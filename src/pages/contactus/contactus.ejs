@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title><%= process.env.appName %></title>
+	<!-- aboutuscss.ejs -->
+	<%= require('@layouts/meta.ejs')()%>
+    <%= require('@layouts/commoncss.ejs')()%>
+    <%= require('@layouts/rem.ejs')() %>
+</head>
+<body>
+	<%= require('@layouts/header.ejs')() %>
+    <%= require('@layouts/aboutusbannermenu.ejs')({index:1}) %>
+    <section class="about-contactus714">
+		<img src="<%= require('@images/img6329.png') %>">
+		<p>地址：深圳市南山区深圳湾科技生态园5栋A座8楼</p>
+		<p>电话：400-900-8516</p>
+		<p>传真：+86-755-83279008</p>
+		<p>邮编：518067</p>
+		<p>内容联系：editors@ieduchina.com</p>
+		<p>市场合作：19925268661</p>
+    </section>
+    <%= require('@layouts/footer.ejs')() %>
+    <%= require('@layouts/commonjs.ejs')()%>
+</body>
+</html>

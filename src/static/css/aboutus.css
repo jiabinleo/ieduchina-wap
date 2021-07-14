@@ -1,0 +1,308 @@
+.aboutus-banner714 .banner714 {
+  width: 100%;
+  height: 6.82666667rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.aboutus-banner714 .menu714 {
+  font-family: Microsoft YaHei;
+  width: 100%;
+  height: 1.42933333rem;
+  background: #ECEAEA;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.512rem;
+  box-sizing: border-box;
+}
+.aboutus-banner714 .menu714 li a span {
+  display: inline-block;
+  font-size: 0.512rem;
+  font-weight: 400;
+  line-height: 1.42933333rem;
+  color: #707070;
+}
+.aboutus-banner714 .menu714 li.active a span {
+  font-size: 0.55466667rem;
+  font-weight: bold;
+  color: #0770D1;
+}
+.about-content714 {
+  padding-bottom: 0.64rem;
+}
+.about-content714 .content714 {
+  padding: 0 0.55466667rem;
+}
+.about-content714 .content714 h2.title714 {
+  font-size: 0.768rem;
+  font-family: Segoe UI;
+  font-weight: bold;
+  color: #0770D1;
+  height: 2.77333333rem;
+  line-height: 2.34666667rem;
+  text-align: center;
+  position: relative;
+  z-index: 50;
+}
+.about-content714 .content714 h2.title714::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  content: attr(en);
+  bottom: -0.08533333rem;
+  z-index: -1;
+  font-size: 0.85333333rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #eeeeee;
+}
+.about-content714 .content714 p {
+  font-size: 0.512rem;
+  font-weight: 400;
+  line-height: 0.85333333rem;
+  color: #1E1E1E;
+  text-align: justify;
+  padding: 0 0.192rem;
+}
+.about-content714 .content714 p span {
+  font-size: 0.55466667rem;
+}
+.about-content714 .content714 p span.blue {
+  color: #0770D1;
+  font-weight: bold;
+}
+.about-content714 .content714 p span.black {
+  color: #1E1E1E;
+  font-weight: bold;
+}
+.about-content714 .content714 .point {
+  position: relative;
+}
+.about-content714 .content714 .point.point {
+  position: relative;
+}
+.about-content714 .content714 .point.point::after {
+  content: "";
+  position: absolute;
+  right: 0.68266667rem;
+  top: 0;
+  z-index: 500;
+  width: 0.46933333rem;
+  height: 0.768rem;
+  background-color: #ff6565;
+}
+.about-content714 .content714 img {
+  display: block;
+  width: 100%;
+  margin: 0.59733333rem 0;
+}
+.about-content714 .content714 img.m2 {
+  margin-top: 1.70666667rem;
+}
+.about-content714 .content714.bg3 {
+  margin-top: 1.024rem;
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.about-content714 .bg {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  height: 12.672rem;
+  background: #F2F2F2;
+  margin-top: -11.94666667rem;
+}
+.about-content714 .bg::after {
+  position: absolute;
+  bottom: -0.42666667rem;
+  left: 50%;
+  transform: translateX(-50%) rotateZ(45deg);
+  z-index: 10;
+  content: "";
+  width: 0.85333333rem;
+  height: 0.85333333rem;
+  background-color: white;
+}
+.about-content714 .bg2 {
+  margin: 0.53333333rem 0;
+  width: 100%;
+  height: 6.89066667rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  padding-top: 0.55466667rem;
+}
+.about-content714 .bg2 p {
+  text-align: justify;
+  padding: 0 0.74666667rem;
+  font-size: 0.512rem;
+  font-weight: 400;
+  line-height: 0.768rem;
+  color: #FFFFFF;
+}
+.about-content714 .bg2 p span {
+  font-weight: bold;
+}
+.about-contactus714 {
+  box-sizing: border-box;
+  padding: 0 0.512rem 2.77333333rem;
+  font-family: Microsoft YaHei;
+}
+.about-contactus714 img {
+  width: 100%;
+  margin: 0.64rem 0;
+}
+.about-contactus714 p {
+  font-size: 0.64rem;
+  font-weight: 400;
+  line-height: 1.28rem;
+  color: #191919;
+}
+.about-contribution714 {
+  padding: 0 0.512rem;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  line-height: 0.85333333rem;
+  color: #1E1E1E;
+}
+.about-contribution714 img {
+  width: 100%;
+  margin: 0.42666667rem 0;
+}
+.about-contribution714 h3 {
+  font-weight: bold;
+}
+.about-joinus714 {
+  font-family: Microsoft YaHei;
+}
+.about-joinus714 .about-joinus-item h2.title714 {
+  font-size: 0.85333333rem;
+  font-family: Segoe UI;
+  font-weight: bold;
+  color: #0770D1;
+  height: 2.77333333rem;
+  line-height: 2.34666667rem;
+  text-align: center;
+  position: relative;
+  z-index: 50;
+}
+.about-joinus714 .about-joinus-item h2.title714::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  content: attr(en);
+  bottom: -0.08533333rem;
+  z-index: -1;
+  font-size: 0.85333333rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #eeeeee;
+}
+.about-joinus714 .about-joinus-item .about-joinus-menu {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 1.19466667rem;
+  width: 100%;
+}
+.about-joinus714 .about-joinus-item .about-joinus-menu li {
+  text-align: center;
+}
+.about-joinus714 .about-joinus-item .about-joinus-menu li img {
+  width: 2.13333333rem;
+  height: 2.13333333rem;
+}
+.about-joinus714 .about-joinus-item .about-joinus-menu li p {
+  margin: 0.27733333rem 0;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  height: 0.896rem;
+  line-height: 0.896rem;
+  color: #1E1E1E;
+}
+.about-joinus714 .about-joinus-swiper {
+  padding: 0 0.512rem;
+}
+.about-joinus714 .about-joinus-swiper .swiper-container .swiper-wrapper .swiper-slide {
+  width: 8.46933333rem;
+  height: 5.48266667rem;
+  border-radius: 0.21333333rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about-joinus714 .tip {
+  font-size: 0.512rem;
+  font-weight: 400;
+  line-height: 1.024rem;
+  color: #1E1E1E;
+  padding: 0.256rem 0.512rem;
+}
+.about-joinus714 .about-joinus-work {
+  margin: 0.256rem 0.512rem 1.45066667rem;
+  box-shadow: 0 0.064rem 0.128rem rgba(0, 0, 0, 0.16);
+  border-radius: 0.128rem;
+  background-color: white;
+  box-sizing: border-box;
+  padding-bottom: 0.64rem;
+}
+.about-joinus714 .about-joinus-work li {
+  padding: 0 0.68266667rem;
+}
+.about-joinus714 .about-joinus-work li .title {
+  width: 100%;
+  height: 1.81333333rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 0.04266667rem rgba(213, 213, 213, 0.5);
+  line-height: 1.81333333rem;
+  font-size: 0.512rem;
+}
+.about-joinus714 .about-joinus-work li .title span.weight {
+  font-weight: bold;
+}
+.about-joinus714 .about-joinus-work li .title span.address img {
+  height: 0.55466667rem;
+  vertical-align: -0.08533333rem;
+  margin-right: 0.17066667rem;
+}
+.about-joinus714 .about-joinus-work li .title span.detail {
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 1.81333333rem;
+  color: #0770D1;
+}
+.about-joinus714 .about-joinus-work li .title span.detail img {
+  width: 0.42666667rem;
+  margin-left: 0.04266667rem;
+  vertical-align: middle;
+  transform: rotateX(180deg);
+}
+.about-joinus714 .about-joinus-work li .title span.detail.top img {
+  transform: rotateX(0deg);
+}
+.about-joinus714 .about-joinus-work li .details {
+  height: 0;
+  overflow: hidden;
+}
+.about-joinus714 .about-joinus-work li .details.border {
+  border-bottom: 0.04266667rem solid rgba(112, 112, 112, 0.5);
+}
+.about-joinus714 .about-joinus-work li .details .con {
+  padding: 0.21333333rem 0 0.42666667rem;
+}
+.about-joinus714 .about-joinus-work li .details .con p {
+  text-align: justify;
+  font-size: 0.512rem;
+  font-weight: 400;
+  line-height: 1.024rem;
+  color: #1E1E1E;
+}
+.about-joinus714 .about-joinus-work li .details .con p.titles {
+  font-weight: bold;
+}

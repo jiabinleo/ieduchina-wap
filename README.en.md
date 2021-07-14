@@ -1,7 +1,7 @@
-# 国际教育网官网wap2
+# 国际教育网官网
 
 #### Description
-{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}
+国际教育网官网
 
 #### Software Architecture
 Software architecture description

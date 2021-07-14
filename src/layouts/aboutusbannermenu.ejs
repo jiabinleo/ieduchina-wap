@@ -1,0 +1,20 @@
+<section class="aboutus-banner714">
+    <div class="banner714" style="background-image: url('<%= require('@images/banner89653.png') %>')">
+    </div>
+    <ul class="menu714">
+        <% var menu = [
+            {name:'关于我们',link:'./aboutus.html'},
+            {name:'联系我们',link:'./contactus.html'},
+            {name:'文章投稿',link:'./contribution.html'},
+            {name:'加入我们',link:'./joinus.html'},
+        ]%>
+        <% menu.forEach(function(m,i){ %>
+            
+        <li class="<%= (index==i)?'active':''%>">
+            <a href="<%=m.link%>">
+                <span><%=m.name%></span>
+            </a>
+        </li>
+        <%})%>
+    </ul>
+</section>

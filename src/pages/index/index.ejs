@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title><%= process.env.appName %></title>
+	<!-- aboutuscss.ejs -->
+	<%= require('@layouts/meta.ejs')()%>
+    <%= require('@layouts/commoncss.ejs')()%>
+    <%= require('@layouts/rem.ejs')() %>
+</head>
+<body>
+	<%= require('@layouts/header.ejs')() %>
+    <section style="min-height: 100vh;">
+        <a href="./aboutus.html"><button>跳转到关于我们</button></a>
+    </section>
+    <%= require('@layouts/footer.ejs')() %>
+    <%= require('@layouts/commonjs.ejs')()%>
+</body>
+</html>

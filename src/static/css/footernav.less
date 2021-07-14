@@ -1,0 +1,85 @@
+@rem: 750/16rem;
+
+.footernav {
+    .top {
+        padding: 0 (47/@rem);
+        height: (70/@rem);
+        display: flex;
+        justify-content: space-between;
+        line-height: (70/@rem);
+        background-color: #2B5887;
+        color: #ffffff;
+        margin-bottom: (-2/@rem);
+
+        .tel {
+            position: relative;
+            font-size: (24/@rem);
+            padding-left: (9/@rem);
+
+            &::before {
+                position: absolute;
+                left: (-18/@rem);
+                top: (22/@rem);
+                content: "";
+                width: (20/@rem);
+                height: (24/@rem);
+                background-image: url(../images/tel.png);
+                background-size: (20/@rem) (24/@rem);
+
+            }
+
+            a {
+                font-size: (28/@rem);
+                color: #ffffff;
+                font-weight: bold;
+                vertical-align: (-2/@rem);
+            }
+
+        }
+
+        .time {
+            font-size: (22/@rem);
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .bottom {
+        background-color: #264F7A;
+        height: (143/@rem);
+        font-size: 0;
+
+        .list {
+            display: flex;
+            justify-content: space-between;
+            padding: (18/@rem )0;
+
+            a {
+                flex: 1;
+                text-align: center;
+                font-size: (24/@rem);
+                line-height: (26/@rem);
+                border-right: solid (1/@rem) rgba(255, 255, 255, 0.8);
+                padding-top: (2/@rem);
+                color: #ffffff;
+
+                &:last-of-type {
+                    border-right: none;
+                }
+            }
+        }
+
+        p {
+            text-align: center;
+            font-size: (22/@rem);
+            color: #ffffff;
+            line-height: (32/@rem);
+            color: rgba(255, 255, 255, 0.8);
+
+            a {
+                font-size: (20/@rem);
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: underline;
+            }
+        }
+    }
+}
