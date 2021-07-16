@@ -63,7 +63,7 @@ gulp.task('css', () => {
         .pipe(autoprefixer({
             cascade: false
         }))
-        .pipe(concat(concatCssName))
+        // .pipe(concat(concatCssName))
         .pipe(gulp.dest(outputPath.output_css))
 });
 
@@ -114,6 +114,8 @@ gulp.task('serve', function () {
             index: "./index.html"
         }
     });
-    browserSync.watch(['**/*.css','**/*.js','**/*.html'], {ignored: '*.map.css'});
+	browserSync.watch(['**/*.css','**/*.js','**/*.html'], {ignored: '*.map.css'});
 });
-gulp.task('app', gulp.series('delete','copy','js','html','serve'));
+// gulp.task('app', gulp.series('delete','copy','js','html','serve'));
+gulp.task('build', gulp.series('delete','images','css','js','html'));
+gulp.task('app', gulp.series('delete','images','css','js','html','serve'));

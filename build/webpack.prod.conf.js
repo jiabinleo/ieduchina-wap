@@ -22,7 +22,7 @@ const webpackConfigProd = {
     
 	plugins: [
 		//删除dist目录
-		new cleanWebpackPlugin(['dist','dist/js'], {
+		new cleanWebpackPlugin(['dist','_dist'], {
 			root: path.resolve(__dirname, '../'), //根目录
 			verbose: true, //开启在控制台输出信息
 			dry: false,

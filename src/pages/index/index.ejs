@@ -3,17 +3,387 @@
 <html lang="zh-CN">
 <head>
 	<title><%= process.env.appName %></title>
-	<!-- aboutuscss.ejs -->
 	<%= require('@layouts/meta.ejs')()%>
     <%= require('@layouts/commoncss.ejs')()%>
+    <%= require('@layouts/indexcss.ejs')()%>
     <%= require('@layouts/rem.ejs')() %>
 </head>
 <body>
-	<%= require('@layouts/header.ejs')() %>
-    <section style="min-height: 100vh;">
-        <a href="./aboutus.html"><button>跳转到关于我们</button></a>
+	<%= require('@layouts/header.ejs')({index:0}) %>
+    <section class="section">
+        <div class="banner">
+            <div class="banner-bg"></div>
+            <div class="swiper-index">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="javascript:;">
+                            <div style='background-image: url("<%= require('@images/new01.png') %>")'></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:;">
+                            <div style='background-image: url("<%= require('@images/new02.png') %>")'></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:;">
+                            <div style='background-image: url("<%= require('@images/new03.png') %>")'></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-index-pagination"></div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="swiper-menu">
+                <div class="swiper-wrapper">
+					<% var menu = [
+						{img:'icon11',name:'找学校',link:'javascript:'},
+						{img:'icon12',name:'测一测',link:'javascript:'},
+						{img:'icon13',name:'要备考',link:'javascript:'},
+						{img:'icon14',name:'看直播',link:'javascript:'},
+						{img:'icon15',name:'看学校',link:'javascript:'},
+						{img:'icon16',name:'找学校',link:'javascript:'},
+						{img:'icon17',name:'找学校',link:'javascript:'}
+					]%>
+					<% menu.forEach(function(el){%>
+                    <div class="swiper-slide">
+                        <a href="<%=el.link%>">
+                            <img src="<%= require(`@images/${el.img}.png`) %>" alt="">
+                            <p><%=el.name%></p>
+                        </a>
+                    </div>
+					<%})%>
+                </div>
+                <div class="swiper-menu-pagination"></div>
+            </div>
+        </div>
+        <div class="todaynews todaynew">
+            <div class="title">
+                <h2>今日热闻</h2>
+                <a href="javascript:;">
+                    <span>更多热闻</span>
+                </a>
+            </div>
+            <ul>
+				<% var todaynew = [
+					{title:'北京致知学校开放日｜本周末走进本周末走进',img:'new01',link:'javascript:'},
+					{title:'北京致知学校开放日｜本周末走进本周末走进',img:'new01',link:'javascript:'},
+					{title:'北京致知学校开放日｜本周末走进本周末走进',img:'new01',link:'javascript:'},
+					{title:'北京致知学校开放日｜本周末走进本周末走进',img:'new01',link:'javascript:'},
+					{title:'北京致知学校开放日｜本周末走进本周末走进',img:'new01',link:'javascript:'}
+				] %>
+				<% todaynew.forEach(function(el){ %>
+                <li>
+                    <a href="<%=el.link %>">
+                        <div class="list">
+                            <div class="left">
+                                <p><%=el.title%></p>
+                            </div>
+							<div style="background-image: url(<%= require(`@images/${el.img}.png`) %>)" class="right"></div>
+                        </div>
+                    </a>
+                </li>
+				<%})%>
+            </ul>
+        </div>
+        <div class="schoolnews">
+            <div class="title">
+                <h2>校园活动</h2>
+                <a href="javascript:;">
+                    <span>更多活动</span>
+                </a>
+            </div>
+            <ul>
+				<% var list=[
+					{
+						title:'东华文泽学校12月11日春季招生开放日',
+						link:'javascript:',
+						img:'new01',
+						label:['国际学校活动','冬令营'],
+						time:'2020-12-11'
+					},
+					{
+						title:'东华文泽学校12月11日春季招生开放日',
+						link:'javascript:',
+						img:'new01',
+						label:['国际学校活动','冬令营'],
+						time:'2020-12-11'
+					},
+					{
+						title:'东华文泽学校12月11日春季招生开放日',
+						link:'javascript:',
+						img:'new01',
+						label:['国际学校活动','冬令营'],
+						time:'2020-12-11'
+					}
+				] %>
+				<% list.forEach(function(el){%>
+                <li>
+                    <a href="<%=el.link%>">
+                        <div style="background-image: url(<%= require(`@images/${el.img}.png`)%>);" class="left">
+                        </div>
+                        <div class="right">
+                            <h3><%=el.title%></h3>
+                            <p>
+								<% el.label.forEach(function(e){%>
+                                <span><%=e%></span>
+								<%})%>
+                            </p>
+                            <div class="bottom">
+                                <div class="time">
+                                    <%=el.time%>
+                                </div>
+                                <div class="bm">
+                                    <button>预约报名</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+				<%})%>
+            </ul>
+        </div>
+        <div class="schooltop">
+            <div class="title">
+                <h2>名校排行榜</h2>
+                <a href="javascript:;">
+                    <span>更多学校</span>
+                </a>
+            </div>
+            <ul id="school-list">
+				<% var school = [
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'new03',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','初中','高中'],
+						img:'new03',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'new03',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'new03',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'new03',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'new03',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'new03',
+						link:'javascript:'
+					}
+				]%>
+				<% school.forEach(function(el){%>
+                <li>
+                    <a href="<%el.link%>">
+                        <div style="background-image: url(<%= require(`@images/${el.img}.png`)%>);" class="left">
+                        </div>
+                        <div class="right">
+                            <h3><%=el.name%></h3>
+                            <p>
+								<% el.label.forEach(function(s){%>
+								<% if(s=="幼儿园"){%>
+									<span class="y">幼儿园</span>
+								<%}else if(s=="小学"){%>
+									<span class="x">小学</span>
+								<%}else if(s=="初中"){%>
+									<span class="c">初中</span>
+								<%}else if(s=="高中"){%>
+									<span class="g">高中</span>
+								<%}%>
+								<%})%>
+                            </p>
+                            <div class="bottom">
+                                <div class="bm">
+                                    <button>入学测试</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+				<%})%>
+            </ul>
+            <div class="else">
+                <a href="javascript:;">
+                    <button class="clickmore" id="clickmore">查看更多</button>
+                </a>
+            </div>
+        </div>
+        <div class="dk">
+            <div class="title">
+                <h2>大咖说择校</h2>
+                <a href="javascript:;">
+                    <span>更多视频</span>
+                </a>
+            </div>
+            <ul>
+				<% var video=[
+					{
+						link:'javascript:',
+						img:'new02',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'new02',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'new02',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'new02',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					}
+				]%>
+				<% video.forEach(function(el){%>
+                <li>
+                    <a href="<%el.link%>">
+                        <div style="background-image: url(<%= require(`@images/${el.img}.png`)%>);" class="video-img">
+                            <div class="video-title">
+                                <div class="hf">查看回放</div>
+                                <div><%=el.time%></div>
+                            </div>
+                        </div>
+                        <p><%=el.desc%></p>
+                    </a>
+                </li>
+				<%})%>
+            </ul>
+        </div>
+        <div class="todaynews">
+            <div class="title">
+                <h2>我要读名校</h2>
+                <a href="javascript:;">
+                    <span>更多内容</span>
+                </a>
+            </div>
+            <ul>
+				<% var schoolm = [
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'new01',
+						link:'javascript:'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'new01',
+						link:'javascript:'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'new01',
+						link:'javascript:'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'new01',
+						link:'javascript:'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'new01',
+						link:'javascript:'
+					}
+				]%>
+				<% schoolm.forEach(function(el){%>
+                <li>
+                    <a href="<%=el.link%>">
+                        <div class="list">
+                            <div class="left">
+                                <p><%=el.title%></p>
+                            </div>
+                            <div style="background-image: url(<%= require(`@images/${el.img}.png`)%>);" class="right">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+				<%})%>
+            </ul>
+        </div>
+        <div class="resources">
+            <div class="title">
+                <h2>行业资源</h2>
+                <a href="javascript:;">
+                    <span>更多内容</span>
+                </a>
+            </div>
+            <div class="swiper-resources">
+                <div class="swiper-wrapper">
+					<% var resource=[
+						{
+							title:'媒体宣传',
+							desc:'通过国际教育网媒体产品、新媒体矩阵、家长社群，和长期深度合作的北上广深主流媒体、教育类门户网站及当地生活论坛，为国际学校/办学团体提供媒体链式传播，达到宣传热度。',
+							img:'resource_bg1'
+						},
+						{
+							title:'品牌推广',
+							desc:'为学校/办学团体提供品牌提升、招生策划、内容宣传运营，包括PR软文宣传、专题报道、固定位广告、新媒体宣传、行业公关，以及创建院校专属页面，并开通发布账号自行上传招生政策和最新活动信息等服务，为学校招生宣传推荐匹配优质学生。',
+							img:'resource_bg2'
+						},
+						{
+							title:'会议组织',
+							desc:'为学校/办学团体提供线上论坛、直播间，以及线下教育择校展、校长论坛、机构专场、探校体验等，实现O2O闭环联动，和学校信息的多维展示，促进院校招生转化。',
+							img:'resource_bg3'
+						},
+						{
+							title:'学习资源',
+							desc:'为国际学校/教师提供全面的K12教学资源信息，覆盖前沿的学科教研资源、课程体系资源、学生学习资源、教学管理系统资源、学术水平评估资源、职业生涯评估资源等。',
+							img:'resource_bg4'
+						},
+						{
+							title:'人才资源',
+							desc:'为学校/办学团体提供国际教育行业人才资源信息，涵盖国内外主流行业人才资源平台，提供定制化人才需求方案。',
+							img:'resource_bg5'
+						},
+						{
+							title:'场地资源',
+							desc:'为学校/办学团体提供合适办学场地（租赁、转让、买卖）信息，促进国际化学校在中国一线城市、二线城市落地办学。',
+							img:'resource_bg6'
+						}
+					]%>
+					<% resource.forEach(function(el){ %>
+                    <div class="swiper-slide" style="background-image: url(<%= require(`@images/${el.img}.png`)%>);">
+                        <h2 class="xuexi"><%=el.title%></h2>
+                        <p><%=el.desc%></p>
+                    </div>
+					<%})%>
+                </div>
+            </div>
+        </div>
     </section>
     <%= require('@layouts/footer.ejs')() %>
     <%= require('@layouts/commonjs.ejs')()%>
+	<%= require('@layouts/indexjs.ejs')%>
 </body>
 </html>

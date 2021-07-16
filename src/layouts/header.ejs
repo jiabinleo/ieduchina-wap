@@ -5,7 +5,7 @@
             .guoqing-bg {
                 width: 100%;
                 height: 4.0rem;
-                background: url(https://www.ieduchina.com/uploadfile/202010/1604141681.png?t=1604548165) no-repeat center;
+                background: url("<%= require('@images/1604141681.png')%>")  no-repeat center; 
                 background-size: 100% 100%;
                 cursor: pointer;
                 transition: all ease-in-out 0.1s;
@@ -18,38 +18,34 @@
     </div>
     <!-- 活动end -->
     <div class="header">
-        <a href="./searchkey.html">
-            <div class="left">
-                <img src="<%= require('@images/search.png') %>" alt="">
-            </div>
-        </a>
+		<div class="left" id="menu">
+		    <img src="<%= require('@images/menu.png') %>" alt="">
+		</div>
         <h1>
-            <img src="https://m.ieduchina.com/statics/w/img/logol.png?t=1214" alt="">
+            <img src="https://m.ieduchina.com/statics/w/img/logol.png" alt="">
         </h1>
-        <div class="right" id="menu">
-            <img src="<%= require('@images/menu.png') %>" alt="">
-        </div>
+        <a class="search" href="./searchkey.html">
+			<img src="<%= require('@images/search.png') %>" alt="">
+        </a>
+		<a class="right" href="javascript:">
+			<img src="https://picsum.photos/id/357/48/48" alt="">
+		</a>
     </div>
     <div class="topmenu">
         <ul>
-            <li class="active">
-                <a href="javascript:;">首页</a>
+			<% var m = [
+				{name:'首页',link:'.'},
+				{name:'学校',link:'javascript:'},
+				{name:'亲子',link:'javascript:'},
+				{name:'出国',link:'javascript:'},
+				{name:'升学',link:'javascript:'},
+				{name:'资源',link:'javascript:'}
+				]%>
+			<% m.forEach(function(el,i){%>
+            <li class="<%= (typeof index !='undefined') && index==i?'active':''%>">
+                <a href="<%=el.link%>"><%=el.name%></a>
             </li>
-            <li>
-                <a href="javascript:;">学校</a>
-            </li>
-            <li>
-                <a href="javascript:;">亲子</a>
-            </li>
-            <li>
-                <a href="javascript:;">出国</a>
-            </li>
-            <li>
-                <a href="javascript:;">升学</a>
-            </li>
-            <li>
-                <a href="javascript:;">资源</a>
-            </li>
+			<%})%>
         </ul>
     </div>
     <div class="index-menu-wrap">
