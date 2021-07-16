@@ -26,7 +26,7 @@
   text-align: left;
 }
 .headernav .header div.left img {
-  width: 0.896rem;
+  width: 1.024rem;
 }
 .headernav .header a.right {
   flex: 0.8;
@@ -34,7 +34,6 @@
 }
 .headernav .header a.right img {
   width: 1.024rem;
-  height: 1.024rem;
   border-radius: 50%;
 }
 .headernav .header a.search {
@@ -42,8 +41,7 @@
   text-align: right;
 }
 .headernav .header a.search img {
-  width: 0.64rem;
-  height: 0.64rem;
+  width: 0.85333333rem;
 }
 .headernav .header h1 {
   flex: 4;

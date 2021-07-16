@@ -104,7 +104,7 @@ body {
 				height: (18/@rem);
 				border-radius: (9/@rem);
 				position: absolute;
-				bottom: (16/@rem);
+				bottom: (0/@rem);
 				top: initial;
 				left: 50%;
 				transform: translateX(-50%);
@@ -114,7 +114,7 @@ body {
 				.swiper-pagination-progressbar-fill {
 					display: inline-block;
 					background-color: #035297;
-					border-radius: 50%;
+					border-radius: (20/@rem);
 					// transform: scaleX(0) !important;
 					height: (18/@rem);
 				}
@@ -133,46 +133,31 @@ body {
             h2 {
                 position: relative;
                 font-size: (32/@rem);
-                font-family: PingFang SC;
-                font-weight: bold;
-                color: #333333;
-                height: (40/@rem);
-                padding-left: (25/@rem);
+                height: (42/@rem);
+				font-family: Microsoft YaHei;
+				font-weight: bold;
+				color: #171717;
 
                 &::before {
                     position: absolute;
                     left: 0;
-                    top: 0;
+                    bottom: 0;
                     content: "";
-                    width: (10/@rem);
-                    height: (40/@rem);
-                    background-color: #035297;
+					right: 0;
+                    height: (18/@rem);
+                    background-color: rgba(51, 108, 255, 0.76);
                     border-radius: (5/@rem);
+					opacity: 0.76;
                 }
             }
 
             span {
-                font-size: 0;
-                position: relative;
                 display: block;
                 font-size: (24/@rem);
-                font-family: PingFang SC;
-                font-weight: 500;
                 color: #666666;
-                padding-right: (25/@rem);
-
-                &::before {
-                    position: absolute;
-                    right: 0;
-                    top: (11/@rem);
-                    content: "";
-                    width: (10/@rem);
-                    height: (16/@rem);
-                    color: #555555;
-                    background-image: url(../images/rightarr.png?t=1214);
-                    background-size: (10/@rem) (16/@rem);
-                    background-repeat: no-repeat;
-                }
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				color: #171717;
             }
         }
 
