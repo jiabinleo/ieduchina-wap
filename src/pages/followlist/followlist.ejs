@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+    <link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微头条</title>
+    <meta name="keywords" content="国际教育网，微头条" />
+    <meta name="description" content="国际教育网，微头条" />
+    <meta itemprop="name" content="国际教育网，微头条" />
+    <meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
+    <meta name="format-detection" content="telephone=no">
+	<%= require('@layouts/logincss.ejs')()%>
+    <script>
+        (function () {
+            var width = document.documentElement.clientWidth;
+            var style = document.createElement("style");
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+            } else {
+                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+            }
+            document.head.appendChild(style);
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="back"></a>
+        <h2>关注</h2>
+    </header>
+	<section class="section">
+		<ul class="follow-list">
+			<% var list = [
+				{link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪',desc:'20万粉丝 做一名国际教育工作者',	status:false},
+                {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true},
+                {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true},
+                {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true},
+                {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true}
+			]%>
+			<% list.forEach(function(lis){ %>
+			<li>
+				<a href="<%=lis.link%>">
+					 <img src="<%=lis.img%>">
+				</a>
+				<div class="name">
+					<h2><a href="<%=lis.link%>"><%=lis.name%></a></h2>
+					<p><%=lis.desc%></p>
+				</div>
+				<button type="button"><%=lis.status?'互关':'已关注'%></button>
+			</li>
+			<% }) %>
+		</ul>
+	</section>
+    <%= require('@layouts/loginjs.ejs')()%>
+</body>
+
+</html>

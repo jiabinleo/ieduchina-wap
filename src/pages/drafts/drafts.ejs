@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+    <link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微头条</title>
+    <meta name="keywords" content="国际教育网，微头条" />
+    <meta name="description" content="国际教育网，微头条" />
+    <meta itemprop="name" content="国际教育网，微头条" />
+    <meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
+    <meta name="format-detection" content="telephone=no">
+	<%= require('@layouts/logincss.ejs')()%>
+    <script>
+        (function () {
+            var width = document.documentElement.clientWidth;
+            var style = document.createElement("style");
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+            } else {
+                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+            }
+            document.head.appendChild(style);
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="back"></a>
+        <h2>草稿箱</h2>
+		<button type="button" class="del-btn">管理</button>
+    </header>
+	<form>
+		<section class="section">
+			<ul class="drafts-list">
+				<% var list = [
+					{
+						img:'https://picsum.photos/id/365/253/150',
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'微头条',
+						time:'1小时前',
+						id:0
+					},
+					{
+						img:'https://picsum.photos/id/365/253/150',
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'短视频',
+						time:'1小时前',
+						id:1
+					},
+					{
+						img:'https://picsum.photos/id/365/253/150',
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'文章',
+						time:'1小时前',
+						id:2
+					}
+				]%>
+				<% list.forEach(function(lis){%>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" name="lis" value="<%=lis.id%>" />
+						<span></span>
+					</label>
+					<div class="content">
+						<div class="image" style="background-image: url(<%=lis.img%>)"></div>
+						<div class="text">
+							<h3><%=lis.title%></h3>
+							<p class="time"><%=lis.time+' '+lis.type%></p>
+						</div>
+					</div>
+				</li>
+				<%})%>
+			</ul>
+		</section>
+		<div class="drafts-list-del">
+	        <div class="weui-actionsheet" id="iosActionsheet">
+	            <div class="weui-actionsheet__menu menu_list">
+	                <button type="button" class="alldel">一键删除</button>
+	                <button type="button" class="del">删除</button>
+	            </div>
+	        </div>
+		</div>
+	</form>
+    <%= require('@layouts/loginjs.ejs')()%>
+</body>
+
+</html>

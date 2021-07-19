@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+    <link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微头条</title>
+    <meta name="keywords" content="国际教育网，微头条" />
+    <meta name="description" content="国际教育网，微头条" />
+    <meta itemprop="name" content="国际教育网，微头条" />
+    <meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
+    <meta name="format-detection" content="telephone=no">
+    <%= require('@layouts/logincss.ejs')()%>
+    <script>
+        (function () {
+            var width = document.documentElement.clientWidth;
+            var style = document.createElement("style");
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+            } else {
+                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+            }
+            document.head.appendChild(style);
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="back"></a>
+        <img src="<%=require('@images/logo.png')%>">
+		<a class="user" href="dynamicpage.html">
+			<img src="https://picsum.photos/id/338/120/120">
+		</a>	
+    </header>
+	<section class="section">
+        <div class="video-menu">
+            <div class="swiper-menu">
+                <div class="swiper-wrapper">
+                    <% var menu = [
+                        {name:'推荐',link:'javascript:'},
+                        {name:'讲座',link:'javascript:'},
+                        {name:'活动',link:'javascript:'},
+                        {name:'访谈',link:'javascript:'},
+                        {name:'直播',link:'javascript:'},
+                        {name:'家庭教育',link:'javascript:'},
+                        {name:'留学',link:'javascript:'},
+                        {name:'升学备考',link:'javascript:'},
+                        {name:'国际学校',link:'javascript:'}
+                    ]%>
+                    <%menu.forEach(function(item,index){%>
+                    <div class="swiper-slide <%=(index==0)?'active':''%>">
+                        <a href="<%=item.link%>">
+                            <%=item.name%>
+                        </a>
+                    </div>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+        <div class="video-list">
+            <ul>
+                <% var video=[
+                    {
+                        link:'javascript:',
+                        userimg:'https://picsum.photos/id/64/73/73',
+                        user:'柠檬启蒙教育',
+                        userlink:'javascript:',
+                        time:'2020-03-09',
+                        isfollow:true,
+                        desc:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育',
+                        videoimg:'https://picsum.photos/id/20/682/348',
+                        duration:'00:30',
+                        pl:96
+                    },
+                    {
+                        link:'javascript:',
+                        userimg:'https://picsum.photos/id/64/73/73',
+                        user:'柠檬启蒙教育',
+                        userlink:'javascript:',
+                        time:'2020-03-09',
+                        isfollow:false,
+                        desc:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育',
+                        videoimg:'https://picsum.photos/id/20/682/348',
+                        duration:'00:30',
+                        pl:96
+                    }
+                ]%>
+                <% video.forEach(function(item){%>
+                <li>
+                    <div class="video-list-header">
+                        <a href="<%=item.userlink%>">
+                            <img src="https://picsum.photos/id/64/73/73" alt="<%=item.user%>">
+                        </a>
+                        <div class="user">
+                            <a href="<%=item.userlink%>"><h2><%=item.user%></h2></a>
+                            <p><%=item.time%></p>
+                        </div>
+                        <button class="<%=item.isfollow?'isfollow':''%>"><%=item.isfollow?'关注':'已关注'%></button>
+                    </div>
+                    <div class="video-list-text">
+                        <a><%=item.desc%></a>
+                    </div>
+                    <div class="video-list-video" style="background-image: url(<%=item.videoimg%>);">
+                        <a href="javascript:">
+                            <div class="play"></div>
+                            <div class="time">
+                                <i class="v"></i><%=item.duration%>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="video-list-tools">
+                        <a><%=item.pl%> 评论</a>
+                        <a><i class="share"></i>分享</a>
+                        <a><i class="collection"></i>收藏</a>
+                    </div>
+                </li>
+                <%})%>
+            </ul>
+            <div class="more">
+                <button>更多视频</button>
+            </div>
+        </div>
+        <div class="school-active">
+            <div class="title">
+                <h2>推荐活动</h2>
+                <a href="javascript:;">
+                    <span>更多活动</span>
+                </a>
+            </div>
+            <ul>
+                <%var active=[
+                    {
+                        link:'javascript:',
+                        img:'https://picsum.photos/id/202/280/172',
+                        title:'东华文泽学校12月11日春季招生开放日',
+                        label:['国际学校活动','冬令营'],
+                        time:'2020-12-11'
+                    },
+                    {
+                        link:'javascript:',
+                        img:'https://picsum.photos/id/202/280/172',
+                        title:'东华文泽学校12月11日春季招生开放日',
+                        label:['国际学校活动','冬令营'],
+                        time:'2020-12-11'
+                    },
+                    {
+                        link:'javascript:',
+                        img:'https://picsum.photos/id/202/280/172',
+                        title:'东华文泽学校12月11日春季招生开放日',
+                        label:['国际学校活动','冬令营'],
+                        time:'2020-12-11'
+                    }
+                ]%>
+                <%active.forEach(function(item){%>
+                <li>
+                    <a href="<%=item.link%>">
+                        <div style="background-image: url(<%=item.img%>);" class="left">
+                        </div>
+                        <div class="right">
+                            <h3><%=item.title%></h3>
+                            <p>
+                                <%item.label.forEach(function(label){%>
+                                <span><%=label%></span>
+                                <%})%>
+                            </p>
+                            <div class="bottom">
+                                <div class="time"><%=item.time%></div>
+                                <div class="bm">
+                                    <button>预约报名</button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="school-dk">
+            <div class="title">
+                <h2>大咖说择校</h2>
+                <a href="javascript:;">
+                    <span>更多视频</span>
+                </a>
+            </div>
+            <ul>
+                <%var dklist=[
+                    {
+                        link:'javascript:',
+                        img:'https://picsum.photos/id/948/340/321',
+                        time:'2020-02-02',
+                        title:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+                    },
+                    {
+                        link:'javascript:',
+                        img:'https://picsum.photos/id/948/340/321',
+                        time:'2020-02-02',
+                        title:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+                    },
+                    {
+                        link:'javascript:',
+                        img:'https://picsum.photos/id/948/340/321',
+                        time:'2020-02-02',
+                        title:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+                    },
+                    {
+                        link:'javascript:',
+                        img:'https://picsum.photos/id/948/340/321',
+                        time:'2020-02-02',
+                        title:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+                    }
+                ]%>
+                <%dklist.forEach(function(item){%>
+                <li>
+                    <a href="<%=item.link%>">
+                        <div style="background-image: url(<%=item.img%>);" class="video-img">
+                            <div class="video-title">
+                                <div class="hf">查看回放</div>
+                                <div><%=item.time%></div>
+                            </div>
+                        </div>
+                        <p><%=item.title%></p>
+                    </a>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+	</section>
+    <%=require('@layouts/footer.ejs')()%>
+    <%= require('@layouts/loginjs.ejs')()%>
+</body>
+
+</html>

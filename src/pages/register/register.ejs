@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+    <link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微头条</title>
+    <meta name="keywords" content="国际教育网，微头条" />
+    <meta name="description" content="国际教育网，微头条" />
+    <meta itemprop="name" content="国际教育网，微头条" />
+    <meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
+    <meta name="format-detection" content="telephone=no">
+	<%= require('@layouts/logincss.ejs')()%>
+    <script>
+        (function () {
+            var width = document.documentElement.clientWidth;
+            var style = document.createElement("style");
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+            } else {
+                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+            }
+            document.head.appendChild(style);
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="back"></a>
+        <img src="<%= require('@images/logo.png')%>" alt="国际教育网">
+    </header>
+    <section class="section" style="background-image: url(<%= require('@images/loginbg.png')%>);">
+        <h2 class="title">欢迎注册国际教育网</h2>
+        <div class="login">
+            <div class="content">
+                <form action="">
+                    <div class="input user">
+                        <input type="text" placeholder="请输入手机号码" name="phone" nullmsg="请输入手机号码" errormsg="手机号格式不正确" datatype="phone">
+                    </div>
+                    <div class="input psd">
+                        <input type="password" placeholder="请输入密码" name="pwd" nullmsg="请输入密码" errormsg="请输入6-18位数密码" datatype="passport">
+                    </div>
+                    <div class="input verify">
+                        <input type="text" placeholder="请输入验证码" name="verify" nullmsg="请输入验证码">
+                        <input type="button" class="getCode" value="获取验证码">
+                    </div>
+                    <p class="tool-bottom top"><a>注册即同意</a><a href="">国际教育网用户协议</a> </p>
+                    <button class="submit bt-reg" success="注册成功" error="注册失败" href="personal.html">注册</button>
+                </form>
+            </div>
+        </div>
+    </section>
+	<%= require('@layouts/loginjs.ejs')()%>
+</body>
+
+</html>

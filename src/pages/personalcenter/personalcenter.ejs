@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+		<link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>微头条</title>
+		<meta name="keywords" content="国际教育网，微头条" />
+		<meta name="description" content="国际教育网，微头条" />
+		<meta itemprop="name" content="国际教育网，微头条" />
+		<meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
+		<meta name="format-detection" content="telephone=no">
+		<%= require('@layouts/logincss.ejs')()%>
+		<script>
+			(function () {
+				var width = document.documentElement.clientWidth;
+				var style = document.createElement("style");
+				if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+					style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+				} else {
+					style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+				}
+				document.head.appendChild(style);
+			})();
+
+		</script>
+	</head>
+
+	<body>
+		<header class="header">
+			<a class="back"></a>
+			<h2>个人中心</h2>
+		</header>
+		<section class="section">
+			<div class="personal-center-banner" style="background-image: url(https://picsum.photos/id/838/750/470);">
+				<div class="personal-center-banner-mask">
+					<a href="./dynamicpage.html">
+						<img class="user-avatar" src="https://picsum.photos/id/338/120/120">
+						<h3>波斯的猫咪</h3>
+					</a>
+					<ul class="statistical">
+						<li>
+							<a>
+								<span>36</span>
+								<p>动态</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<span>36</span>
+								<p>粉丝</p>
+							</a>
+						</li>
+						<li>
+							<a href="./followlist.html">
+								<span>36</span>
+								<p>关注</p>
+							</a>
+						</li>
+					</ul>
+					<a class="btn" href="./personal.html">个人资料</a>
+				</div>
+			</div>
+			<div class="personal-center-menu">
+				<ul>
+					<% var list=[
+						{
+							name:'创作中心',
+							link:'./creativecenter.html'
+						},
+						{
+							name:'消息通知',
+							link:'javascript:'
+						},
+						{
+							name:'草稿箱',
+							link:'./drafts.html'
+						},
+						{
+							name:'收藏',
+							link:'javascript:'
+						},
+						{
+							name:'国际教育号',
+							link:'javascript:'
+						},
+						{
+							name:'预约',
+							link:'javascript:'
+						},
+						{
+							name:'评论',
+							link:'javascript:'
+						},
+						{
+							name:'关注',
+							link:'./followlist.html'
+						}
+					] %>
+					<% list.forEach(function(lis){%>
+					<li>
+						<a href="<%=lis.link%>">
+							<i></i>
+							<p><%=lis.name%></p>
+						</a>
+					</li>
+					<%})%>
+				</ul>
+			</div>
+		</section>
+		<%= require('@layouts/loginjs.ejs')()%>
+	</body>
+
+</html>

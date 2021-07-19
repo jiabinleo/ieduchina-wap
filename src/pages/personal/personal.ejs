@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+    <link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微头条</title>
+    <meta name="keywords" content="国际教育网，微头条" />
+    <meta name="description" content="国际教育网，微头条" />
+    <meta itemprop="name" content="国际教育网，微头条" />
+    <meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
+    <meta name="format-detection" content="telephone=no">
+	<%= require('@layouts/logincss.ejs')()%>
+    <script>
+        (function () {
+            var width = document.documentElement.clientWidth;
+            var style = document.createElement("style");
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+            } else {
+                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+            }
+            document.head.appendChild(style);
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="back"></a>
+        <h2>填写个人信息</h2>
+    </header>
+    <section class="section">
+        <div class="avatar">
+            <div class="avatar-img">
+                <img src="https://picsum.photos/id/453/188/188" alt="用户" class="avatar">
+            </div>
+            <button class="addPhotoBtn1" id="addPhotoBtn1">修改头像</button>
+			<form action="">
+				<input type="hidden" name="userimg" id="avatar-img" value="" />
+				<ul>
+					<li>
+						<span>昵称</span>
+						<input type="text" name="name" value="波斯的猫咪" nullmsg="请输入昵称"/>
+					</li>
+					<li>
+						<span>身份</span>
+						<input type="hidden" name="work" value="教育工作者"/>
+						<a href="javascript:" class="weui-cell_access" id="showPicker">
+							<p>教育工作者</p>
+							<i></i>
+						</a>
+					</li>
+					<li>
+						<span>地址</span>
+						<input type="text" name="address" value="深圳福田" nullmsg="请输入地址"/>
+					</li>
+					<li>
+						<span>邮箱</span>
+						<input type="text" name="email" value="ieduchina@ieduchina.com" nullmsg="请输入邮箱" errormsg="邮箱格式不正确" datatype="email"/>
+					</li>
+				</ul>
+				<button type="button" success="提交成功" error="提交失败" class="submit">提交</button>
+			</form>
+        </div>
+        
+    </section>
+	<%= require('@layouts/loginjs.ejs')()%>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+		<link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>微头条</title>
+		<meta name="keywords" content="国际教育网，微头条" />
+		<meta name="description" content="国际教育网，微头条" />
+		<meta itemprop="name" content="国际教育网，微头条" />
+		<meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
+		<meta name="format-detection" content="telephone=no">
+		<%= require('@layouts/logincss.ejs')()%>
+		<script>
+			(function () {
+				var width = document.documentElement.clientWidth;
+				var style = document.createElement("style");
+				if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+					style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+				} else {
+					style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+				}
+				document.head.appendChild(style);
+			})();
+
+		</script>
+	</head>
+
+	<body>
+		<header class="header">
+			<a class="back"></a>
+			<h2>创作中心</h2>
+		</header>
+		<section class="section">
+			<div class="creative-center-banner" style="background-image: url(https://picsum.photos/id/838/750/470);">
+				<div class="creative-center-banner-mask">
+					<div class="top">
+						<a href="./dynamicpage.html">
+							<img class="user-avatar" src="https://picsum.photos/id/338/120/120">
+						</a>
+						<h3>波斯的猫咪</h3>
+					</div>
+					<ul class="statistical">
+						<li>
+							<a>
+								<span>36</span>
+								<p>动态</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<span>36</span>
+								<p>粉丝</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<span>36</span>
+								<p>关注</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="creative-center-menu">
+				<ul>
+					<li>
+						<a href="javascript:">
+							<i></i>
+							<p>发布文章</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<i></i>
+							<p>发布短视频</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<i></i>
+							<p>发布微头条</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="creative-menu">
+				<div class="inner">
+					<div class="menu-top">
+						<div class="menu-in">
+							<button class="active">全部</button>
+						<button>文章</button>
+						<button>视频</button>
+						<button>微头条</button>
+						</div>
+					</div>
+					<div class="menu-bottom">
+						<div class="menu-in">
+							<button class="active">全部</button>
+							<button>已发布</button>
+							<button>审核中</button>
+							<button>未通过</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="creative-list">
+				<!-- wtt 微头条-->
+				<!-- sp  视频-->
+				<!-- wz  文章-->
+				<ul>
+					<!-- share 分享-->
+					<!-- top 置顶-->
+					<!-- del 删除-->
+					<!-- modify 修改-->
+					<!-- nomodify 禁止修改-->
+					<% var list=[
+						{
+							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
+							img:'https://picsum.photos/id/889/253/150',
+							type:'wtt',
+							time:'2020-3-9',
+							id:0,
+							pl:10,
+							modify:false,
+							link:'./wdetail.html'
+						},
+						{
+							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
+							img:'https://picsum.photos/id/889/253/150',
+							type:'sp',
+							time:'2020-3-9',
+							id:1,
+							pl:10,
+							modify:true,
+							link:'javascript:',
+							duration:'00:30'
+						},
+						{
+							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
+							img:'https://picsum.photos/id/889/253/150',
+							type:'wz',
+							time:'2020-3-9',
+							id:1,
+							pl:10,
+							modify:true,
+							link:'javascript:'
+						},
+						{
+							title:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育',
+							img:'',
+							type:'wz',
+							time:'2020-3-9',
+							id:1,
+							pl:10,
+							modify:true,
+							link:'javascript:'
+						}
+					]%>
+					<% list.forEach(function(lis){%>
+					<li class="<%=lis.type%>">
+						<div class="lis">
+							<%if(lis.img){%>
+							<a href="<%=lis.link%>">
+								<div <%=lis.duration?('duration='+lis.duration):''%> class="image" style="background-image: url(<%=lis.img%>);"></div>
+							</a>
+							<%}%>
+							<div class="text">
+								<a href="<%=lis.link%>">
+									<h3><%=lis.title%></h3>
+								</a>
+								<p>
+									<span>已发布 <%=lis.time%></span>
+									<span class="operation"></span>
+								</p>
+							</div>
+						</div>
+						<div class="tool">
+							<a href="<%=lis.link%>"><%=lis.pl%> 评论</a>
+							<a class="share"><i></i>分享</a>
+							<a class="top"><i></i>置顶</a>
+							<a class="del"><i></i>删除</a>
+							<a class="<%=lis.modify?'modify':'nomodify'%>"><i></i>修改</a>
+						</div>
+					</li>
+					<%})%>
+				</ul>
+			</div>
+		</section>
+		<%= require('@layouts/loginjs.ejs')()%>
+	</body>
+</html>

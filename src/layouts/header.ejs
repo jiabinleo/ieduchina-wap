@@ -27,7 +27,7 @@
         <a class="search" href="./searchkey.html">
 			<img src="<%= require('@images/search.png') %>" alt="">
         </a>
-		<a class="right" href="javascript:">
+		<a class="right" href="./login.html">
 			<img src="https://picsum.photos/id/357/48/48" alt="">
 		</a>
     </div>
@@ -54,32 +54,22 @@
                 全部频道
                 <div class="close-menu"></div>
             </div>
-            <h2>资讯</h2>
-            <ul>
-                <li><a href="javascript:;">校园资讯</a></li>
-                <li><a href="javascript:;">家庭教育</a></li>
-                <li><a href="javascript:;">升学资讯</a></li>
-                <li><a href="javascript:;">留学资讯</a></li>
-                <li><a href="javascript:;">移民资讯</a></li>
-            </ul>
-            <h2>投稿</h2>
-            <ul>
-                <li><a href="javascript:;">发布文章</a></li>
-            </ul>
-            <h2>学校</h2>
-            <ul>
-                <li><a href="javascript:;">国际学校</a></li>
-                <li><a href="javascript:;">海外学校</a></li>
-            </ul>
-            <h2>活动</h2>
-            <ul>
-                <li><a href="javascript:;">全部活动</a></li>
-                <li><a href="javascript:;">开放日</a></li>
-                <li><a href="javascript:;">冬/夏令营</a></li>
-                <li><a href="javascript:;">培训</a></li>
-                <li><a href="javascript:;">教育展</a></li>
-                <li><a href="javascript:;">直播</a></li>
-            </ul>
+			<% var menulist = [
+				{
+					title:'资讯',list:[{name:'校园资讯',link:'javascript:'},{name:'家庭资讯',link:'javascript:'},{name:'升学资讯',link:'javascript:'},{name:'留学资讯',link:'javascript:'},	{name:'移民资讯',link:'javascript:'}]},{
+					title:'投稿',list:[{name:'发布文章',link:'javascript:'},{name:'发布短视频',link:'javascript:'},{name:'发布微头条',link:'javascript:'}]},
+					{
+					title:'学校',list:[{name:'国际学校',link:'javascript:'},{name:'海外学校',link:'javascript:'}]},{
+					title:'活动',list:[{name:'全部活动',link:'javascript:'},{name:'开放日',link:'javascript:'},{name:'冬/夏令营',link:'javascript:'},{name:'培训',link:'javascript:'},{name:'教育展',link:'javascript:'},{name:'直播',link:'javascript:'}]}
+			]%>
+			<% menulist.forEach(function(list){ %>
+			<h2><%= list.title%></h2>
+			<ul>
+				<% list.list.forEach(function(item){%>
+				<li><a href="<%=item.link%>"><%=item.name%></a></li>
+				<%})%>
+			</ul>
+			<% }) %>
         </div>
     </div>
 </header>

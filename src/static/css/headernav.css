@@ -108,13 +108,13 @@
   padding: 0.42666667rem 0 0 0.59733333rem;
 }
 .headernav .index-menu-wrap .index-menu .title {
+  font-size: 0.68266667rem;
+  font-family: Microsoft YaHei;
+  color: #171717;
   position: relative;
   height: 1.70666667rem;
   width: 100%;
-  font-size: 0.59733333rem;
-  font-family: PingFang SC;
   font-weight: bold;
-  color: #000000;
   line-height: 1.70666667rem;
   text-align: center;
   border-bottom: rgba(180, 180, 180, 0.5) solid 0.04266667rem;
@@ -125,7 +125,7 @@
   top: 0.53333333rem;
   width: 0.64rem;
   height: 0.64rem;
-  background-image: url(../images/close.png?t=1214);
+  background-image: url(../images/close.png);
   background-size: 100% 100%;
 }
 .headernav .index-menu-wrap .index-menu ul {
