@@ -1438,10 +1438,12 @@ body {
 
 		.drafts-list {
 			padding-top: (64/@rem);
-			transition: 300ms;
-
 			&.ing {
 				transform: translateX((80/@rem)); 
+				transition: 300ms;
+			}
+			&.end{
+				transform: translateX((0/@rem));
 				transition: 300ms;
 			}
 
@@ -2248,6 +2250,11 @@ body {
 					border: none;
 					width: 100%;
 				}
+				img{
+					height: (36/@rem);
+					padding: (2/@rem);
+					vertical-align: middle;
+				}
 			}
 			.weui-cells_form{
 				&::after,&::before{
@@ -2262,6 +2269,88 @@ body {
 				&::before{
 					width: (266/@rem);
 					height: (266/@rem);
+					background-color: transparent;
+					background-image: url(../images/camaer.png);
+					background-size: (54/@rem) (52/@rem);
+					background-position: center center;
+					background-repeat: no-repeat;
+				}
+				&::after{
+					background-color: transparent;
+				}
+			}
+			.checkbox{
+				margin-top: (230/@rem);
+				text-align: center;
+				label{
+					height: (30/@rem);
+					font-size: (24/@rem);
+					font-family: Microsoft YaHei;
+					font-weight: 300;
+					line-height: (30/@rem);
+					color: #2A2A2A;
+					input[type="checkbox"]{
+						vertical-align: middle;
+					}
+				}
+			}
+			.btn{
+				text-align: center;
+				button{
+					width: (563/@rem);
+					height: (68/@rem);
+					background: #336CFF;
+					border-radius: (44/@rem);
+					border: none;
+					outline: none;
+					font-size: (36/@rem);
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					color: #FFFFFF;
+				}
+			}
+		}
+		.publish-image{
+			padding: (106/@rem) (24/@rem);
+			.textarea{
+				min-height: (384/@rem);
+				width: 100%;
+				font-size: (28/@rem);
+				font-family: Microsoft YaHei;
+				font-weight: 300;
+				line-height: (36/@rem);
+				color: #414141;
+				input[type='text']{
+					border: none;
+					width: 100%;
+				}
+				img{
+					height: (36/@rem);
+					padding: (2/@rem);
+					vertical-align: middle;
+				}
+			}
+			.weui-cells_form{
+				&::after,&::before{
+					content: initial;
+				}
+			}
+			.weui-uploader__files{
+				li{
+					width: (218/@rem);
+					height: (218/@rem);
+					border-radius: (20/@rem);
+					border: rgba(159, 159, 159, 0.5) solid (2/@rem);
+				}
+			}
+			.weui-uploader__input-box{
+				width: (218/@rem);
+				height: (218/@rem);
+				border: rgba(159, 159, 159, 1) solid (4/@rem);
+				border-radius: (20/@rem);
+				&::before{
+					width: (218/@rem);
+					height: (218/@rem);
 					background-color: transparent;
 					background-image: url(../images/camaer.png);
 					background-size: (54/@rem) (52/@rem);
@@ -2346,6 +2435,128 @@ body {
 				color: #484747;
 				text-align: justify;
 				margin: (46/@rem) auto 0;
+			}
+		}
+		.appointment-header{
+			padding-top: (64/@rem);
+			ul{
+				width: (553/@rem);
+				height: (100/@rem);
+				line-height: (100/@rem);
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				li{
+					width: (110/@rem);
+					height: (44/@rem);
+					background: #FFFFFF;
+					border: (2/@rem) solid rgba(112, 112, 112, 0.5);
+					border-radius: (60/@rem);
+					font-size: (24/@rem);
+					font-family: Microsoft YaHei;
+					font-weight: 300;
+					color: #101010;
+					line-height: (44/@rem);
+					text-align: center;
+				}
+			}
+		}
+		.appointment-list {
+			&.ing {
+				transform: translateX((80/@rem)); 
+				transition: 300ms;
+			}
+			&.end{
+				transform: translateX((0/@rem));
+				transition: 300ms;
+			}
+		
+			li {
+		
+				position: relative;
+		
+				.checkbox {
+					position: absolute;
+					left: (-80/@rem);
+					top: 0;
+					z-index: 10;
+					box-sizing: border-box;
+					width: (80/@rem);
+					height: (200/@rem);
+					background-color: rgba(0, 0, 0, 0);
+					overflow: hidden;
+		
+					span {
+						box-sizing: border-box;
+						display: inline-block;
+						width: (80/@rem);
+						height: (80/@rem);
+						margin: (36/@rem) (40/@rem);
+					}
+		
+					input[type="checkbox"] {
+						opacity: 0;
+					}
+		
+				}
+		
+				.checkbox input[type='checkbox']+span {
+					.iconlistimg((-724/@rem), (-276/@rem))
+				}
+		
+				.checkbox input[type='checkbox']:checked+span {
+					.iconlistimg((-721/@rem), (-179/@rem))
+				}
+		
+				.content {
+					box-sizing: border-box;
+					width: (702/@rem);
+					height: (200/@rem);
+					margin: 0 (24/@rem);
+					border-bottom: (2/@rem) solid rgba(112, 112, 112, 0.5);
+					display: flex;
+					padding: (25/@rem) 0;
+					justify-content: flex-start;
+		
+					.image {
+						width: (253/@rem);
+						height: (150/@rem);
+						border-radius: (10/@rem);
+						background-color: rgba(212, 209, 209, 1);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: cover;
+						margin-right: (30/@rem);
+					}
+		
+					.text {
+						flex: 1;
+		
+						h3 {
+							height: (74/@rem);
+							font-size: (28/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 400;
+							line-height: (37/@rem);
+							color: #171717;
+							height: (74 / @rem);
+							display: -webkit-box;
+							-webkit-box-orient: vertical;
+							-webkit-line-clamp: 2;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							margin-bottom: (50/@rem);
+						}
+		
+						p {
+							font-size: (20/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 300;
+							line-height: (26/@rem);
+							color: #171717;
+						}
+					}
+				}
 			}
 		}
 	} 

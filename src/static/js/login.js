@@ -346,11 +346,11 @@ $(function () {
 	$(document).on("click", ".del-btn", function () {
 		if ($(this).text() == "管理") {
 			$(this).text("取消")
-			$(".drafts-list").addClass("ing")
+			$(".drafts-list").addClass("ing").removeClass("end")
 			$('.weui-actionsheet').addClass('weui-actionsheet_toggle');
 		} else {
 			$(this).text("管理")
-			$(".drafts-list").removeClass("ing")
+			$(".drafts-list").removeClass("ing").addClass("end")
 			hideActionSheet()
 		}
 	})
@@ -430,4 +430,104 @@ $(function () {
 			// return true; // 阻止默认行为，不使用默认的失败态
 		}
 	});
+	
+	
+	 var tmpl = '<li class="weui-uploader__file" style="background-image:url(#url#)"></li>',
+	            $gallery = $("#gallery"), $galleryImg = $("#galleryImg"),
+	            $uploaderInput = $("#uploaderInput"),
+	            $uploaderFiles = $("#uploaderFiles")
+	            ;
+	
+	        $uploaderInput.on("change", function(e){
+	            var src, url = window.URL || window.webkitURL || window.mozURL, files = e.target.files;
+				
+	            for (var i = 0, len = files.length; i < len; ++i) {
+	                var file = files[i];
+	
+	                if (url) {
+	                    src = url.createObjectURL(file);
+	                } else {
+	                    src = e.target.result;
+	                }
+	
+	                $uploaderFiles.append($(tmpl.replace('#url#', src)));
+	            }
+	        });
+	        $uploaderFiles.on("click", "li", function(){
+	            $galleryImg.attr("style", this.getAttribute("style"));
+	            $gallery.fadeIn(100);
+	        });
+	        $gallery.on("click", function(){
+	            $gallery.fadeOut(100);
+	        });
+			
+			
+			
+	var uploadCount = 0;
+	weui.uploader('#uploaders', {
+	   url: 'http://localhost:8081',
+	   auto: true,
+	   type: 'file',
+	   fileVal: 'fileVal',
+	   compress: false,
+	   onBeforeQueued: function(files) {
+		   return false
+	       // `this` 是轮询到的文件, `files` 是所有文件
+	
+	       if(["image/jpg", "image/jpeg", "image/png", "image/gif"].indexOf(this.type) < 0){
+	           weui.alert('请上传图片');
+	           return false; // 阻止文件添加
+	       }
+	       if(this.size > 10 * 1024 * 1024){
+	           weui.alert('请上传不超过10M的图片');
+	           return false;
+	       }
+	       if (files.length > 5) { // 防止一下子选择过多文件
+	           weui.alert('最多只能上传5张图片，请重新选择');
+	           return false;
+	       }
+	       if (uploadCount + 1 > 5) {
+	           weui.alert('最多只能上传5张图片');
+	           return false;
+	       }
+	
+	       ++uploadCount;
+	
+	       return true; // 阻止默认行为，不插入预览图的框架
+	   },
+	   onQueued: function(){
+	       console.log(this);
+	       // console.log(this.status); // 文件的状态：'ready', 'progress', 'success', 'fail'
+	       // console.log(this.base64); // 如果是base64上传，file.base64可以获得文件的base64
+	       // this.upload(); // 如果是手动上传，这里可以通过调用upload来实现；也可以用它来实现重传。
+	       // this.stop(); // 中断上传
+	       return true; // 阻止默认行为，不显示预览图的图像
+	   },
+	   onBeforeSend: function(data, headers){
+	       console.log(this, data, headers);
+	       // $.extend(data, { test: 1 }); // 可以扩展此对象来控制上传参数
+	       // $.extend(headers, { Origin: 'http://127.0.0.1' }); // 可以扩展此对象来控制上传头部
+	
+	       // return false; // 阻止文件上传
+	   },
+	   onProgress: function(procent){
+	       console.log(this, procent);
+	       // return true; // 阻止默认行为，不使用默认的进度显示
+	   },
+	   onSuccess: function (ret) {
+	       console.log(this, ret);
+	       // return true; // 阻止默认行为，不使用默认的成功态
+	   },
+	   onError: function(err){
+	       console.log(this, err);
+	       // return true; // 阻止默认行为，不使用默认的失败态
+	   }
+	});
+	
+	
+	$("div").each(function(index,el){
+		if($(el).css("background").indexOf("?wx_fmt=png")!=-1){
+			$(el).css("background","none")
+		}
+	})
 })

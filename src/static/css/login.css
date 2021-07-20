@@ -1208,10 +1208,13 @@ body .section .dynamic-list ul li .tool a.iscollection i {
 }
 body .section .drafts-list {
   padding-top: 1.36533333rem;
-  transition: 300ms;
 }
 body .section .drafts-list.ing {
   transform: translateX(1.70666667rem);
+  transition: 300ms;
+}
+body .section .drafts-list.end {
+  transform: translateX(0rem);
   transition: 300ms;
 }
 body .section .drafts-list li {
@@ -1957,6 +1960,11 @@ body .section .publish-video .textarea input[type='text'] {
   border: none;
   width: 100%;
 }
+body .section .publish-video .textarea img {
+  height: 0.768rem;
+  padding: 0.04266667rem;
+  vertical-align: middle;
+}
 body .section .publish-video .weui-cells_form::after,
 body .section .publish-video .weui-cells_form::before {
   content: initial;
@@ -1998,6 +2006,85 @@ body .section .publish-video .btn {
   text-align: center;
 }
 body .section .publish-video .btn button {
+  width: 12.01066667rem;
+  height: 1.45066667rem;
+  background: #336CFF;
+  border-radius: 0.93866667rem;
+  border: none;
+  outline: none;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+body .section .publish-image {
+  padding: 2.26133333rem 0.512rem;
+}
+body .section .publish-image .textarea {
+  min-height: 8.192rem;
+  width: 100%;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 0.768rem;
+  color: #414141;
+}
+body .section .publish-image .textarea input[type='text'] {
+  border: none;
+  width: 100%;
+}
+body .section .publish-image .textarea img {
+  height: 0.768rem;
+  padding: 0.04266667rem;
+  vertical-align: middle;
+}
+body .section .publish-image .weui-cells_form::after,
+body .section .publish-image .weui-cells_form::before {
+  content: initial;
+}
+body .section .publish-image .weui-uploader__files li {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  border-radius: 0.42666667rem;
+  border: rgba(159, 159, 159, 0.5) solid 0.04266667rem;
+}
+body .section .publish-image .weui-uploader__input-box {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  border: #9f9f9f solid 0.08533333rem;
+  border-radius: 0.42666667rem;
+}
+body .section .publish-image .weui-uploader__input-box::before {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  background-color: transparent;
+  background-image: url(../images/camaer.png);
+  background-size: 1.152rem 1.10933333rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+body .section .publish-image .weui-uploader__input-box::after {
+  background-color: transparent;
+}
+body .section .publish-image .checkbox {
+  margin-top: 4.90666667rem;
+  text-align: center;
+}
+body .section .publish-image .checkbox label {
+  height: 0.64rem;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 0.64rem;
+  color: #2A2A2A;
+}
+body .section .publish-image .checkbox label input[type="checkbox"] {
+  vertical-align: middle;
+}
+body .section .publish-image .btn {
+  text-align: center;
+}
+body .section .publish-image .btn button {
   width: 12.01066667rem;
   height: 1.45066667rem;
   background: #336CFF;
@@ -2053,6 +2140,118 @@ body .section .publish-video-popup p {
   color: #484747;
   text-align: justify;
   margin: 0.98133333rem auto 0;
+}
+body .section .appointment-header {
+  padding-top: 1.36533333rem;
+}
+body .section .appointment-header ul {
+  width: 11.79733333rem;
+  height: 2.13333333rem;
+  line-height: 2.13333333rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+body .section .appointment-header ul li {
+  width: 2.34666667rem;
+  height: 0.93866667rem;
+  background: #FFFFFF;
+  border: 0.04266667rem solid rgba(112, 112, 112, 0.5);
+  border-radius: 1.28rem;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #101010;
+  line-height: 0.93866667rem;
+  text-align: center;
+}
+body .section .appointment-list.ing {
+  transform: translateX(1.70666667rem);
+  transition: 300ms;
+}
+body .section .appointment-list.end {
+  transform: translateX(0rem);
+  transition: 300ms;
+}
+body .section .appointment-list li {
+  position: relative;
+}
+body .section .appointment-list li .checkbox {
+  position: absolute;
+  left: -1.70666667rem;
+  top: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 1.70666667rem;
+  height: 4.26666667rem;
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+body .section .appointment-list li .checkbox span {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 1.70666667rem;
+  height: 1.70666667rem;
+  margin: 0.768rem 0.85333333rem;
+}
+body .section .appointment-list li .checkbox input[type="checkbox"] {
+  opacity: 0;
+}
+body .section .appointment-list li .checkbox input[type='checkbox'] + span {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -15.44533333rem -5.888rem;
+}
+body .section .appointment-list li .checkbox input[type='checkbox']:checked + span {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -15.38133333rem -3.81866667rem;
+}
+body .section .appointment-list li .content {
+  box-sizing: border-box;
+  width: 14.976rem;
+  height: 4.26666667rem;
+  margin: 0 0.512rem;
+  border-bottom: 0.04266667rem solid rgba(112, 112, 112, 0.5);
+  display: flex;
+  padding: 0.53333333rem 0;
+  justify-content: flex-start;
+}
+body .section .appointment-list li .content .image {
+  width: 5.39733333rem;
+  height: 3.2rem;
+  border-radius: 0.21333333rem;
+  background-color: #d4d1d1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 0.64rem;
+}
+body .section .appointment-list li .content .text {
+  flex: 1;
+}
+body .section .appointment-list li .content .text h3 {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.78933333rem;
+  color: #171717;
+  height: 1.57866667rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 1.06666667rem;
+}
+body .section .appointment-list li .content .text p {
+  font-size: 0.42666667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 0.55466667rem;
+  color: #171717;
 }
 body .drafts-list-del {
   padding-bottom: 4.26666667rem;
