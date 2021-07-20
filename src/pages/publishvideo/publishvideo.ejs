@@ -43,6 +43,12 @@
 				<button>发布</button>
 			</div>
 		</div>
+		<div class="publish-video-popup">
+			<img src="<%=require('@images/close.png')%>" alt="" class="close">
+			<img class="status" src="<%=require('@images/err.png')%>" alt="">
+			<h3>上传失败！</h3>
+			<p>视频文件已超过60秒,请重新上传视频文件。</p>
+		</div>
 	</section>
     <!-- <%=require('@layouts/footer.ejs')()%> -->
     <%= require('@layouts/loginjs.ejs')()%>

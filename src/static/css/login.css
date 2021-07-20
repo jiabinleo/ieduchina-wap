@@ -2009,6 +2009,51 @@ body .section .publish-video .btn button {
   font-weight: 400;
   color: #FFFFFF;
 }
+body .section .publish-video-popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 10.816rem;
+  height: 10.56rem;
+  background: #FFFFFF;
+  box-shadow: 0 0.256rem 0.29866667rem rgba(0, 0, 0, 0.16);
+  border-radius: 0.49066667rem;
+  text-align: center;
+}
+body .section .publish-video-popup .close {
+  position: absolute;
+  right: 0.29866667rem;
+  top: 0.34133333rem;
+  width: 0.91733333rem;
+  height: 0.91733333rem;
+  border-radius: 50%;
+}
+body .section .publish-video-popup .status {
+  width: 2.624rem;
+  height: 2.624rem;
+  margin-top: 1.36533333rem;
+}
+body .section .publish-video-popup h3 {
+  margin-top: 0.384rem;
+  height: 1.36533333rem;
+  line-height: 1.36533333rem;
+  font-size: 1.024rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #FF0000;
+}
+body .section .publish-video-popup p {
+  width: 7.76533333rem;
+  height: 2.00533333rem;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 1.024rem;
+  color: #484747;
+  text-align: justify;
+  margin: 0.98133333rem auto 0;
+}
 body .drafts-list-del {
   padding-bottom: 4.26666667rem;
   padding-top: 0.21333333rem;
