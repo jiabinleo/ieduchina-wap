@@ -2,30 +2,10 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
-    <link href="https://m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>微头条</title>
-    <meta name="keywords" content="国际教育网，微头条" />
-    <meta name="description" content="国际教育网，微头条" />
-    <meta itemprop="name" content="国际教育网，微头条" />
-    <meta itemprop="image" content="https://m.ieduchina.com/statics/images/logo_share.png">
-    <meta name="format-detection" content="telephone=no">
+    <title><%= process.env.appName %></title>
+    <%= require('@layouts/meta.ejs')()%>
+    <%= require('@layouts/rem.ejs')() %>
     <%= require('@layouts/logincss.ejs')()%>
-    <script>
-        (function () {
-            var width = document.documentElement.clientWidth;
-            var style = document.createElement("style");
-            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
-            } else {
-                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
-            }
-            document.head.appendChild(style);
-        })();
-    </script>
 </head>
 
 <body>
