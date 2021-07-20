@@ -46,6 +46,7 @@ body .header .back {
   background-size: 20.416rem 9.23733333rem;
   background-position: -9.25866667rem -1.19466667rem;
 }
+body .header .cancel,
 body .header .del-btn,
 body .header .cancel-btn {
   cursor: pointer;
@@ -55,7 +56,6 @@ body .header .cancel-btn {
   font-size: 0.59733333rem;
   font-family: Microsoft YaHei;
   font-weight: 400;
-  width: 2.13333333rem;
   height: 1.36533333rem;
   color: #1F1F20;
   border: none;
@@ -1897,7 +1897,9 @@ body .section .w-detail ul li:nth-of-type(3n) {
   margin-right: 0;
 }
 body .section .w-detail .tool {
+  height: 2.21866667rem;
   margin: 0 0.68266667rem;
+  line-height: 2.21866667rem;
   border-bottom: solid 0.04266667rem rgba(112, 112, 112, 0.5);
 }
 body .section .w-detail .tool a {
@@ -1915,7 +1917,8 @@ body .section .w-detail .tool a i {
   display: inline-block;
   width: 0.74666667rem;
   height: 0.74666667rem;
-  vertical-align: -0.10666667rem;
+  vertical-align: middle;
+  line-height: 1;
 }
 body .section .w-detail .tool a i.share {
   background-image: url(../images/iconlist.png);
@@ -1937,6 +1940,74 @@ body .section .w-detail .tool a i.iscollection {
 }
 body .section .w-detail .tool a a {
   color: #1b1b1c;
+}
+body .section .publish-video {
+  padding: 2.26133333rem 0.512rem;
+}
+body .section .publish-video .textarea {
+  min-height: 8.192rem;
+  width: 100%;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 0.768rem;
+  color: #414141;
+}
+body .section .publish-video .textarea input[type='text'] {
+  border: none;
+  width: 100%;
+}
+body .section .publish-video .weui-cells_form::after,
+body .section .publish-video .weui-cells_form::before {
+  content: initial;
+}
+body .section .publish-video .weui-uploader__input-box {
+  width: 5.67466667rem;
+  height: 5.67466667rem;
+  border: #9f9f9f solid 0.08533333rem;
+  border-radius: 0.42666667rem;
+}
+body .section .publish-video .weui-uploader__input-box::before {
+  width: 5.67466667rem;
+  height: 5.67466667rem;
+  background-color: transparent;
+  background-image: url(../images/camaer.png);
+  background-size: 1.152rem 1.10933333rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+body .section .publish-video .weui-uploader__input-box::after {
+  background-color: transparent;
+}
+body .section .publish-video .checkbox {
+  margin-top: 4.90666667rem;
+  text-align: center;
+}
+body .section .publish-video .checkbox label {
+  height: 0.64rem;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 0.64rem;
+  color: #2A2A2A;
+}
+body .section .publish-video .checkbox label input[type="checkbox"] {
+  vertical-align: middle;
+}
+body .section .publish-video .btn {
+  text-align: center;
+}
+body .section .publish-video .btn button {
+  width: 12.01066667rem;
+  height: 1.45066667rem;
+  background: #336CFF;
+  border-radius: 0.93866667rem;
+  border: none;
+  outline: none;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #FFFFFF;
 }
 body .drafts-list-del {
   padding-bottom: 4.26666667rem;

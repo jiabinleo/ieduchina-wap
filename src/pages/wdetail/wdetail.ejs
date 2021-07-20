@@ -34,22 +34,41 @@
 				</p>
 			</div>
 			<ul>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
-				<li style="background-image: url(https://picsum.photos/id/606/217/196)"></li>
+				<% var imglist=[
+					'https://picsum.photos/id/606/217/196',
+					'https://picsum.photos/id/607/217/196',
+					'https://picsum.photos/id/608/217/196',
+					'https://picsum.photos/id/609/217/196',
+					'https://picsum.photos/id/610/217/196',
+					'https://picsum.photos/id/611/217/196',
+					'https://picsum.photos/id/612/217/196',
+					'https://picsum.photos/id/613/217/196',
+					'https://picsum.photos/id/614/217/196'
+				]%>
+				<% imglist.forEach(function(item){%>
+				<li style="background-image: url(<%=item%>)"></li>
+				<%})%>
+				
 			</ul>
 			<div class="tool">
 				<a><i>0</i>评论</a>
 				<a><i class="share"></i>分享</a>
 				<a><i class="collection"></i>收藏</a>
 			</div>
-			
+		</div>
+		<div class="comment">
+			<form action="">
+				<h2>评论</h2>
+				<div class="textarea">
+					<textarea name=""></textarea>
+				</div>
+				<div class="btn">
+					<button>发布</button>
+				</div>
+			</form>
+			<div class="common-list">
+				
+			</div>
 		</div>
         <div class="school-active">
             <div class="title">

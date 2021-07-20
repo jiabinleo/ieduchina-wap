@@ -63,7 +63,7 @@ body {
 			line-height: (64 / @rem);
 			.iconlistimg((-434 / @rem), (-56 / @rem));
 		}
-
+		.cancel,
 		.del-btn,
 		.cancel-btn {
 			cursor: pointer;
@@ -73,7 +73,7 @@ body {
 			font-size: (28/@rem);
 			font-family: Microsoft YaHei;
 			font-weight: 400;
-			width: (100 / @rem);
+			// width: (100 / @rem);
 			height: (64 / @rem);
 			color: #1F1F20;
 			border: none;
@@ -2196,7 +2196,9 @@ body {
 				}
 			}
 			.tool{
+				height: (104/@rem);
 				margin: 0 (32/@rem);
+				line-height: (104/@rem);
 				border-bottom:solid (2/@rem) rgba(112, 112, 112, 0.5);
 				a{
 					font-size: (32/@rem);
@@ -2212,7 +2214,8 @@ body {
 						display: inline-block;
 						width: (35 / @rem);
 						height: (35 / @rem);
-						vertical-align: (-5 / @rem);
+						vertical-align: middle;
+						line-height: 1;
 						&.share {
 							.iconlistimg((-196 / @rem), (-188 / @rem));
 						}
@@ -2231,7 +2234,76 @@ body {
 				}
 			}
 		}
-	}
+		.publish-video{
+			padding: (106/@rem) (24/@rem);
+			.textarea{
+				min-height: (384/@rem);
+				width: 100%;
+				font-size: (28/@rem);
+				font-family: Microsoft YaHei;
+				font-weight: 300;
+				line-height: (36/@rem);
+				color: #414141;
+				input[type='text']{
+					border: none;
+					width: 100%;
+				}
+			}
+			.weui-cells_form{
+				&::after,&::before{
+					content: initial;
+				}
+			}
+			.weui-uploader__input-box{
+				width: (266/@rem);
+				height: (266/@rem);
+				border: rgba(159, 159, 159, 1) solid (4/@rem);
+				border-radius: (20/@rem);
+				&::before{
+					width: (266/@rem);
+					height: (266/@rem);
+					background-color: transparent;
+					background-image: url(../images/camaer.png);
+					background-size: (54/@rem) (52/@rem);
+					background-position: center center;
+					background-repeat: no-repeat;
+				}
+				&::after{
+					background-color: transparent;
+				}
+			}
+			.checkbox{
+				margin-top: (230/@rem);
+				text-align: center;
+				label{
+					height: (30/@rem);
+					font-size: (24/@rem);
+					font-family: Microsoft YaHei;
+					font-weight: 300;
+					line-height: (30/@rem);
+					color: #2A2A2A;
+					input[type="checkbox"]{
+						vertical-align: middle;
+					}
+				}
+			}
+			.btn{
+				text-align: center;
+				button{
+					width: (563/@rem);
+					height: (68/@rem);
+					background: #336CFF;
+					border-radius: (44/@rem);
+					border: none;
+					outline: none;
+					font-size: (36/@rem);
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					color: #FFFFFF;
+				}
+			}
+		}
+	} 
 
 	.drafts-list-del {
 		padding-bottom: (200/@rem);

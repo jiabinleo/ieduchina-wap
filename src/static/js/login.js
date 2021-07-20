@@ -65,8 +65,8 @@ $(function () {
 					applyFlag = true;
 					$(self).html(btnTxt);
 					textToast(errormsg)
-					if($(self).attr("html")){
-						window.location=$(self).attr("html")
+					if ($(self).attr("html")) {
+						window.location = $(self).attr("html")
 					}
 					if (isMock) {
 						window.open($(self).attr('href'), '_self')
@@ -326,58 +326,108 @@ $(function () {
 		$(this).siblings("li").find(".men").hide();
 		if (!con.is(e.target) && con.has(e.target).length === 0 && con.css("display") == "block") {
 			con.hide()
-		}else if(con.has(e.target).length === 0){
+		} else if (con.has(e.target).length === 0) {
 			con.hide()
 		}
 	})
 	$(document).on("click", ".follow", function () {
 		var followNume = parseInt($(".follow-nume").text())
 		if ($(this).text() == "关注") {
-			followNume ++ 
+			followNume++
 			$(this).closest("body").find(".follow").text("取消关注");
 		} else {
-			followNume --
+			followNume--
 			$(this).closest("body").find(".follow").text("关注");
 		}
 		$(".follow-nume").text(followNume)
 	})
-	
+
 	//草稿箱
-	$(document).on("click",".del-btn",function(){
-		if($(this).text()=="管理"){
+	$(document).on("click", ".del-btn", function () {
+		if ($(this).text() == "管理") {
 			$(this).text("取消")
 			$(".drafts-list").addClass("ing")
 			$('.weui-actionsheet').addClass('weui-actionsheet_toggle');
-		}else{
+		} else {
 			$(this).text("管理")
 			$(".drafts-list").removeClass("ing")
 			hideActionSheet()
 		}
 	})
-	$(".drafts-list").on("click","li",function(){
-		if($(".drafts-list.ing").length){
-			var  $checkbox = $(this).find("input[type='checkbox']")
-			if($checkbox.attr("checked")){
-				$checkbox.attr("checked",false);
-				 // $("#cb1″).prop("checked",true);
-			}else{
-				$checkbox.attr("checked",true);
+	$(".drafts-list").on("click", "li", function () {
+		if ($(".drafts-list.ing").length) {
+			var $checkbox = $(this).find("input[type='checkbox']")
+			if ($checkbox.attr("checked")) {
+				$checkbox.attr("checked", false);
+				// $("#cb1″).prop("checked",true);
+			} else {
+				$checkbox.attr("checked", true);
 			}
-		}else{
+		} else {
 			console.log("跳转页面")
 		}
 	})
+
 	function hideActionSheet() {
 		$('.weui-actionsheet').removeClass('weui-actionsheet_toggle');
 	}
 
-	if($(".swiper-menu").length){
+	if ($(".swiper-menu").length) {
 		var menu = new Swiper('.swiper-menu', {
 			loop: false,
 			autoplay: false,
 			// slidesPerView: 5,
-			 slidesPerView: 'auto',
+			slidesPerView: 'auto',
 			// spaceBetween: 25
 		})
 	}
+
+
+	weui.uploader('#uploader', {
+		url: 'http://localhost:8081',
+		auto: true,
+		type: 'file',
+		fileVal: 'fileVal',
+		compress: false,
+		onBeforeQueued: function (files) {
+			console.log(this)
+			console.log(files)
+			// `this` 是轮询到的文件, `files` 是所有文件
+			if (["video/mp4"].indexOf(this.type) < 0) {
+				weui.alert('请上传视频');
+				// return false; // 阻止文件添加
+			}
+			// if (this.size > 10 * 1024 * 1024) {
+			// 	weui.alert('请上传不超过10M的视频');
+			// 	return false;
+			// }
+			// return true; // 阻止默认行为，不插入预览图的框架
+		},
+		onQueued: function () {
+			console.log(this);
+			// console.log(this.status); // 文件的状态：'ready', 'progress', 'success', 'fail'
+			// console.log(this.base64); // 如果是base64上传，file.base64可以获得文件的base64
+			// this.upload(); // 如果是手动上传，这里可以通过调用upload来实现；也可以用它来实现重传。
+			// this.stop(); // 中断上传
+			// return true; // 阻止默认行为，不显示预览图的图像
+		},
+		onBeforeSend: function (data, headers) {
+			console.log(this, data, headers);
+			// $.extend(data, { test: 1 }); // 可以扩展此对象来控制上传参数
+			// $.extend(headers, { Origin: 'http://127.0.0.1' }); // 可以扩展此对象来控制上传头部
+			// return false; // 阻止文件上传
+		},
+		onProgress: function (percent) {
+			console.log(this, percent);
+			// return true; // 阻止默认行为，不使用默认的进度显示
+		},
+		onSuccess: function (ret) {
+			console.log(this, ret);
+			// return true; // 阻止默认行为，不使用默认的成功态
+		},
+		onError: function (err) {
+			console.log(this, err);
+			// return true; // 阻止默认行为，不使用默认的失败态
+		}
+	});
 })

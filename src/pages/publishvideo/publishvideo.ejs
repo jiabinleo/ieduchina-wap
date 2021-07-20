@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= process.env.appName %></title>
+    <%= require('@layouts/meta.ejs')()%>
+    <%= require('@layouts/rem.ejs')() %>
+    <%= require('@layouts/logincss.ejs')()%>
+</head>
+
+<body>
+    <header class="header">
+        <a class="back"></a>
+		<h2>发布短视频</h2>
+		<a class="cancel">
+			取消
+		</a>	
+    </header>
+	<section class="section">
+		<div class="publish-video">
+			<div class="textarea" contenteditable="true">
+				<input type="text" placeholder="记录美好的心情，和大家一起分享吧~">
+			</div>
+			<div class="weui-cells weui-cells_form" id="uploader">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<div class="weui-uploader">
+							<div class="weui-uploader__bd">
+								<div class="weui-uploader__input-box">
+									<input id="uploaderInput" class="weui-uploader__input" type="file" capture="camera" multiple="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox">保存到草稿箱
+				</label>
+			</div>
+			<div class="btn">
+				<button>发布</button>
+			</div>
+		</div>
+	</section>
+    <!-- <%=require('@layouts/footer.ejs')()%> -->
+    <%= require('@layouts/loginjs.ejs')()%>
+</body>
+
+</html>
