@@ -1206,54 +1206,59 @@ body .section .dynamic-list ul li .tool a.iscollection i {
   background-size: 20.416rem 9.23733333rem;
   background-position: -4.16rem -6.12266667rem;
 }
-body .section .drafts-list {
-  padding-top: 1.36533333rem;
+body .section .del-list-style {
+  padding: 1.92rem 0.512rem 3.41333333rem;
 }
-body .section .drafts-list.ing {
+body .section .del-list-style.ing {
   transform: translateX(1.70666667rem);
   transition: 300ms;
 }
-body .section .drafts-list.end {
+body .section .del-list-style.end {
   transform: translateX(0rem);
   transition: 300ms;
 }
-body .section .drafts-list li {
+body .section .del-list-style li {
+  border-bottom: 0.04266667rem solid rgba(112, 112, 112, 0.5);
   position: relative;
+  padding: 0.49066667rem 0 0.42666667rem;
 }
-body .section .drafts-list li .checkbox {
+body .section .del-list-style li:last-of-type {
+  border-bottom: none;
+}
+body .section .del-list-style li .checkbox {
   position: absolute;
-  left: -1.70666667rem;
-  top: 0;
+  left: -2.34666667rem;
+  top: -0.85333333rem;
   z-index: 10;
   box-sizing: border-box;
   width: 1.70666667rem;
-  height: 4.26666667rem;
+  height: 3.2rem;
   background-color: rgba(0, 0, 0, 0);
   overflow: hidden;
 }
-body .section .drafts-list li .checkbox span {
+body .section .del-list-style li .checkbox span {
   box-sizing: border-box;
   display: inline-block;
   width: 1.70666667rem;
   height: 1.70666667rem;
   margin: 0.768rem 0.85333333rem;
 }
-body .section .drafts-list li .checkbox input[type="checkbox"] {
+body .section .del-list-style li .checkbox input[type="checkbox"] {
   opacity: 0;
 }
-body .section .drafts-list li .checkbox input[type='checkbox'] + span {
+body .section .del-list-style li .checkbox input[type='checkbox'] + span {
   background-image: url(../images/iconlist.png);
   background-repeat: no-repeat;
   background-size: 20.416rem 9.23733333rem;
   background-position: -15.44533333rem -5.888rem;
 }
-body .section .drafts-list li .checkbox input[type='checkbox']:checked + span {
+body .section .del-list-style li .checkbox input[type='checkbox']:checked + span {
   background-image: url(../images/iconlist.png);
   background-repeat: no-repeat;
   background-size: 20.416rem 9.23733333rem;
   background-position: -15.38133333rem -3.81866667rem;
 }
-body .section .drafts-list li .content {
+body .section .drafts-list .content {
   box-sizing: border-box;
   width: 14.976rem;
   height: 4.26666667rem;
@@ -1263,7 +1268,7 @@ body .section .drafts-list li .content {
   padding: 0.53333333rem 0;
   justify-content: flex-start;
 }
-body .section .drafts-list li .content .image {
+body .section .drafts-list .content .image {
   width: 5.39733333rem;
   height: 3.2rem;
   border-radius: 0.21333333rem;
@@ -1273,10 +1278,10 @@ body .section .drafts-list li .content .image {
   background-size: cover;
   margin-right: 0.64rem;
 }
-body .section .drafts-list li .content .text {
+body .section .drafts-list .content .text {
   flex: 1;
 }
-body .section .drafts-list li .content .text h3 {
+body .section .drafts-list .content .text h3 {
   font-size: 0.59733333rem;
   font-family: Microsoft YaHei;
   font-weight: 400;
@@ -1290,7 +1295,7 @@ body .section .drafts-list li .content .text h3 {
   overflow: hidden;
   margin-bottom: 1.06666667rem;
 }
-body .section .drafts-list li .content .text p {
+body .section .drafts-list .content .text p {
   font-size: 0.42666667rem;
   font-family: Microsoft YaHei;
   font-weight: 300;
@@ -2165,51 +2170,7 @@ body .section .appointment-header ul li {
   line-height: 0.93866667rem;
   text-align: center;
 }
-body .section .appointment-list.ing {
-  transform: translateX(1.70666667rem);
-  transition: 300ms;
-}
-body .section .appointment-list.end {
-  transform: translateX(0rem);
-  transition: 300ms;
-}
-body .section .appointment-list li {
-  position: relative;
-}
-body .section .appointment-list li .checkbox {
-  position: absolute;
-  left: -1.70666667rem;
-  top: 0;
-  z-index: 10;
-  box-sizing: border-box;
-  width: 1.70666667rem;
-  height: 4.26666667rem;
-  background-color: rgba(0, 0, 0, 0);
-  overflow: hidden;
-}
-body .section .appointment-list li .checkbox span {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 1.70666667rem;
-  height: 1.70666667rem;
-  margin: 0.768rem 0.85333333rem;
-}
-body .section .appointment-list li .checkbox input[type="checkbox"] {
-  opacity: 0;
-}
-body .section .appointment-list li .checkbox input[type='checkbox'] + span {
-  background-image: url(../images/iconlist.png);
-  background-repeat: no-repeat;
-  background-size: 20.416rem 9.23733333rem;
-  background-position: -15.44533333rem -5.888rem;
-}
-body .section .appointment-list li .checkbox input[type='checkbox']:checked + span {
-  background-image: url(../images/iconlist.png);
-  background-repeat: no-repeat;
-  background-size: 20.416rem 9.23733333rem;
-  background-position: -15.38133333rem -3.81866667rem;
-}
-body .section .appointment-list li .content {
+body .section .appointment-list .content {
   box-sizing: border-box;
   width: 14.976rem;
   height: 4.26666667rem;
@@ -2219,7 +2180,7 @@ body .section .appointment-list li .content {
   padding: 0.53333333rem 0;
   justify-content: flex-start;
 }
-body .section .appointment-list li .content .image {
+body .section .appointment-list .content .image {
   width: 5.39733333rem;
   height: 3.2rem;
   border-radius: 0.21333333rem;
@@ -2229,10 +2190,10 @@ body .section .appointment-list li .content .image {
   background-size: cover;
   margin-right: 0.64rem;
 }
-body .section .appointment-list li .content .text {
+body .section .appointment-list .content .text {
   flex: 1;
 }
-body .section .appointment-list li .content .text h3 {
+body .section .appointment-list .content .text h3 {
   font-size: 0.59733333rem;
   font-family: Microsoft YaHei;
   font-weight: 400;
@@ -2246,28 +2207,179 @@ body .section .appointment-list li .content .text h3 {
   overflow: hidden;
   margin-bottom: 1.06666667rem;
 }
-body .section .appointment-list li .content .text p {
+body .section .appointment-list .content .text p {
   font-size: 0.42666667rem;
   font-family: Microsoft YaHei;
   font-weight: 300;
   line-height: 0.55466667rem;
   color: #171717;
 }
-body .drafts-list-del {
+body .section .collection-list {
+  padding-bottom: 1.06666667rem;
+}
+body .section .collection-list .content {
+  display: flex;
+  justify-content: space-between;
+}
+body .section .collection-list .content .text {
+  flex: 1;
+}
+body .section .collection-list .content .text .title {
+  height: 2.34666667rem;
+}
+body .section .collection-list .content .text .title h3 {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.78933333rem;
+  color: #171717;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body .section .collection-list .content .text .user {
+  height: 0.85333333rem;
+  line-height: 1.06666667rem;
+}
+body .section .collection-list .content .text .user i {
+  display: inline-block;
+  width: 0.68266667rem;
+  height: 0.68266667rem;
+  border-radius: 50%;
+  border: 0.04266667rem solid rgba(112, 112, 112, 0.5);
+  vertical-align: -0.17066667rem;
+}
+body .section .collection-list .content .text .user span {
+  font-size: 0.512rem;
+  font-weight: 400;
+  line-height: 0.66133333rem;
+  color: #171717;
+}
+body .section .collection-list .content .image {
+  width: 6.4rem;
+  height: 3.2rem;
+  position: relative;
+}
+body .section .collection-list .content .image::after {
+  position: absolute;
+  width: 1.57866667rem;
+  height: 0.512rem;
+  right: 0.23466667rem;
+  bottom: 0.192rem;
+  background-color: rgba(90, 89, 89, 0.6);
+  border-radius: 0.27733333rem;
+  font-size: 0.512rem;
+  color: white;
+  line-height: 0.512rem;
+  text-align: center;
+}
+body .section .collection-list .content .image.wz::after {
+  content: "文章";
+}
+body .section .collection-list .content .image.dsp::after {
+  content: attr(duration);
+}
+body .section .collection-list .content .ww {
+  width: 100%;
+}
+body .section .collection-list .content .ww .top {
+  height: 1.62133333rem;
+  line-height: 1.62133333rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .section .collection-list .content .ww .top .ll i {
+  display: inline-block;
+  width: 1.06666667rem;
+  height: 1.06666667rem;
+  border-radius: 50%;
+  border: 1px solid #707070;
+  vertical-align: sub;
+}
+body .section .collection-list .content .ww .top .ll span {
+  font-size: 0.68266667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #171717;
+}
+body .section .collection-list .content .ww .top .rr button {
+  width: 2.38933333rem;
+  height: 0.85333333rem;
+  border: 0.04266667rem solid rgba(245, 63, 63, 0.5);
+  border-radius: 0.21333333rem;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #F53F3F;
+  outline: none;
+  background-color: transparent;
+}
+body .section .collection-list .content .ww .top .rr button.active {
+  color: #707070;
+  border-color: #707070;
+}
+body .section .collection-list .content .ww .text {
+  height: 2.34666667rem;
+}
+body .section .collection-list .content .ww .text h3 {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.78933333rem;
+  color: #171717;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body .section .collection-list .content .ww .images {
+  display: flex;
+  justify-items: start;
+  flex-wrap: wrap;
+}
+body .section .collection-list .content .ww .images .image {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  border-radius: 0.21333333rem;
+  margin-left: 0.42666667rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+body .section .collection-list .content .ww .images .image:nth-of-type(3n+1) {
+  margin-left: 0;
+}
+body .section .collection-list .content .ww .images .image:nth-of-type(n+4) {
+  margin-top: 0.42666667rem;
+}
+body .section .collection-list .content .ww .images .image.one {
+  width: 10.41066667rem;
+  height: 10.41066667rem;
+  border-radius: 0.21333333rem;
+}
+body .del-list-bottom-style {
   padding-bottom: 4.26666667rem;
   padding-top: 0.21333333rem;
 }
-body .drafts-list-del .weui-actionsheet {
+body .del-list-bottom-style.foots {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+body .del-list-bottom-style .weui-actionsheet {
   box-shadow: 0rem 0rem 0.04266667rem 0rem rgba(0, 0, 0, 0.5);
   bottom: -0.21333333rem;
 }
-body .drafts-list-del .menu_list {
+body .del-list-bottom-style .menu_list {
   height: 3.49866667rem;
   box-sizing: border-box;
   padding: 1.06666667rem 0 0.64rem 0;
   text-align: center;
 }
-body .drafts-list-del .menu_list button {
+body .del-list-bottom-style .menu_list button {
   border-radius: 0.93866667rem;
   width: 6.528rem;
   height: 1.45066667rem;
@@ -2276,11 +2388,11 @@ body .drafts-list-del .menu_list button {
   font-weight: 300;
   color: #585757;
 }
-body .drafts-list-del .menu_list button.alldel {
+body .del-list-bottom-style .menu_list button.alldel {
   border: 0.04266667rem solid rgba(54, 52, 52, 0.5);
   background-color: white;
 }
-body .drafts-list-del .menu_list button.del {
+body .del-list-bottom-style .menu_list button.del {
   background-color: #336cff;
   border: 0.04266667rem solid rgba(51, 108, 255, 0.5);
   color: white;

@@ -346,16 +346,16 @@ $(function () {
 	$(document).on("click", ".del-btn", function () {
 		if ($(this).text() == "管理") {
 			$(this).text("取消")
-			$(".drafts-list").addClass("ing").removeClass("end")
+			$(".del-list-style").addClass("ing").removeClass("end")
 			$('.weui-actionsheet').addClass('weui-actionsheet_toggle');
 		} else {
 			$(this).text("管理")
-			$(".drafts-list").removeClass("ing").addClass("end")
+			$(".del-list-style").removeClass("ing").addClass("end")
 			hideActionSheet()
 		}
 	})
-	$(".drafts-list").on("click", "li", function () {
-		if ($(".drafts-list.ing").length) {
+	$(".del-list-style").on("click", "li", function () {
+		if ($(".del-list-style.ing").length) {
 			var $checkbox = $(this).find("input[type='checkbox']")
 			if ($checkbox.attr("checked")) {
 				$checkbox.attr("checked", false);
