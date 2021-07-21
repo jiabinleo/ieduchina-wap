@@ -2361,6 +2361,198 @@ body .section .collection-list .content .ww .images .image.one {
   height: 10.41066667rem;
   border-radius: 0.21333333rem;
 }
+body .section .notification-list .content .gz {
+  display: flex;
+}
+body .section .notification-list .content .gz .left {
+  width: 1.45066667rem;
+}
+body .section .notification-list .content .gz .left .user {
+  width: 1.45066667rem;
+  height: 1.45066667rem;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body .section .notification-list .content .gz .right {
+  flex: 1;
+}
+body .section .notification-list .content .gz .right .t {
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.45066667rem;
+}
+body .section .notification-list .content .gz .right .t span {
+  font-size: 0.68266667rem;
+  padding: 0 0.46933333rem;
+  color: #212121;
+}
+body .section .notification-list .content .gz .right .time {
+  font-size: 0.40533333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  padding: 0.21333333rem 0;
+  padding-left: 0.46933333rem;
+  color: #212121;
+}
+body .section .notification-list .content .xt {
+  display: flex;
+}
+body .section .notification-list .content .xt .left {
+  width: 1.45066667rem;
+}
+body .section .notification-list .content .xt .left .user {
+  width: 1.45066667rem;
+  height: 1.45066667rem;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body .section .notification-list .content .xt .right {
+  flex: 1;
+}
+body .section .notification-list .content .xt .right .t {
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.45066667rem;
+  font-size: 0.68266667rem;
+  padding: 0 0.46933333rem;
+}
+body .section .notification-list .content .xt .right .con {
+  background: #F8F6F6;
+  border-radius: 0.08533333rem;
+  padding: 0.384rem 0.42666667rem;
+  margin-left: 0.46933333rem;
+}
+body .section .notification-list .content .xt .right .con p {
+  font-size: 0.55466667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.704rem;
+  color: #171717;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body .section .notification-list .content .xt .right .con.img {
+  display: flex;
+}
+body .section .notification-list .content .xt .right .con.img .textp {
+  flex: 1;
+}
+body .section .notification-list .content .xt .right .con.img p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body .section .notification-list .content .xt .right .con.img .image {
+  width: 4.05333333rem;
+  height: 2.38933333rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .section .notification-list .content .xt .right .time {
+  font-size: 0.40533333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  padding: 0.21333333rem 0;
+  padding-left: 0.46933333rem;
+  color: #212121;
+}
+body .section .notification-list .content .pl {
+  display: flex;
+}
+body .section .notification-list .content .pl .left {
+  width: 1.45066667rem;
+}
+body .section .notification-list .content .pl .left .user {
+  width: 1.45066667rem;
+  height: 1.45066667rem;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body .section .notification-list .content .pl .right {
+  flex: 1;
+}
+body .section .notification-list .content .pl .right .t {
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.45066667rem;
+}
+body .section .notification-list .content .pl .right .t span {
+  font-size: 0.68266667rem;
+  padding: 0 0.46933333rem;
+  color: #212121;
+}
+body .section .notification-list .content .pl .right .msg {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.78933333rem;
+  color: #212121;
+  padding-left: 0.46933333rem;
+  padding-bottom: 0.42666667rem;
+}
+body .section .notification-list .content .pl .right .con {
+  background: #F8F6F6;
+  border-radius: 0.08533333rem;
+  padding: 0.384rem 0.42666667rem;
+  margin-left: 0.46933333rem;
+}
+body .section .notification-list .content .pl .right .con p {
+  font-size: 0.55466667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.704rem;
+  color: #171717;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body .section .notification-list .content .pl .right .con.img {
+  display: flex;
+}
+body .section .notification-list .content .pl .right .con.img .textp {
+  flex: 1;
+}
+body .section .notification-list .content .pl .right .con.img p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body .section .notification-list .content .pl .right .con.img .image {
+  width: 4.05333333rem;
+  height: 2.38933333rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .section .notification-list .content .pl .right .time {
+  font-size: 0.40533333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  padding: 0.21333333rem 0;
+  padding-left: 0.46933333rem;
+  color: #212121;
+}
 body .del-list-bottom-style {
   padding-bottom: 4.26666667rem;
   padding-top: 0.21333333rem;

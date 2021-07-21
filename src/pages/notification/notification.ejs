@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= process.env.appName %></title>
+    <%= require('@layouts/meta.ejs')()%>
+    <%= require('@layouts/rem.ejs')() %>
+    <%= require('@layouts/logincss.ejs')()%>
+</head>
+
+<body>
+    <header class="header">
+        <a class="back"></a>
+        <h2>消息通知</h2>
+		<button type="button" class="del-btn">管理</button>
+    </header>
+	<form>
+		<section class="section">
+			<ul class="del-list-style notification-list">
+				<% var list = [
+					{
+						user:'波斯的猫咪',
+						userimg:'https://picsum.photos/id/478/30/30',
+						id:1,
+						type:'关注',
+						time:'三天前'
+					},
+					{
+						user:'波斯的猫咪',
+						time:'2021-2-9 18:30',
+						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走,听鉴教育北京致知学校开放日本周末走,听鉴教育北京致知学校开放日本周末走，听鉴教育北京致知学校开放日本周末走，听鉴教育北京致知学校开放日本周末走',
+						xtimg:'',
+						id:1,
+						type:'系统',
+						link:'javascript:'
+					},
+					{
+						user:'波斯的猫咪',
+						userimg:'https://picsum.photos/id/478/30/30',
+						time:'2021-2-9 18:30',
+						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走',
+						xtimg:'https://picsum.photos/id/472/192/112',
+						id:1,
+						type:'评论',
+						hf:'这是对教育孩子上有很大的帮助，值得推荐',
+						link:'javascript:'
+					},
+					{
+						user:'波斯的猫咪',
+						userimg:'https://picsum.photos/id/478/30/30',
+						time:'2021-2-9 18:30',
+						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走',
+						xtimg:'',
+						id:1,
+						type:'评论',
+						hf:'这是对教育孩子上有很大的帮助，值得推荐',
+						link:'javascript:'
+					},
+					{
+						user:'波斯的猫咪',
+						time:'2021-2-9 18:30',
+						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走',
+						xtimg:'https://picsum.photos/id/472/192/112',
+						id:1,
+						type:'系统',
+						link:'javascript:'
+					}
+				]%>
+				<% list.forEach(function(lis){%>
+				<li>
+					<label class="checkbox">
+						<input type="checkbox" name="lis" value="<%=lis.id%>" />
+						<span></span>
+					</label>
+					<div class="content">
+						<% if(lis.type=="关注"){%>
+							<div class="gz">
+								<div class="left">
+									<a href="<%=lis.link%>">
+										<div class="user" style="background-image:url(<%=lis.userimg%>)"></div>
+									</a>
+								</div>
+								<div class="right">
+									<p class="t">
+									<a href="<%=lis.link%>">
+										<span><%=lis.user%></span>
+									</a>
+									关注了你</p>
+									<p class="time"><%=lis.time%></p>
+								</div>
+							</div>
+						<%}%>
+						<% if(lis.type=="系统"){%>
+							<div class="xt">
+								<div class="left">
+									<div class="user" style="background-image:url(<%=require('@images/xt.png')%>)"></div>
+								</div>
+								<div class="right">
+									<p class="t">系统消息</p>
+									<a href="<%=lis.link%>">
+										<%if(lis.xtimg==""){%>
+											<div class="con">
+												<div class="textp">
+												<p><%=lis.xttext%></p>
+												</div>
+											</div>
+										<%}else{%>
+											<div class="con img">
+												<div class="textp">
+												<p><%=lis.xttext%></p>
+												</div>
+												<div class="image" style="background-image:url(<%=lis.xtimg%>)">
+												</div>
+											</div>
+										<%}%>
+									</a>
+									<p class="time"><%=lis.time%></p>
+								</div>
+							</div>
+						<%}%>
+						<% if(lis.type=="评论"){%>
+							<div class="pl">
+								<div class="left">
+									<a href="<%=lis.link%>">
+										<div class="user" style="background-image:url(<%=lis.userimg%>)"></div>
+									</a>
+								</div>
+								<div class="right">
+									<p class="t">
+										<a href="<%=lis.link%>">
+											<span><%=lis.user%></span>
+										</a>
+									评论了你</p>
+									<p class="msg"><%=lis.hf%></p>
+									<a href="">
+										<%if(lis.xtimg==""){%>
+											<div class="con">
+												<div class="textp">
+												<p><%=lis.xttext%></p>
+												</div>
+											</div>
+										<%}else{%>
+											<div class="con img">
+												<div class="textp">
+												<p><%=lis.xttext%></p>
+												</div>
+												<div class="image" style="background-image:url(<%=lis.xtimg%>)">
+												</div>
+											</div>
+										<%}%>
+									</a>
+									<p class="time"><%=lis.time%></p>
+								</div>
+							</div>
+						<%}%>
+					</div>
+				</li>
+				<%})%>
+			</ul>
+		</section>
+		<div class="del-list-bottom-style foots">
+	        <div class="weui-actionsheet" id="iosActionsheet">
+	            <div class="weui-actionsheet__menu menu_list">
+	                <button type="button" class="alldel">一键删除</button>
+	                <button type="button" class="del">删除</button>
+	            </div>
+	        </div>
+		</div>
+	</form>
+	<%= require('@layouts/footer.ejs')()%>
+    <%= require('@layouts/loginjs.ejs')()%>
+</body>
+
+</html>
