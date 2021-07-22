@@ -15,87 +15,10 @@
 		<button type="button" class="del-btn">管理</button>
     </header>
 	<section class="section">
+		<% var list = []%>
+		<%if(list.length){%>
 		<ul class="del-list-style collection-list">
-			<% var list = [
-				{
-					img:['https://picsum.photos/id/365/253/150'],
-					title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-					type:'dsp',
-					time:'1小时前',
-					user:'波斯的猫咪',
-					userimg:'https://picsum.photos/id/478/30/30',
-					id:1,
-					duration:'00:30',
-					link:'javascript:',
-					userlink:'javascript:'
-				},
-				{
-					img:['https://picsum.photos/id/365/253/150','https://picsum.photos/id/365/253/150','https://picsum.photos/id/365/253/150'],
-					title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-					type:'wtt',
-					time:'1小时前',
-					user:'波斯的猫咪',
-					userimg:'https://picsum.photos/id/478/30/30',
-					id:0,
-					follow:true,
-					link:'javascript:',
-					userlink:'javascript:'
-				},
-				{
-					img:['https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150',
-					'https://picsum.photos/id/365/253/150'],
-					title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-					type:'wtt',
-					time:'1小时前',
-					user:'波斯的猫咪',
-					userimg:'https://picsum.photos/id/478/30/30',
-					id:0,
-					follow:true,
-					link:'javascript:',
-					userlink:'javascript:'
-				},
-				{
-					img:['https://picsum.photos/id/365/253/150'],
-					title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-					type:'wtt',
-					time:'1小时前',
-					user:'波斯的猫咪',
-					userimg:'https://picsum.photos/id/478/30/30',
-					id:0,
-					follow:false,
-					link:'javascript:',
-					userlink:'javascript:'
-				},
-				{
-					img:['https://picsum.photos/id/365/253/150'],
-					title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-					type:'wz',
-					time:'1小时前',
-					user:'波斯的猫咪',
-					userimg:'https://picsum.photos/id/478/30/30',
-					id:2,
-					link:'javascript:',
-					userlink:'javascript:'
-				},
-				{
-					img:[],
-					title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育，听鉴教育，听鉴教育，听鉴教育，听鉴教育',
-					type:'wz',
-					time:'1小时前',
-					user:'波斯的猫咪',
-					userimg:'https://picsum.photos/id/478/30/30',
-					id:2,
-					link:'javascript:',
-					userlink:'javascript:'
-				}
-			]%>
+			
 			<% list.forEach(function(lis){%>
 			<li>
 				<label class="checkbox">
@@ -168,6 +91,12 @@
 			</li>
 			<%})%>
 		</ul>
+		<%}else{%>
+		<div class="no">
+			<img src="<%=require('@images/no3.png')%>" alt="">
+			<p>暂无收藏</p>
+		</div>
+		<%}%>
 	</section>
 	<div class="del-list-bottom-style foots">
 		<div class="weui-actionsheet" id="iosActionsheet">

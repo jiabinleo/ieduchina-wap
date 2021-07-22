@@ -30,6 +30,7 @@ body {
 	margin: 0 auto;
 	max-width: 750px;
 	font-family: Muiicons;
+	text-align: justify;
 
 	.header {
 		position: fixed;
@@ -733,7 +734,6 @@ body {
 							font-weight: 400;
 							color: #262525;
 							line-height: (26 / @rem);
-							padding-top: (16 / @rem);
 						}
 					}
 				}
@@ -880,6 +880,23 @@ body {
 							background-repeat: no-repeat;
 							background-size: cover;
 							margin-right: (30 / @rem);
+							&.istop{
+								&::before {
+									content: "置顶";
+									position: absolute;
+									left: (15 / @rem);
+									top: 0;
+									font-size: (28 / @rem);
+									font-family: Microsoft YaHei;
+									font-weight: 300;
+									color: #ffffff;
+									background-color: #F21717;
+									border-radius: (13 / @rem);
+									padding: (6 / @rem) (30 / @rem);
+									transform: scale(0.5);
+									transform-origin: left top;
+								}
+							}
 
 							&:after {
 								position: absolute;
@@ -969,7 +986,7 @@ body {
 
 							&.share {
 								i {
-									.iconlistimg((-196 / @rem), (-188 / @rem));
+									.iconlistimg((-196 / @rem), (-80 / @rem));
 								}
 							}
 
@@ -1436,7 +1453,7 @@ body {
 			}
 		}
 		.del-list-style{
-			padding: (90/@rem) (24/@rem) (160/@rem);
+			padding: 0 (24/@rem) (160/@rem);
 			&.ing {
 				transform: translateX((80/@rem)); 
 				transition: 300ms;
@@ -1447,12 +1464,15 @@ body {
 			}
 			
 			li {
-				border-bottom: (2/@rem) solid rgba(112, 112, 112, 0.5);
+				border-bottom: (2/@rem) solid rgba(210, 210, 210, 0.5);
+				position: relative;
+				padding: (23/@rem) 0 (20/@rem);
 				&:last-of-type{
 					border-bottom: none;
 				}
-				position: relative;
-				padding: (23/@rem) 0 (20/@rem);
+				&:first-of-type{
+					padding-top:0;
+				}
 			
 				.checkbox {
 					position: absolute;
@@ -1461,7 +1481,7 @@ body {
 					z-index: 10;
 					box-sizing: border-box;
 					width: (80/@rem);
-					height: (150/@rem);
+					height: 100%;
 					background-color: rgba(0, 0, 0, 0);
 					overflow: hidden;
 			
@@ -1488,16 +1508,29 @@ body {
 				}
 			}
 		}
+		.no{
+			height: 100%;
+			padding-top: (220/@rem);
+			text-align: center;
+			img{
+				width: (306/@rem);
+			}
+			p{
+				font-size: (48/@rem);
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				line-height: (64/@rem);
+				color: #828181;
+			}
+		}
 
 		.drafts-list {
+			padding-top: (90/@rem);
 			.content {
 				box-sizing: border-box;
 				width: (702/@rem);
-				height: (200/@rem);
 				margin: 0 (24/@rem);
-				border-bottom: (2/@rem) solid rgba(112, 112, 112, 0.5);
 				display: flex;
-				padding: (25/@rem) 0;
 				justify-content: flex-start;
 						
 				.image {
@@ -1513,7 +1546,7 @@ body {
 						
 				.text {
 					flex: 1;
-						
+						padding-right: (22/@rem);
 					h3 {
 						height: (74/@rem);
 						font-size: (28/@rem);
@@ -2451,6 +2484,7 @@ body {
 				margin: 0 auto;
 				display: flex;
 				justify-content: space-between;
+				align-items: center;
 				li{
 					width: (110/@rem);
 					height: (44/@rem);
@@ -2460,65 +2494,74 @@ body {
 					font-size: (24/@rem);
 					font-family: Microsoft YaHei;
 					font-weight: 300;
-					color: #101010;
+					color: rgba(16, 16, 16, 1);
 					line-height: (44/@rem);
 					text-align: center;
+					&.active{
+						border: (2/@rem) solid rgba(254, 66, 66, 0.5);
+						color:rgba(251, 68, 68, 1);
+					}
 				}
 			}
 		}
 		.appointment-list {
-			.content {
-				box-sizing: border-box;
-				width: (702/@rem);
-				height: (200/@rem);
-				margin: 0 (24/@rem);
-				border-bottom: (2/@rem) solid rgba(112, 112, 112, 0.5);
-				display: flex;
-				padding: (25/@rem) 0;
-				justify-content: flex-start;
-	
-				.image {
-					width: (253/@rem);
-					height: (150/@rem);
-					border-radius: (10/@rem);
-					background-color: rgba(212, 209, 209, 1);
-					background-position: center;
-					background-repeat: no-repeat;
-					background-size: cover;
-					margin-right: (30/@rem);
-				}
-	
-				.text {
-					flex: 1;
-	
-					h3 {
-						height: (74/@rem);
-						font-size: (28/@rem);
-						font-family: Microsoft YaHei;
-						font-weight: 400;
-						line-height: (37/@rem);
-						color: #171717;
-						height: (74 / @rem);
-						display: -webkit-box;
-						-webkit-box-orient: vertical;
-						-webkit-line-clamp: 2;
-						text-overflow: ellipsis;
-						overflow: hidden;
-						margin-bottom: (50/@rem);
+			li{
+				&:first-of-type{
+					.content{
+						padding-top:0;
 					}
-	
-					p {
-						font-size: (20/@rem);
-						font-family: Microsoft YaHei;
-						font-weight: 300;
-						line-height: (26/@rem);
-						color: #171717;
+				}
+				.content {
+					box-sizing: border-box;
+					margin: 0 (24/@rem);
+					display: flex;
+					justify-content: flex-start;
+		
+					.image {
+						width: (253/@rem);
+						height: (150/@rem);
+						border-radius: (10/@rem);
+						background-color: rgba(212, 209, 209, 1);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: cover;
+						margin-right: (30/@rem);
+					}
+		
+					.text {
+						flex: 1;
+		
+						h3 {
+							height: (74/@rem);
+							font-size: (28/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 400;
+							line-height: (37/@rem);
+							color: #171717;
+							height: (74 / @rem);
+							display: -webkit-box;
+							-webkit-box-orient: vertical;
+							-webkit-line-clamp: 2;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							margin-bottom: (50/@rem);
+						}
+		
+						p {
+							font-size: (20/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 300;
+							line-height: (26/@rem);
+							color: #171717;
+						}
 					}
 				}
 			}
+			
 		}
 		.collection-list {
 			padding-bottom: (50/@rem);
+			padding-top:(90/@rem);
 			.content{
 				display: flex;
 				justify-content: space-between;
@@ -2675,6 +2718,7 @@ body {
 			}
 		}
 		.notification-list{
+			padding-top: (90/@rem);
 			.content{
 				.gz{
 					display: flex;
@@ -2767,6 +2811,7 @@ body {
 									overflow: hidden;
 								}
 								.image{
+									margin-left: (20/@rem);
 									width: (190/@rem);
 									height: (112/@rem);
 									background-position: center;
@@ -2852,6 +2897,7 @@ body {
 									overflow: hidden;
 								}
 								.image{
+									margin-left: (20/@rem);
 									width: (190/@rem);
 									height: (112/@rem);
 									background-position: center;
@@ -2867,8 +2913,256 @@ body {
 							padding: (10/@rem) 0;
 							padding-left: (22/@rem);
 							color: #212121;
+							display: flex;
+							justify-content: space-between;
+							button{
+								width: (80/@rem);
+								height: (40/@rem);
+								background: #FFFFFF;
+								border: (2/@rem) solid rgba(112,112,112,0.5);
+								border-radius: (40/@rem);
+								font-size: (24/@rem);
+								font-family: Microsoft YaHei;
+								font-weight: 300;
+								color: #363434;
+							}
+						}
+						.textareawrap{
+							display: none;
+							// display: flex;
+							justify-content: space-between;
+							padding-top: (24/@rem);
+							.textarea{
+								flex: 1;
+								margin-left: (22/@rem);
+								margin-right: (22/@rem);
+								textarea{
+									box-sizing: border-box;
+									padding: (6/@rem);
+									width: 100%;
+									height: (120/@rem);
+									background: #FCFCFC;
+									border: (2/@rem) solid rgba(121,121,121,0.5);
+									background-color: transparent;
+									resize: none;
+									border-radius: (10/@rem);
+									font-size: (24/@rem);
+									font-family: Microsoft YaHei;
+									font-weight: 300;
+									line-height: (31/@rem);
+									color: #333333;
+									&:placeholder{
+										color: rgba(181, 177, 177, 1);
+									}
+								}
+							}
+							.btn{
+								button{
+									width: (100/@rem);
+									height: (60/@rem);
+									background: #FFFFFF;
+									border: (2/@rem) solid rgba(121,121,121,0.5);
+									border-radius: (60/@rem);
+									line-height: (60/@rem);
+									font-size: (32/@rem);
+									font-family: Microsoft YaHei;
+									font-weight: 300;
+									color: #B1ADAD;
+								}
+							}
 						}
 					}
+				}
+			}
+		}
+		.comment-list{
+			padding-top: (90/@rem);
+			li{
+				.top{
+					height: (110/@rem);
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					.left{
+						a{
+							display: flex;
+							height: (110/@rem);
+							justify-content: start;
+							align-items: center;
+							.userimg{
+								width: (68/@rem);
+								height: (68/@rem);
+								border-radius: 50%;
+								background-position: center;
+								background-repeat: no-repeat;
+								background-size: cover;
+							}
+							p{
+								font-size: (32/@rem);
+								font-family: Microsoft YaHei;
+								font-weight: 400;
+								color: #212121;
+								padding-left: (20/@rem);
+							}
+						}
+					}
+					.right{
+						p{
+							font-size: (24/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 400;
+							color: #212121;
+						}
+					}
+				}
+				.center{
+					padding-bottom: (30/@rem);
+					p{
+						font-size: (28/@rem);
+						font-family: Microsoft YaHei;
+						font-weight: 400;
+						line-height: (37/@rem);
+						color: #212121;
+					}
+				}
+				.bottom{
+					background: #F8F6F6;
+					border-radius: (4/@rem);
+					padding: 0 (20/@rem) (20/@rem) (20/@rem);
+					.comment-header{
+						display: flex;
+						height: (72/@rem);
+						align-items: center;
+						.comment-header-userimg{
+							width: (47/@rem);
+							height: (47/@rem);
+							border-radius: 50%;
+							background-position: center;
+							background-repeat: no-repeat;
+							background-size: cover;
+						}
+						p{
+							font-size: (20/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 400;
+							color: #212121;
+							padding-left: (15/@rem);
+						}
+					}
+					.comment-content{
+						display: flex;
+						justify-content: space-between;
+						.text{
+							flex: 1;
+							font-size: (26/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 400;
+							line-height: (35/@rem);
+							color: #171717;
+							p{
+								display: -webkit-box;
+								-webkit-box-orient: vertical;
+								-webkit-line-clamp: 3;
+								text-overflow: ellipsis;
+								overflow: hidden;
+							}
+							&.twoline{
+								p{
+									-webkit-line-clamp: 2;
+								}
+							}
+						}
+						.image{
+							margin-left: (20/@rem);
+							width: (242/@rem);
+							height: (142/@rem);
+							background-position: center;
+							background-repeat: no-repeat;
+							background-size: cover;
+							&.video{
+								position: relative;
+								&::after{
+									content:attr(duration);
+									position: absolute;
+									right: (12/@rem);
+									bottom: (16/@rem);
+									font-size: (13/@rem);
+									font-family: Microsoft YaHei;
+									font-weight: 300;
+									color: #FFFFFF;
+									background-color: rgba(90, 89, 89, 0.6);
+									border-radius: (13/@rem);
+									padding: 0 (4/@rem);
+								}
+							}
+						}
+					}
+					.images{
+						display: flex;
+						justify-items: start;
+						flex-wrap: wrap;
+						.image{
+							width: (204/@rem);
+							height: (204/@rem);
+							border-radius: (10/@rem);
+							margin-left: (22/@rem);
+							background-repeat: no-repeat;
+							background-position: center center;
+							background-size: cover;
+							margin-top: (20/@rem);
+							&:nth-of-type(3n+1){
+								margin-left: 0;
+							}
+							&.one{
+								width: (488/@rem);
+								height: (488/@rem);
+								border-radius: (10/@rem);
+							}
+						}
+					}
+				}
+			}
+		}
+		.search{
+			position: relative;
+			box-sizing: border-box;
+			margin: (80/@rem) (24/@rem) 0;
+			padding-left: (24/@rem) ;
+			height: (68/@rem);
+			background: #FFFFFF;
+			border: (2/@rem) solid rgba(112, 112, 112, 0.5);
+			border-radius: (6/@rem);
+			font-size: 0;
+			overflow: hidden;
+			.searchbtn{
+				position: absolute;
+				right: 0;
+				top: 0;
+				border: none;
+				outline: none;
+				width: (68/@rem);
+				height: (68/@rem);
+				background-size: (957/@rem) (432/@rem);
+				background-repeat: no-repeat;
+				background-position: (-710 / @rem) (-56 / @rem);
+				background-image: url(../images/iconlist.png);
+			}
+			input{
+				box-sizing: border-box;
+				width: 100%;
+				height: 100%;
+				border: none;
+				line-height: (68/@rem);
+				padding-right: (90/@rem);
+			}
+		}
+		.contacts-list{
+			h2{
+				
+			}
+			ul{
+				li{
+					
 				}
 			}
 		}

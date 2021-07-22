@@ -99,7 +99,9 @@
 							id:0,
 							pl:10,
 							modify:false,
-							link:'./wdetail.html'
+							link:'./wdetail.html',
+							num:100,
+							istop:true
 						},
 						{
 							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
@@ -110,7 +112,8 @@
 							pl:10,
 							modify:true,
 							link:'javascript:',
-							duration:'00:30'
+							duration:'00:30',
+							num:100
 						},
 						{
 							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
@@ -120,7 +123,8 @@
 							id:1,
 							pl:10,
 							modify:true,
-							link:'javascript:'
+							link:'javascript:',
+							num:100
 						},
 						{
 							title:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育',
@@ -130,7 +134,8 @@
 							id:1,
 							pl:10,
 							modify:true,
-							link:'javascript:'
+							link:'javascript:',
+							num:100
 						}
 					]%>
 					<% list.forEach(function(lis){%>
@@ -138,7 +143,7 @@
 						<div class="lis">
 							<%if(lis.img){%>
 							<a href="<%=lis.link%>">
-								<div <%=lis.duration?('duration='+lis.duration):''%> class="image" style="background-image: url(<%=lis.img%>);"></div>
+								<div <%=lis.duration?('duration='+lis.duration):''%> class="image <%=lis.istop?'istop':''%>" style="background-image: url(<%=lis.img%>);"></div>
 							</a>
 							<%}%>
 							<div class="text">
@@ -153,7 +158,7 @@
 						</div>
 						<div class="tool">
 							<a href="<%=lis.link%>"><%=lis.pl%> 评论</a>
-							<a class="share"><i></i>分享</a>
+							<a class="share"><i></i><%=lis.num%></a>
 							<a class="top"><i></i>置顶</a>
 							<a class="del"><i></i>删除</a>
 							<a class="<%=lis.modify?'modify':'nomodify'%>"><i></i>修改</a>

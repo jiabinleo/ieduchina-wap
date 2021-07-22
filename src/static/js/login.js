@@ -354,7 +354,7 @@ $(function () {
 			hideActionSheet()
 		}
 	})
-	$(".del-list-style").on("click", "li", function () {
+	$(".del-list-style").on("click", "li .newPage", function () {
 		if ($(".del-list-style.ing").length) {
 			var $checkbox = $(this).find("input[type='checkbox']")
 			if ($checkbox.attr("checked")) {
@@ -363,8 +363,6 @@ $(function () {
 			} else {
 				$checkbox.attr("checked", true);
 			}
-		} else {
-			console.log("跳转页面")
 		}
 	})
 
@@ -529,5 +527,28 @@ $(function () {
 		if($(el).css("background").indexOf("?wx_fmt=png")!=-1){
 			$(el).css("background","none")
 		}
+	})
+	
+	$(".hfwrap").on("click",function(e){
+		e.preventDefault()
+		var box = $(this).parent().siblings('.textareawrap')
+		if(box.css("display")=="none"){
+			box.css("display","flex")
+			box.closest("li").siblings("li").find(".textareawrap").css("display","none")
+		}else{
+			box.css("display","none")
+		}
+		return false;
+	})
+	$(".hfbtn").on("click",function(e){
+		e.preventDefault()
+		var value = $.trim($(this).closest(".textareawrap").find("textarea").val());
+		if(value){
+			console.log(value)
+		}else{
+			textToast("回复内容不能为空")
+			return false;
+		}
+		return false;
 	})
 })

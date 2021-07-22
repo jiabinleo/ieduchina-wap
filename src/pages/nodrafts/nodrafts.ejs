@@ -11,43 +11,14 @@
 <body>
     <header class="header">
         <a class="back"></a>
-        <h2>预约</h2>
+        <h2>草稿箱</h2>
 		<button type="button" class="del-btn">管理</button>
     </header>
 	<form>
 		<section class="section">
-			<div class="appointment-header">
-				<ul>
-					<%var menu=['全部','未开始','已开始','已结束']%>
-					<% menu.forEach(function(el,index){%>
-						<li class="<%=index==0?'active':''%>"><%=el%></li>
-					<%})%>
-				</ul>
-			</div>
-			<ul class="del-list-style appointment-list">
-				<% var list = [
-					{
-						img:'https://picsum.photos/id/365/253/150',
-						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-						type:'微头条',
-						time:'1小时前',
-						id:0
-					},
-					{
-						img:'https://picsum.photos/id/365/253/150',
-						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-						type:'短视频',
-						time:'1小时前',
-						id:1
-					},
-					{
-						img:'https://picsum.photos/id/365/253/150',
-						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
-						type:'文章',
-						time:'1小时前',
-						id:2
-					}
-				]%>
+			<% var list = []%>
+			<%if(list.length){%>
+			<ul class="del-list-style drafts-list">
 				<% list.forEach(function(lis){%>
 				<li>
 					<label class="checkbox">
@@ -64,6 +35,12 @@
 				</li>
 				<%})%>
 			</ul>
+			<%}else{%>
+			<div class="no">
+				<img src="<%=require('@images/no1.png')%>" alt="">
+				<p>暂无内容</p>
+			</div>
+			<%}%>
 		</section>
 		<div class="del-list-bottom-style">
 	        <div class="weui-actionsheet" id="iosActionsheet">

@@ -15,57 +15,9 @@
 		<button type="button" class="del-btn">管理</button>
     </header>
 		<section class="section">
+			<% var list = []%>
+			<%if(list.length){%>
 			<ul class="del-list-style notification-list">
-				<% var list = [
-					{
-						user:'波斯的猫咪',
-						userimg:'https://picsum.photos/id/478/30/30',
-						id:1,
-						type:'关注',
-						time:'三天前',
-						link:'javascript:'
-					},
-					{
-						user:'波斯的猫咪',
-						time:'2021-2-9 18:30',
-						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走,听鉴教育北京致知学校开放日本周末走,听鉴教育北京致知学校开放日本周末走，听鉴教育北京致知学校开放日本周末走，听鉴教育北京致知学校开放日本周末走',
-						xtimg:'',
-						id:1,
-						type:'系统',
-						link:'javascript:'
-					},
-					{
-						user:'波斯的猫咪',
-						userimg:'https://picsum.photos/id/478/30/30',
-						time:'2021-2-9 18:30',
-						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走',
-						xtimg:'https://picsum.photos/id/472/192/112',
-						id:1,
-						type:'评论',
-						hf:'这是对教育孩子上有很大的帮助，值得推荐',
-						link:'javascript:'
-					},
-					{
-						user:'波斯的猫咪',
-						userimg:'https://picsum.photos/id/478/30/30',
-						time:'2021-2-9 18:30',
-						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走',
-						xtimg:'',
-						id:1,
-						type:'评论',
-						hf:'这是对教育孩子上有很大的帮助，值得推荐',
-						link:'javascript:'
-					},
-					{
-						user:'波斯的猫咪',
-						time:'2021-2-9 18:30',
-						xttext:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走听鉴教育北京致知学校开放日本周末走',
-						xtimg:'https://picsum.photos/id/472/192/112',
-						id:1,
-						type:'系统',
-						link:'javascript:'
-					}
-				]%>
 				<% list.forEach(function(lis){%>
 				<li>
 					<label class="checkbox">
@@ -172,6 +124,12 @@
 				</li>
 				<%})%>
 			</ul>
+			<%}else{%>
+			<div class="no">
+				<img src="<%=require('@images/no1.png')%>" alt="">
+				<p>暂无通知</p>
+			</div>
+			<%}%>
 		</section>
 		<div class="del-list-bottom-style foots">
 	        <div class="weui-actionsheet" id="iosActionsheet">
@@ -181,7 +139,6 @@
 	            </div>
 	        </div>
 		</div>
-	<%= require('@layouts/footer.ejs')()%>
     <%= require('@layouts/loginjs.ejs')()%>
 </body>
 
