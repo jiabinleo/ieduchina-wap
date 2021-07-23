@@ -3157,13 +3157,107 @@ body {
 			}
 		}
 		.contacts-list{
+			padding: 0 (24/@rem);
 			h2{
-				
+				font-size: (28/@rem);
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				line-height: (37/@rem);
+				height: (37/@rem);
+				color: #292828;
+				padding: (15/@rem) 0 (2/@rem);
 			}
 			ul{
+				padding-bottom: (84/@rem);
 				li{
-					
+					display: flex;
+					align-items: center;
+					.userimg{
+						width: (84/@rem);
+						height: (84/@rem);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: cover;
+						border-radius: 50%;
+						border: solid (2/@rem) rgba(112, 112, 112, 0.5);
+					}
+					.msg{
+						flex: 1;
+						height: (84/@rem);
+						padding: (20/@rem) 0 (12/@rem);
+						margin-left: (33/@rem);
+						border-bottom: (2/@rem) solid rgba(112, 112, 112, 0.25);
+						h2{
+							font-size: (32/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: bold;
+							line-height: 1;
+							padding: (10/@rem) 0 0 0;
+							color: #212121;
+						}
+						p{
+							font-size: (24/@rem);
+							font-family: Microsoft YaHei;
+							font-weight: 300;
+							line-height: (30/@rem);
+							color: #212121;
+							span{
+								padding-right: (48/@rem);
+							}
+						}
+					}
 				}
+			}
+		}
+		.topic-list{
+			
+			h2{
+				font-size: (28/@rem);
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				line-height: (37/@rem);
+				height: (37/@rem);
+				color: #292828;
+				padding: (36/@rem) (24/@rem) 0;
+			}
+			ul{
+				padding: 0 (24/@rem);
+				&:last-of-type{
+					padding-bottom: (84/@rem);
+				}
+				li{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					height: (120/@rem);
+					&:nth-last-of-type(n+2){
+						border-bottom: (2/@rem) solid rgba(112, 112, 112, 0.25);
+					}
+					h3{
+						font-size: (28/@rem);
+						font-family: Microsoft YaHei;
+						font-weight: bold;
+						line-height: (37/@rem);
+						color: #212121;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+					span{
+						font-size: (28/@rem);
+						font-family: Microsoft YaHei;
+						font-weight: 400;
+						line-height: (37/@rem);
+						color: #292828;
+						white-space: nowrap;
+						padding-left: (20/@rem);
+					}
+				}
+			}
+			p.line{
+				width: 100%;
+				height: (6/@rem);
+				background-color:rgba(112, 112, 112, 0.25);
 			}
 		}
 	} 

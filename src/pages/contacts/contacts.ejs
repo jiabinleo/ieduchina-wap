@@ -21,18 +21,92 @@
 			<div class="contacts-list">
 				<h2>我的关注</h2>
 				<ul>
-					
+					<%var list=[
+						{
+							user:'波斯的猫1',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫2',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫3',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫4',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫5',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫6',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫7',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫8',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫9',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫10',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫11',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						},
+						{
+							user:'波斯的猫12',
+							userimg:'https://picsum.photos/id/357/84/84',
+							desc:'做一名国际教育工作者',
+							num:'20万粉丝'
+						}
+					]%>
+					<%list.forEach(function(lis){%>
+					<li>
+						<div class="userimg" style="background-image:url(<%=lis.userimg%>)"></div>
+						<div class="msg">
+							<h2><%=lis.user%></h2>
+							<p><span><%=lis.num%></span><%=lis.desc%></p>
+						</div>
+					</li>
+					<%})%>
 				</ul>
 			</div>
 		</section>
-		<div class="del-list-bottom-style foots">
-	        <div class="weui-actionsheet" id="iosActionsheet">
-	            <div class="weui-actionsheet__menu menu_list">
-	                <button type="button" class="alldel">一键删除</button>
-	                <button type="button" class="del">删除</button>
-	            </div>
-	        </div>
-		</div>
     <%= require('@layouts/loginjs.ejs')()%>
 </body>
 
