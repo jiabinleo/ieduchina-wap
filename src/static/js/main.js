@@ -423,7 +423,7 @@ $(function () {
 	$(document).on("click", ".menu-data", function (e) {
 		if ($(this).find("p").length) {
 			data = {
-				'title': $(e.target).text(),
+				'title': $.trim($(e.target).text()),
 				'type': '全部'
 			}
 			$(".creative-center-menu").find('li').eq($(this).index()).addClass("active").siblings("li")
@@ -433,9 +433,11 @@ $(function () {
 		}
 		console.log(data)
 		if(data.title=="微头条"){
-			$(".creative-list").find("ul.wtt").show().siblings("ul").hide();
+			$(".dynamic_list").find("ul.wtt").show().siblings("ul").hide();
 		}else if(data.title=="文章"){
-			$(".creative-list").find("ul.wz").show().siblings("ul").hide();
+			$(".dynamic_list").find("ul.wz").show().siblings("ul").hide();
+		}else if(data.title=="收藏"){
+			$(".dynamic_list").find("ul.sc").show().siblings("ul").hide();
 		}
 		$.ajax({
 			url: "/ajaxs/collegereg/?dopost=reg&t=" + Math.random(),
@@ -459,6 +461,7 @@ $(function () {
 		if($(this).find(".men").length){
 			if($(this).find(".men").css('display')=='none'){
 				$(this).find(".men").show();
+				$(this).closest("li").siblings('li').find(".men").hide();
 			}else{
 				if($(e.target).attr("class")!=="nomodify"){
 					$(this).find(".men").hide();

@@ -2930,3 +2930,288 @@ body {
   font-weight: 300;
   color: #1b1b1c;
 }
+.dynamic-list ul {
+  box-sizing: border-box;
+  padding: 0 0.59733333rem 2.56rem 0.59733333rem;
+}
+.dynamic-list ul li {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 0.53333333rem;
+}
+.dynamic-list ul li:nth-of-type(n + 2) {
+  border-top: solid 0.04266667rem rgba(112, 112, 112, 0.5);
+}
+.dynamic-list ul li .user {
+  display: flex;
+  justify-content: space-between;
+}
+.dynamic-list ul li .user img {
+  width: 1.55733333rem;
+  height: 1.55733333rem;
+  border-radius: 50%;
+}
+.dynamic-list ul li .user .name {
+  flex: 1;
+  font-family: Microsoft YaHei;
+  padding-left: 0.384rem;
+}
+.dynamic-list ul li .user .name h2 {
+  padding: 0;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  color: #212121;
+  line-height: 0.768rem;
+  text-align: left;
+}
+.dynamic-list ul li .user .name p {
+  padding: 0;
+  font-size: 0.512rem;
+  font-weight: 300;
+  color: #171717;
+  text-align: left;
+}
+.dynamic-list ul li .user .operation {
+  position: relative;
+  z-index: 6;
+  display: inline-block;
+  width: 1.55733333rem;
+  height: 1.55733333rem;
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -3.49866667rem -7.89333333rem;
+}
+.dynamic-list ul li .user .operation .men {
+  background-image: url(../images/qweqw12.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  right: -0.192rem;
+  top: 0.896rem;
+  width: 4.224rem;
+  height: 4.71466667rem;
+  text-align: center;
+  padding-top: 0.896rem;
+}
+.dynamic-list ul li .user .operation .men p {
+  font-size: 0.59733333rem;
+  line-height: 1.06666667rem;
+  color: #1b1b1c;
+}
+.dynamic-list ul li .user .operation .men p i {
+  display: inline-block;
+  width: 0.55466667rem;
+  height: 0.55466667rem;
+  vertical-align: -0.10666667rem;
+  margin-right: 0.064rem;
+}
+.dynamic-list ul li .user .operation .men p.top i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -6.16533333rem -3.98933333rem;
+}
+.dynamic-list ul li .user .operation .men p.del i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -8.064rem -3.88266667rem;
+}
+.dynamic-list ul li .user .operation .men p.modify i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -9.89866667rem -3.88266667rem;
+}
+.dynamic-list ul li .user .operation .men p.nomodify {
+  color: #9f9f9f;
+}
+.dynamic-list ul li .user .operation .men p.nomodify i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -11.88266667rem -3.88266667rem;
+}
+.dynamic-list ul li.wz .lis {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.42666667rem;
+}
+.dynamic-list ul li.wz .lis .image {
+  position: relative;
+  width: 5.39733333rem;
+  height: 3.2rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 0.64rem;
+}
+.dynamic-list ul li.wz .lis .image.istop::before {
+  content: '置顶';
+  position: absolute;
+  left: 0.32rem;
+  top: 0;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #f21717;
+  border-radius: 0.27733333rem;
+  padding: 0.128rem 0.64rem;
+  transform: scale(0.5);
+  transform-origin: left top;
+}
+.dynamic-list ul li.wz .lis .image:after {
+  position: absolute;
+  right: 0.32rem;
+  bottom: 0.14933333rem;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #5a5959;
+  border-radius: 0.27733333rem;
+  padding: 0.128rem 0.64rem;
+  transform: scale(0.5);
+  transform-origin: right bottom;
+}
+.dynamic-list ul li.wz .lis .text {
+  flex: 1;
+  color: #171717;
+  text-align: justify;
+}
+.dynamic-list ul li.wz .lis .text h3 {
+  color: #171717;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.78933333rem;
+  height: 1.57866667rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.dynamic-list ul li.wz .lis .text p {
+  padding-top: 0.98133333rem;
+  display: flex;
+  justify-content: space-between;
+  width: 7.68rem;
+}
+.dynamic-list ul li.wz .lis .text p a {
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #1B1B1C;
+}
+.dynamic-list ul li.wz .lis .text p a i {
+  display: inline-block;
+  vertical-align: -0.34133333rem;
+  right: 0.34133333rem;
+  width: 1.06666667rem;
+  height: 0.85333333rem;
+  margin-right: -0.512rem;
+}
+.dynamic-list ul li.wz .lis .text p a.nocollection i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -6.12266667rem -6.10133333rem;
+}
+.dynamic-list ul li.wz .lis .text p a.collection i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -4.16rem -6.10133333rem;
+}
+.dynamic-list ul li.wtt.one .lis .images .img {
+  width: 10.41066667rem;
+  height: 10.41066667rem;
+}
+.dynamic-list ul li.wtt .lis {
+  display: block;
+}
+.dynamic-list ul li.wtt .lis .text {
+  padding-top: 0.42666667rem;
+}
+.dynamic-list ul li.wtt .lis .text h3 {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.768rem;
+  color: #171717;
+}
+.dynamic-list ul li.wtt .lis .images {
+  position: relative;
+  width: 100%;
+  margin-left: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.dynamic-list ul li.wtt .lis .images .img {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  margin: 0.32rem 0 0 0.384rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.21333333rem;
+}
+.dynamic-list ul li.wtt .lis .images .img:nth-of-type(3n + 1) {
+  margin-left: 0;
+}
+.dynamic-list ul li.wtt .lis .images .mask {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 4.65066667rem;
+  margin: 0.32rem 0.08533333rem 0 0;
+  font-size: 1.23733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  border-radius: 0.21333333rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.dynamic-list ul li.wtt .lis .tool {
+  display: flex;
+  justify-content: space-between;
+  height: 1.408rem;
+  line-height: 1.408rem;
+}
+.dynamic-list ul li.wtt .lis .tool .left a {
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  padding-right: 0.85333333rem;
+  font-weight: 300;
+  color: #1B1B1C;
+}
+.dynamic-list ul li.wtt .lis .tool .left a i {
+  display: inline-block;
+  vertical-align: -0.34133333rem;
+  right: 0.34133333rem;
+  width: 1.06666667rem;
+  height: 0.85333333rem;
+  margin-right: -0.512rem;
+}
+.dynamic-list ul li.wtt .lis .tool .left a.nocollection i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -6.12266667rem -6.10133333rem;
+}
+.dynamic-list ul li.wtt .lis .tool .left a.collection i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -4.16rem -6.10133333rem;
+}
