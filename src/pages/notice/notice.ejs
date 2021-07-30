@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
+<body>
+    <header class="headernew">
+        <a class="back"></a>
+        <h2>系统公告</h2>
+    </header>
+    <section class="section">
+        <div class="notice">
+            <%let content = {
+                banner:'https://picsum.photos/id/448/704/254',
+                title:'国际教育网-活动公告',
+                text:[
+                    {
+                        text:'活动|国际教育号优质作者扶持计划（第一期）榜单公布',
+                        time:'2021-01-25',
+                        link:'javascript:'
+                    },
+                    {
+                        text:'国际教育号绑定“智能同步”功能步骤详解',
+                        time:'2020-12-22',
+                        link:'javascript:'
+                    },
+                    {
+                        text:'国际教育号一键智能同步，给你超预期的推广福利!!',
+                        time:'2020-12-17',
+                        link:'javascript:'
+                    },
+                    {
+                        text:'【新手必看】国际教育号注册流程',
+                        time:'2020-12-11',
+                        link:'javascript:'
+                    },
+                    {
+                        text:'国际教育号优质作者扶持计划上线啦！多重福利等你来拿国际教育号优质作者扶持计划上线啦！多重福利等你来拿国际教育号优质作者扶持计划上线啦！多重福利等你来拿国际教育号优质作者扶持计划上线啦！多重福利等你来拿国际教育号优质作者扶持计划上线啦！多重福利等你来拿国际教育号优质作者扶持计划上线啦！多重福利等你来拿国际教育号优质作者扶持计划上线啦！多重福利等你来拿国际教育号优质作者扶持计划上线啦！多重福利等你来拿~ ',
+                        time:'2020-11-23',
+                        link:'javascript:'
+                    }
+                ]
+            }%>
+            <div class="notice-banner" style="background-image: url('<%=content.banner%>');"></div>
+            <div class="notice-text">
+                <h3 class="title"><%=content.title%></h3>
+                <%content.text.forEach(item => {%>
+                    <a href="<%=item.link%>">
+                        <p><%=item.text%></p>
+                    </a>
+                    <p class="time"><%=item.time%></p>
+                <%});%>
+            </div>
+
+        </div>
+    </section>
+<%= require('@layouts/footer.ejs')({footer:false})%>
+</body>
+
+</html>

@@ -3215,3 +3215,41 @@ body {
   background-size: 20.416rem 9.23733333rem;
   background-position: -4.16rem -6.10133333rem;
 }
+.section .notice {
+  padding: 2.34666667rem 0.512rem 0;
+}
+.section .notice .notice-banner {
+  margin: 0 auto;
+  width: 100%;
+  height: 5.41866667rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section .notice .notice-text h3 {
+  height: 1.92rem;
+  font-size: 0.55466667rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 1.74933333rem;
+  color: #000000;
+  border-bottom: rgba(112, 112, 112, 0.3) solid 0.02133333rem;
+  margin-bottom: 0.42666667rem;
+}
+.section .notice .notice-text p {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.93866667rem;
+  color: #000000;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.section .notice .notice-text p.time {
+  text-align: right;
+  padding-bottom: 0.128rem;
+}
