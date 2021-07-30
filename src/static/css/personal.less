@@ -1,0 +1,136 @@
+@rem: 750/16rem;
+
+.iconlistimg(@x, @y) {
+	background-image: url(../images/iconlist.png);
+	background-repeat: no-repeat;
+	background-size: (957 / @rem) (433 / @rem);
+	background-position: (@x) (@y);
+}
+
+.iconmenuimg(@x, @y) {
+	background-image: url(../images/iconmenu.png);
+	background-repeat: no-repeat;
+	background-size: (748 / @rem) (525 / @rem);
+	background-position: (@x) (@y);
+}
+.avatar {
+	text-align: center;
+	overflow: hidden;
+
+	.avatar-img {
+		margin-top: (124 / @rem);
+		height: (188 / @rem);
+		img {
+			width: (188 / @rem);
+			height: (188 / @rem);
+			border-radius: 50%;
+			overflow: hidden;
+			font-size: (36 / @rem);
+		}
+	}
+
+	button {
+		&.addPhotoBtn1 {
+			position: relative;
+			width: (180 / @rem);
+			height: (48 / @rem);
+			font-size: (36 / @rem);
+			font-family: Microsoft YaHei;
+			font-weight: 400;
+			color: #1b1b1c;
+			margin-top: (20 / @rem);
+			border: none;
+			outline: none;
+			background-color: transparent;
+			line-height: 1;
+
+			input[type='file'] {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+		}
+	}
+
+	form {
+		padding: 0 (24 / @rem);
+
+		ul {
+			li {
+				width: 100%;
+				border-bottom: 1px solid #707070;
+				height: (113 / @rem);
+				display: flex;
+				justify-content: space-between;
+
+				span {
+					font-size: (36 / @rem);
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					color: #1b1b1c;
+					line-height: (160 / @rem);
+				}
+
+				input {
+					box-sizing: border-box;
+					width: (520 / @rem);
+					font-size: (36 / @rem);
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					color: #1b1b1c;
+					padding-top: (48 / @rem);
+					border: none;
+					text-align: right;
+					outline: none;
+					padding-right: (40 / @rem);
+				}
+
+				a {
+					position: relative;
+					display: inline-block;
+					box-sizing: border-box;
+					width: (520 / @rem);
+					font-size: (36 / @rem);
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					color: #1b1b1c;
+					padding-top: (60 / @rem);
+					border: none;
+					text-align: right;
+					outline: none;
+					padding-right: (40 / @rem);
+
+					p {
+						display: inline-block;
+					}
+
+					i {
+						position: absolute;
+						display: inline-block;
+						right: (16 / @rem);
+						width: (50 / @rem);
+						height: (40 / @rem);
+						margin-right: (-24 / @rem);
+						.iconlistimg((-370 / @rem), (-70 / @rem));
+					}
+				}
+			}
+		}
+
+		button {
+			width: (430 / @rem);
+			height: (74 / @rem);
+			background: #336cff;
+			border-radius: (100 / @rem);
+			border: none;
+			font-size: (40 / @rem);
+			font-family: Microsoft YaHei;
+			font-weight: 400;
+			color: #ffffff;
+			margin-top: (172 / @rem);
+		}
+	}
+}

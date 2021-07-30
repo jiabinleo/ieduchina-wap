@@ -1,0 +1,207 @@
+@rem: 750/16rem;
+.iconlistimg(@x, @y) {
+	background-image: url(../images/iconlist.png);
+	background-repeat: no-repeat;
+	background-size: (957 / @rem) (433 / @rem);
+	background-position: (@x) (@y);
+}
+
+.iconmenuimg(@x, @y) {
+	background-image: url(../images/iconmenu.png);
+	background-repeat: no-repeat;
+	background-size: (748 / @rem) (525 / @rem);
+	background-position: (@x) (@y);
+}
+.section{
+	.personal-center-banner {
+		box-sizing: border-box;
+		width: 100%;
+		height: (470 / @rem);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+		box-shadow: 0 (3 / @rem) (6 / @rem) rgba(0, 0, 0, 0.16);
+	
+		.personal-center-banner-mask {
+			box-sizing: border-box;
+			padding-top: (64 / @rem);
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.2);
+	
+			.user-avatar {
+				width: (120 / @rem);
+				height: (120 / @rem);
+				border-radius: 50%;
+				border: (2 / @rem) solid #ffffff;
+				margin-top: (58 / @rem);
+				box-sizing: content-box;
+			}
+	
+			h3 {
+				font-size: (40 / @rem);
+				font-family: Microsoft YaHei;
+				font-weight: bold;
+				color: #ffffff;
+				line-height: (52 / @rem);
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				width: 80%;
+				margin: 0 auto;
+				padding: (20/@rem) 0 (55/@rem);
+			}
+	
+			.statistical {
+				display: flex;
+				justify-content: space-between;
+				width: (460 / @rem);
+				// margin: (50 / @rem) auto 0;
+				margin: 0 auto;
+	
+				li {
+					a {
+						font-family: Microsoft YaHei;
+						color: #ffffff;
+	
+						span {
+							font-size: (32 / @rem);
+							font-weight: 400;
+						}
+	
+						p {
+							font-size: (24 / @rem);
+							font-weight: 300;
+						}
+					}
+				}
+			}
+	
+			.btn {
+				position: absolute;
+				right: (24 / @rem);
+				top: (122 / @rem);
+				font-size: (24 / @rem);
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				line-height: (32 / @rem);
+				color: #ffffff;
+			}
+		}
+	}
+	
+	.personal-center-menu {
+		width: (702 / @rem);
+		height: (343 / @rem);
+		margin: (40 / @rem) (24 / @rem);
+		box-shadow: 0 (2 / @rem) (6 / @rem) rgba(0, 0, 0, 0.16);
+		background: #ffffff;
+		border-radius: (10 / @rem);
+		box-sizing: border-box;
+		padding: 0 (34 / @rem);
+	
+		ul {
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 100%;
+	
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 100%;
+				height: (2 / @rem);
+				background-color: rgba(112, 112, 112, 0.5);
+			}
+	
+			li {
+				text-align: center;
+				width: 25%;
+				height: 50%;
+				i {
+					width: (60 / @rem);
+					height: (60 / @rem);
+					display: inline-block;
+					margin-top: (35 / @rem);
+				}
+				p {
+					font-size: (28 / @rem);
+					font-family: Microsoft YaHei;
+					font-weight: 400;
+					line-height: (38 / @rem);
+					color: #1b1b1c;
+					padding-top: (6 / @rem);
+				}
+	
+				&:nth-of-type(1) {
+					i {
+						.iconmenuimg((-71 / @rem), (-57 / @rem));
+					}
+				}
+	
+				&:nth-of-type(2) {
+					i {
+						.iconmenuimg((-238 / @rem), (-57 / @rem));
+					}
+				}
+	
+				&:nth-of-type(3) {
+					i {
+						.iconmenuimg((-412 / @rem), (-57 / @rem));
+					}
+				}
+	
+				&:nth-of-type(4) {
+					i {
+						.iconmenuimg((-572 / @rem), (-57 / @rem));
+					}
+				}
+	
+				&:nth-of-type(5) {
+					i {
+						.iconmenuimg((-71 / @rem), (-158 / @rem));
+					}
+				}
+	
+				&:nth-of-type(6) {
+					i {
+						.iconmenuimg((-238 / @rem), (-158 / @rem));
+					}
+				}
+	
+				&:nth-of-type(7) {
+					i {
+						.iconmenuimg((-413 / @rem), (-158 / @rem));
+					}
+				}
+	
+				&:nth-of-type(8) {
+					i {
+						.iconmenuimg((-573 / @rem), (-158 / @rem));
+					}
+				}
+			}
+		}
+	}
+	.publishwtt{
+		padding-top: (213/@rem);
+		text-align: center;
+		a{
+			display: inline-block;
+			width: (430/@rem);
+			height: (74/@rem);
+			background: #336CFF;
+			border-radius: (37/@rem);
+			font-size: (40/@rem);
+			font-family: Microsoft YaHei;
+			font-weight: 400;
+			line-height: (74/@rem);
+			color: #FFFFFF;
+		}
+	}
+}

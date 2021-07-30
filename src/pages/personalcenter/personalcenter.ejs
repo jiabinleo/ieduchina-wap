@@ -1,95 +1,92 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title><%= process.env.appName %></title>
-		<%= require('@layouts/meta.ejs')()%>
-		<%= require('@layouts/rem.ejs')() %>
-		<%= require('@layouts/logincss.ejs')()%>
-	</head>
-
-	<body>
-		<header class="header">
-			<a class="back"></a>
-			<h2>个人中心</h2>
-		</header>
-		<section class="section">
-			<div class="personal-center-banner" style="background-image: url(https://picsum.photos/id/838/750/470);">
-				<div class="personal-center-banner-mask">
-					<a href="./dynamicpage.html">
-						<img class="user-avatar" src="https://picsum.photos/id/338/120/120">
-						<h3>波斯的猫咪</h3>
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
+<body>
+<header class="headernew">
+	<a class="back"></a>
+	<h2>个人中心</h2>
+	<a href="./login.html" class="signout">退出登录</a>
+</header>
+<section class="section">
+	<div class="personal-center-banner" style="background-image: url(https://picsum.photos/id/838/750/470);">
+		<div class="personal-center-banner-mask">
+			<a href="./dynamicpage.html">
+				<img class="user-avatar" src="https://picsum.photos/id/338/120/120">
+				<h3>波斯的猫咪</h3>
+			</a>
+			<ul class="statistical">
+				<%let menu1=[
+					{
+						name:'动态',
+						link:'javascript:',
+						value:'36'
+					},
+					{
+						name:'粉丝',
+						link:'javascript:',
+						value:'36'
+					},
+					{
+						name:'关注',
+						link:'./followlist.html',
+						value:'36'
+					}
+				]%>
+				<%menu1.forEach((item)=>{%>
+				<li>
+					<a href="<%=item.link%>">
+						<span><%=item.value%></span>
+						<p><%=item.name%></p>
 					</a>
-					<ul class="statistical">
-						<li>
-							<a>
-								<span>36</span>
-								<p>动态</p>
-							</a>
-						</li>
-						<li>
-							<a>
-								<span>36</span>
-								<p>粉丝</p>
-							</a>
-						</li>
-						<li>
-							<a href="./followlist.html">
-								<span>36</span>
-								<p>关注</p>
-							</a>
-						</li>
-					</ul>
-					<a class="btn" href="./personal.html">个人资料</a>
-				</div>
-			</div>
-			<div class="personal-center-menu">
-				<ul>
-					<% var list=[
-						{
-							name:'创作中心',
-							link:'./creativecenter.html'
-						},
-						{
-							name:'消息通知',
-							link:'./notification.html'
-						},
-						{
-							name:'草稿箱',
-							link:'./drafts.html'
-						},
-						{
-							name:'收藏',
-							link:'./collection.html'
-						},
-						{
-							name:'国际教育号',
-							link:'javascript:'
-						},
-						{
-							name:'预约',
-							link:'./appointment.html'
-						},
-						{
-							name:'评论',
-							link:'./comment.html'
-						},
-						{
-							name:'关注',
-							link:'./followlist.html'
-						}
-					] %>
-					<% list.forEach(function(lis){%>
-					<li>
-						<a href="<%=lis.link%>">
-							<i></i>
-							<p><%=lis.name%></p>
-						</a>
-					</li>
-					<%})%>
-				</ul>
-			</div>
-		</section>
-		<%= require('@layouts/loginjs.ejs')()%>
-	</body>
+				</li>
+				<%})%>
+			</ul>
+			<a class="btn" href="./personal.html">个人资料</a>
+		</div>
+	</div>
+	<div class="personal-center-menu">
+		<ul>
+			<% var list=[
+				{
+					name:'创作中心',
+					link:'./creativecenter.html'
+				},
+				{
+					name:'系统公告',
+					link:'./notification.html'
+				},
+				{
+					name:'预约',
+					link:'javascript:'
+				},
+				{
+					name:'发布微头条',
+					link:'./collection.html'
+				},
+				{
+					name:'国际教育号',
+					link:'javascript:'
+				},
+				{
+					name:'关注',
+					link:'./followlist.html'
+				}
+			] %>
+			<% list.forEach(function(lis){%>
+			<li>
+				<a href="<%=lis.link%>">
+					<i></i>
+					<p><%=lis.name%></p>
+				</a>
+			</li>
+			<%})%>
+		</ul>
+	</div>
+	<div class="publishwtt">
+		<a href="">发布微头条</a>
+	</div>
+</section>
+<%= require('@layouts/footer.ejs')({footer:false})%>
+</body>
 
 </html>

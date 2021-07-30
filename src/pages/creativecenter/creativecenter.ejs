@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title><%= process.env.appName %></title>
-		<%= require('@layouts/meta.ejs')()%>
-		<%= require('@layouts/rem.ejs')() %>
-		<%= require('@layouts/logincss.ejs')()%>
-	</head>
-
-	<body>
-		<header class="header">
-			<a class="back"></a>
-			<h2>创作中心</h2>
-		</header>
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
+<body>
+<header class="headernew">
+	<a class="back"></a>
+	<h2>创作中心</h2>
+</header>
 		<section class="section">
-			<div class="creative-center-banner" style="background-image: url(https://picsum.photos/id/838/750/470);">
+			<div class="creative-center-banner" style="background-image: url(https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg);">
 				<div class="creative-center-banner-mask">
 					<div class="top">
 						<a href="./dynamicpage.html">
-							<img class="user-avatar" src="https://picsum.photos/id/338/120/120">
+							<img class="user-avatar" src="https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg">
 						</a>
 						<h3>波斯的猫咪</h3>
 					</div>
@@ -46,14 +40,12 @@
 			<div class="creative-center-menu">
 				<ul>
 					<%var menu=[
-						{link:'javascript:',name:'发布文章'},
-						{link:'./publishvideo.html',name:'发布短视频'},
-						{link:'./publishwtt.html',name:'发布微头条'},
+						{link:'javascript:',name:'文章'},
+						{link:'javascript:',name:'微头条'},
 					]%>
-					<%menu.forEach(function(item){%>
-					<li>
+					<%menu.forEach(function(item,index){%>
+					<li class="<%=index?'':'active'%> menu-data">
 						<a href="<%=item.link%>">
-							<i></i>
 							<p><%=item.name%></p>
 						</a>
 					</li>
@@ -62,84 +54,211 @@
 			</div>
 			<div class="creative-menu">
 				<div class="inner">
-					<div class="menu-top">
-						<div class="menu-in">
-							<button class="active">全部</button>
-						<button>文章</button>
-						<button>视频</button>
-						<button>微头条</button>
-						</div>
-					</div>
-					<div class="menu-bottom">
-						<div class="menu-in">
-							<button class="active">全部</button>
-							<button>已发布</button>
-							<button>审核中</button>
-							<button>未通过</button>
-						</div>
+					<div class="menu-in  menu-data">
+						<button class="active">全部</button>
+						<button>已发布</button>
+						<button>审核中</button>
+						<button>未通过</button>
+						<button>草稿</button>
 					</div>
 				</div>
 			</div>
 			<div class="creative-list">
 				<!-- wtt 微头条-->
-				<!-- sp  视频-->
 				<!-- wz  文章-->
-				<ul>
+				<ul class="wtt" style="display:none;">
+					<% var wttlist = [
+						{
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'dsp',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:1,
+							status:'已发布',
+							modify:false,
+							duration:'00:30',
+							link:'javascript:',
+							userlink:'javascript:'
+						},
+						{
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'wtt',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:0,
+							status:'已发布',
+							modify:true,
+							follow:true,
+							link:'javascript:',
+							userlink:'javascript:'
+						},
+						{
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'wtt',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:0,
+							status:'已发布',
+							follow:true,
+							link:'javascript:',
+							userlink:'javascript:'
+						},
+						{
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'wtt',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:0,
+							status:'已发布',
+							follow:false,
+							link:'javascript:',
+							userlink:'javascript:'
+						},
+						{
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'wz',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:2,
+							status:'已发布',
+							link:'javascript:',
+							userlink:'javascript:'
+						},
+						{
+							img:[],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育，听鉴教育，听鉴教育，听鉴教育，听鉴教育',
+							type:'wz',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:2,
+							status:'已发布',
+							link:'javascript:',
+							userlink:'javascript:'
+						}
+					]%>
+					
+					<% wttlist.forEach(function(lis){%>
+					<li class="<%=lis.img.length==1?'one':''%>">
+						<div class="user">
+							<a href="<%=lis.userlink%>">
+								<img src="<%=lis.userimg%>" >
+							</a>
+							<div class="name">
+								<h2><%=lis.user%></h2>
+							</div>
+							<div class="operation">
+								<div class="men">
+									<p class="top"><i class="top"></i>顶置</p>
+									<p class="<%=lis.modify?'modify':'nomodify'%>"><i></i>修改</p>
+									<p class="del"><i></i>删除</p>
+								</div>
+							</div>
+						</div>
+						<div class="lis">
+							<div class="text">
+								<a href="<%=lis.link%>">
+									<h3><%=lis.title%></h3>
+								</a>
+							</div>
+							<div class="images">
+								<%lis.img.forEach((el,index)=>{%>
+								<%if(index<3){%>
+								<div class="img" style="background-image: url(<%=el%>);"></div>
+								<%}%>
+								<%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
+								<div class="mask"><%=`${lis.img.length-3}+`%></div>
+								<%}%>
+								<%})%>
+							</div>
+							<div class="tool">
+								<div class="left">
+									<a>0 阅读</a>
+									<a>0 评论</a>
+								</div>
+								<div class="right">
+									<a><%=lis.status%></a>
+									<a><%=lis.time%></a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<%})%>
+				</ul>
+				<ul class="wz">
+				<% var wzlist=[
+					{
+						title:'北京致知学校开放日｜本周末走致知，听鉴教育',
+						img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						type:'wz',
+						time:'2020-3-9',
+						id:0,
+						pl:10,
+						modify:false,
+						link:'./wdetail.html',
+						num:100,
+						istop:true
+					},
+					{
+						title:'北京致知学校开放日｜本周末走致知，听鉴教育',
+						img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						type:'wz',
+						time:'2020-3-9',
+						id:1,
+						pl:10,
+						modify:true,
+						link:'javascript:',
+						duration:'00:30',
+						num:100
+					},
+					{
+						title:'北京致知学校开放日｜本周末走致知，听鉴教育',
+						img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						type:'wz',
+						time:'2020-3-9',
+						id:1,
+						pl:10,
+						modify:true,
+						link:'javascript:',
+						num:100
+					},
+					{
+						title:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育',
+						img:'',
+						type:'wz',
+						time:'2020-3-9',
+						id:1,
+						pl:10,
+						modify:true,
+						link:'javascript:',
+						num:100
+					}
+				]%>
 					<!-- share 分享-->
 					<!-- top 置顶-->
 					<!-- del 删除-->
 					<!-- modify 修改-->
 					<!-- nomodify 禁止修改-->
-					<% var list=[
-						{
-							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
-							img:'https://picsum.photos/id/889/253/150',
-							type:'wtt',
-							time:'2020-3-9',
-							id:0,
-							pl:10,
-							modify:false,
-							link:'./wdetail.html',
-							num:100,
-							istop:true
-						},
-						{
-							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
-							img:'https://picsum.photos/id/889/253/150',
-							type:'sp',
-							time:'2020-3-9',
-							id:1,
-							pl:10,
-							modify:true,
-							link:'javascript:',
-							duration:'00:30',
-							num:100
-						},
-						{
-							title:'北京致知学校开放日｜本周末走致知，听鉴教育',
-							img:'https://picsum.photos/id/889/253/150',
-							type:'wz',
-							time:'2020-3-9',
-							id:1,
-							pl:10,
-							modify:true,
-							link:'javascript:',
-							num:100
-						},
-						{
-							title:'北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育北京致知学校开放日｜本周末走致知，听鉴教育',
-							img:'',
-							type:'wz',
-							time:'2020-3-9',
-							id:1,
-							pl:10,
-							modify:true,
-							link:'javascript:',
-							num:100
-						}
-					]%>
-					<% list.forEach(function(lis){%>
-					<li class="<%=lis.type%>">
+					<% wzlist.forEach(function(lis){%>
+					<li>
 						<div class="lis">
 							<%if(lis.img){%>
 							<a href="<%=lis.link%>">
@@ -157,8 +276,8 @@
 							</div>
 						</div>
 						<div class="tool">
+							<a><%=lis.num%> 阅读</a>
 							<a href="<%=lis.link%>"><%=lis.pl%> 评论</a>
-							<a class="share"><i></i><%=lis.num%></a>
 							<a class="top"><i></i>置顶</a>
 							<a class="del"><i></i>删除</a>
 							<a class="<%=lis.modify?'modify':'nomodify'%>"><i></i>修改</a>
@@ -168,6 +287,6 @@
 				</ul>
 			</div>
 		</section>
-		<%= require('@layouts/loginjs.ejs')()%>
+		<%= require('@layouts/footer.ejs')({footer:false})%>
 	</body>
 </html>

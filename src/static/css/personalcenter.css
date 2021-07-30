@@ -1,0 +1,176 @@
+.section .personal-center-banner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 10.02666667rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  box-shadow: 0 0.064rem 0.128rem rgba(0, 0, 0, 0.16);
+}
+.section .personal-center-banner .personal-center-banner-mask {
+  box-sizing: border-box;
+  padding-top: 1.36533333rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.section .personal-center-banner .personal-center-banner-mask .user-avatar {
+  width: 2.56rem;
+  height: 2.56rem;
+  border-radius: 50%;
+  border: 0.04266667rem solid #ffffff;
+  margin-top: 1.23733333rem;
+  box-sizing: content-box;
+}
+.section .personal-center-banner .personal-center-banner-mask h3 {
+  font-size: 0.85333333rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.10933333rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.42666667rem 0 1.17333333rem;
+}
+.section .personal-center-banner .personal-center-banner-mask .statistical {
+  display: flex;
+  justify-content: space-between;
+  width: 9.81333333rem;
+  margin: 0 auto;
+}
+.section .personal-center-banner .personal-center-banner-mask .statistical li a {
+  font-family: Microsoft YaHei;
+  color: #ffffff;
+}
+.section .personal-center-banner .personal-center-banner-mask .statistical li a span {
+  font-size: 0.68266667rem;
+  font-weight: 400;
+}
+.section .personal-center-banner .personal-center-banner-mask .statistical li a p {
+  font-size: 0.512rem;
+  font-weight: 300;
+}
+.section .personal-center-banner .personal-center-banner-mask .btn {
+  position: absolute;
+  right: 0.512rem;
+  top: 2.60266667rem;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.68266667rem;
+  color: #ffffff;
+}
+.section .personal-center-menu {
+  width: 14.976rem;
+  height: 7.31733333rem;
+  margin: 0.85333333rem 0.512rem;
+  box-shadow: 0 0.04266667rem 0.128rem rgba(0, 0, 0, 0.16);
+  background: #ffffff;
+  border-radius: 0.21333333rem;
+  box-sizing: border-box;
+  padding: 0 0.72533333rem;
+}
+.section .personal-center-menu ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.section .personal-center-menu ul::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 0.04266667rem;
+  background-color: rgba(112, 112, 112, 0.5);
+}
+.section .personal-center-menu ul li {
+  text-align: center;
+  width: 25%;
+  height: 50%;
+}
+.section .personal-center-menu ul li i {
+  width: 1.28rem;
+  height: 1.28rem;
+  display: inline-block;
+  margin-top: 0.74666667rem;
+}
+.section .personal-center-menu ul li p {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.81066667rem;
+  color: #1b1b1c;
+  padding-top: 0.128rem;
+}
+.section .personal-center-menu ul li:nth-of-type(1) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -1.51466667rem -1.216rem;
+}
+.section .personal-center-menu ul li:nth-of-type(2) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -5.07733333rem -1.216rem;
+}
+.section .personal-center-menu ul li:nth-of-type(3) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -8.78933333rem -1.216rem;
+}
+.section .personal-center-menu ul li:nth-of-type(4) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -12.20266667rem -1.216rem;
+}
+.section .personal-center-menu ul li:nth-of-type(5) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -1.51466667rem -3.37066667rem;
+}
+.section .personal-center-menu ul li:nth-of-type(6) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -5.07733333rem -3.37066667rem;
+}
+.section .personal-center-menu ul li:nth-of-type(7) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -8.81066667rem -3.37066667rem;
+}
+.section .personal-center-menu ul li:nth-of-type(8) i {
+  background-image: url(../images/iconmenu.png);
+  background-repeat: no-repeat;
+  background-size: 15.95733333rem 11.2rem;
+  background-position: -12.224rem -3.37066667rem;
+}
+.section .publishwtt {
+  padding-top: 4.544rem;
+  text-align: center;
+}
+.section .publishwtt a {
+  display: inline-block;
+  width: 9.17333333rem;
+  height: 1.57866667rem;
+  background: #336CFF;
+  border-radius: 0.78933333rem;
+  font-size: 0.85333333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 1.57866667rem;
+  color: #FFFFFF;
+}

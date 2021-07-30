@@ -1,7 +1,7 @@
 {
-  "name": "h5",
-  "version": "1.0.8",
-  "description": "",
+  "name": "ieduchina-persion-center-wap",
+  "version": "1.0.0",
+  "description": "国际教育网wap端个人中心",
   "main": "index.js",
   "scripts": {
     "makefile": "node build/bin/makefile.js",
@@ -10,7 +10,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js ",
     "build": "cross-env webpack --config build/webpack.prod.conf.js"
   },
-  "author": "lsy",
+  "author": "jiabinleo@126.com",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^8.5.0",

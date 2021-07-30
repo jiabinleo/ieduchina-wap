@@ -670,6 +670,8 @@ body {
 .section .schooltop ul li a .right p {
   font-size: 0;
   height: 2.13333333rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .section .schooltop ul li a .right p span {
   display: inline-block;
@@ -697,6 +699,9 @@ body {
 .section .schooltop ul li a .right p span.g {
   color: #035297;
   background-color: rgba(3, 82, 151, 0.1);
+}
+.section .schooltop ul li a .right p span:nth-of-type(n+4) {
+  display: none;
 }
 .section .schooltop ul li a .right .bottom {
   height: 0.85333333rem;

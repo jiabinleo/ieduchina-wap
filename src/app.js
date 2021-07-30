@@ -1,1 +1,1 @@
-console.log('一个并无卵用的入口文件!')
+console.log('无用的入口文件');

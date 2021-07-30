@@ -529,6 +529,8 @@ body {
                         p {
                             font-size: 0;
                             height: (100/@rem);
+                            white-space: nowrap;
+                            overflow: hidden;
 
                             span {
                                 display: inline-block;
@@ -561,6 +563,9 @@ body {
                                 &.g {
                                     color: rgba(3, 82, 151, 1);
                                     background-color: rgba(3, 82, 151, 0.1);
+                                }
+                                &:nth-of-type(n+4){
+                                    display: none;
                                 }
                             }
                         }

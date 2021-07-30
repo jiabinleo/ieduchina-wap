@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const webpackConfigBase = require('./webpack.base.conf');
 const cleanWebpackPlugin = require("clean-webpack-plugin");
-const {app} =require('./config/config')
+const {app} =require('./config/config');
 const webpackConfigDev = {
 	mode: 'development', // 通过 mode 声明开发环境
 	output: {

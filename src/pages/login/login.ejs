@@ -1,58 +1,51 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title><%= process.env.appName %></title>
-    <%= require('@layouts/meta.ejs')()%>
-    <%= require('@layouts/rem.ejs')() %>
-	<%= require('@layouts/logincss.ejs')()%>
-</head>
-
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
 <body>
-    <header class="header">
-        <img src="<%= require('@images/logo.png')%>" alt="国际教育网">
-    </header>
-    <section class="section" style="background-image: url(<%= require('@images/loginbg.png')%>);">
-        <h2 class="title">欢迎登录国际教育网</h2>
-        <div class="login">
-            <div class="tab">
-                <span>账号登录</span>
-                <span class="active">手机登录</span>
-            </div>
-            <div class="content">
-                <form action="">
-                    <div class="input user">
-                        <input type="text" placeholder="请输入手机号码或者邮箱" name="account" nullmsg="请输入手机号码或者邮箱" mobileOrEmail=true>
-                    </div>
-                    <div class="input psd">
-                        <input type="password" placeholder="请输入账号密码" name="pwd" nullmsg="请输入账号密码">
-                    </div>
-                    <p class="tool">
-                        <a href="./register.html">注册账号</a>
-                        <a href="">忘记密码？</a>
-                    </p>
-                    <button class="submit" success="登录成功" error="登录失败" html="./personalcenter.html">登录</button>
-                </form>
-            </div>
-            <div class="content" style="display:none;">
-                <form action="">
-                    <div class="input user">
-                        <input type="text" placeholder="请输入手机号码" name="phone" nullmsg="请输入手机号码" errormsg="手机号格式不正确" datatype="phone">
-                    </div>
-                    <div class="input verify">
-                        <input type="password" placeholder="请输入验证码" name="verify" nullmsg="请输入验证码">
-                        <input type="button" class="getCode" value="获取验证码">
-                    </div>
-                    <button class="submit bt2" success="登录成功" error="登录失败" html="./personalcenter.html">登录</button>
-                    <p class="tool-bottom">
-                        <a>还没账号？</a>
-                        <a href="./register.html">现在注册</a>
-                    </p>
-                </form>
-            </div>
-        </div>
-    </section>
-    <%= require('@layouts/loginjs.ejs')()%>
+	<header class="headernew">
+		<a class="back"></a>
+	    <img src="<%= require('@images/logo.png')%>" alt="国际教育网">
+	</header>
+	<section class="section" style="background-image: url(<%= require('@images/loginbg.png')%>);">
+	    <h2 class="title">欢迎登录国际教育网</h2>
+	    <div class="login">
+	        <div class="tab">
+	            <span>手机登录</span>
+	            <span class="active">账号登录</span>
+	        </div>
+	        <div class="content">
+	            <form action="">
+	                <div class="input user">
+	                    <input type="text" placeholder="请输入手机号码" name="phone" nullmsg="请输入手机号码" errormsg="手机号格式不正确" datatype="phone">
+	                </div>
+	                <div class="input verify">
+	                    <input type="password" placeholder="请输入验证码" name="verify" nullmsg="请输入验证码">
+	                    <input type="button" class="getCode" value="获取验证码">
+	                </div>
+	                <button class="submit bt2" success="登录成功" error="登录失败" html="./personalcenter.html">登录</button>
+	                <p class="tool-bottom">
+	                    <a>还没账号？</a>
+	                    <a href="./register.html">现在注册</a>
+	                </p>
+	            </form>
+	        </div>
+			<div class="content" style="display:none;">
+			    <form action="">
+			        <div class="input user">
+			            <input type="text" placeholder="请输入手机号码或者邮箱" name="account" nullmsg="请输入手机号码或者邮箱" mobileOrEmail=true>
+			        </div>
+			        <div class="input psd">
+			            <input type="password" placeholder="请输入账号密码" name="pwd" nullmsg="请输入账号密码">
+			        </div>
+			        <p class="tool">
+			            <a href="./register.html">注册账号</a>
+			            <a href="">忘记密码？</a>
+			        </p>
+			        <button class="submit" success="登录成功" error="登录失败" html="./personalcenter.html">登录</button>
+			    </form>
+			</div>
+	    </div>
+	</section>
+	<%= require('@layouts/footer.ejs')({footer:false})%>
 </body>
-
 </html>

@@ -1,16 +1,9 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title><%= process.env.appName %></title>
-    <%= require('@layouts/meta.ejs')()%>
-    <%= require('@layouts/rem.ejs')() %>
-    <%= require('@layouts/logincss.ejs')()%>
-</head>
-
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
 <body>
-    <header class="header">
-        <a class="back"></a>
+    <header class="headernew">
+    	<a class="back"></a>
         <img src="<%= require('@images/logo.png')%>" alt="国际教育网">
     </header>
     <section class="section" style="background-image: url(<%= require('@images/loginbg.png')%>);">
@@ -34,7 +27,6 @@
             </div>
         </div>
     </section>
-	<%= require('@layouts/loginjs.ejs')()%>
+	<%= require('@layouts/footer.ejs')({footer:true})%>
 </body>
-
 </html>

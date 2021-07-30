@@ -1,0 +1,109 @@
+.avatar {
+  text-align: center;
+  overflow: hidden;
+}
+.avatar .avatar-img {
+  margin-top: 2.64533333rem;
+  height: 4.01066667rem;
+}
+.avatar .avatar-img img {
+  width: 4.01066667rem;
+  height: 4.01066667rem;
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 0.768rem;
+}
+.avatar button.addPhotoBtn1 {
+  position: relative;
+  width: 3.84rem;
+  height: 1.024rem;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #1b1b1c;
+  margin-top: 0.42666667rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  line-height: 1;
+}
+.avatar button.addPhotoBtn1 input[type='file'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.avatar form {
+  padding: 0 0.512rem;
+}
+.avatar form ul li {
+  width: 100%;
+  border-bottom: 1px solid #707070;
+  height: 2.41066667rem;
+  display: flex;
+  justify-content: space-between;
+}
+.avatar form ul li span {
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #1b1b1c;
+  line-height: 3.41333333rem;
+}
+.avatar form ul li input {
+  box-sizing: border-box;
+  width: 11.09333333rem;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #1b1b1c;
+  padding-top: 1.024rem;
+  border: none;
+  text-align: right;
+  outline: none;
+  padding-right: 0.85333333rem;
+}
+.avatar form ul li a {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 11.09333333rem;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #1b1b1c;
+  padding-top: 1.28rem;
+  border: none;
+  text-align: right;
+  outline: none;
+  padding-right: 0.85333333rem;
+}
+.avatar form ul li a p {
+  display: inline-block;
+}
+.avatar form ul li a i {
+  position: absolute;
+  display: inline-block;
+  right: 0.34133333rem;
+  width: 1.06666667rem;
+  height: 0.85333333rem;
+  margin-right: -0.512rem;
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -7.89333333rem -1.49333333rem;
+}
+.avatar form button {
+  width: 9.17333333rem;
+  height: 1.57866667rem;
+  background: #336cff;
+  border-radius: 2.13333333rem;
+  border: none;
+  font-size: 0.85333333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 3.66933333rem;
+}
