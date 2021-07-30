@@ -455,12 +455,14 @@ $(function () {
 			}
 		})
 	})
-	$(document).on("click", '.operation', function () {
+	$(document).on("click", '.operation', function (e) {
 		if($(this).find(".men").length){
 			if($(this).find(".men").css('display')=='none'){
 				$(this).find(".men").show();
 			}else{
-				$(this).find(".men").hide();
+				if($(e.target).attr("class")!=="nomodify"){
+					$(this).find(".men").hide();
+				}
 			}
 		}else{
 			var $tool = $(this).closest(".lis").siblings('.tool')
