@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
+<body>
+    <header class="headernew">
+        <a class="back"></a>
+        <h2>发布微头条</h2>
+    </header>
+    <section class="publish">
+        <div class="publish-image">
+			<textarea class="textarea" name="" id="" cols="30" rows="10" placeholder="记录美好的心情，和大家一起分享吧~"></textarea>
+			<div class="publish-list">
+				<ul>
+					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
+					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
+					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
+					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
+					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
+					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
+					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
+					<!-- <li style="background-image: url(https://picsum.photos/id/444/216/196);"></li> -->
+					<li>
+						<input type="file" id="photo" name="photo">
+						<div class="line"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="btn">
+				<button>发布</button>
+			</div>
+		</div>
+    </section>
+<%= require('@layouts/footer.ejs')({footer:false})%>
+</body>
+
+</html>

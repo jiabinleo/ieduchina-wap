@@ -477,4 +477,37 @@ $(function () {
 			}
 		}
 	})
+
+	
+
+	$("#photo").change(()=>{
+		var formData = new FormData();
+		// let infro1 = {"abc": "abc",}  //上传需要携带的参数
+		// formData1.append("json", JSON.stringify(infro1));
+		var photo = $("#photo")[0].files[0];
+		formData.append("photo", photo);
+		console.log(formData)
+		$.ajax({
+			type: 'post',
+			url: 'url',
+			contentType: "application/json;charset=UTF-8",
+			dataType: 'json',
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (er) {
+			},
+			error: function (err) {
+				// 
+				$("#photo").closest("li").before($(`<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>`))
+			}
+		})
+	})
 })
+
+
+
+
+
+完成wap端个人中心项目
+开发pc端个人中心项目

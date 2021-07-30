@@ -3385,3 +3385,102 @@ body {
   color: #ffffff;
   line-height: 1;
 }
+.publish-image {
+  padding: 2.26133333rem 0.512rem;
+}
+.publish-image .textarea {
+  min-height: 8.192rem;
+  width: 100%;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 0.768rem;
+  color: #414141;
+  border: none;
+  text-align: justify;
+  resize: none;
+}
+.publish-image .publish-list ul {
+  padding: 0.42666667rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  flex-flow: row wrap;
+}
+.publish-image .publish-list ul li {
+  position: relative;
+  width: 4.608rem;
+  height: 4.18133333rem;
+  box-sizing: border-box;
+  border-radius: 0.21333333rem;
+  border: solid 0.04266667rem #9f9f9f;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 0.55466667rem;
+}
+.publish-image .publish-list ul li:nth-of-type(3n+1) {
+  margin-left: 0;
+}
+.publish-image .publish-list ul li:nth-of-type(n+4) {
+  margin-top: 0.55466667rem;
+}
+.publish-image .publish-list ul li:nth-of-type(n+10) {
+  display: none;
+}
+.publish-image .publish-list ul li input[type='file'] {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  width: 4.608rem;
+  height: 4.18133333rem;
+  box-sizing: border-box;
+  border-radius: 0.21333333rem;
+}
+.publish-image .publish-list ul li .line {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.publish-image .publish-list ul li .line::after {
+  content: "";
+  position: absolute;
+  width: 1.344rem;
+  height: 0.128rem;
+  background-color: #9f9f9f;
+  border-radius: 0.064rem;
+}
+.publish-image .publish-list ul li .line::before {
+  content: "";
+  position: absolute;
+  height: 1.344rem;
+  width: 0.128rem;
+  background-color: #9f9f9f;
+  border-radius: 0.064rem;
+}
+.publish-image .btn {
+  text-align: center;
+}
+.publish-image .btn button {
+  width: 12.01066667rem;
+  height: 1.45066667rem;
+  background: #336CFF;
+  border-radius: 0.93866667rem;
+  border: none;
+  outline: none;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #FFFFFF;
+}
