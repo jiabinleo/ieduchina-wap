@@ -99,7 +99,7 @@
 	                        <div class="left">
 	                            <p><%=el.title%></p>
 	                        </div>
-							<div style="background-image: url(<%= el.img %>)" class="right"></div>
+							<div style="background-image: url('<%= el.img %>')" class="right"></div>
 	                    </div>
 	                </a>
 	            </li>
@@ -140,7 +140,7 @@
 				<% list.forEach(function(el){%>
 	            <li>
 	                <a href="<%=el.link%>">
-	                    <div style="background-image: url(<%= el.img%>);" class="left">
+	                    <div style="background-image: url('<%= el.img%>');" class="left">
 	                    </div>
 	                    <div class="right">
 	                        <h3><%=el.title%></h3>
@@ -218,7 +218,7 @@
 				<% school.forEach(function(el){%>
 	            <li>
 	                <a href="<%el.link%>">
-	                    <div style="background-image: url(<%= el.img %>);" class="left">
+	                    <div style="background-image: url('<%= el.img %>');" class="left">
 	                    </div>
 	                    <div class="right">
 	                        <h3><%=el.name%></h3>
@@ -288,7 +288,7 @@
 				<% video.forEach(function(el){%>
 	            <li>
 	                <a href="<%el.link%>">
-	                    <div style="background-image: url(<%= el.img %>);" class="video-img">
+	                    <div style="background-image: url('<%= el.img %>');" class="video-img">
 	                        <div class="video-title">
 	                            <div class="hf">查看回放</div>
 	                            <div><%=el.time%></div>
@@ -342,7 +342,7 @@
 	                        <div class="left">
 	                            <p><%=el.title%></p>
 	                        </div>
-	                        <div style="background-image: url(<%= el.img %>);" class="right">
+	                        <div style="background-image: url('<%= el.img %>');" class="right">
 	                        </div>
 	                    </div>
 	                </a>
@@ -392,7 +392,7 @@
 						}
 					]%>
 					<% resource.forEach(function(el){ %>
-	                <div class="swiper-slide" style="background-image: url(<%= el.img %>);">
+	                <div class="swiper-slide" style="background-image: url('<%= el.img %>');">
 	                    <h2 class="xuexi"><%=el.title%></h2>
 	                    <p><%=el.desc%></p>
 	                </div>
