@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
+<body>
+<header class="headernew">
+	<a class="back"></a>
+    <h2>关注</h2>
+</header>
+		<section class="section">
+			<ul class="follow-list">
+                <% var list = [
+                    {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪',desc:'20万粉丝 做一名国际教育工作者',status:false},
+                    {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true},
+                    {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true},
+                    {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true},
+                    {link:'./dynamicpage2.html',img:'https://picsum.photos/id/360/73/73',name:'波斯的猫咪2',desc:'20万粉丝 做一名国际教育工作者2',status:true}
+                ]%>
+                <% list.forEach(function(lis){ %>
+                <li>
+                    <a href="<%=lis.link%>">
+                         <img src="<%=lis.img%>">
+                    </a>
+                    <div class="name">
+                        <h2><a href="<%=lis.link%>"><%=lis.name%></a></h2>
+                        <p><%=lis.desc%></p>
+                    </div>
+                    <button type="button"><%=lis.status?'互关':'已关注'%></button>
+                </li>
+                <% }) %>
+            </ul>
+		</section>
+		<%= require('@layouts/footer.ejs')({footer:true})%>
+	</body>
+</html>

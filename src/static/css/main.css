@@ -3253,3 +3253,56 @@ body {
   text-align: right;
   padding-bottom: 0.128rem;
 }
+.section .follow-list {
+  padding-top: 2.47466667rem;
+}
+.section .follow-list li {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 16rem;
+  padding: 0.34133333rem 0.512rem;
+}
+.section .follow-list li a img {
+  width: 1.792rem;
+  height: 1.792rem;
+  border-radius: 50%;
+}
+.section .follow-list li .name {
+  flex: 1;
+  margin: 0 0.704rem;
+}
+.section .follow-list li .name h2 {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 0.85333333rem;
+  padding: 0;
+}
+.section .follow-list li .name h2 a {
+  font-size: 0.68266667rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #212121;
+}
+.section .follow-list li .name p {
+  text-align: left;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  line-height: 0.96rem;
+  color: #212121;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section .follow-list li button {
+  margin-top: 0.53333333rem;
+  width: 2.38933333rem;
+  height: 0.85333333rem;
+  border: 0.04266667rem solid rgba(138, 138, 138, 0.5);
+  border-radius: 0.21333333rem;
+  background-color: transparent;
+  color: #a2a0a0;
+}
