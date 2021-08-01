@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
+<body>
+<header class="headernew">
+	<a class="back"></a>
+	<img src="<%= require('@images/logo.png')%>" alt="国际教育网">
+</header>
+		<section class="section">
+			<div class="creative-center-banner" style="background-image: url(https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg);">
+				<div class="creative-center-banner-mask">
+					<div class="top">
+						<a href="./dynamicpage.html">
+							<img class="user-avatar" src="https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg">
+						</a>
+						<h3>波斯的猫咪</h3>
+					</div>
+					<ul class="statistical">
+						<li>
+							<a>
+								<span>36</span>
+								<p>动态</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<span>36</span>
+								<p>粉丝</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<span>36</span>
+								<p>关注</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="creative-center-menu">
+				<ul>
+					<%var menu=[
+						{link:'javascript:',name:'文章'},
+						{link:'javascript:',name:'微头条'},
+						{link:'javascript:',name:'收藏'},
+					]%>
+					<%menu.forEach(function(item,index){%>
+					<li class="<%=index?'':'active'%> menu-data">
+						<a href="<%=item.link%>">
+							<p><%=item.name%></p>
+						</a>
+					</li>
+					<%})%>
+				</ul>
+			</div>
+			<div class="dynamic-list dynamic_list">
+				<!-- wtt 微头条-->
+				<!-- wz  文章-->
+				<!-- sc  收藏-->
+				<ul class="wtt" style="display:none;">
+					<% var wttlist = [
+						{
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'dsp',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:1,
+							status:'已发布',
+							modify:false,
+							duration:'00:30',
+							link:'javascript:',
+							userlink:'javascript:',
+                            istop:true,
+                            pl:0,
+                            read:10,
+                            collection:true,
+                            block:false
+						},
+                        {
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'dsp',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:1,
+							status:'已发布',
+							modify:false,
+							duration:'00:30',
+							link:'javascript:',
+							userlink:'javascript:',
+                            istop:true,
+                            pl:0,
+                            read:10,
+                            collection:false,
+                            block:false
+						}
+					]%>
+					
+					<% wttlist.forEach(function(lis){%>
+					<li class="wtt <%=lis.img.length==1?'one':''%>">
+						<div class="user">
+							<a href="<%=lis.userlink%>">
+								<img src="<%=lis.userimg%>" >
+							</a>
+							<div class="name">
+								<h2><%=lis.user%></h2>
+                                <p><%=lis.time%></p>
+							</div>
+							<div class="operation">
+								<div class="men">
+									<p class="top"></i>关注</p>
+                                    <%if(lis.block){%>
+                                        <p class="block">拉黑</p>
+                                    <%}else{%>
+                                        <p class="block">拉黑</p>
+                                    <%}%>
+									<p class="del">举报此内容</p>
+								</div>
+							</div>
+						</div>
+						<div class="lis">
+							<div class="text">
+								<a href="<%=lis.link%>">
+									<h3><%=lis.title%></h3>
+								</a>
+							</div>
+							<div class="images">
+								<%lis.img.forEach((el,index)=>{%>
+								<%if(index<3){%>
+								<div class="img" style="background-image: url(<%=el%>);"></div>
+								<%}%>
+								<%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
+								<div class="mask"><%=`${lis.img.length-3}+`%></div>
+								<%}%>
+								<%})%>
+							</div>
+							<div class="tool">
+								<div class="left">
+                                    <a><%=lis.read%> 阅读</a>
+                                    <a><%=lis.pl%> 评论</a>
+                                    <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i> 收藏</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<%})%>
+				</ul>
+				<ul class="wz">
+                    <% var wzlist=[
+                        {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            read:565,
+                            pl:0,
+                            collection:false,
+                            id:1,
+                            istop:true,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        },
+                        {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'',
+                            read:565,
+                            pl:0,
+                            collection:true,
+                            id:1,
+                            istop:false,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        },
+                        {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            read:565,
+                            pl:0,
+                            collection:true,
+                            id:1,
+                            istop:false,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        },
+                        {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            read:565,
+                            pl:0,
+                            collection:true,
+                            id:1,
+                            istop:false,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        }
+                    ]%>
+					<% wzlist.forEach(function(lis){%>
+					<li class="wz">
+                        <div class="user">
+							<a href="<%=lis.userlink%>">
+								<img src="<%=lis.userimg%>" >
+							</a>
+							<div class="name">
+								<h2><%=lis.username%></h2>
+                                <p><%=lis.time%></p>
+							</div>
+							<div class="operation">
+								<div class="men">
+									<p class="top"></i>关注</p>
+                                    <%if(lis.block){%>
+                                        <p class="block">拉黑</p>
+                                    <%}else{%>
+                                        <p class="block">拉黑</p>
+                                    <%}%>
+									<p class="del">举报此内容</p>
+								</div>
+							</div>
+						</div>
+						<div class="lis">
+							<div class="text">
+								<a href="<%=lis.link%>">
+									<h3><%=lis.title%></h3>
+								</a>
+                                <p>
+                                    <a><%=lis.read%> 阅读</a>
+                                    <a><%=lis.pl%> 评论</a>
+                                    <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i> 收藏</a>
+                                </p>
+							</div>
+                            <%if(lis.img){%>
+							<a href="<%=lis.link%>">
+								<div <%=lis.duration?('duration='+lis.duration):''%> class="image <%=lis.istop?'istop':''%>" style="background-image: url(<%=lis.img%>);"></div>
+							</a>
+							<%}%>
+						</div>
+					</li>
+					<%})%>
+				</ul>
+                <ul class="sc" style="display:none;">
+                    <% var sclist=[
+                    {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            read:565,
+                            pl:0,
+                            type:'wz',
+                            collection:false,
+                            id:1,
+                            istop:true,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        },
+                        {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'',
+                            read:565,
+                            pl:0,
+                            type:'wz',
+                            collection:true,
+                            id:1,
+                            istop:false,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        },
+                        {
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'wtt',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:1,
+							status:'已发布',
+							modify:false,
+							duration:'00:30',
+							link:'javascript:',
+							userlink:'javascript:',
+                            istop:true,
+                            pl:0,
+                            read:10,
+                            collection:true
+						},
+                        {
+							img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+							title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+							type:'wtt',
+							time:'1小时前',
+							user:'波斯的猫咪',
+							userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+							id:1,
+							status:'已发布',
+							modify:false,
+							duration:'00:30',
+							link:'javascript:',
+							userlink:'javascript:',
+                            istop:true,
+                            pl:0,
+                            read:10,
+                            collection:false
+						},
+                        {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            read:565,
+                            pl:0,
+                            type:'wz',
+                            collection:true,
+                            id:1,
+                            istop:false,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        },
+                        {
+                            userimg:'https://www.ieduchina.com/uploadfile/gzh/202009/160032783550762.jpg',
+                            username:'选校专家',
+                            time:'2020-03-09',
+                            title:'国际学校学籍那些事儿，你想知道的都在这里！国际学校学籍那些事儿，你想知道的都在这里！',
+                            img:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+                            read:565,
+                            pl:0,
+                            collection:true,
+                            id:1,
+                            type:'wz',
+                            istop:false,
+                            link:'javascript:',
+                            userlink:'javascript:'
+                        }
+                    ]%>
+					<% sclist.forEach(function(lis){%>
+                        <%if(lis.type=="wz"){%>
+                            <li class="wz">
+                                <div class="user">
+                                    <a href="<%=lis.userlink%>">
+                                        <img src="<%=lis.userimg%>" >
+                                    </a>
+                                    <div class="name">
+                                        <h2><%=lis.username%></h2>
+                                        <p><%=lis.time%></p>
+                                    </div>
+                                    <div class="operation">
+                                        <div class="men">
+                                            <p class="top"></i>关注</p>
+                                            <%if(lis.block){%>
+                                                <p class="block">拉黑</p>
+                                            <%}else{%>
+                                                <p class="block">拉黑</p>
+                                            <%}%>
+                                            <p class="del">举报此内容</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lis">
+                                    <div class="text">
+                                        <a href="<%=lis.link%>">
+                                            <h3><%=lis.title%></h3>
+                                        </a>
+                                        <p>
+                                            <a><%=lis.read%> 阅读</a>
+                                            <a><%=lis.pl%> 评论</a>
+                                            <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i> 收藏</a>
+                                        </p>
+                                    </div>
+                                    <%if(lis.img){%>
+                                    <a href="<%=lis.link%>">
+                                        <div <%=lis.duration?('duration='+lis.duration):''%> class="image <%=lis.istop?'istop':''%>" style="background-image: url(<%=lis.img%>);"></div>
+                                    </a>
+                                    <%}%>
+                                </div>
+                            </li>
+                        <%}else if(lis.type=="wtt"){%>
+                            <li class="wtt <%=lis.img.length==1?'one':''%>">
+                                <div class="user">
+                                    <a href="<%=lis.userlink%>">
+                                        <img src="<%=lis.userimg%>" >
+                                    </a>
+                                    <div class="name">
+                                        <h2><%=lis.user%></h2>
+                                        <p><%=lis.time%></p>
+                                    </div>
+                                    <div class="operation">
+                                        <div class="men">
+                                            <p class="top"></i>关注</p>
+                                            <%if(lis.block){%>
+                                                <p class="block">拉黑</p>
+                                            <%}else{%>
+                                                <p class="block">拉黑</p>
+                                            <%}%>
+                                            <p class="del">举报此内容</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lis">
+                                    <div class="text">
+                                        <a href="<%=lis.link%>">
+                                            <h3><%=lis.title%></h3>
+                                        </a>
+                                    </div>
+                                    <div class="images">
+                                        <%lis.img.forEach((el,index)=>{%>
+                                        <%if(index<3){%>
+                                        <div class="img" style="background-image: url(<%=el%>);"></div>
+                                        <%}%>
+                                        <%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
+                                        <div class="mask"><%=`${lis.img.length-3}+`%></div>
+                                        <%}%>
+                                        <%})%>
+                                    </div>
+                                    <div class="tool">
+                                        <div class="left">
+                                            <a><%=lis.read%> 阅读</a>
+                                            <a><%=lis.pl%> 评论</a>
+                                            <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i> 收藏</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <%}%>
+					<%})%>
+				</ul>
+			</div>
+		</section>
+		<%= require('@layouts/footer.ejs')({footer:true})%>
+	</body>
+</html>
