@@ -2,7 +2,7 @@
 <html lang="zh">
 <%= require('@layouts/head.ejs')() %>
 <body>
-	<%= require('@layouts/header.ejs')()%>
+	<%= require('@layouts/header.ejs')({index:0})%>
 	<section class="section">
 	    <div class="banner">
 	        <div class="banner-bg"></div>
@@ -37,13 +37,13 @@
 	        <div class="swiper-menu">
 	            <div class="swiper-wrapper">
 					<% var menu = [
-						{img:'https://m.ieduchina.com/statics/w/img/icon1.png',name:'找学校',link:'javascript:'},
-						{img:'https://m.ieduchina.com/statics/w/img/icon2.png',name:'测一测',link:'javascript:'},
-						{img:'https://m.ieduchina.com/statics/w/img/icon3.png',name:'要备考',link:'javascript:'},
-						{img:'https://m.ieduchina.com/statics/w/img/icon4.png',name:'短视频',link:'javascript:'},
-						{img:'https://m.ieduchina.com/statics/w/img/icon5.png',name:'看学校',link:'javascript:'},
-						{img:'https://m.ieduchina.com/statics/w/img/icon6.png',name:'找学校',link:'javascript:'},
-						{img:'https://m.ieduchina.com/statics/w/img/icon6.png',name:'找学校',link:'javascript:'}
+						{img:'./static/images/menu1.png',name:'找学校',link:'javascript:'},
+						{img:'./static/images/menu2.png',name:'测一测',link:'javascript:'},
+						{img:'./static/images/menu3.png',name:'要备考',link:'javascript:'},
+						{img:'./static/images/menu4.png',name:'短视频',link:'javascript:'},
+						{img:'./static/images/menu5.png',name:'看学校',link:'javascript:'},
+						{img:'./static/images/menu6.png',name:'要留学',link:'javascript:'},
+						{img:'./static/images/menu7.png',name:'看直播',link:'javascript:'}
 					]%>
 					<% menu.forEach(function(el){%>
 	                <div class="swiper-slide">
@@ -69,27 +69,38 @@
 					{
 						title:'东京奥运11金:学霸冠军的父母，都做对了这3件事',
 						img:'https://www.ieduchina.com/uploadfile/202107/f17020210729092748.jpg',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+
 					},
 					{
 						title:'俞敏洪生气了！但假“海上培训班”的背后，也有人们的真担心',
 						img:'https://www.ieduchina.com/statics/js/editor/php/upload/image/20210728/1627462678750080.jpg',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					},
 					{
 						title:'美国政府首次发布《对国际教育的新承诺》，鼓励国际学生赴美学习',
 						img:'https://www.ieduchina.com/uploadfile/202107/f45020210728160231.jpg',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					},
 					{
 						title:'内地生转轨DSE需知！1.36人争1个港八大学位！',
 						img:'https://www.ieduchina.com/uploadfile/202107/f85520210728172603.jpg',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					},
 					{
 						title:'南山中加2021级高一新生入学指南',
 						img:'https://www.ieduchina.com/uploadfile/202107/f74720210728094752.jpg',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					}
 				] %>
 				<% todaynew.forEach(function(el){ %>
@@ -97,7 +108,15 @@
 	                <a href="<%=el.link %>">
 	                    <div class="list">
 	                        <div class="left">
-	                            <p><%=el.title%></p>
+	                            <div class="text">
+									<p>
+										<span><%=el.title%></span>
+									</p>
+								</div>
+								<div class="possessor">
+									<i style="background-image: url('<%=el.portrait%>');"></i>
+									<p><%=el.author%></p>
+								</div>
 	                        </div>
 							<div style="background-image: url('<%= el.img %>')" class="right"></div>
 	                    </div>
@@ -106,6 +125,111 @@
 				<%})%>
 	        </ul>
 	    </div>
+		<div class="index-wtt">
+			<div class="title">
+	            <h2>微头条</h2>
+	            <a href="javascript:;">
+	                <span>更多头条</span>
+	            </a>
+	        </div>
+			<ul class="wtt">
+				<% var wttlist = [
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						modify:true,
+						follow:true,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:true
+					},
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						follow:true,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:false
+					},
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						follow:false,
+						link:'javascript:',
+						userlink:'javascript:'
+					}
+				]%>
+				
+				<% wttlist.forEach(function(lis){%>
+				<li class="<%=lis.img.length==1?'one':''%>">
+					<div class="user">
+						<a href="<%=lis.userlink%>">
+							<img src="<%=lis.userimg%>" >
+						</a>
+						<div class="name">
+							<h2><%=lis.user%></h2>
+						</div>
+						<div class="follow">
+							<button><%=lis.follow?'关注':'已关注'%></button>
+						</div>
+					</div>
+					<div class="lis">
+						<div class="text">
+							<a href="<%=lis.link%>">
+								<h3><%=lis.title%></h3>
+							</a>
+						</div>
+						<div class="images">
+							<%lis.img.forEach((el,index)=>{%>
+							<%if(index<3){%>
+							<div class="img" style="background-image: url(<%=el%>);"></div>
+							<%}%>
+							<%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
+							<div class="mask"><%=`${lis.img.length-3}+`%></div>
+							<%}%>
+							<%})%>
+						</div>
+						<div class="tool">
+							<div class="left">
+								<a>0 阅读</a>
+								<a class="<%=lis.collection?'collection':'nocollection'%>"><i></i>收藏</a>
+								<a>0 评论</a>
+							</div>
+							<div class="right">
+								<a><%=lis.time%></a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<%})%>
+			</ul>
+		</div>
 	    <div class="schoolnews">
 	        <div class="title">
 	            <h2>校园活动</h2>
@@ -164,12 +288,12 @@
 	        </ul>
 	    </div>
 	    <div class="schooltop">
-	        <div class="title">
+			<div class="title">
 	            <h2>名校排行榜</h2>
 	            <a href="javascript:;">
 	                <span>更多学校</span>
 	            </a>
-	        </div>
+	        </div>	
 	        <ul id="school-list">
 				<% var school = [
 					{
@@ -312,27 +436,37 @@
 					{
 						title:'北京致知学校开放日｜本周末走进本周末走进',
 						img:'https://picsum.photos/id/695/240/160',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					},
 					{
 						title:'北京致知学校开放日｜本周末走进本周末走进',
 						img:'https://picsum.photos/id/695/240/160',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					},
 					{
 						title:'北京致知学校开放日｜本周末走进本周末走进',
 						img:'https://picsum.photos/id/695/240/160',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					},
 					{
 						title:'北京致知学校开放日｜本周末走进本周末走进',
 						img:'https://picsum.photos/id/695/240/160',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					},
 					{
 						title:'北京致知学校开放日｜本周末走进本周末走进',
 						img:'https://picsum.photos/id/695/240/160',
-						link:'javascript:'
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
 					}
 				]%>
 				<% schoolm.forEach(function(el){%>
@@ -340,7 +474,13 @@
 	                <a href="<%=el.link%>">
 	                    <div class="list">
 	                        <div class="left">
-	                            <p><%=el.title%></p>
+	                            <div class="text">
+									<p><%=el.title%></p>
+								</div>
+								<div class="possessor">
+									<i style="background-image: url('<%=el.portrait%>');"></i>
+									<p><%=el.author%></p>
+								</div>
 	                        </div>
 	                        <div style="background-image: url('<%= el.img %>');" class="right">
 	                        </div>
