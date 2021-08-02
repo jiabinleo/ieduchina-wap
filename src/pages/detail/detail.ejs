@@ -38,11 +38,17 @@
 					'https://picsum.photos/id/613/217/196',
 					'https://picsum.photos/id/614/217/196'
 				].splice(Math.ceil(Math.random()*9))%>
+                <% var lis={
+                    collection:true,
+                    read:1,
+                    pl:11
+                }%>
 				<% imglist.forEach(function(item){%>
                     <li class="<%=imglist.length==1?'one':''%>" style="background-image: url(<%=item%>)"></li>
 				<%})%>
 				
 			</ul>
+            <%= require('@layouts/ysp.ejs')({lis:lis})%>
 		</div>
 		<div class="comment">
 			<form action="">

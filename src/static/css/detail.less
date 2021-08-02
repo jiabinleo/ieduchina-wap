@@ -7,11 +7,11 @@
 }
 .section{
     .w-detail{
-        padding-top: (90/@rem);
+        padding: (120/@rem) (24/@rem) (36/@rem);
         .w-header{
             height: (126/@rem);
             box-sizing: border-box;
-            padding: (28/@rem) (36/@rem) (25/@rem);
+            
             width: 100%;
             display: flex;
             line-height: (126/@rem);
@@ -70,7 +70,7 @@
                 width: 100%;
                 box-sizing: border-box;
                 text-align: justify;
-                padding: 0 (25/@rem) (20/@rem) (25/@rem);
+                padding-bottom: (25/@rem);
                 font-size: (28/@rem);
                 font-family: Microsoft YaHei;
                 font-weight: 400;
@@ -81,7 +81,6 @@
         ul{
             width: 100%;
             box-sizing: border-box;
-            padding: 0 (24/@rem);
             display: flex;
             justify-content: flex-start;
             flex-wrap: wrap;
@@ -100,44 +99,6 @@
                 &.one{
                     width: (488/@rem);
                     height: (488/@rem);
-                }
-            }
-        }
-        .tool{
-            height: (104/@rem);
-            margin: 0 (32/@rem);
-            line-height: (104/@rem);
-            border-bottom:solid (2/@rem) rgba(112, 112, 112, 0.5);
-            a{
-                font-size: (32/@rem);
-                font-family: Microsoft YaHei;
-                font-weight: 300;
-                color: #1B1B1C;
-                &:nth-of-type(n+2){
-                    margin-left: (94/@rem);
-                }
-                i{
-                    margin-right: (10/@rem);
-                    font-style: initial;
-                    display: inline-block;
-                    width: (35 / @rem);
-                    height: (35 / @rem);
-                    vertical-align: middle;
-                    line-height: 1;
-                    &.share {
-                        .iconlistimg((-196 / @rem), (-188 / @rem));
-                    }
-                    &.collection {
-                        .iconlistimg((-287 / @rem), (-286 / @rem));
-                    }
-                    
-                    &.iscollection {
-                        .iconlistimg((-195 / @rem), (-287 / @rem));
-                    }
-                }
-                
-                a {
-                    color: rgba(27, 27, 28, 1);
                 }
             }
         }

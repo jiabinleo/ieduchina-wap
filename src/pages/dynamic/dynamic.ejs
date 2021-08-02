@@ -141,13 +141,7 @@
 								<%}%>
 								<%})%>
 							</div>
-							<div class="tool">
-								<div class="left">
-                                    <a><%=lis.read%> 阅读</a>
-                                    <a><%=lis.pl%> 评论</a>
-                                    <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i> 收藏</a>
-								</div>
-							</div>
+							<%= require('@layouts/ysp.ejs')({lis:lis})%>
 						</div>
 					</li>
 					<%})%>
@@ -437,13 +431,7 @@
                                         <%}%>
                                         <%})%>
                                     </div>
-                                    <div class="tool">
-                                        <div class="left">
-                                            <a><%=lis.read%> 阅读</a>
-                                            <a><%=lis.pl%> 评论</a>
-                                            <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i> 收藏</a>
-                                        </div>
-                                    </div>
+                                    <%= require('@layouts/ysp.ejs')({lis:lis})%>
                                 </div>
                             </li>
                         <%}%>
