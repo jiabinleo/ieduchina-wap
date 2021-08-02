@@ -182,7 +182,8 @@
 						status:'已发布',
 						follow:false,
 						link:'javascript:',
-						userlink:'javascript:'
+						userlink:'javascript:',
+						collection:false
 					}
 				]%>
 				
@@ -215,16 +216,7 @@
 							<%}%>
 							<%})%>
 						</div>
-						<div class="tool">
-							<div class="left">
-								<a>0 阅读</a>
-								<a class="<%=lis.collection?'collection':'nocollection'%>"><i></i>收藏</a>
-								<a>0 评论</a>
-							</div>
-							<div class="right">
-								<a><%=lis.time%></a>
-							</div>
-						</div>
+						<%= require('@layouts/ysp.ejs')({lis:lis})%>
 					</div>
 				</li>
 				<%})%>

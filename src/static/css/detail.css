@@ -1,0 +1,137 @@
+.section .w-detail {
+  padding-top: 1.92rem;
+}
+.section .w-detail .w-header {
+  height: 2.688rem;
+  box-sizing: border-box;
+  padding: 0.59733333rem 0.768rem 0.53333333rem;
+  width: 100%;
+  display: flex;
+  line-height: 2.688rem;
+  justify-content: space-between;
+}
+.section .w-detail .w-header a {
+  display: flex;
+  justify-content: space-between;
+}
+.section .w-detail .w-header a img {
+  width: 1.55733333rem;
+  height: 1.55733333rem;
+  border-radius: 50%;
+}
+.section .w-detail .w-header a .name {
+  height: 1.55733333rem;
+  flex: 1;
+  font-family: Microsoft YaHei;
+  padding-left: 0.384rem;
+}
+.section .w-detail .w-header a .name h2 {
+  padding: 0;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  color: #212121;
+  line-height: 0.98133333rem;
+  text-align: left;
+}
+.section .w-detail .w-header a .name p {
+  padding: 0;
+  font-size: 0.512rem;
+  font-weight: 300;
+  color: #171717;
+  text-align: left;
+  line-height: 1;
+}
+.section .w-detail .w-header button {
+  cursor: pointer;
+  width: 2.38933333rem;
+  height: 0.93866667rem;
+  background: #FFFFFF;
+  border: 1px solid #FC4242;
+  border-radius: 0.21333333rem;
+  margin-top: 0.26666667rem;
+  font-size: 0.55466667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #F53F3F;
+}
+.section .w-detail .w-text p {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: justify;
+  padding: 0 0.53333333rem 0.42666667rem 0.53333333rem;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.768rem;
+  color: #171717;
+}
+.section .w-detail ul {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.512rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.section .w-detail ul li {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  border-radius: 0.42666667rem;
+  margin-right: 0.512rem;
+  margin-top: 0.384rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section .w-detail ul li:nth-of-type(3n) {
+  margin-right: 0;
+}
+.section .w-detail ul li.one {
+  width: 10.41066667rem;
+  height: 10.41066667rem;
+}
+.section .w-detail .tool {
+  height: 2.21866667rem;
+  margin: 0 0.68266667rem;
+  line-height: 2.21866667rem;
+  border-bottom: solid 0.04266667rem rgba(112, 112, 112, 0.5);
+}
+.section .w-detail .tool a {
+  font-size: 0.68266667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #1B1B1C;
+}
+.section .w-detail .tool a:nth-of-type(n+2) {
+  margin-left: 2.00533333rem;
+}
+.section .w-detail .tool a i {
+  margin-right: 0.21333333rem;
+  font-style: initial;
+  display: inline-block;
+  width: 0.74666667rem;
+  height: 0.74666667rem;
+  vertical-align: middle;
+  line-height: 1;
+}
+.section .w-detail .tool a i.share {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -4.18133333rem -4.01066667rem;
+}
+.section .w-detail .tool a i.collection {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -6.12266667rem -6.10133333rem;
+}
+.section .w-detail .tool a i.iscollection {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -4.16rem -6.12266667rem;
+}
+.section .w-detail .tool a a {
+  color: #1b1b1c;
+}

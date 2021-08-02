@@ -1,0 +1,15 @@
+<!-- 阅读收藏评论 -->
+<div class="tool">
+    <div class="left">
+        <a>0 阅读</a>
+        <a>0 评论</a>
+        <%if(typeof lis.collection != 'undefined'){%>
+        <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i>收藏</a>
+        <%}%>
+    </div>
+    <%if(lis.time){%>
+    <div class="right">
+        <a><%=lis.time%></a>
+    </div>
+    <%}%>
+</div>

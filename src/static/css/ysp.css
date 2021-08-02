@@ -1,0 +1,35 @@
+.tool {
+  display: flex;
+  justify-content: space-between;
+  height: 1.408rem;
+  line-height: 1.408rem;
+}
+.tool .left a {
+  padding-right: 0.85333333rem;
+}
+.tool a {
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #1b1b1c;
+}
+.tool a i {
+  display: inline-block;
+  vertical-align: -0.34133333rem;
+  right: 0.34133333rem;
+  width: 1.06666667rem;
+  height: 0.85333333rem;
+  margin-right: -0.42666667rem;
+}
+.tool a.nocollection i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -6.12266667rem -6.10133333rem;
+}
+.tool a.collection i {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -4.16rem -6.10133333rem;
+}
