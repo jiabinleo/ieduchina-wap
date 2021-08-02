@@ -1,0 +1,33 @@
+.index_title {
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.98133333rem;
+}
+.index_title h2 {
+  position: relative;
+  font-size: 0.68266667rem;
+  height: 0.896rem;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #171717;
+}
+.index_title h2::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  right: 0;
+  z-index: -1;
+  height: 0.384rem;
+  background-color: rgba(51, 108, 255, 0.76);
+  border-radius: 0.10666667rem;
+  opacity: 0.76;
+}
+.index_title span {
+  display: block;
+  font-size: 0.512rem;
+  color: #666666;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #171717;
+}

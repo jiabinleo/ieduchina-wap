@@ -1,0 +1,38 @@
+@rem:750/16rem;
+
+.index_title {
+    display: flex;
+    justify-content: space-between;
+    line-height: (46/@rem);
+
+    h2 {
+        position: relative;
+        font-size: (32/@rem);
+        height: (42/@rem);
+        font-family: Microsoft YaHei;
+        font-weight: bold;
+        color: #171717;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            content: "";
+            right: 0;
+            z-index: -1;
+            height: (18/@rem);
+            background-color: rgba(51, 108, 255, 0.76);
+            border-radius: (5/@rem);
+            opacity: 0.76;
+        }
+    }
+
+    span {
+        display: block;
+        font-size: (24/@rem);
+        color: #666666;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #171717;
+    }
+}

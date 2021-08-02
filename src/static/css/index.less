@@ -1,45 +1,5 @@
 @rem: 750/16rem;
 
-.titlefn{
-	padding: (28/@rem) (28/@rem) 0 (28/@rem);
-
-        .title {
-            display: flex;
-            justify-content: space-between;
-            line-height: (46/@rem);
-
-            h2 {
-                position: relative;
-                font-size: (32/@rem);
-                height: (42/@rem);
-				font-family: Microsoft YaHei;
-				font-weight: bold;
-				color: #171717;
-
-                &::before {
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    content: "";
-					right: 0;
-					z-index: -1;
-                    height: (18/@rem);
-                    background-color: rgba(51, 108, 255, 0.76);
-                    border-radius: (5/@rem);
-					opacity: 0.76;
-                }
-            }
-
-            span {
-                display: block;
-                font-size: (24/@rem);
-                color: #666666;
-				font-family: Microsoft YaHei;
-				font-weight: 400;
-				color: #171717;
-            }
-        }
-}
 .iconlistimg(@x, @y) {
 	background-image: url(../images/iconlist.png);
 	background-repeat: no-repeat;
@@ -172,7 +132,7 @@ body {
     }
 
     .todaynews {
-        .titlefn();
+        padding: (28/@rem) (28/@rem) 0 (28/@rem);
         ul {
 			counter-reset: item;
             li {
@@ -262,141 +222,15 @@ body {
         }
     }
 	.index-wtt{
-		.titlefn();
+        padding: (28/@rem) (28/@rem) 0 (28/@rem);
 		ul {
 			&.wtt {
 				box-sizing: border-box;
-	
-			li {
-				width: 100%;
-				box-sizing: border-box;
-				padding-top: (25 / @rem);
-
-				.user {
-					display: flex;
-					align-items: center;
-					justify-content: space-between;
-	
-					img {
-						width: (50 / @rem);
-						height: (50 / @rem);
-						border-radius: 50%;
-					}
-	
-					.name {
-						height: (50 / @rem);
-						flex: 1;
-						font-family: Microsoft YaHei;
-						padding-left: (18 / @rem);
-	
-						h2 {
-							padding: 0;
-							font-size: (32 / @rem);
-							font-weight: 400;
-							color: #212121;
-							line-height: (50 / @rem);
-							text-align: left;
-						}
-	
-						p {
-							padding: 0;
-							font-size: (24 / @rem);
-							font-weight: 300;
-							color: #171717;
-							text-align: left;
-						}
-					}
-					.follow{
-						button{
-							width: (112/@rem);
-							height: (40/@rem);
-							background: #FFFFFF;
-							border: (2/@rem) solid rgba(252, 66, 66, 0.5);
-							border-radius: (10/@rem);
-							font-size: (24/@rem);
-							font-family: Microsoft YaHei;
-							font-weight: 400;
-							color: #F53F3F;
-							letter-spacing: (4/@rem);
-						}
-					}
-				}
-			}
-				li {
-					&.one {
-						.lis {
-							.images {
-								.img {
-									width: (488 / @rem);
-									height: (488 / @rem);
-								}
-							}
-						}
-					}
-					.lis {
-						display: block;
-	
-						.text {
-							padding-top: (20 / @rem);
-							h3 {
-								font-size: (28 / @rem);
-								font-family: Microsoft YaHei;
-								font-weight: 400;
-								line-height: (36 / @rem);
-								color: #171717;
-
-								display: -webkit-box;
-								-webkit-box-orient: vertical;
-								-webkit-line-clamp: 2;
-								text-overflow: ellipsis;
-								overflow: hidden;
-							}
-						}
-						.images {
-							position: relative;
-							width: 100%;
-							margin-left: 0;
-							display: flex;
-							justify-content: flex-start;
-							flex-wrap: wrap;
-	
-							.img {
-								width: (218 / @rem);
-								height: (218 / @rem);
-								margin: (15 / @rem) 0 0 (18 / @rem);
-								background-position: center;
-								background-repeat: no-repeat;
-								background-size: cover;
-								border-radius: (10 / @rem);
-	
-								&:nth-of-type(3n + 1) {
-									margin-left: 0;
-								}
-							}
-							.mask {
-								width: (218 / @rem);
-								height: (218 / @rem);
-								position: absolute;
-								right: 0;
-								top: 0;
-								text-align: center;
-								line-height: (218 / @rem);
-								margin: (15 / @rem) (4 / @rem) 0 0;
-								font-size: (58 / @rem);
-								font-family: Microsoft YaHei;
-								font-weight: 400;
-								border-radius: (10 / @rem);
-								color: #ffffff;
-								background-color: rgba(0, 0, 0, 0.2);
-							}
-						}
-					}
-				}
 			}
 		}
 	}
     .schoolnews {
-        .titlefn();
+        padding: (28/@rem) (28/@rem) 0 (28/@rem);
         ul {
             li {
                 a {
@@ -498,7 +332,7 @@ body {
     }
 
     .schooltop {
-        .titlefn();
+        padding: (28/@rem) (28/@rem) 0 (28/@rem);
 
         ul {
             li {
@@ -675,7 +509,7 @@ body {
     }
 
     .dk {
-        .titlefn();
+        padding: (28/@rem) (28/@rem) 0 (28/@rem);
 
         ul {
             display: flex;
@@ -754,7 +588,7 @@ body {
 
     .resources {
         background-color: #f5f5f5;
-		.titlefn();
+        padding: (28/@rem) (28/@rem) 0 (28/@rem);
 
         .swiper-resources {
             padding: (32/@rem) 0;

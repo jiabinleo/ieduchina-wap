@@ -58,12 +58,7 @@
 	        </div>
 	    </div>
 	    <div class="todaynews todaynew">
-	        <div class="title">
-	            <h2>今日热闻</h2>
-	            <a href="javascript:;">
-	                <span>更多热闻</span>
-	            </a>
-	        </div>
+			<%=require('@layouts/titlefn.ejs')({item:{title:'今日热闻',link:'javascript:',link_title:'更多热闻'}})%>
 	        <ul>
 				<% var todaynew = [
 					{
@@ -126,12 +121,7 @@
 	        </ul>
 	    </div>
 		<div class="index-wtt">
-			<div class="title">
-	            <h2>微头条</h2>
-	            <a href="javascript:;">
-	                <span>更多头条</span>
-	            </a>
-	        </div>
+			<%=require('@layouts/titlefn.ejs')({item:{title:'微头条',link:'javascript:',link_title:'更多头条'}})%>
 			<ul class="wtt">
 				<% var wttlist = [
 					{
@@ -188,47 +178,12 @@
 				]%>
 				
 				<% wttlist.forEach(function(lis){%>
-				<li class="<%=lis.img.length==1?'one':''%>">
-					<div class="user">
-						<a href="<%=lis.userlink%>">
-							<img src="<%=lis.userimg%>" >
-						</a>
-						<div class="name">
-							<h2><%=lis.user%></h2>
-						</div>
-						<div class="follow">
-							<button><%=lis.follow?'关注':'已关注'%></button>
-						</div>
-					</div>
-					<div class="lis">
-						<div class="text">
-							<a href="<%=lis.link%>">
-								<h3><%=lis.title%></h3>
-							</a>
-						</div>
-						<div class="images">
-							<%lis.img.forEach((el,index)=>{%>
-							<%if(index<3){%>
-							<div class="img" style="background-image: url(<%=el%>);"></div>
-							<%}%>
-							<%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
-							<div class="mask"><%=`${lis.img.length-3}+`%></div>
-							<%}%>
-							<%})%>
-						</div>
-						<%= require('@layouts/ysp.ejs')({lis:lis})%>
-					</div>
-				</li>
+					<%=require('@layouts/wtt.ejs')({lis:lis,isBtn:true})%>
 				<%})%>
 			</ul>
 		</div>
 	    <div class="schoolnews">
-	        <div class="title">
-	            <h2>校园活动</h2>
-	            <a href="javascript:;">
-	                <span>更多活动</span>
-	            </a>
-	        </div>
+			<%=require('@layouts/titlefn.ejs')({item:{title:'校园活动',link:'javascript:',link_title:'更多活动'}})%>
 	        <ul>
 				<% var list=[
 					{
@@ -280,12 +235,7 @@
 	        </ul>
 	    </div>
 	    <div class="schooltop">
-			<div class="title">
-	            <h2>名校排行榜</h2>
-	            <a href="javascript:;">
-	                <span>更多学校</span>
-	            </a>
-	        </div>	
+			<%=require('@layouts/titlefn.ejs')({item:{title:'名校排行榜',link:'javascript:',link_title:'更多学校'}})%>
 	        <ul id="school-list">
 				<% var school = [
 					{
@@ -368,12 +318,7 @@
 	        </div>
 	    </div>
 	    <div class="dk">
-	        <div class="title">
-	            <h2>大咖说择校</h2>
-	            <a href="javascript:;">
-	                <span>更多视频</span>
-	            </a>
-	        </div>
+			<%=require('@layouts/titlefn.ejs')({item:{title:'大咖说择校',link:'javascript:',link_title:'更多视频'}})%>
 	        <ul>
 				<% var video=[
 					{
@@ -417,15 +362,9 @@
 	        </ul>
 	    </div>
 	    <div class="todaynews">
-	        <div class="title">
-	            <h2>我要读名校</h2>
-	            <a href="javascript:;">
-	                <span>更多内容</span>
-	            </a>
-	        </div>
+			<%=require('@layouts/titlefn.ejs')({item:{title:'我要读名校',link:'javascript:',link_title:'更多内容'}})%>
 	        <ul>
-				<% var schoolm = [
-					{
+				<% var schoolm = [{
 						title:'北京致知学校开放日｜本周末走进本周末走进',
 						img:'https://picsum.photos/id/695/240/160',
 						link:'javascript:',
@@ -483,12 +422,7 @@
 	        </ul>
 	    </div>
 	    <div class="resources">
-	        <div class="title">
-	            <h2>行业资源</h2>
-	            <a href="javascript:;">
-	                <span>更多内容</span>
-	            </a>
-	        </div>
+			<%=require('@layouts/titlefn.ejs')({item:{title:'行业资源',link:'javascript:',link_title:'更多内容'}})%>
 	        <div class="swiper-resources">
 	            <div class="swiper-wrapper">
 					<% var resource=[

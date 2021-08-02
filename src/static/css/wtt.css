@@ -1,0 +1,106 @@
+li.wttlist {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 0.53333333rem;
+}
+li.wttlist .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+li.wttlist .user img {
+  width: 1.06666667rem;
+  height: 1.06666667rem;
+  border-radius: 50%;
+}
+li.wttlist .user .name {
+  height: 1.06666667rem;
+  flex: 1;
+  font-family: Microsoft YaHei;
+  padding-left: 0.384rem;
+}
+li.wttlist .user .name h2 {
+  padding: 0;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.06666667rem;
+  text-align: left;
+}
+li.wttlist .user .name p {
+  padding: 0;
+  font-size: 0.512rem;
+  font-weight: 300;
+  color: #171717;
+  text-align: left;
+}
+li.wttlist .user .follow button {
+  width: 2.38933333rem;
+  height: 0.85333333rem;
+  background: #FFFFFF;
+  border: 0.04266667rem solid rgba(252, 66, 66, 0.5);
+  border-radius: 0.21333333rem;
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #F53F3F;
+  letter-spacing: 0.08533333rem;
+}
+li.wttlist.one .lis .images .img {
+  width: 10.41066667rem;
+  height: 10.41066667rem;
+}
+li.wttlist .lis {
+  display: block;
+}
+li.wttlist .lis .text {
+  padding-top: 0.42666667rem;
+}
+li.wttlist .lis .text h3 {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.768rem;
+  color: #171717;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+li.wttlist .lis .images {
+  position: relative;
+  width: 100%;
+  margin-left: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+li.wttlist .lis .images .img {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  margin: 0.32rem 0 0 0.384rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.21333333rem;
+}
+li.wttlist .lis .images .img:nth-of-type(3n + 1) {
+  margin-left: 0;
+}
+li.wttlist .lis .images .mask {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 4.65066667rem;
+  margin: 0.32rem 0.08533333rem 0 0;
+  font-size: 1.23733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  border-radius: 0.21333333rem;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.2);
+}

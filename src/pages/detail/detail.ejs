@@ -50,11 +50,11 @@
 			</ul>
             <%= require('@layouts/ysp.ejs')({lis:lis})%>
 		</div>
-		<div class="comment">
+		<div class="wtt-comment">
 			<form action="">
 				<h2>评论</h2>
 				<div class="textarea">
-					<textarea name=""></textarea>
+					<textarea name="" placeholder="请输入您想说的话"></textarea>
 				</div>
 				<div class="btn">
 					<button>发布</button>
@@ -64,133 +64,164 @@
 				
 			</div>
 		</div>
-        <div class="school-active">
-            <div class="title">
-                <h2>推荐活动</h2>
-                <a href="javascript:;">
-                    <span>更多活动</span>
-                </a>
-            </div>
-            <ul>
-                <li>
-                    <a href="javascript:;">
-                        <div style="background-image: url(https://picsum.photos/id/202/280/172);" class="left">
-                        </div>
-                        <div class="right">
-                            <h3>东华文泽学校12月11日春季招生开放日</h3>
-                            <p>
-                                <span>国际学校活动</span>
-                                <span>冬令营</span>
-                            </p>
-                            <div class="bottom">
-                                <div class="time">
-                                    2020-12-11
-                                </div>
-                                <div class="bm">
-                                    <button>预约报名</button>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <div style="background-image: url(https://picsum.photos/id/202/280/172);" class="left">
-                        </div>
-                        <div class="right">
-                            <h3>东华文泽学校12月11日春季招生开放日</h3>
-                            <p>
-                                <span>国际学校活动</span>
-                                <span>冬令营</span>
-                            </p>
-                            <div class="bottom">
-                                <div class="time">
-                                    2020-12-11
-                                </div>
-                                <div class="bm">
-                                    <button>预约报名</button>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <div style="background-image: url(https://picsum.photos/id/202/280/172);" class="left">
-                        </div>
-                        <div class="right">
-                            <h3>东华文泽学校12月11日春季招生开放日</h3>
-                            <p>
-                                <span>国际学校活动</span>
-                                <span>冬令营</span>
-                            </p>
-                            <div class="bottom">
-                                <div class="time">
-                                    2020-12-11
-                                </div>
-                                <div class="bm">
-                                    <button>预约报名</button>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="school-dk">
-            <div class="title">
-                <h2>大咖说择校</h2>
-                <a href="javascript:;">
-                    <span>更多视频</span>
-                </a>
-            </div>
-            <ul>
-                <li>
-                    <a href="javascript:;">
-                        <div style="background-image: url(https://picsum.photos/id/948/340/321);" class="video-img">
-                            <div class="video-title">
-                                <div class="hf">查看回放</div>
-                                <div>2020-02-02</div>
-                            </div>
-                        </div>
-                        <p>留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <div style="background-image: url(https://picsum.photos/id/950/340/321);" class="video-img">
-                            <div class="video-title">
-                                <div class="hf">查看回放</div>
-                                <div>2020-02-02</div>
-                            </div>
-                        </div>
-                        <p>留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <div style="background-image: url(https://picsum.photos/id/949/340/321);" class="video-img">
-                            <div class="video-title">
-                                <div class="hf">查看回放</div>
-                                <div>2020-02-02</div>
-                            </div>
-                        </div>
-                        <p>留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <div style="background-image: url(https://picsum.photos/id/951/340/321);" class="video-img">
-                            <div class="video-title">
-                                <div class="hf">查看回放</div>
-                                <div>2020-02-02</div>
-                            </div>
-                        </div>
-                        <p>留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <div class="index-wtt">
+            <%=require('@layouts/titlefn.ejs')({item:{title:'推荐微头条',link:'javascript:',link_title:'更多头条'}})%>
+			<ul class="wtt">
+				<% var wttlist = [
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						modify:true,
+						follow:true,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:true
+					},
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						follow:true,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:false
+					},
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						follow:false,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:false
+					}
+				]%>
+				
+				<% wttlist.forEach(function(lis){%>
+					<%=require('@layouts/wtt.ejs')({lis:lis,isBtn:true})%>
+				<%})%>
+			</ul>
+		</div>
+        <div class="schoolnews">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'推荐活动',link:'javascript:',link_title:'更多活动'}})%>
+	        <ul>
+				<% var list=[
+					{
+						title:'揭秘全球领先的新加坡教育优势，高校规划国际教育孩子升学之路',
+						link:'javascript:',
+						img:'https://www.ieduchina.com/uploadfile/activity/202107/1626333696.jpg',
+						label:['直播'],
+						time:'2021.07.30 周五'
+					},
+					{
+						title:'抓住7月份的尾巴，再次热血“斐”腾！',
+						link:'javascript:',
+						img:'https://www.ieduchina.com/uploadfile/activity/202107/1627036593.jpg',
+						label:['国际学校活动'],
+						time:'2021.07.31 周六'
+					},
+					{
+						title:'中考结束，是时候来北京爱迪国际学校探校啦！',
+						link:'javascript:',
+						img:'https://www.ieduchina.com/uploadfile/activity/202106/1625032489.png',
+						label:['国际学校活动'],
+						time:'2021.07.31 周六'
+					}
+				] %>
+				<% list.forEach(function(el){%>
+	            <li>
+	                <a href="<%=el.link%>">
+	                    <div style="background-image: url('<%= el.img%>');" class="left">
+	                    </div>
+	                    <div class="right">
+	                        <h3><%=el.title%></h3>
+	                        <p>
+								<% el.label.forEach(function(e){%>
+	                            <span><%=e%></span>
+								<%})%>
+	                        </p>
+	                        <div class="bottom">
+	                            <div class="time">
+	                                <%=el.time%>
+	                            </div>
+	                            <div class="bm">
+	                                <button>预约报名</button>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </a>
+	            </li>
+				<%})%>
+	        </ul>
+	    </div>
+        <div class="dk">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'大咖说择校',link:'javascript:',link_title:'更多视频'}})%>
+	        <ul>
+				<% var video=[
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					}
+				]%>
+				<% video.forEach(function(el){%>
+	            <li>
+	                <a href="<%el.link%>">
+	                    <div style="background-image: url('<%= el.img %>');" class="video-img">
+	                        <div class="video-title">
+	                            <div class="hf">查看回放</div>
+	                            <div><%=el.time%></div>
+	                        </div>
+	                    </div>
+	                    <p><%=el.desc%></p>
+	                </a>
+	            </li>
+				<%})%>
+	        </ul>
+	    </div>
 	</section>
     <%= require('@layouts/footer.ejs')({footer:true})%>
 </body>

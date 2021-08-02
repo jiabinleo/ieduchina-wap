@@ -104,46 +104,7 @@
 					]%>
 					
 					<% wttlist.forEach(function(lis){%>
-					<li class="wtt <%=lis.img.length==1?'one':''%>">
-						<div class="user">
-							<a href="<%=lis.userlink%>">
-								<img src="<%=lis.userimg%>" >
-							</a>
-							<div class="name">
-								<h2><%=lis.user%></h2>
-                                <p><%=lis.time%></p>
-							</div>
-							<div class="operation">
-								<div class="men">
-									<p class="top"></i>编辑</p>
-                                    <%if(lis.istop){%>
-                                        <p class="istop">取消顶置</p>
-                                    <%}else{%>
-                                        <p class="istop">顶置</p>
-                                    <%}%>
-									<p class="del">删除</p>
-								</div>
-							</div>
-						</div>
-						<div class="lis">
-							<div class="text">
-								<a href="<%=lis.link%>">
-									<h3><%=lis.title%></h3>
-								</a>
-							</div>
-							<div class="images">
-								<%lis.img.forEach((el,index)=>{%>
-								<%if(index<3){%>
-								<div class="img" style="background-image: url(<%=el%>);"></div>
-								<%}%>
-								<%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
-								<div class="mask"><%=`${lis.img.length-3}+`%></div>
-								<%}%>
-								<%})%>
-							</div>
-							<%= require('@layouts/ysp.ejs')({lis:lis})%>
-						</div>
-					</li>
+                        <%=require('@layouts/wtt.ejs')({lis:lis,isBtn:false})%>
 					<%})%>
 				</ul>
 				<ul class="wz">
@@ -394,46 +355,7 @@
                                 </div>
                             </li>
                         <%}else if(lis.type=="wtt"){%>
-                            <li class="wtt <%=lis.img.length==1?'one':''%>">
-                                <div class="user">
-                                    <a href="<%=lis.userlink%>">
-                                        <img src="<%=lis.userimg%>" >
-                                    </a>
-                                    <div class="name">
-                                        <h2><%=lis.user%></h2>
-                                        <p><%=lis.time%></p>
-                                    </div>
-                                    <div class="operation">
-                                        <div class="men">
-                                            <p class="top"></i>编辑</p>
-                                            <%if(lis.istop){%>
-                                                <p class="istop">取消顶置</p>
-                                            <%}else{%>
-                                                <p class="istop">顶置</p>
-                                            <%}%>
-                                            <p class="del">删除</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="lis">
-                                    <div class="text">
-                                        <a href="<%=lis.link%>">
-                                            <h3><%=lis.title%></h3>
-                                        </a>
-                                    </div>
-                                    <div class="images">
-                                        <%lis.img.forEach((el,index)=>{%>
-                                        <%if(index<3){%>
-                                        <div class="img" style="background-image: url(<%=el%>);"></div>
-                                        <%}%>
-                                        <%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
-                                        <div class="mask"><%=`${lis.img.length-3}+`%></div>
-                                        <%}%>
-                                        <%})%>
-                                    </div>
-                                    <%= require('@layouts/ysp.ejs')({lis:lis})%>
-                                </div>
-                            </li>
+                            <%=require('@layouts/wtt.ejs')({lis:lis,isBtn:false})%>
                         <%}%>
 					<%})%>
 				</ul>

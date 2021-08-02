@@ -1,39 +1,3 @@
-.titlefn {
-  padding: 0.59733333rem 0.59733333rem 0 0.59733333rem;
-}
-.titlefn .title {
-  display: flex;
-  justify-content: space-between;
-  line-height: 0.98133333rem;
-}
-.titlefn .title h2 {
-  position: relative;
-  font-size: 0.68266667rem;
-  height: 0.896rem;
-  font-family: Microsoft YaHei;
-  font-weight: bold;
-  color: #171717;
-}
-.titlefn .title h2::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  right: 0;
-  z-index: -1;
-  height: 0.384rem;
-  background-color: rgba(51, 108, 255, 0.76);
-  border-radius: 0.10666667rem;
-  opacity: 0.76;
-}
-.titlefn .title span {
-  display: block;
-  font-size: 0.512rem;
-  color: #666666;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #171717;
-}
 html,
 body {
   width: 100%;
@@ -140,39 +104,6 @@ body {
 .section .todaynews {
   padding: 0.59733333rem 0.59733333rem 0 0.59733333rem;
 }
-.section .todaynews .title {
-  display: flex;
-  justify-content: space-between;
-  line-height: 0.98133333rem;
-}
-.section .todaynews .title h2 {
-  position: relative;
-  font-size: 0.68266667rem;
-  height: 0.896rem;
-  font-family: Microsoft YaHei;
-  font-weight: bold;
-  color: #171717;
-}
-.section .todaynews .title h2::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  right: 0;
-  z-index: -1;
-  height: 0.384rem;
-  background-color: rgba(51, 108, 255, 0.76);
-  border-radius: 0.10666667rem;
-  opacity: 0.76;
-}
-.section .todaynews .title span {
-  display: block;
-  font-size: 0.512rem;
-  color: #666666;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #171717;
-}
 .section .todaynews ul {
   counter-reset: item;
 }
@@ -248,183 +179,11 @@ body {
 .section .index-wtt {
   padding: 0.59733333rem 0.59733333rem 0 0.59733333rem;
 }
-.section .index-wtt .title {
-  display: flex;
-  justify-content: space-between;
-  line-height: 0.98133333rem;
-}
-.section .index-wtt .title h2 {
-  position: relative;
-  font-size: 0.68266667rem;
-  height: 0.896rem;
-  font-family: Microsoft YaHei;
-  font-weight: bold;
-  color: #171717;
-}
-.section .index-wtt .title h2::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  right: 0;
-  z-index: -1;
-  height: 0.384rem;
-  background-color: rgba(51, 108, 255, 0.76);
-  border-radius: 0.10666667rem;
-  opacity: 0.76;
-}
-.section .index-wtt .title span {
-  display: block;
-  font-size: 0.512rem;
-  color: #666666;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #171717;
-}
 .section .index-wtt ul.wtt {
   box-sizing: border-box;
 }
-.section .index-wtt ul.wtt li {
-  width: 100%;
-  box-sizing: border-box;
-  padding-top: 0.53333333rem;
-}
-.section .index-wtt ul.wtt li .user {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.section .index-wtt ul.wtt li .user img {
-  width: 1.06666667rem;
-  height: 1.06666667rem;
-  border-radius: 50%;
-}
-.section .index-wtt ul.wtt li .user .name {
-  height: 1.06666667rem;
-  flex: 1;
-  font-family: Microsoft YaHei;
-  padding-left: 0.384rem;
-}
-.section .index-wtt ul.wtt li .user .name h2 {
-  padding: 0;
-  font-size: 0.68266667rem;
-  font-weight: 400;
-  color: #212121;
-  line-height: 1.06666667rem;
-  text-align: left;
-}
-.section .index-wtt ul.wtt li .user .name p {
-  padding: 0;
-  font-size: 0.512rem;
-  font-weight: 300;
-  color: #171717;
-  text-align: left;
-}
-.section .index-wtt ul.wtt li .user .follow button {
-  width: 2.38933333rem;
-  height: 0.85333333rem;
-  background: #FFFFFF;
-  border: 0.04266667rem solid rgba(252, 66, 66, 0.5);
-  border-radius: 0.21333333rem;
-  font-size: 0.512rem;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #F53F3F;
-  letter-spacing: 0.08533333rem;
-}
-.section .index-wtt ul.wtt li.one .lis .images .img {
-  width: 10.41066667rem;
-  height: 10.41066667rem;
-}
-.section .index-wtt ul.wtt li .lis {
-  display: block;
-}
-.section .index-wtt ul.wtt li .lis .text {
-  padding-top: 0.42666667rem;
-}
-.section .index-wtt ul.wtt li .lis .text h3 {
-  font-size: 0.59733333rem;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  line-height: 0.768rem;
-  color: #171717;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.section .index-wtt ul.wtt li .lis .images {
-  position: relative;
-  width: 100%;
-  margin-left: 0;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-.section .index-wtt ul.wtt li .lis .images .img {
-  width: 4.65066667rem;
-  height: 4.65066667rem;
-  margin: 0.32rem 0 0 0.384rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 0.21333333rem;
-}
-.section .index-wtt ul.wtt li .lis .images .img:nth-of-type(3n + 1) {
-  margin-left: 0;
-}
-.section .index-wtt ul.wtt li .lis .images .mask {
-  width: 4.65066667rem;
-  height: 4.65066667rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-  text-align: center;
-  line-height: 4.65066667rem;
-  margin: 0.32rem 0.08533333rem 0 0;
-  font-size: 1.23733333rem;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  border-radius: 0.21333333rem;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.2);
-}
 .section .schoolnews {
   padding: 0.59733333rem 0.59733333rem 0 0.59733333rem;
-}
-.section .schoolnews .title {
-  display: flex;
-  justify-content: space-between;
-  line-height: 0.98133333rem;
-}
-.section .schoolnews .title h2 {
-  position: relative;
-  font-size: 0.68266667rem;
-  height: 0.896rem;
-  font-family: Microsoft YaHei;
-  font-weight: bold;
-  color: #171717;
-}
-.section .schoolnews .title h2::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  right: 0;
-  z-index: -1;
-  height: 0.384rem;
-  background-color: rgba(51, 108, 255, 0.76);
-  border-radius: 0.10666667rem;
-  opacity: 0.76;
-}
-.section .schoolnews .title span {
-  display: block;
-  font-size: 0.512rem;
-  color: #666666;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #171717;
 }
 .section .schoolnews ul li a {
   display: flex;
@@ -509,39 +268,6 @@ body {
 }
 .section .schooltop {
   padding: 0.59733333rem 0.59733333rem 0 0.59733333rem;
-}
-.section .schooltop .title {
-  display: flex;
-  justify-content: space-between;
-  line-height: 0.98133333rem;
-}
-.section .schooltop .title h2 {
-  position: relative;
-  font-size: 0.68266667rem;
-  height: 0.896rem;
-  font-family: Microsoft YaHei;
-  font-weight: bold;
-  color: #171717;
-}
-.section .schooltop .title h2::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  right: 0;
-  z-index: -1;
-  height: 0.384rem;
-  background-color: rgba(51, 108, 255, 0.76);
-  border-radius: 0.10666667rem;
-  opacity: 0.76;
-}
-.section .schooltop .title span {
-  display: block;
-  font-size: 0.512rem;
-  color: #666666;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #171717;
 }
 .section .schooltop ul li {
   margin-top: 0.68266667rem;
@@ -678,39 +404,6 @@ body {
 .section .dk {
   padding: 0.59733333rem 0.59733333rem 0 0.59733333rem;
 }
-.section .dk .title {
-  display: flex;
-  justify-content: space-between;
-  line-height: 0.98133333rem;
-}
-.section .dk .title h2 {
-  position: relative;
-  font-size: 0.68266667rem;
-  height: 0.896rem;
-  font-family: Microsoft YaHei;
-  font-weight: bold;
-  color: #171717;
-}
-.section .dk .title h2::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  right: 0;
-  z-index: -1;
-  height: 0.384rem;
-  background-color: rgba(51, 108, 255, 0.76);
-  border-radius: 0.10666667rem;
-  opacity: 0.76;
-}
-.section .dk .title span {
-  display: block;
-  font-size: 0.512rem;
-  color: #666666;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #171717;
-}
 .section .dk ul {
   display: flex;
   justify-content: space-between;
@@ -779,39 +472,6 @@ body {
 .section .resources {
   background-color: #f5f5f5;
   padding: 0.59733333rem 0.59733333rem 0 0.59733333rem;
-}
-.section .resources .title {
-  display: flex;
-  justify-content: space-between;
-  line-height: 0.98133333rem;
-}
-.section .resources .title h2 {
-  position: relative;
-  font-size: 0.68266667rem;
-  height: 0.896rem;
-  font-family: Microsoft YaHei;
-  font-weight: bold;
-  color: #171717;
-}
-.section .resources .title h2::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  right: 0;
-  z-index: -1;
-  height: 0.384rem;
-  background-color: rgba(51, 108, 255, 0.76);
-  border-radius: 0.10666667rem;
-  opacity: 0.76;
-}
-.section .resources .title span {
-  display: block;
-  font-size: 0.512rem;
-  color: #666666;
-  font-family: Microsoft YaHei;
-  font-weight: 400;
-  color: #171717;
 }
 .section .resources .swiper-resources {
   padding: 0.68266667rem 0;
