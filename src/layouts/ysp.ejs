@@ -2,7 +2,7 @@
 <div class="ysp-tool">
     <div class="left">
         <a><%=lis.read||0%> 阅读</a>
-        <a><%=lis.pl||0%> 评论</a>
+        <a href="./detail.html#pl"><%=lis.pl||0%> 评论</a>
         <%if(typeof lis.collection != 'undefined'){%>
         <a class="<%=lis.collection?'collection':'nocollection'%>"><i></i>收藏</a>
         <%}%>

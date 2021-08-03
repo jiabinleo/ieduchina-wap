@@ -1,0 +1,223 @@
+.section .w-detail {
+  padding: 2.56rem 0.512rem 0rem;
+}
+.section .w-detail .w-header {
+  height: 1.92rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  line-height: 2.688rem;
+  justify-content: space-between;
+}
+.section .w-detail .w-header a {
+  display: flex;
+  justify-content: space-between;
+}
+.section .w-detail .w-header a img {
+  width: 1.55733333rem;
+  height: 1.55733333rem;
+  border-radius: 50%;
+}
+.section .w-detail .w-header a .name {
+  height: 1.55733333rem;
+  flex: 1;
+  font-family: Microsoft YaHei;
+  padding-left: 0.384rem;
+}
+.section .w-detail .w-header a .name h2 {
+  padding: 0;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  color: #212121;
+  line-height: 0.98133333rem;
+  text-align: left;
+}
+.section .w-detail .w-header a .name p {
+  padding: 0;
+  font-size: 0.512rem;
+  font-weight: 300;
+  color: #171717;
+  text-align: left;
+  line-height: 1;
+}
+.section .w-detail .w-header button {
+  cursor: pointer;
+  width: 2.38933333rem;
+  height: 0.93866667rem;
+  background: #FFFFFF;
+  border: 1px solid #FC4242;
+  border-radius: 0.21333333rem;
+  margin-top: 0.26666667rem;
+  font-size: 0.55466667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #F53F3F;
+}
+.section .w-detail .w-text p {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: justify;
+  padding-bottom: 0.53333333rem;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.768rem;
+  color: #171717;
+}
+.section .w-detail ul {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.section .w-detail ul li {
+  width: 4.65066667rem;
+  height: 4.65066667rem;
+  border-radius: 0.42666667rem;
+  margin-right: 0.512rem;
+  margin-top: 0.384rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section .w-detail ul li:nth-of-type(3n) {
+  margin-right: 0;
+}
+.section .w-detail ul li.one {
+  width: 10.41066667rem;
+  height: 10.41066667rem;
+}
+.section .wtt-comment {
+  padding: 0 0.512rem 0.768rem;
+  padding-top: 2.13333333rem;
+  margin-top: -2.13333333rem;
+}
+.section .wtt-comment h2 {
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 1.00266667rem;
+  color: #1B1B1C;
+  padding-bottom: 0.42666667rem;
+}
+.section .wtt-comment .textarea textarea {
+  box-sizing: border-box;
+  padding: 0.42666667rem;
+  width: 100%;
+  height: 3.584rem;
+  resize: none;
+  background: #FCFCFC;
+  border: 0.04266667rem solid rgba(112, 112, 112, 0.5);
+  border-radius: 0.21333333rem;
+}
+.section .wtt-comment .btn {
+  text-align: right;
+  margin-top: 0.21333333rem;
+}
+.section .wtt-comment .btn button {
+  width: 4.52266667rem;
+  height: 1.23733333rem;
+  background: #336CFF;
+  border-radius: 0.93866667rem;
+  font-size: 0.768rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #FFFFFF;
+  letter-spacing: 0.08533333rem;
+  border: none;
+  outline: none;
+}
+.section .wtt-comment .common-list {
+  padding-top: 1.024rem;
+}
+.section .wtt-comment .common-list ul.istwo li:nth-of-type(n+3) {
+  display: none;
+}
+.section .wtt-comment .common-list ul.istwo li:nth-of-type(2) {
+  border-bottom: none;
+}
+.section .wtt-comment .common-list ul li {
+  padding-top: 0.53333333rem;
+  padding-bottom: 0.53333333rem;
+  border-bottom: solid 0.04266667rem rgba(112, 112, 112, 0.3);
+}
+.section .wtt-comment .common-list ul li:last-of-type {
+  border-bottom: none;
+}
+.section .wtt-comment .common-list ul li .author-msg {
+  height: 1.92rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  line-height: 2.688rem;
+  justify-content: space-between;
+}
+.section .wtt-comment .common-list ul li .author-msg a {
+  display: flex;
+  justify-content: space-between;
+}
+.section .wtt-comment .common-list ul li .author-msg a img {
+  width: 1.55733333rem;
+  height: 1.55733333rem;
+  border-radius: 50%;
+}
+.section .wtt-comment .common-list ul li .author-msg a .name {
+  height: 1.55733333rem;
+  flex: 1;
+  font-family: Microsoft YaHei;
+  padding-left: 0.384rem;
+}
+.section .wtt-comment .common-list ul li .author-msg a .name h2 {
+  padding: 0;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  color: #212121;
+  line-height: 0.98133333rem;
+  text-align: left;
+}
+.section .wtt-comment .common-list ul li .author-msg a .name p {
+  padding: 0;
+  font-size: 0.512rem;
+  font-weight: 300;
+  color: #171717;
+  text-align: left;
+  line-height: 1;
+}
+.section .wtt-comment .common-list ul li .author-msg button {
+  cursor: pointer;
+  width: 2.38933333rem;
+  height: 0.93866667rem;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 0.21333333rem;
+  margin-top: 0.26666667rem;
+  font-size: 0.55466667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #2b2b2b;
+}
+.section .wtt-comment .common-list ul li p {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: justify;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.768rem;
+  color: #171717;
+  padding-left: 0.42666667rem;
+}
+.section .wtt-comment .common-list .more {
+  text-align: center;
+}
+.section .wtt-comment .common-list .more button {
+  width: 4.94933333rem;
+  height: 1.024rem;
+  background: #FFFFFF;
+  border: 1px solid #707070;
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #212121;
+}

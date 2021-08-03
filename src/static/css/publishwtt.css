@@ -1,7 +1,10 @@
-.publish-image {
+.publish {
   padding: 2.26133333rem 0.512rem;
 }
-.publish-image .textarea {
+.publish .publish-image {
+  min-height: 19.2rem;
+}
+.publish .publish-image .textarea {
   min-height: 8.192rem;
   width: 100%;
   font-size: 0.59733333rem;
@@ -13,14 +16,14 @@
   text-align: justify;
   resize: none;
 }
-.publish-image .publish-list ul {
+.publish .publish-image .publish-list ul {
   padding: 0.42666667rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
   flex-flow: row wrap;
 }
-.publish-image .publish-list ul li {
+.publish .publish-image .publish-list ul li {
   position: relative;
   width: 4.608rem;
   height: 4.18133333rem;
@@ -32,16 +35,16 @@
   background-size: cover;
   margin-left: 0.55466667rem;
 }
-.publish-image .publish-list ul li:nth-of-type(3n+1) {
+.publish .publish-image .publish-list ul li:nth-of-type(3n+1) {
   margin-left: 0;
 }
-.publish-image .publish-list ul li:nth-of-type(n+4) {
+.publish .publish-image .publish-list ul li:nth-of-type(n+4) {
   margin-top: 0.55466667rem;
 }
-.publish-image .publish-list ul li:nth-of-type(n+10) {
+.publish .publish-image .publish-list ul li:nth-of-type(n+10) {
   display: none;
 }
-.publish-image .publish-list ul li input[type='file'] {
+.publish .publish-image .publish-list ul li input[type='file'] {
   position: absolute;
   z-index: 20;
   left: 0;
@@ -54,7 +57,7 @@
   box-sizing: border-box;
   border-radius: 0.21333333rem;
 }
-.publish-image .publish-list ul li .line {
+.publish .publish-image .publish-list ul li .line {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -66,7 +69,7 @@
   height: 100%;
   background-color: transparent;
 }
-.publish-image .publish-list ul li .line::after {
+.publish .publish-image .publish-list ul li .line::after {
   content: "";
   position: absolute;
   width: 1.344rem;
@@ -74,7 +77,7 @@
   background-color: #9f9f9f;
   border-radius: 0.064rem;
 }
-.publish-image .publish-list ul li .line::before {
+.publish .publish-image .publish-list ul li .line::before {
   content: "";
   position: absolute;
   height: 1.344rem;
@@ -82,10 +85,49 @@
   background-color: #9f9f9f;
   border-radius: 0.064rem;
 }
-.publish-image .btn {
-  text-align: center;
+.publish .publish-image .tip {
+  font-size: 0.59733333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 0.768rem;
+  color: #FF0000;
 }
-.publish-image .btn button {
+.publish .btn {
+  text-align: center;
+  padding-top: 0.42666667rem;
+}
+.publish .btn label input[type='checkbox'] {
+  display: none;
+}
+.publish .btn label input[type='checkbox']:checked + span::before {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -17.408rem -3.92533333rem;
+}
+.publish .btn label input[type='checkbox'] + span::before {
+  background-image: url(../images/iconlist.png);
+  background-repeat: no-repeat;
+  background-size: 20.416rem 9.23733333rem;
+  background-position: -17.408rem -5.99466667rem;
+}
+.publish .btn label span {
+  font-size: 0.512rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #2A2A2A;
+}
+.publish .btn label span::before {
+  content: "";
+  display: inline-block;
+  width: 0.55466667rem;
+  height: 0.55466667rem;
+  border-radius: 50%;
+  vertical-align: -0.064rem;
+  margin-right: 0.08533333rem;
+}
+.publish .btn button {
+  margin-top: 0.42666667rem;
   width: 12.01066667rem;
   height: 1.45066667rem;
   background: #336CFF;

@@ -499,7 +499,7 @@ $(function () {
 			},
 			error: function (err) {
 				// 
-				$("#photo").closest("li").before($(`<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>`))
+				$("#photo").closest("li").before($(`<li style="background-image: url(https://picsum.photos/id/444/216/196);"><input type="hidden" name="imgarr" value="https://picsum.photos/id/444/216/196"></li>`))
 			}
 		})
 	})

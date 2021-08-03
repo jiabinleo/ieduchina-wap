@@ -50,8 +50,8 @@
 			</ul>
             <%= require('@layouts/ysp.ejs')({lis:lis})%>
 		</div>
-		<div class="wtt-comment">
-			<form action="">
+		<div class="wtt-comment" id="pl">
+			<form>
 				<h2>评论</h2>
 				<div class="textarea">
 					<textarea name="" placeholder="请输入您想说的话"></textarea>
@@ -61,7 +61,76 @@
 				</div>
 			</form>
 			<div class="common-list">
-				
+				<% let common=[
+					{
+						authorimg:'https://picsum.photos/id/605/73/73',
+						authorlink:'javascript:',
+						author:'波斯的猫咪',
+						time:'2021-08-02',
+						content:'很有意义的一段视频，值得收藏！！！',
+						id:1
+					},
+					{
+						authorimg:'https://picsum.photos/id/605/73/73',
+						authorlink:'javascript:',
+						author:'波斯的猫咪',
+						time:'2021-08-02',
+						content:'很有意义的一段视频，值得收藏！！！',
+						id:2
+					},
+					{
+						authorimg:'https://picsum.photos/id/605/73/73',
+						authorlink:'javascript:',
+						author:'波斯的猫咪',
+						time:'2021-08-02',
+						content:'很有意义的一段视频，值得收藏！！！',
+						id:3
+					},
+					{
+						authorimg:'https://picsum.photos/id/605/73/73',
+						authorlink:'javascript:',
+						author:'波斯的猫咪',
+						time:'2021-08-02',
+						content:'很有意义的一段视频，值得收藏！！！',
+						id:3
+					},
+					{
+						authorimg:'https://picsum.photos/id/605/73/73',
+						authorlink:'javascript:',
+						author:'波斯的猫咪',
+						time:'2021-08-02',
+						content:'很有意义的一段视频，值得收藏！！！',
+						id:3
+					},
+					{
+						authorimg:'https://picsum.photos/id/605/73/73',
+						authorlink:'javascript:',
+						author:'波斯的猫咪',
+						time:'2021-08-02',
+						content:'很有意义的一段视频，值得收藏！！！',
+						id:3
+					}
+				]%>
+				<ul class="istwo">
+					<% common.forEach((el,index) => {%>
+						<li>
+							<div class="author-msg">
+								<a href="<%=el.authorlink%>">
+									<img src="<%=el.authorimg%>" alt="<%=el.author%>">
+									<div class="name">
+										<h2><%=el.author%></h2>
+										<p><%=el.time%></p>
+									</div>
+								</a>
+								<button type="button">X</button>
+							</div>
+							<p><%=el.content%></p>
+						</li>
+					<%});%>
+				</ul>
+				<div class="more">
+					<button>更多评论</button>
+				</div>
 			</div>
 		</div>
         <div class="index-wtt">

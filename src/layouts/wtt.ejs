@@ -18,16 +18,18 @@
                 <h3><%=lis.title%></h3>
             </a>
         </div>
-        <div class="images">
-            <%lis.img.forEach((el,index)=>{%>
-            <%if(index<3){%>
-            <div class="img" style="background-image: url(<%=el%>);"></div>
-            <%}%>
-            <%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
-            <div class="mask"><%=`${lis.img.length-3}+`%></div>
-            <%}%>
-            <%})%>
-        </div>
+        <a href="<%=lis.link%>">
+            <div class="images">
+                <%lis.img.forEach((el,index)=>{%>
+                    <%if(index<3){%>
+                        <div class="img" style="background-image: url(<%=el%>);"></div>
+                    <%}%>
+                    <%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
+                        <div class="mask"><%=`${lis.img.length-3}+`%></div>
+                    <%}%>
+                <%})%>
+            </div>
+        </a>
         <%= require('@layouts/ysp.ejs')({lis:lis})%>
     </div>
 </li>
@@ -54,16 +56,18 @@
                 <h3><%=lis.title%></h3>
             </a>
         </div>
-        <div class="images">
-            <%lis.img.forEach((el,index)=>{%>
-            <%if(index<3){%>
-            <div class="img" style="background-image: url(<%=el%>);"></div>
-            <%}%>
-            <%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
-            <div class="mask"><%=`${lis.img.length-3}+`%></div>
-            <%}%>
-            <%})%>
-        </div>
+        <a href="<%=lis.link%>">
+            <div class="images">
+                <%lis.img.forEach((el,index)=>{%>
+                <%if(index<3){%>
+                <div class="img" style="background-image: url(<%=el%>);"></div>
+                <%}%>
+                <%if((lis.img.length>3)&&(index==lis.img.length-1)){%>
+                <div class="mask"><%=`${lis.img.length-3}+`%></div>
+                <%}%>
+                <%})%>
+            </div>
+        </a>
         <%= require('@layouts/ysp.ejs')({lis:lis})%>
     </div>
 </li>

@@ -7,17 +7,11 @@
         <h2>发布微头条</h2>
     </header>
     <section class="publish">
+		<form>
         <div class="publish-image">
-			<textarea class="textarea" name="" id="" cols="30" rows="10" placeholder="记录美好的心情，和大家一起分享吧~"></textarea>
+			<textarea class="textarea" name="content" id="" cols="30" rows="10" placeholder="记录美好的心情，和大家一起分享吧~"></textarea>
 			<div class="publish-list">
 				<ul>
-					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
-					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
-					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
-					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
-					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
-					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
-					<li style="background-image: url(https://picsum.photos/id/444/216/196);"></li>
 					<!-- <li style="background-image: url(https://picsum.photos/id/444/216/196);"></li> -->
 					<li>
 						<input type="file" id="photo" name="photo">
@@ -25,10 +19,16 @@
 					</li>
 				</ul>
 			</div>
-			<div class="btn">
-				<button>发布</button>
-			</div>
+			<p class="tip">温馨提醒：可发布视频或者图片（最多9张）</p>
 		</div>
+		<div class="btn">
+			<label>
+				<input type="checkbox" name="cgx">
+				<span>保存到草稿箱</span>
+			</label>
+			<button class="submit">发布</button>
+		</div>
+	</form>
     </section>
 <%= require('@layouts/footer.ejs')({footer:false})%>
 </body>
