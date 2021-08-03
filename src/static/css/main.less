@@ -18,3 +18,68 @@
 @import 'titlefn.less';
 @import 'wtt.less';
 @import 'ieduaccount.less';
+
+
+
+@rem:750/16rem;
+.appointment{
+    ul{
+        display: flex;
+        li{
+            width: 14.28%;
+            height: 30/@rem;
+            font-size: 32/@rem;
+            text-align: center;
+            line-height: 30/@rem;
+            font-family: PingFang SC;
+            font-weight: bold;
+            color: #B7B7B7;
+        }
+        &.datelist{
+            flex-wrap: wrap;
+            padding: 45/@rem 0;
+            li{
+                height: 90/@rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span{
+                    display: inline-block;
+                    border-radius: 50%;
+                    width: 56/@rem;
+                    height: 56/@rem;
+                    line-height: 56/@rem;
+                }
+                &.finished{
+                    span{
+                        background-color: #AEB1B0;
+                        color: white;
+                    }
+                }
+                &.thisdate{
+                    span{
+                        position: relative;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            bottom: -18/@rem;
+                            z-index: 10;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            width: 10/@rem;
+                            height: 10/@rem;
+                            border-radius: 50%;
+                            background-color: #6FB5F0;
+                        }
+                    }
+                }
+                &.waitfor{
+                    span{
+                        background-color: #FF7A33;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

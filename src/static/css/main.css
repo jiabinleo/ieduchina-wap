@@ -3728,3 +3728,56 @@ li.wttlist .lis .images .mask {
   height: 4.736rem;
   margin-top: 0.42666667rem;
 }
+.appointment ul {
+  display: flex;
+}
+.appointment ul li {
+  width: 14.28%;
+  height: 30/750/16rem;
+  font-size: 32/750/16rem;
+  text-align: center;
+  line-height: 30/750/16rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #B7B7B7;
+}
+.appointment ul.datelist {
+  flex-wrap: wrap;
+  padding: 45/750/16rem 0;
+}
+.appointment ul.datelist li {
+  height: 90/750/16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.appointment ul.datelist li span {
+  display: inline-block;
+  border-radius: 50%;
+  width: 56/750/16rem;
+  height: 56/750/16rem;
+  line-height: 56/750/16rem;
+}
+.appointment ul.datelist li.finished span {
+  background-color: #AEB1B0;
+  color: white;
+}
+.appointment ul.datelist li.thisdate span {
+  position: relative;
+}
+.appointment ul.datelist li.thisdate span::after {
+  content: "";
+  position: absolute;
+  bottom: -18/750/16rem;
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10/750/16rem;
+  height: 10/750/16rem;
+  border-radius: 50%;
+  background-color: #6FB5F0;
+}
+.appointment ul.datelist li.waitfor span {
+  background-color: #FF7A33;
+  color: white;
+}

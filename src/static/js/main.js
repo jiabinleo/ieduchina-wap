@@ -479,7 +479,7 @@ $(function () {
 	})
 
 	
-
+	// 发布微头条 上传图片
 	$("#photo").change(()=>{
 		var formData = new FormData();
 		// let infro1 = {"abc": "abc",}  //上传需要携带的参数
@@ -503,4 +503,48 @@ $(function () {
 			}
 		})
 	})
+
+	// appointment
+	//获取日历	
+	if($(".datelist").length){
+		var finished = [7,9,10,12,13,14,15,17];
+		var waitfor = [19,21,22,29];
+		
+		function getCountDays() {
+			var curDate = new Date();
+			var curMonth = curDate.getMonth()+2;
+			curDate.setMonth(curMonth + 1);
+			curDate.setDate(0);
+			return curDate.getDate();
+		}
+		var day=getCountDays();
+		var first = (new Date().getFullYear())+"-"+(new Date().getMonth()+1)+"-"+'1';
+		var firstweek =  new Date(first).getDay()+1;
+		var date = new Date().getDate() 
+		function getEvryDay(){
+			var dayArry=[];
+			for (var s = 1; s < firstweek; s++) {
+				dayArry.push("");
+			}
+			for (var k = 1; k <= day; k++) {
+				dayArry.push(k);
+			}
+		return dayArry;
+		};
+		var evryday= getEvryDay();
+		$(".datelist").empty();
+		for(var i=0;i<evryday.length;i++){
+			var thisclass = ""
+			if(finished.indexOf(evryday[i])!=-1){
+				thisclass+=" finished"
+			}
+			if(waitfor.indexOf(evryday[i])!=-1){
+				thisclass+=" waitfor"
+			}
+			if(evryday[i]== date){
+				thisclass+=" thisdate"
+			}
+			$(".datelist").append(`<li class='${$.trim(thisclass)}'><span>${evryday[i]}</span></li>`)			
+		}
+	}
 })
