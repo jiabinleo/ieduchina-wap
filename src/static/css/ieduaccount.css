@@ -1,0 +1,52 @@
+.personal {
+  font-family: Microsoft YaHei;
+  padding-top: 2.90133333rem;
+}
+.personal ul {
+  padding: 0 0.512rem;
+}
+.personal ul li {
+  min-height: 1.96266667rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.personal ul li:nth-of-type(n+2) {
+  border-bottom: solid 0.04266667rem rgba(112, 112, 112, 0.3);
+  align-items: center;
+}
+.personal ul li:last-of-type {
+  border-bottom: none;
+}
+.personal ul li span {
+  font-size: 0.512rem;
+  font-weight: bold;
+  color: #2C2B2B;
+}
+.personal ul li .image {
+  width: 2.98666667rem;
+  height: 2.98666667rem;
+  border-radius: 0.10666667rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.personal ul li p {
+  font-size: 0.512rem;
+  font-weight: 400;
+  color: #2C2B2B;
+}
+.personal ul li.morelink {
+  padding: 0.42666667rem 0;
+  display: block;
+  text-align: justify;
+}
+.personal ul li.morelink p {
+  padding-top: 0.42666667rem;
+  line-height: 0.93866667rem;
+}
+.personal ul li.morelink .image {
+  width: 7.82933333rem;
+  height: 4.736rem;
+  margin-top: 0.42666667rem;
+}
