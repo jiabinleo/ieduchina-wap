@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%= require('@layouts/head.ejs')() %>
+<body>
+    <header class="headernew">
+        <a class="back"></a>
+        <h2>国际教育号-企业</h2>
+    </header>
+    <section class="personal">
+        <%let msg=[
+        {
+            name:'国际教育号头像',
+            type:'img',
+            value:'https://picsum.photos/id/73/140/140'
+        },
+        {
+            name:'国际教育号名称',
+            value:'波斯的猫咪'
+        },
+        {
+            name:'国际教育号简介',
+            value:'愿意分享最真实的感悟最珍贵的体会，并坚信这是共同进步的前提，把“付出”作为习惯，而不是只关注自己的收获。',
+            morelink:true
+        },
+        {
+            name:'行业领域',
+            value:'国际教育'
+        },
+        {
+            name:'国家地区',
+            value:'中国地区'
+        },
+        {
+            name:'地址',
+            value:'深圳市南山区'
+        },
+        {
+            name:'运营者姓名',
+            value:'邹云霞'
+        },
+        {
+            name:'护照号码',
+            value:'44168788855252200'
+        },
+        {
+            name:'单位名称',
+            value:'深圳爱读教育咨询有限公司'
+        },
+        {
+            name:'组织机构代码证',
+            value:'https://picsum.photos/id/724/367/222',
+            type:'img',
+            morelink:true
+        },
+        {
+            name:'护照',
+            value:'https://picsum.photos/id/724/367/222',
+            type:'img',
+            morelink:true
+        }
+        ]%>
+		<ul>
+            <%msg.forEach(function(item){%>
+                <li class="<%=item.morelink?'morelink':''%>">
+                    <span><%=item.name%></span>
+                    <%if(item.type=="img"){%>
+                    <div class="image" style="background-image: url(<%=item.value%>);"></div>
+                    <%}else{%>
+                    <p><%=item.value%></p>
+                    <%}%>
+                </li>
+            <%})%>
+        </ul>
+    </section>
+<%= require('@layouts/footer.ejs')({footer:false})%>
+</body>
+
+</html>

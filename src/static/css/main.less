@@ -17,3 +17,58 @@
 @import 'ysp.less';
 @import 'titlefn.less';
 @import 'wtt.less';
+@import 'ieduaccount.less';
+
+@rem:750/16rem;
+.personal{
+    font-family: Microsoft YaHei;
+    padding-top: (136/@rem);
+    ul{
+        padding: 0 (24/@rem);
+        li{
+            min-height: (92/@rem);
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            &:nth-of-type(n+2){
+                border-bottom: solid (2/@rem) rgba(112, 112, 112, 0.3);
+                align-items: center;
+            }
+            &:last-of-type{
+                border-bottom: none;
+            }
+            span{
+                font-size: (24/@rem);
+                font-weight: bold;
+                color: #2C2B2B;
+            }
+            .image{
+                width: (140/@rem);
+                height: (140/@rem);
+                border-radius: (5/@rem);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            p{
+                font-size: (24/@rem);
+                font-weight: 400;
+                color: #2C2B2B;
+            }
+            &.morelink{
+                padding: (20/@rem) 0;
+                display: block;
+                text-align: justify;
+                p{
+                    padding-top: (20/@rem);
+                    line-height: (44/@rem);
+                }
+                .image{
+                    width: (367/@rem);
+                    height: (222/@rem);
+                    margin-top: (20/@rem);
+                }
+            }
+        }
+    }
+}
