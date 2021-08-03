@@ -2109,7 +2109,7 @@ body {
   background-image: url(../images/iconmenu.png);
   background-repeat: no-repeat;
   background-size: 15.95733333rem 11.2rem;
-  background-position: -1.51466667rem -1.216rem;
+  background-position: -8.87466667rem -5.97333333rem;
 }
 .section .personal-center-menu ul li:nth-of-type(2) i {
   background-image: url(../images/iconmenu.png);
@@ -2121,13 +2121,13 @@ body {
   background-image: url(../images/iconmenu.png);
   background-repeat: no-repeat;
   background-size: 15.95733333rem 11.2rem;
-  background-position: -8.78933333rem -1.216rem;
+  background-position: -5.12rem -3.47733333rem;
 }
 .section .personal-center-menu ul li:nth-of-type(4) i {
   background-image: url(../images/iconmenu.png);
   background-repeat: no-repeat;
   background-size: 15.95733333rem 11.2rem;
-  background-position: -12.20266667rem -1.216rem;
+  background-position: -1.51466667rem -1.216rem;
 }
 .section .personal-center-menu ul li:nth-of-type(5) i {
   background-image: url(../images/iconmenu.png);
@@ -2139,19 +2139,7 @@ body {
   background-image: url(../images/iconmenu.png);
   background-repeat: no-repeat;
   background-size: 15.95733333rem 11.2rem;
-  background-position: -5.07733333rem -3.37066667rem;
-}
-.section .personal-center-menu ul li:nth-of-type(7) i {
-  background-image: url(../images/iconmenu.png);
-  background-repeat: no-repeat;
-  background-size: 15.95733333rem 11.2rem;
-  background-position: -8.81066667rem -3.37066667rem;
-}
-.section .personal-center-menu ul li:nth-of-type(8) i {
-  background-image: url(../images/iconmenu.png);
-  background-repeat: no-repeat;
-  background-size: 15.95733333rem 11.2rem;
-  background-position: -12.224rem -3.37066667rem;
+  background-position: -12.24533333rem -3.328rem;
 }
 .section .publishwtt {
   padding-top: 4.544rem;
