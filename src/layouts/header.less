@@ -1,0 +1,179 @@
+@rem: 750/16rem;
+
+.headernav {
+    position: relative;
+    width: 100%;
+
+    .header {
+        position: relative;
+        left: 50%;
+        top: 0;
+		display: flex;
+		justify-content: space-between;
+        transform: translate(-50%);
+        z-index: 1000;
+        height: (90/@rem);
+        width: 100%;
+        max-width: 750px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 (30/@rem);
+        background-color: #ffffff;
+        border-bottom: rgba(180, 180, 180, 0.5) solid (2/@rem);
+		line-height: (90/@rem);
+        div {
+            line-height: (90/@rem);
+            &.left {
+				flex: 2;
+				text-align: left;
+				img{
+					width: (48/@rem);
+				}
+            }
+        }
+		a{
+			&.right {
+				flex: 0.8;
+				text-align: right;
+				img{
+					width: (48/@rem);
+					border-radius: 50%;
+				}
+            }
+			&.search{
+				flex: 1.2;
+				text-align: right;
+				
+				img{
+					width: (40/@rem);
+				}
+			}
+		}
+
+        h1 {
+			flex: 4;
+			text-align: center;
+            img {
+                height: (40/@rem);
+            }
+        }
+    }
+
+    .topmenu {
+        height: (84/@rem);
+        background-color: #035297;
+        margin-bottom: (-2/@rem);
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            line-height: (82/@rem);
+
+            li {
+                font-size: (28/@rem);
+                font-family: PingFang SC;
+                font-weight: 500;
+
+                a {
+                    color: #FFFFFF;
+                }
+
+                &.active {
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        left: 50%;
+                        bottom: (10/@rem);
+                        transform: translateX(-50%);
+                        content: "";
+                        width: (70/@rem);
+                        height: (6/@rem);
+                        background-color: #ffffff;
+                        border-radius: (3/@rem);
+                    }
+                }
+            }
+        }
+    }
+
+    .index-menu-wrap {
+        position: fixed;
+        left: 50%;
+        right: 0;
+        top: (90/@rem);
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 750px;
+        z-index: 3000;
+        height: 0;
+        background-color: rgba(255, 255, 255, 1);
+        overflow: hidden;
+
+        .index-menu {
+            overflow-y: auto;
+            max-height: 100vh;
+
+            h2 {
+                font-size: (32/@rem);
+                font-weight: bold;
+                line-height: (54/@rem);
+                color: #000000;
+                padding: (20/@rem) 0 0 (28/@rem);
+            }
+
+            .title {
+				font-size: (32/@rem);
+				font-family: Microsoft YaHei;
+				color: #171717;
+                position: relative;
+                height: (80/@rem);
+                width: 100%;
+                font-weight: bold;
+                line-height: (80/@rem);
+                text-align: center;
+                border-bottom: rgba(180, 180, 180, 0.5) solid (2/@rem);
+
+                .close-menu {
+                    position: absolute;
+                    right: (28/@rem);
+                    top: (25/@rem);
+                    width: (30/@rem);
+                    height: (30/@rem);
+                    background-image: url(../images/close.png);
+                    background-size: 100% 100%;
+                }
+            }
+
+            ul {
+                overflow: hidden;
+                padding-bottom: (59/@rem);
+                padding-left: (28/@rem);
+
+                &:last-of-type {
+                    padding-bottom: (100/@rem);
+                }
+
+                li {
+                    margin-right: (39/@rem);
+                    margin-top: (24/@rem);
+                    float: left;
+                    width: (200/@rem);
+                    height: (56/@rem);
+                    font-size: (28/@rem);
+                    font-weight: 400;
+                    color: #000000;
+                    border-radius: (10/@rem);
+                    border: (2/@rem) solid rgba(0, 0, 0, 0.5);
+                    text-align: center;
+                    line-height: (56/@rem);
+
+                    a {
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+}

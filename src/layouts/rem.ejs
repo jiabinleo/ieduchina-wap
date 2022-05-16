@@ -1,0 +1,12 @@
+<script>
+    (function () {
+        var width = document.documentElement.clientWidth;
+        var style = document.createElement("style");
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+        } else {
+            style.innerHTML = "html{font-size: " + (750 / 16) + "px !important;width:750px;margin:0 auto;}";
+        }
+        document.head.appendChild(style);
+    })();
+</script>

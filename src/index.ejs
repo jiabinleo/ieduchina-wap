@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%= require('@layouts/head.ejs')({links:['main']}) %>
+<%let time =Number(new Date().getTime().toString().slice(7))%>
+<body>
+	<%= require('@layouts/header.ejs')({index:0,adtop:true})%>
+	<section class="section">
+	    <div class="banner">
+	        <div class="banner-bg"></div>
+	        <div class="swiper-index">
+	            <div class="swiper-wrapper">
+					<%let swiper=[
+						{
+							img:'https://www.ieduchina.com/uploadfile/202107/1626334543.jpg',
+							link:'javascript:'
+						},
+						{
+							img:'https://www.ieduchina.com/uploadfile/202107/1627294365.jpg',
+							link:'javascript:'
+						},
+						{
+							img:'https://www.ieduchina.com/uploadfile/202107/1627467730.jpg',
+							link:'javascript:'
+						}
+					]%>
+	                <%swiper.forEach((el)=>{%>
+					<div class="swiper-slide">
+					    <a href="<%=el.link%>">
+					        <div style='background-image: url(<%=`${el.img}?t=${time}`%>)'></div>
+					    </a>
+					</div>
+					<%})%>
+	            </div>
+	            <div class="swiper-index-pagination"></div>
+	        </div>
+	    </div>
+	    <div class="menu">
+	        <div class="swiper-menu">
+	            <div class="swiper-wrapper">
+					<% var menu = [
+						{img:'./static/images/menu1.png',name:'找学校',link:'javascript:'},
+						{img:'./static/images/menu2.png',name:'测一测',link:'javascript:'},
+						{img:'./static/images/menu3.png',name:'要备考',link:'javascript:'},
+						// {img:'./static/images/menu4.png',name:'短视频',link:'javascript:'},
+						{img:'./static/images/menu5.png',name:'看学校',link:'javascript:'},
+						{img:'./static/images/menu6.png',name:'要留学',link:'javascript:'},
+						{img:'./static/images/menu7.png',name:'看直播',link:'javascript:'}
+					]%>
+					<% menu.forEach(function(el){%>
+	                <div class="swiper-slide">
+	                    <a href="<%=el.link%>">
+	                        <img src="<%=`${el.img}?t=${time}`%>" alt="">
+	                        <p><%= el.name %></p>
+	                    </a>
+	                </div>
+					<%})%>
+	            </div>
+	            <div class="swiper-menu-pagination"></div>
+	        </div>
+	    </div>
+	    <div class="todaynews todaynew">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'今日热闻',link:'javascript:',link_title:'更多热闻'}})%>
+	        <ul>
+				<% var todaynew = [
+					{
+						title:'东京奥运11金:学霸冠军的父母，都做对了这3件事',
+						img:'https://www.ieduchina.com/uploadfile/202107/f17020210729092748.jpg',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+
+					},
+					{
+						title:'俞敏洪生气了！但假“海上培训班”的背后，也有人们的真担心',
+						img:'https://www.ieduchina.com/statics/js/editor/php/upload/image/20210728/1627462678750080.jpg',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					},
+					{
+						title:'美国政府首次发布《对国际教育的新承诺》，鼓励国际学生赴美学习',
+						img:'https://www.ieduchina.com/uploadfile/202107/f45020210728160231.jpg',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					},
+					{
+						title:'内地生转轨DSE需知！1.36人争1个港八大学位！',
+						img:'https://www.ieduchina.com/uploadfile/202107/f85520210728172603.jpg',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					},
+					{
+						title:'南山中加2021级高一新生入学指南',
+						img:'https://www.ieduchina.com/uploadfile/202107/f74720210728094752.jpg',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					}
+				] %>
+				<% todaynew.forEach(function(el){ %>
+	            <li>
+	                <a href="<%=el.link %>">
+	                    <div class="list">
+	                        <div class="left">
+	                            <div class="text">
+									<p>
+										<span><%=el.title%></span>
+									</p>
+								</div>
+								<div class="possessor">
+									<i style="background-image: url('<%=el.portrait%>');"></i>
+									<p><%=el.author%></p>
+								</div>
+	                        </div>
+							<div style="background-image: url('<%=`${el.img}?t=${time}`%>')" class="right"></div>
+	                    </div>
+	                </a>
+	            </li>
+				<%})%>
+	        </ul>
+	    </div>
+		<div class="index-wtt">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'微头条',link:'javascript:',link_title:'更多头条'}})%>
+			<ul class="wtt">
+				<% var wttlist = [
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg','https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						modify:true,
+						follow:true,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:true
+					},
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						follow:true,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:false
+					},
+					{
+						img:['https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg'],
+						title:'北京致知学校开放日｜本周末走致知本周末走致知本周末走致知，听鉴教育',
+						type:'wtt',
+						time:'1小时前',
+						user:'波斯的猫咪',
+						userimg:'https://www.ieduchina.com/uploadfile/202107/f34120210727182950.jpg',
+						id:0,
+						status:'已发布',
+						follow:false,
+						link:'javascript:',
+						userlink:'javascript:',
+						collection:false
+					}
+				]%>
+				
+				<% wttlist.forEach(function(lis){%>
+					<%=require('@layouts/wtt.ejs')({lis:lis,isBtn:true})%>
+				<%})%>
+			</ul>
+		</div>
+	    <div class="schoolnews">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'校园活动',link:'javascript:',link_title:'更多活动'}})%>
+	        <ul>
+				<% var list=[
+					{
+						title:'揭秘全球领先的新加坡教育优势，高校规划国际教育孩子升学之路',
+						link:'javascript:',
+						img:'https://www.ieduchina.com/uploadfile/activity/202107/1626333696.jpg',
+						label:['直播'],
+						time:'2021.07.30 周五'
+					},
+					{
+						title:'抓住7月份的尾巴，再次热血“斐”腾！',
+						link:'javascript:',
+						img:'https://www.ieduchina.com/uploadfile/activity/202107/1627036593.jpg',
+						label:['国际学校活动'],
+						time:'2021.07.31 周六'
+					},
+					{
+						title:'中考结束，是时候来北京爱迪国际学校探校啦！',
+						link:'javascript:',
+						img:'https://www.ieduchina.com/uploadfile/activity/202106/1625032489.png',
+						label:['国际学校活动'],
+						time:'2021.07.31 周六'
+					}
+				] %>
+				<% list.forEach(function(el){%>
+	            <li>
+	                <a href="<%=el.link%>">
+	                    <div style="background-image: url('<%= el.img%>');" class="left">
+	                    </div>
+	                    <div class="right">
+	                        <h3><%=el.title%></h3>
+	                        <p>
+								<% el.label.forEach(function(e){%>
+	                            <span><%=e%></span>
+								<%})%>
+	                        </p>
+	                        <div class="bottom">
+	                            <div class="time">
+	                                <%=el.time%>
+	                            </div>
+	                            <div class="bm">
+	                                <button>预约报名</button>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </a>
+	            </li>
+				<%})%>
+	        </ul>
+	    </div>
+	    <div class="schooltop">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'名校排行榜',link:'javascript:',link_title:'更多学校'}})%>
+	        <ul id="school-list">
+				<% var school = [
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','初中','高中'],
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:'
+					},
+					{
+						name:'哈罗国际学校',
+						label:['幼儿园','小学','初中','高中'],
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:'
+					}
+				]%>
+				<% school.forEach(function(el){%>
+	            <li>
+	                <a href="<%el.link%>">
+	                    <div style="background-image: url('<%= el.img %>');" class="left">
+	                    </div>
+	                    <div class="right">
+	                        <h3><%=el.name%></h3>
+	                        <p>
+								<% el.label.forEach(function(s){%>
+								<% if(s=="幼儿园"){%>
+									<span class="y">幼儿园</span>
+								<%}else if(s=="小学"){%>
+									<span class="x">小学</span>
+								<%}else if(s=="初中"){%>
+									<span class="c">初中</span>
+								<%}else if(s=="高中"){%>
+									<span class="g">高中</span>
+								<%}%>
+								<%})%>
+	                        </p>
+	                        <div class="bottom">
+	                            <div class="bm">
+	                                <button>入学测试</button>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </a>
+	            </li>
+				<%})%>
+	        </ul>
+	        <div class="else">
+	            <a href="javascript:;">
+	                <button class="clickmore" id="clickmore">查看更多</button>
+	            </a>
+	        </div>
+	    </div>
+	    <div class="dk">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'大咖说择校',link:'javascript:',link_title:'更多视频'}})%>
+	        <ul>
+				<% var video=[
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					},
+					{
+						link:'javascript:',
+						img:'https://picsum.photos/id/695/240/160',
+						time:'2020-02-02',
+						desc:'留学欧洲高性价比之选-葡萄牙科英布拉大学留学欧洲高性价比之选-葡萄牙科英布拉大学'
+					}
+				]%>
+				<% video.forEach(function(el){%>
+	            <li>
+	                <a href="<%el.link%>">
+	                    <div style="background-image: url('<%= el.img %>');" class="video-img">
+	                        <div class="video-title">
+	                            <div class="hf">查看回放</div>
+	                            <div><%=el.time%></div>
+	                        </div>
+	                    </div>
+	                    <p><%=el.desc%></p>
+	                </a>
+	            </li>
+				<%})%>
+	        </ul>
+	    </div>
+	    <div class="todaynews">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'我要读名校',link:'javascript:',link_title:'更多内容'}})%>
+	        <ul>
+				<% var schoolm = [{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					},
+					{
+						title:'北京致知学校开放日｜本周末走进本周末走进',
+						img:'https://picsum.photos/id/695/240/160',
+						link:'javascript:',
+						portrait:'https://www.ieduchina.com/uploadfile/gzh/202105/1622010089223.jpg',
+						author:'深圳南山中加学校'
+					}
+				]%>
+				<% schoolm.forEach(function(el){%>
+	            <li>
+	                <a href="<%=el.link%>">
+	                    <div class="list">
+	                        <div class="left">
+	                            <div class="text">
+									<p><%=el.title%></p>
+								</div>
+								<div class="possessor">
+									<i style="background-image: url('<%=el.portrait%>');"></i>
+									<p><%=el.author%></p>
+								</div>
+	                        </div>
+	                        <div style="background-image: url('<%= el.img %>');" class="right">
+	                        </div>
+	                    </div>
+	                </a>
+	            </li>
+				<%})%>
+	        </ul>
+	    </div>
+	    <div class="resources">
+			<%=require('@layouts/titlefn.ejs')({item:{title:'行业资源',link:'javascript:',link_title:'更多内容'}})%>
+	        <div class="swiper-resources">
+	            <div class="swiper-wrapper">
+					<% var resource=[
+						{
+							title:'媒体宣传',
+							desc:'通过国际教育网媒体产品、新媒体矩阵、家长社群，和长期深度合作的北上广深主流媒体、教育类门户网站及当地生活论坛，为国际学校/办学团体提供媒体链式传播，达到宣传热度。',
+							img:'https://m.ieduchina.com/statics/w/img/resource_bg1.png?t=1214'
+						},
+						{
+							title:'品牌推广',
+							desc:'为学校/办学团体提供品牌提升、招生策划、内容宣传运营，包括PR软文宣传、专题报道、固定位广告、新媒体宣传、行业公关，以及创建院校专属页面，并开通发布账号自行上传招生政策和最新活动信息等服务，为学校招生宣传推荐匹配优质学生。',
+							img:'https://m.ieduchina.com/statics/w/img/resource_bg2.png?t=1214'
+						},
+						{
+							title:'会议组织',
+							desc:'为学校/办学团体提供线上论坛、直播间，以及线下教育择校展、校长论坛、机构专场、探校体验等，实现O2O闭环联动，和学校信息的多维展示，促进院校招生转化。',
+							img:'https://m.ieduchina.com/statics/w/img/resource_bg3.png?t=1214'
+						},
+						{
+							title:'学习资源',
+							desc:'为国际学校/教师提供全面的K12教学资源信息，覆盖前沿的学科教研资源、课程体系资源、学生学习资源、教学管理系统资源、学术水平评估资源、职业生涯评估资源等。',
+							img:'https://m.ieduchina.com/statics/w/img/resource_bg4.png?t=1214'
+						},
+						{
+							title:'人才资源',
+							desc:'为学校/办学团体提供国际教育行业人才资源信息，涵盖国内外主流行业人才资源平台，提供定制化人才需求方案。',
+							img:'https://m.ieduchina.com/statics/w/img/resource_bg5.png?t=1214'
+						},
+						{
+							title:'场地资源',
+							desc:'为学校/办学团体提供合适办学场地（租赁、转让、买卖）信息，促进国际化学校在中国一线城市、二线城市落地办学。',
+							img:'https://m.ieduchina.com/statics/w/img/resource_bg6.png?t=1214'
+						}
+					]%>
+					<% resource.forEach(function(el){ %>
+	                <div class="swiper-slide" style="background-image: url('<%= el.img %>');">
+	                    <h2 class="xuexi"><%=el.title%></h2>
+	                    <p><%=el.desc%></p>
+	                </div>
+					<%})%>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<%= require('@layouts/footer.ejs')({footer:true,scripts:['jquery','layer','swiper.min','c3photocrop','weui.min','main']})%>
+</body>
+</html>
