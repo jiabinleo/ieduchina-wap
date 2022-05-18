@@ -11,15 +11,16 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin=require('copy-webpack-plugin');
 console.log(process.env.NODE_ENV)
 const isdev = process.env.NODE_ENV == "development";
-const pages = ["abroad"];
-const page = pages[0];
+// const pages = ["abroad"];
+// const page = pages[0];
 const moduleConfig = {
     entry: {
-        index: `./src/js/${page}.js`,
+        abroad: `./src/js/abroad.js`,
+        schoollistinfo:`./src/js/schoollistinfo.js`
     },
     output: {
-        filename: "js/index.js?t=[contenthash:8]",
-        path: path.resolve(__dirname, page),
+        filename: "js/[name].js?t=[contenthash:8]",
+        path: path.resolve(__dirname, "dist"),
         clean: true
     },
     module: {
@@ -104,20 +105,33 @@ const moduleConfig = {
     mode: process.env.NODE_ENV,
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "css/index.css?t=[contenthash:8]"
+            filename: "css/[name].css?t=[contenthash:8]"
         }),
         new HtmlWebpackPlugin({
-            template: `./src/${page}.ejs`,
+            template: `./src/schoollistinfo.ejs`,
             hash: false,
             minify: {
                 collapseWhitespace: true, //删除空格
                 removeComments: true, // 删除注释
             },
             inject: "body",
-            filename: "index.html",
+            filename: "schoollistinfo.html",
             xhtml: true,
             showErrors: true,
-            chunks: ['index']
+            chunks: ['schoollistinfo']
+        }),
+        new HtmlWebpackPlugin({
+            template: `./src/abroad.ejs`,
+            hash: false,
+            minify: {
+                collapseWhitespace: true, //删除空格
+                removeComments: true, // 删除注释
+            },
+            inject: "body",
+            filename: "abroad.html",
+            xhtml: true,
+            showErrors: true,
+            chunks: ['abroad']
         })
         // new webpack.DefinePlugin({
         //     process.env.NODE_ENV
@@ -127,7 +141,7 @@ const moduleConfig = {
         alias: {
             '@': path.resolve(__dirname, '../src'),
             '@layouts': path.resolve(__dirname, './src/layouts'),
-            '@images': path.resolve(__dirname, `./src/images/${page}`),
+            '@images': path.resolve(__dirname, `./src/images`),
             '@data': path.resolve(__dirname, './src/data')
         }
     },
@@ -138,9 +152,10 @@ const moduleConfig = {
     devServer: {
         watchFiles: ['src/**/*'],
         static: {
-            directory: path.join(__dirname, page),
+            directory: path.join(__dirname, ".src/index.ejs"),
         },
         compress: true,
+        port:8089,
         hot: true,
         open: true,
         allowedHosts: 'all',
