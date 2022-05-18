@@ -141,7 +141,6 @@ const moduleConfig = {
             directory: path.join(__dirname, page),
         },
         compress: true,
-        port: 3001,
         hot: true,
         open: true,
         allowedHosts: 'all',
