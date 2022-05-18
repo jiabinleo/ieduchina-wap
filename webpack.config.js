@@ -11,8 +11,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin=require('copy-webpack-plugin');
 console.log(process.env.NODE_ENV)
 const isdev = process.env.NODE_ENV == "development";
-// const pages = ["abroad"];
-// const page = pages[0];
 const moduleConfig = {
     entry: {
         abroad: `./src/js/abroad.js`,
