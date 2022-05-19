@@ -15,7 +15,8 @@ const moduleConfig = {
     entry: {
         abroad: `./src/js/abroad.js`,
         // schoollistinfo:`./src/js/schoollistinfo.js`,
-        // wenzhangdetail:`./src/js/wenzhangdetail.js`
+        // wenzhangdetail:`./src/js/wenzhangdetail.js`,
+        huodongdetail:`./src/js/huodongdetail.js`
     },
     output: {
         filename: "js/[name].js?t=[contenthash:8]",
@@ -145,6 +146,19 @@ const moduleConfig = {
         //     showErrors: true,
         //     chunks: ['wenzhangdetail']
         // })
+        new HtmlWebpackPlugin({
+            template: `./src/huodongdetail.ejs`,
+            hash: false,
+            minify: {
+                collapseWhitespace: true, //删除空格
+                removeComments: true, // 删除注释
+            },
+            inject: "body",
+            filename: "huodongdetail.html",
+            xhtml: true,
+            showErrors: true,
+            chunks: ['huodongdetail']
+        })
         // new webpack.DefinePlugin({
         //     process.env.NODE_ENV
         // })
@@ -169,6 +183,7 @@ const moduleConfig = {
         compress: true,
         hot: true,
         open: true,
+        port:1234,
         allowedHosts: 'all',
         bonjour: true,
         client: {
