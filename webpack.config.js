@@ -14,7 +14,8 @@ const isdev = process.env.NODE_ENV == "development";
 const moduleConfig = {
     entry: {
         abroad: `./src/js/abroad.js`,
-        schoollistinfo:`./src/js/schoollistinfo.js`
+        schoollistinfo:`./src/js/schoollistinfo.js`,
+        wenzhangdetail:`./src/js/wenzhangdetail.js`
     },
     output: {
         filename: "js/[name].js?t=[contenthash:8]",
@@ -130,6 +131,19 @@ const moduleConfig = {
             xhtml: true,
             showErrors: true,
             chunks: ['abroad']
+        }),
+        new HtmlWebpackPlugin({
+            template: `./src/wenzhangdetail.ejs`,
+            hash: false,
+            minify: {
+                collapseWhitespace: true, //删除空格
+                removeComments: true, // 删除注释
+            },
+            inject: "body",
+            filename: "index.html",
+            xhtml: true,
+            showErrors: true,
+            chunks: ['wenzhangdetail']
         })
         // new webpack.DefinePlugin({
         //     process.env.NODE_ENV
@@ -153,7 +167,6 @@ const moduleConfig = {
             directory: path.join(__dirname, ".src/index.ejs"),
         },
         compress: true,
-        port:8089,
         hot: true,
         open: true,
         allowedHosts: 'all',
