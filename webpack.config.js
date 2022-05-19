@@ -14,8 +14,8 @@ const isdev = process.env.NODE_ENV == "development";
 const moduleConfig = {
     entry: {
         abroad: `./src/js/abroad.js`,
-        schoollistinfo:`./src/js/schoollistinfo.js`,
-        wenzhangdetail:`./src/js/wenzhangdetail.js`
+        // schoollistinfo:`./src/js/schoollistinfo.js`,
+        // wenzhangdetail:`./src/js/wenzhangdetail.js`
     },
     output: {
         filename: "js/[name].js?t=[contenthash:8]",
@@ -106,19 +106,19 @@ const moduleConfig = {
         new MiniCssExtractPlugin({
             filename: "css/[name].css?t=[contenthash:8]"
         }),
-        new HtmlWebpackPlugin({
-            template: `./src/schoollistinfo.ejs`,
-            hash: false,
-            minify: {
-                collapseWhitespace: true, //删除空格
-                removeComments: true, // 删除注释
-            },
-            inject: "body",
-            filename: "schoollistinfo.html",
-            xhtml: true,
-            showErrors: true,
-            chunks: ['schoollistinfo']
-        }),
+        // new HtmlWebpackPlugin({
+        //     template: `./src/schoollistinfo.ejs`,
+        //     hash: false,
+        //     minify: {
+        //         collapseWhitespace: true, //删除空格
+        //         removeComments: true, // 删除注释
+        //     },
+        //     inject: "body",
+        //     filename: "schoollistinfo.html",
+        //     xhtml: true,
+        //     showErrors: true,
+        //     chunks: ['schoollistinfo']
+        // }),
         new HtmlWebpackPlugin({
             template: `./src/abroad.ejs`,
             hash: false,
@@ -132,19 +132,19 @@ const moduleConfig = {
             showErrors: true,
             chunks: ['abroad']
         }),
-        new HtmlWebpackPlugin({
-            template: `./src/wenzhangdetail.ejs`,
-            hash: false,
-            minify: {
-                collapseWhitespace: true, //删除空格
-                removeComments: true, // 删除注释
-            },
-            inject: "body",
-            filename: "index.html",
-            xhtml: true,
-            showErrors: true,
-            chunks: ['wenzhangdetail']
-        })
+        // new HtmlWebpackPlugin({
+        //     template: `./src/wenzhangdetail.ejs`,
+        //     hash: false,
+        //     minify: {
+        //         collapseWhitespace: true, //删除空格
+        //         removeComments: true, // 删除注释
+        //     },
+        //     inject: "body",
+        //     filename: "index.html",
+        //     xhtml: true,
+        //     showErrors: true,
+        //     chunks: ['wenzhangdetail']
+        // })
         // new webpack.DefinePlugin({
         //     process.env.NODE_ENV
         // })
