@@ -11,13 +11,27 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin=require('copy-webpack-plugin');
 console.log(process.env.NODE_ENV)
 const isdev = process.env.NODE_ENV == "development";
+var pages = ["abroad","schoollistinfo","wenzhangdetail","huodongdetail"];
+const entry = {};
+const template=[];
+pages.forEach((page,index)=>{
+    entry[page]=`./src/js/${page}.js`,
+    template.push(new HtmlWebpackPlugin({
+        template: `./src/${page}.ejs`,
+        hash: false,
+        minify: {
+            collapseWhitespace: true,
+            removeComments: true,
+        },
+        inject: "body",
+        filename: `${page}.html`,
+        xhtml: true,
+        showErrors: true,
+        chunks: [page]
+    }),)
+})
 const moduleConfig = {
-    entry: {
-        abroad: `./src/js/abroad.js`,
-        // schoollistinfo:`./src/js/schoollistinfo.js`,
-        // wenzhangdetail:`./src/js/wenzhangdetail.js`,
-        huodongdetail:`./src/js/huodongdetail.js`
-    },
+    entry,
     output: {
         filename: "js/[name].js?t=[contenthash:8]",
         path: path.resolve(__dirname, "dist"),
@@ -103,66 +117,6 @@ const moduleConfig = {
             })]
     },
     mode: process.env.NODE_ENV,
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "css/[name].css?t=[contenthash:8]"
-        }),
-        // new HtmlWebpackPlugin({
-        //     template: `./src/schoollistinfo.ejs`,
-        //     hash: false,
-        //     minify: {
-        //         collapseWhitespace: true, //删除空格
-        //         removeComments: true, // 删除注释
-        //     },
-        //     inject: "body",
-        //     filename: "schoollistinfo.html",
-        //     xhtml: true,
-        //     showErrors: true,
-        //     chunks: ['schoollistinfo']
-        // }),
-        new HtmlWebpackPlugin({
-            template: `./src/abroad.ejs`,
-            hash: false,
-            minify: {
-                collapseWhitespace: true, //删除空格
-                removeComments: true, // 删除注释
-            },
-            inject: "body",
-            filename: "abroad.html",
-            xhtml: true,
-            showErrors: true,
-            chunks: ['abroad']
-        }),
-        // new HtmlWebpackPlugin({
-        //     template: `./src/wenzhangdetail.ejs`,
-        //     hash: false,
-        //     minify: {
-        //         collapseWhitespace: true, //删除空格
-        //         removeComments: true, // 删除注释
-        //     },
-        //     inject: "body",
-        //     filename: "index.html",
-        //     xhtml: true,
-        //     showErrors: true,
-        //     chunks: ['wenzhangdetail']
-        // })
-        new HtmlWebpackPlugin({
-            template: `./src/huodongdetail.ejs`,
-            hash: false,
-            minify: {
-                collapseWhitespace: true, //删除空格
-                removeComments: true, // 删除注释
-            },
-            inject: "body",
-            filename: "huodongdetail.html",
-            xhtml: true,
-            showErrors: true,
-            chunks: ['huodongdetail']
-        })
-        // new webpack.DefinePlugin({
-        //     process.env.NODE_ENV
-        // })
-    ],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, '../src'),
@@ -192,6 +146,10 @@ const moduleConfig = {
     },
     target: "web"
 }
+const plugin = [new MiniCssExtractPlugin({
+    filename: "css/[name].css?t=[contenthash:8]"
+})]
+moduleConfig.plugins = [...plugin,...template]
 if (isdev) {
     moduleConfig.plugins.push(new BundleAnalyzerPlugin());
     module.exports = smp.wrap(moduleConfig)
