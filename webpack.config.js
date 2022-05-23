@@ -11,7 +11,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin=require('copy-webpack-plugin');
 console.log(process.env.NODE_ENV)
 const isdev = process.env.NODE_ENV == "development";
-var pages = ["abroad","schoollistinfo","wenzhangdetail","huodongdetail"];
+var pages = ["abroad","schoollistinfo","wenzhangdetail","huodongdetail","schoollist"];
 const entry = {};
 const template=[];
 pages.forEach((page,index)=>{
