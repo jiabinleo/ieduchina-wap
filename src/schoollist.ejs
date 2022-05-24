@@ -93,7 +93,7 @@
 				<span>国际学校大全</span>
 			</h4>
 			<ul>
-				<%let list = ["",""]%>
+				<%let list = ["","",""]%>
 				<%list.forEach((el,index)=>{%>
 					<li>
 						<div class="top">
@@ -120,20 +120,22 @@
 								<a>预约探校</a>
 							</div>
 						</div>
-						<div class="bottom">
-							<a href="javascript:">
-								<%if(index){%>
-									<div class="image" style="background-image: url(https://www.ieduchina.com/uploadfile/202205/f46120220520145636.jpg);">
-								</div>	
-								<%}%>
-								<div class="text">
-									<div class="title">
-										<h4>深扒包玉刚：中国排名第一！据说马伊琍女儿就读该校！它凭什么这么牛？</h4>
+						<% if(index!=2){%>
+							<div class="bottom">
+								<a href="javascript:">
+									<%if(index){%>
+										<div class="image" style="background-image: url(https://www.ieduchina.com/uploadfile/202205/f46120220520145636.jpg);">
+									</div>	
+									<%}%>
+									<div class="text">
+										<div class="title">
+											<h4>深扒包玉刚：中国排名第一！据说马伊琍女儿就读该校！它凭什么这么牛？</h4>
+										</div>
+										<p>上海包玉刚实验学校</p>
 									</div>
-									<p>上海包玉刚实验学校</p>
-								</div>
-							</a>
-						</div>
+								</a>
+							</div>	
+						<%}%>
 					</li>
 				<%})%>
 			</ul>
