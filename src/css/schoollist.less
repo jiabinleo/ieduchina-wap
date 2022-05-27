@@ -404,29 +404,27 @@ section {
                         padding-top: (30/@rem);
                         border-top: solid rgba(221, 221, 221, .5) (2/@rem);
                         a {
-                            display: flex;
-                            justify-content: space-between;
-
-                            .image {
-                                width: (188/@rem);
-                                height: (116/@rem);
-                                border-radius: (8/@rem);
-                                margin-right: (20/@rem);
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                            }
-
                             .text {
-                                flex: 1;
                                 .title{
-                                    height: (94/@rem);
                                     h4 {
-                                        font-size: (30/@rem);
+                                        font-size: (28/@rem);
                                         font-weight: 400;
                                         color: #333333;
                                         line-height: (38/@rem);
+                                        padding-left: (26/@rem);
+                                        position: relative;
                                         .line(2);
+                                        i{
+                                            position: absolute;
+                                            left: 0;
+                                            top: (14/@rem);
+                                            display: inline-block;
+                                            width: (14/@rem);
+                                            height: (14/@rem);
+                                            border-radius: 50%;
+                                            background-color: #0770D1;
+                                            margin-right: (10/@rem);
+                                        }
                                     }
     
                                 }
