@@ -1,0 +1,1151 @@
+html,
+body {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.section {
+  width: 100%;
+  overflow: hidden;
+  font-family: PingFang SC, serif;
+}
+.section .title-link {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0.768rem;
+  width: 100%;
+  height: 1.152rem;
+  background-color: #E5E5E5;
+  margin: 0.256rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.section .title-link a {
+  display: block;
+  width: 0.72533333rem;
+  height: 1.152rem;
+  text-align: center;
+  line-height: 1.06666667rem;
+}
+.section .title-link a:first-of-type {
+  text-align: left;
+}
+.section .title-link a:nth-last-child {
+  text-align: right;
+}
+.section .title-link a img {
+  height: 0.74666667rem;
+}
+.section .title-link p {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 0.448rem;
+  line-height: 1.152rem;
+  font-weight: 400;
+  color: #035297;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section .link {
+  height: 1.216rem;
+  line-height: 1.216rem;
+  padding: 0 0.55466667rem;
+  color: #4d4c4c;
+  font-weight: 500;
+}
+.section .link a {
+  font-size: 0.512rem;
+  vertical-align: middle;
+  font-weight: 500;
+  color: #4D4C4C;
+  line-height: 0.768rem;
+}
+.section .banner {
+  width: 14.93333333rem;
+  height: 4.9rem;
+  margin: 0 auto;
+}
+.section .banner .banner-container .swiper-wrapper .swiper-slide {
+  width: 14.93333333rem;
+  height: 4.9rem;
+  border-radius: 0.21333333rem;
+  overflow: hidden;
+}
+.section .banner .banner-container .swiper-wrapper .swiper-slide .image {
+  width: 14.93333333rem;
+  height: 4.9rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section .banner .banner-container .banner-container-swiper-pagination {
+  position: absolute;
+  text-align: center;
+  bottom: 0.21333333rem;
+  z-index: 100;
+  line-height: 0.42666667rem;
+  height: 0.42666667rem;
+}
+.section .banner .banner-container .banner-container-swiper-pagination span {
+  width: 0.21333333rem;
+  height: 0.21333333rem;
+  line-height: 0.42666667rem;
+  background-color: rgba(238, 238, 238, 0.4);
+  opacity: 1;
+}
+.section .banner .banner-container .banner-container-swiper-pagination span.swiper-pagination-bullet-active {
+  width: 0.42666667rem;
+  height: 0.42666667rem;
+  vertical-align: middle;
+  background-color: #eeeeee;
+}
+.section .detail-title {
+  font-size: 0.68266667rem;
+  font-weight: 800;
+  color: #242323;
+  padding: 0.42666667rem 0.93866667rem;
+  line-height: 0.93866667rem;
+}
+.section .detail-banner {
+  position: relative;
+  width: 14.89066667rem;
+  height: 7.68rem;
+  border-radius: 0.21333333rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+.section .detail-banner.started::before {
+  position: absolute;
+  left: 0.64rem;
+  top: 0;
+  content: "姝ｅ湪鎶ュ悕";
+  width: 2.60266667rem;
+  height: 2.432rem;
+  line-height: 1.92rem;
+  background-image: url(https://m.ieduchina.com/statics/m/images/status4.png?t=1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0.59733333rem;
+  letter-spacing: -0.08533333rem;
+  text-align: center;
+  font-family: PingFang SC, serif;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.section .detail-banner.over::before {
+  position: absolute;
+  left: 0.64rem;
+  top: 0;
+  content: "娲诲姩缁撴潫";
+  width: 2.60266667rem;
+  height: 2.432rem;
+  line-height: 1.92rem;
+  background-image: url(https://m.ieduchina.com/statics/m/images/status3.png?t=1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0.59733333rem;
+  letter-spacing: -0.08533333rem;
+  text-align: center;
+  font-family: PingFang SC, serif;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.section .detail-banner p.number {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.36533333rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: right;
+  width: 100%;
+  font-size: 0.576rem;
+  font-weight: 400;
+  color: white;
+  padding: 0 0.512rem;
+  line-height: 1.36533333rem;
+}
+.section .detail-banner p.number span {
+  color: #FC6607;
+}
+.section .detail-msg {
+  padding: 0.32rem 0.384rem;
+  border-bottom: solid 0.5px rgba(0, 0, 0, 0.2);
+  margin: 0 0.512rem;
+}
+.section .detail-msg p {
+  font-size: 0.512rem;
+  font-weight: 500;
+  line-height: 0.85333333rem;
+  color: #000000;
+}
+.section .detail-msg p:first-of-type {
+  color: #0770D1;
+}
+.section .detail-form .input {
+  width: 12.8rem;
+  height: 1.23733333rem;
+  margin: 0.64rem auto 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 1.23733333rem;
+}
+.section .detail-form .input:nth-of-type(3) input {
+  width: 1.28rem;
+}
+.section .detail-form .input img {
+  width: 0.96rem;
+  height: 0.96rem;
+  margin-right: 0.64rem;
+  margin-top: 0.128rem;
+}
+.section .detail-form .input input {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex-basis: 0%;
+      -ms-flex-preferred-size: 0%;
+          flex-basis: 0%;
+  height: 1.23733333rem;
+  border: 0.04266667rem solid rgba(70, 70, 69, 0.5);
+  border-radius: 0.53333333rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0.53333333rem;
+  line-height: 1.23733333rem;
+  font-size: 0.512rem;
+}
+.section .detail-form .input input::-webkit-input-placeholder {
+  font-size: 0.512rem;
+}
+.section .detail-form .input input::-moz-placeholder {
+  font-size: 0.512rem;
+}
+.section .detail-form .input input:-ms-input-placeholder {
+  font-size: 0.512rem;
+}
+.section .detail-form .input input::-ms-input-placeholder {
+  font-size: 0.512rem;
+}
+.section .detail-form .input input::placeholder {
+  font-size: 0.512rem;
+}
+.section .detail-form .input button {
+  width: 3.84rem;
+  height: 1.23733333rem;
+  border: 0.04266667rem solid rgba(252, 102, 7, 0.5);
+  border-radius: 0.53333333rem;
+  margin-left: 0.29866667rem;
+  color: #FC6607;
+  font-size: 0.512rem;
+  background-color: white;
+  white-space: nowrap;
+}
+.section .detail-form .btn {
+  text-align: center;
+  padding-top: 0.768rem;
+}
+.section .detail-form .btn button {
+  width: 12.71466667rem;
+  height: 1.45066667rem;
+  background: #FC6607;
+  border-radius: 0.72533333rem;
+  font-size: 0.59733333rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.45066667rem;
+  border: none;
+  outline: none;
+}
+.section .detail-form p.tel {
+  font-size: 0.448rem;
+  color: #FC6607;
+  text-align: center;
+  line-height: 1.088rem;
+}
+.section .detail-form p.tel a {
+  font-weight: bold;
+  color: #FC6607;
+}
+.section h3.title {
+  border-bottom: solid 0.04266667rem #1245ab;
+}
+.section h3.title span {
+  line-height: 0.91733333rem;
+  font-size: 0.512rem;
+  font-weight: bold;
+  color: #0770D1;
+  border-bottom: solid 0.128rem #1245ab;
+  padding-right: 0.256rem;
+}
+.section .event-details {
+  padding: 0 0.512rem;
+}
+.section .event-details .bd {
+  padding: 0.85333333rem 0;
+}
+.section .event-details .bd p {
+  font-size: 0.52rem;
+  line-height: 0.62rem;
+}
+.section .event-details .bd p span {
+  font-size: 0.52rem;
+}
+.section .event-details .bd img {
+  max-width: 100%;
+}
+.section .school-introduction {
+  padding: 0 0.512rem;
+}
+.section .school-introduction .school-msg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.91733333rem 0 0.64rem;
+  border-bottom: solid 1px #B5B5B5;
+}
+.section .school-introduction .school-msg .image {
+  width: 5.48266667rem;
+  height: 3.05066667rem;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 0.576rem;
+}
+.section .school-introduction .school-msg .image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.section .school-introduction .school-msg .school-msg-text {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 200px;
+}
+.section .school-introduction .school-msg .school-msg-text h3 {
+  font-size: 0.59733333rem;
+  font-weight: 400;
+  color: #1245AB;
+}
+.section .school-introduction .school-msg .school-msg-text .target {
+  height: 1.70666667rem;
+}
+.section .school-introduction .school-msg .school-msg-text .target p {
+  font-size: 0.448rem;
+  font-weight: 400;
+  color: #333232;
+  line-height: 0.768rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.section .school-introduction .school-msg .school-msg-text .btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.section .school-introduction .school-msg .school-msg-text .btn button {
+  width: 3.41333333rem;
+  height: 0.85333333rem;
+  line-height: 0.85333333rem;
+  border: 1px solid #A0A0A0;
+  border-radius: 0.08533333rem;
+  font-size: 0.512rem;
+  margin-right: 0.64rem;
+  border: solid 1px #A0A0A0;
+  background-color: white;
+}
+.section .school-introduction .school-msg .school-msg-text .btn button:last-of-type {
+  background-color: #FC6607;
+  border: solid 1px #FC6607;
+}
+.section .school-introduction .school-msg .school-msg-text .btn button:last-of-type a {
+  color: white;
+}
+.section .school-introduction .school-msg .school-msg-text .btn button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #333232;
+}
+.section .school-introduction .school-introduction-text {
+  padding-top: 0.64rem;
+}
+.section .school-introduction .school-introduction-text p {
+  text-indent: 2em;
+  font-size: 0.448rem;
+  font-weight: 400;
+  color: #242323;
+  line-height: 0.768rem;
+  text-align: justify;
+}
+.section .hdlist {
+  width: 14.99733333rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.section .hdlist .search {
+  text-align: left;
+  width: 100%;
+  height: 1.49333333rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 3.41333333rem;
+}
+.section .hdlist .search .box {
+  overflow: hidden;
+  height: 1.70666667rem;
+  line-height: 1.70666667rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.section .hdlist .search .box label {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 0.21333333rem;
+}
+.section .hdlist .search .box label:first-of-type span {
+  padding-left: 0;
+}
+.section .hdlist .search .box label::after {
+  content: "";
+  position: absolute;
+  right: 0.42666667rem;
+  top: 0.72533333rem;
+  width: 0.29866667rem;
+  height: 0.17066667rem;
+  background-image: url(https://m.ieduchina.com/statics/m/images/arr.png);
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+.section .hdlist .search .box label select {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  padding: 0 0.128rem;
+  cursor: pointer;
+  height: 1.06666667rem;
+  vertical-align: 0;
+  font-size: 0.46933333rem;
+  font-family: Microsoft YaHei;
+  font-weight: 300;
+  color: #0770D1;
+  border: 1px solid #035297;
+  border-radius: 0.21333333rem;
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.section .hdlist .search .box label select:-internal-autofill-previewed,
+.section .hdlist .search .box label select:-internal-autofill-selected {
+  -webkit-text-fill-color: #000000;
+  -webkit-transition: background-color 5000s ease-out 0.5s;
+  transition: background-color 5000s ease-out 0.5s;
+}
+.section .hdlist .search .box label select option {
+  color: #333333;
+  text-align: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
+}
+.section .hdlist .search .box button {
+  vertical-align: 0.10666667rem;
+  padding-left: 0.32rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.section .hdlist .search .box button img {
+  width: 0.704rem;
+  height: 0.704rem;
+}
+.section .hdlist ul {
+  text-align: left;
+}
+.section .hdlist ul li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 14.99733333rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+  padding-top: 0.29866667rem;
+  background-color: white;
+  margin-top: 0.128rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.section .hdlist ul li .image {
+  width: 4.75733333rem;
+  height: 4.26666667rem;
+  border-radius: 0.21333333rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section .hdlist ul li .text {
+  padding-left: 0.384rem;
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.section .hdlist ul li .text a {
+  display: inline-block;
+  height: 1.36533333rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 0.59733333rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #242323;
+  line-height: 0.68266667rem;
+  margin-bottom: 0.34133333rem;
+  text-align: justify;
+  padding-right: 1.06666667rem;
+}
+.section .hdlist ul li .text p {
+  font-size: 0.512rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #242323;
+  line-height: 0.8rem;
+}
+.section .hdlist ul li .text p img {
+  width: 0.512rem;
+  height: 0.512rem;
+  margin-right: 0.128rem;
+  vertical-align: -0.064rem;
+}
+.section .hdlist ul li .text .link {
+  display: inline;
+}
+.section .hdlist ul li .text a button {
+  position: absolute;
+  right: 0.064rem;
+  bottom: 0.128rem;
+  width: 3.2rem;
+  background: #FC6607;
+  height: 0.98133333rem;
+  border-radius: 0.49066667rem;
+  font-size: 0.512rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+.section .hdlist ul li.over .text a button {
+  background-color: #989796;
+}
+.section .hdlist ul li.started .image {
+  position: relative;
+}
+.section .hdlist ul li.started .image::before {
+  content: "";
+  position: absolute;
+  width: 0.96rem;
+  height: 1.04533333rem;
+  z-index: 10;
+  left: 0.576rem;
+  top: 0rem;
+  font-size: 0.23466667rem;
+  white-space: nowrap;
+  letter-spacing: -0.02133333rem;
+  color: white;
+  line-height: 0.768rem;
+  background-image: url(https://m.ieduchina.com/statics/m/images/status1.png?t=1);
+  background-size: contain;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+.section .hdlist ul li.over .image {
+  position: relative;
+}
+.section .hdlist ul li.over .image::before {
+  content: "";
+  position: absolute;
+  width: 0.96rem;
+  height: 1.04533333rem;
+  z-index: 10;
+  left: 0.576rem;
+  top: 0rem;
+  font-size: 0.23466667rem;
+  white-space: nowrap;
+  letter-spacing: -0.02133333rem;
+  color: white;
+  line-height: 0.768rem;
+  background-image: url(https://m.ieduchina.com/statics/m/images/status2.png?t=1);
+  background-size: contain;
+  text-align: center;
+}
+.section .hdlist .more {
+  width: 12.90666667rem;
+  height: 1.23733333rem;
+  border: 0.04266667rem solid rgba(3, 82, 151, 0.5);
+  border-radius: 0.64rem;
+  margin: 0.46933333rem auto;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  color: #035297;
+  background-color: white;
+}
+.section .todaynews {
+  padding: 0.59733333rem 0.59733333rem 1.13066667rem 0.59733333rem;
+}
+.section .todaynews .title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 0.98133333rem;
+}
+.section .todaynews .title h2 {
+  position: relative;
+  font-size: 0.68266667rem;
+  font-weight: bold;
+  color: #333333;
+  height: 0.85333333rem;
+  padding-left: 0.53333333rem;
+}
+.section .todaynews .title h2::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 0.21333333rem;
+  height: 0.85333333rem;
+  background-color: #035297;
+  border-radius: 0.10666667rem;
+}
+.section .todaynews .title span {
+  position: relative;
+  display: block;
+  font-size: 0.512rem;
+  font-weight: 500;
+  color: #666666;
+  padding-right: 0.53333333rem;
+}
+.section .todaynews .title span::before {
+  position: absolute;
+  right: 0;
+  top: 0.23466667rem;
+  content: "";
+  width: 0.21333333rem;
+  height: 0.34133333rem;
+  color: #555555;
+  background-image: url(https://m.ieduchina.com/statics/m/images/rightarr.png?t=1214);
+  background-size: 0.21333333rem 0.34133333rem;
+  background-repeat: no-repeat;
+}
+.section .todaynews ul li .list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 0.64rem;
+}
+.section .todaynews ul li .list .left {
+  position: relative;
+  width: 9.472rem;
+  height: 3.41333333rem;
+}
+.section .todaynews ul li .list .left::before {
+  position: absolute;
+  width: 0.59733333rem;
+  height: 0.59733333rem;
+  text-align: center;
+  line-height: 0.72533333rem;
+  font-size: 0.59733333rem;
+  color: #ffffff;
+  border-radius: 0.08533333rem;
+}
+.section .todaynews ul li .list .left p {
+  width: 9.472rem;
+  font-size: 0.59733333rem;
+  font-weight: 500;
+  color: #333333;
+  line-height: 0.768rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.section .todaynews ul li .list .right {
+  width: 5.12rem;
+  height: 3.41333333rem;
+  background-size: cover;
+  background-position: center center;
+}
+.section .todaynews.todaynew {
+  padding: 1.06666667rem 0.59733333rem 0rem 0.59733333rem;
+}
+.section .todaynews.todaynew li .left {
+  border-bottom: solid 0.5px rgba(153, 153, 153, 0.5);
+}
+.section .todaynews.todaynew li .left p {
+  padding-left: 0.85333333rem;
+}
+.section .todaynews.todaynew li:nth-child(1) .left::before {
+  content: "1";
+  background-color: #FE1C31;
+}
+.section .todaynews.todaynew li:nth-child(2) .left::before {
+  content: "2";
+  background-color: #FE461C;
+}
+.section .todaynews.todaynew li:nth-child(3) .left::before {
+  content: "3";
+  background-color: #FE8C1C;
+}
+.section .todaynews.todaynew li:nth-child(4) .left::before {
+  content: "4";
+  background-color: #808080;
+}
+.section .todaynews.todaynew li:nth-child(5) .left::before {
+  content: "5";
+  background-color: #808080;
+}
+.section .schoolnews {
+  padding: 0.93866667rem 0.59733333rem 0;
+}
+.section .schoolnews .title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 0.98133333rem;
+}
+.section .schoolnews .title h2 {
+  position: relative;
+  font-size: 0.68266667rem;
+  font-weight: bold;
+  color: #333333;
+  height: 0.85333333rem;
+  padding-left: 0.53333333rem;
+}
+.section .schoolnews .title h2::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 0.21333333rem;
+  height: 0.85333333rem;
+  background-color: #035297;
+  border-radius: 0.10666667rem;
+}
+.section .schoolnews .title span {
+  position: relative;
+  display: block;
+  font-size: 0.512rem;
+  font-weight: 500;
+  color: #666666;
+  padding-right: 0.53333333rem;
+}
+.section .schoolnews .title span::before {
+  position: absolute;
+  right: 0;
+  top: 0.23466667rem;
+  content: "";
+  width: 0.21333333rem;
+  height: 0.34133333rem;
+  color: #555555;
+  background-image: url(https://m.ieduchina.com/statics/m/images/rightarr.png?t=1214);
+  background-size: 0.21333333rem 0.34133333rem;
+  background-repeat: no-repeat;
+}
+.section .schoolnews ul li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 0.68266667rem;
+}
+.section .schoolnews ul li a .left {
+  width: 6.4rem;
+  height: 4.26666667rem;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 0.21333333rem;
+}
+.section .schoolnews ul li a .right {
+  width: 7.95733333rem;
+  height: 4.26666667rem;
+  border-bottom: solid 0.5px rgba(153, 153, 153, 0.5);
+}
+.section .schoolnews ul li a .right h3 {
+  height: 1.28rem;
+  font-size: 0.59733333rem;
+  font-weight: 500;
+  line-height: 0.64rem;
+  color: #333333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.section .schoolnews ul li a .right p {
+  font-size: 0;
+  height: 1.92rem;
+}
+.section .schoolnews ul li a .right p span {
+  display: inline-block;
+  background-color: rgba(3, 82, 151, 0.1);
+  border-radius: 0.34133333rem;
+  padding: 0.17066667rem 0.46933333rem 0.128rem 0.46933333rem;
+  font-size: 0.46933333rem;
+  font-weight: 500;
+  color: #035297;
+  margin: 0.128rem 0.128rem 0 0;
+}
+.section .schoolnews ul li a .right .bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 0.85333333rem;
+}
+.section .schoolnews ul li a .right .bottom .time {
+  position: relative;
+  font-size: 0.512rem;
+  font-weight: 500;
+  color: #666666;
+  line-height: 0.98133333rem;
+  padding-left: 0.64rem;
+}
+.section .schoolnews ul li a .right .bottom .time::before {
+  position: absolute;
+  content: "";
+  background-image: url(https://m.ieduchina.com/statics/m/images/time.png?t=1214);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 0.512rem;
+  height: 0.81066667rem;
+  left: 0;
+  top: 0rem;
+}
+.section .schoolnews ul li a .right .bottom .bm button {
+  width: 2.98666667rem;
+  height: 0.85333333rem;
+  border: solid 1px #f44000;
+  border-radius: 0.42666667rem;
+  background-color: #ffffff;
+  color: #f44000;
+  line-height: 0.768rem;
+  font-size: 0.46933333rem;
+}
+.section .dk {
+  padding: 0.93866667rem 0.59733333rem 0;
+}
+.section .dk .title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 0.98133333rem;
+}
+.section .dk .title h2 {
+  position: relative;
+  font-size: 0.68266667rem;
+  font-weight: bold;
+  color: #333333;
+  height: 0.85333333rem;
+  padding-left: 0.53333333rem;
+}
+.section .dk .title h2::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 0.21333333rem;
+  height: 0.85333333rem;
+  background-color: #035297;
+  border-radius: 0.10666667rem;
+}
+.section .dk .title span {
+  font-size: 0;
+  position: relative;
+  display: block;
+  font-size: 0.512rem;
+  font-weight: 500;
+  color: #666666;
+  padding-right: 0.53333333rem;
+}
+.section .dk .title span::before {
+  position: absolute;
+  right: 0;
+  top: 0.23466667rem;
+  content: "";
+  width: 0.21333333rem;
+  height: 0.34133333rem;
+  color: #555555;
+  background-image: url(https://m.ieduchina.com/statics/m/images/rightarr.png?t=1214);
+  background-size: 0.21333333rem 0.34133333rem;
+  background-repeat: no-repeat;
+}
+.section .dk ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-top: 0.512rem;
+}
+.section .dk ul li {
+  width: 7.25333333rem;
+  height: 7.296rem;
+}
+.section .dk ul li .video-img {
+  position: relative;
+  width: 7.25333333rem;
+  height: 4.77866667rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.21333333rem;
+}
+.section .dk ul li .video-img .video-title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.85333333rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 0.32rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 0.85333333rem;
+}
+.section .dk ul li .video-img .video-title div {
+  color: #ffffff;
+  font-size: 0.46933333rem;
+}
+.section .dk ul li .video-img .video-title .hf {
+  position: relative;
+  padding-left: 0.64rem;
+}
+.section .dk ul li .video-img .video-title .hf::before {
+  position: absolute;
+  left: 0;
+  top: 0.256rem;
+  content: "";
+  width: 0.34133333rem;
+  height: 0.42666667rem;
+  background-image: url(https://m.ieduchina.com/statics/m/images/play.png?t=1214);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.section .dk ul li p {
+  padding-top: 0.34133333rem;
+  width: 100%;
+  height: 1.664rem;
+  font-size: 0.59733333rem;
+  line-height: 0.68266667rem;
+  font-weight: 500;
+  color: #333333;
+  letter-spacing: 0.02133333rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.section .dk.zthg {
+  padding-bottom: 0.42666667rem;
+}
+.section .dk.zthg ul li {
+  width: 7.25333333rem;
+  height: 5.33333333rem;
+}
+.section .dk.zthg ul li .video-img {
+  height: 3.54133333rem;
+}
+.overflow {
+  overflow: hidden;
+}
+.app_share {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1001;
+}
+.app_share .table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.app_share .tips {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(0, 0, 0, 0.6);*/
+  text-align: center;
+  display: none;
+  z-index: 9999;
+}
+.app_share .tips img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*left: 50%;
+  margin-left: -4.2666666667rem;*/
+}
+.app_share ul {
+  text-align: left;
+  height: 1.70666667rem;
+}
+.app_share .icon_wrap {
+  padding: 0.21333333rem;
+  background: #ebe6e6;
+}
+.app_share .share_content {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.app_share .share_content.show {
+  -webkit-transform: translateY(0) !important;
+  transform: translateY(0) !important;
+}
+.app_share .cancel {
+  font-size: 0.768rem;
+  background: #fff;
+  line-height: 1.70666667rem;
+  text-align: center;
+}
+.app_share .table_cell {
+  vertical-align: bottom;
+  display: table-cell;
+}
+.app_share li,
+.share-icon li {
+  display: inline-block;
+  margin-right: 0.53333333rem;
+  text-align: center;
+}
+.app_share .icon,
+.share-icon .icon {
+  width: 1.70666667rem;
+  height: 1.70666667rem;
+  vertical-align: top;
+  display: inline-block;
+  background: url(https://m.ieduchina.com/statics/m/images/sina.png) scroll no-repeat center center;
+  background-size: contain;
+}
+.app_share .icon.qzone,
+.share-icon .icon.qzone {
+  background: url(https://m.ieduchina.com/statics/m/images/qzone.png) scroll no-repeat center center;
+  background-size: contain;
+}
+.app_share p,
+.share-icon p {
+  color: #2c3e50;
+  font-size: 0.512rem;
+  padding: 0.55466667rem 0;
+}
+/* 在页面上直接显示分享图标 */
+.share-icon {
+  padding: 1.06666667rem;
+}
+
