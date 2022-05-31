@@ -771,15 +771,15 @@
             <input type="hidden" mark="mark" value="选校专家semWAP版">
             <div class="xh">
                 <label>
-                    <span><a></a>姓名</span>
-                    <input class="username" name="name" type="text" placeholder="请输入姓名">
+                    <span><a>*</a>姓名</span>
+                    <input class="username" nullmsg="请输入姓名" name="name" type="text" placeholder="请输入姓名">
                 </label>
             </div>
 
             <div class="xh">
                 <label>
-                    <span><a></a>年级</span>
-                    <select class="black" name="grade" style="color: rgb(102, 102, 102);">
+                    <span><a>*</a>年级</span>
+                    <select class="black" name="grade" nullmsg="请选择在读年级" style="color: rgb(102, 102, 102);">
                         <option value="" disabled="" selected="" style="display: none; color: rgb(0, 0, 0);">请选择在读年级</option>
                         <option value="幼儿" style="color: rgb(0, 0, 0);">幼儿</option>
                         <option value="一年级" style="color: rgb(0, 0, 0);">一年级</option>
@@ -808,7 +808,7 @@
             <div class="xh">
                 <label>
                     <span><a>*</a>电话</span>
-                    <input type="text" name="mobile" errormsg="请输入正确的家长电话" datatype="m" class="username" placeholder="请输入家长电话">
+                    <input type="text" name="mobile" nullmsg="请输入家长电话" errormsg="请输入正确的家长电话" datatype="m" class="username" placeholder="请输入家长电话">
                 </label>
             </div>
             <p class="error-tips"></p>
