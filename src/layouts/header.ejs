@@ -15,25 +15,18 @@
         </a>
     </div>
     <div class="topmenu">
+        <%let topmenu = [{"name":"首页","link":"/"},
+        {"name":"学校","link":"/schoollist.html"},
+        {"name":"亲子","link":"//m.ieduchina.com/parents/"},
+        {"name":"升学","link":"//m.ieduchina.com/topic/ruxue/"},
+        {"name":"留学","link":"//m.ieduchina.com/topic/abroad/"},
+        {"name":"资源","link":"/#ziyuan"}]%>
         <ul>
-            <li>
-                <a href="//m.ieduchina.com">首页</a>
-            </li>
-            <li class="active">
-                <a href="//schoollist.m.ieduchina.com/">学校</a>
-            </li>
-            <li>
-                <a href="//m.ieduchina.com/parents/">亲子</a>
-            </li>
-            <li>
-                <a href="//m.ieduchina.com/topic/ruxue/">升学</a>
-            </li>
-            <li>
-                <a href="//m.ieduchina.com/topic/abroad/">留学</a>
-            </li>
-            <li>
-                <a href="//m.ieduchina.com/#ziyuan">资源</a>
-            </li>
+            <%topmenu.forEach((el,index)=>{%>
+                <li<%=(index==menu)?" class=active":""%>>
+                    <a href="<%=el.link%>"><%=el.name%></a>
+                </li>    
+            <%})%>
         </ul>
     </div>
     <div class="index-menu-wrap">
@@ -42,34 +35,92 @@
                 全部频道
                 <div class="close-menu"></div>
             </div>
-            <h2>资讯</h2>
-            <ul>
-                <li><a href="//m.ieduchina.com/school/">校园资讯</a></li>
-                <li><a href="//m.ieduchina.com/parents/">家庭教育</a></li>
-                <li><a href="//m.ieduchina.com/training/">升学资讯</a></li>
-                <li><a href="//m.ieduchina.com/abroad/">留学资讯</a></li>
-                <li><a href="//m.ieduchina.com/immigration/">移民资讯</a></li>
-            </ul>
-
-            <h2>投稿</h2>
-            <ul>
-                <li><a href="//m.ieduchina.com/login.html">发布微头条</a></li>
-            </ul>
-
-            <h2>学校</h2>
-            <ul>
-                <li><a href="//schoollist.m.ieduchina.com/schlist/c2/">国际学校</a></li>
-                <li><a href="//schoollist.m.ieduchina.com/schlist/c1/">海外学校</a></li>
-            </ul>
-            <h2>活动</h2>
-            <ul>
-                <li><a href="//m.ieduchina.com/huodong/">全部活动</a></li>
-                <li><a href="//m.ieduchina.com/huodong/?type=1">开放日</a></li>
-                <li><a href="//m.ieduchina.com/huodong/?type=2">冬/夏令营</a></li>
-                <li><a href="//m.ieduchina.com/huodong/?type=3">培训</a></li>
-                <li><a href="//m.ieduchina.com/huodong/?type=4">教育展</a></li>
-                <li><a href="//m.ieduchina.com/huodong/?type=5">直播</a></li>
-            </ul>
+            <%let menu2=[
+                {
+                    "name":"资讯",
+                    "list":[
+                        {
+                            "name":"校园资讯",
+                            "link":"//m.ieduchina.com/school/"
+                        },
+                        {
+                            "name":"家庭教育",
+                            "link":"//m.ieduchina.com/parents/"
+                        },
+                        {
+                            "name":"升学资讯",
+                            "link":"//m.ieduchina.com/training/"
+                        },
+                        {
+                            "name":"留学资讯",
+                            "link":"/abroad.html"
+                        },
+                        {
+                            "name":"移民资讯",
+                            "link":"//m.ieduchina.com/immigration/"
+                        }
+                    ]
+                },
+                {
+                    "name":"投稿",
+                    "list":[
+                        {
+                            "name":"发布微头条",
+                            "link":"//m.ieduchina.com/login.html"
+                        }
+                    ]
+                },
+                {
+                    "name":"学校",
+                    "list":[
+                        {
+                            "name":"国际学校",
+                            "link":"//schoollist.m.ieduchina.com/schlist/c2/"
+                        },
+                        {
+                            "name":"海外学校",
+                            "link":"//schoollist.m.ieduchina.com/schlist/c1/"
+                        }
+                    ]
+                },
+                {
+                    "name":"活动",
+                    "list":[
+                        {
+                            "name":"全部活动",
+                            "link":"//m.ieduchina.com/huodong/"
+                        },
+                        {
+                            "name":"开放日",
+                            "link":"//m.ieduchina.com/huodong/?type=1"
+                        },
+                        {
+                            "name":"冬/夏令营",
+                            "link":"//m.ieduchina.com/huodong/?type=2"
+                        },
+                        {
+                            "name":"培训",
+                            "link":"//m.ieduchina.com/huodong/?type=3"
+                        },
+                        {
+                            "name":"教育展",
+                            "link":"//m.ieduchina.com/huodong/?type=4"
+                        },
+                        {
+                            "name":"直播",
+                            "link":"//m.ieduchina.com/huodong/?type=5"
+                        }
+                    ]
+                }
+            ]%>
+            <%menu2.forEach((el)=>{%>
+                <h2><%=el.name%></h2>
+                <ul>
+                    <%el.list&&el.list.forEach((el2)=>{%>
+                        <li><a href="<%=el2.link%>"><%=el2.name%></a></li>    
+                    <%})%>
+                </ul>
+            <%})%>
         </div>
     </div>
 </header>
