@@ -136,7 +136,7 @@ const moduleConfig = {
     devServer: {
         watchFiles: ['src/**/*'],
         static: {
-            directory: path.join(__dirname, ".src/index.ejs"),
+            directory: path.join(__dirname, "./dist/"),
         },
         compress: true,
         hot: true,

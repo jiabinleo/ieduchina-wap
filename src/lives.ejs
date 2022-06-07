@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="//m.ieduchina.com/favicon.ico" rel="Shortcut Icon">
-    <meta name="keywords" content="国际教育,国际学校,教育门户">
+    <meta name="keywords" content="教育直播,国际学校直播,国际教育直播">
     <meta name="description"
-        content="国际教育网是汇集了海内外前沿的国际教育门户网站，涵盖北京、上海、广州、深圳等全国数千家国际学校排名学费及招生报名资讯，为K12家长提供全面升学指导、为孩子提供专业的国际课程、助力备考升学。">
-    <title>国际教育网-面向家长的国际学校升学教育门户</title>
+        content="国际教育直播是专业的在线国际学校直播平台，提供最新国际教育讲座视频直播节目、国际学校入学培训、经验分享及国际名校论坛等。全程图文直播、视频直播、PPT直播等多种在线直播形式。">
+    <title>国际教育直播-国际学校互动直播平台</title>
+    <link rel="stylesheet" href="https://lives.ieduchina.com/Public/Home/m/css/swiper.min.css">
     <script>
-        var http_url = window.location.href;
-        if (http_url == "http://m.ieduchina.com/" || http_url == "http://m.ieduchina.com") {
-            window.location.href = "https://m.ieduchina.com";
-        }
         (function () {
             var width = document.documentElement.clientWidth;
             var style = document.createElement("style");
@@ -32,8 +29,201 @@
     <header>
         <img src="<%=require(`@images/56.png`)%>">
     </header>
-    <section class="section">
-        
+    <section>
+        <div class="swiper-container banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="" style="background-image: url(https://newfile.ofweek.net/fileremote/room/video/2022-06/20220601155236567_m.jpg);">
+                        <span>7661人已预约</span>
+                        <div class="text">
+                            <p class="yugao">考试季已来，抓紧时间，紧急紧急紧急紧急</p>
+                            <span>2022-06-07</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="" style="background-image: url(https://newfile.ofweek.net/fileremote/room/video/2022-05/202205241712227965_m.jpg);">
+                        <div class="text">
+                            <p class="huigu">考试季已来，抓紧时间，紧急紧急紧急紧急</p>
+                            <span>2022-06-07</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="" style="background-image: url(https://newfile.ofweek.net/fileremote/room/video/2022-05/202205301717173438_m.jpg);">
+                        <div class="text">
+                            <p class="huigu">考试季已来，抓紧时间，紧急紧急紧急紧急</p>
+                            <span class="huigu">2022-06-07</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-banner-pagination"></div>
+        </div>
+        <div class="list list1">
+            <h2 class="title">
+                <span><img src="<%=require(`@images/升学中心@2x.png`)%>">升学中心专场</span><a href="javascript:">更多></a>
+            </h2>
+            <% let list1 = [{
+                type:"yugao",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205300932081631_m.jpg",
+                title:"深圳城市绿洲学校新生家长会深圳城市绿洲学校新生家长会深圳城市绿洲学校新生家长会深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205241712211267_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205301717174230_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205191025117594_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205191021544470_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205191029119238_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            }]%>
+            <ul >
+                <%list1.forEach((item)=>{%>
+                    <li class="<%=item.type%>">
+                        <a href="javascript:" target="_blank">
+                            <div class="image" style="background-image:url(<%=item.image%>)">
+                                <%if(item.type=="huigu"){%><span><%=item.time%></span><%}%>
+                            </div>
+                            <div class="text">
+                                <div class="title"><h3><%=item.title%></h3></div>
+                                <p>
+                                    <%if(item.type=="yugao"){%>
+                                        <span><%=item.num%>人已预约</span>    
+                                    <%}else{%>
+                                        <span><%=item.num%>次播放</span>    
+                                    <%}%>
+                                    <span><%=item.date%></span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="list list2">
+            <h2 class="title">
+                <span><img src="<%=require(`@images/国际学校@2x.png`)%>">国际学校专场</span><a href="javascript:">更多></a>
+            </h2>
+            <% let list2 = [{
+                type:"yugao",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205300932081631_m.jpg",
+                title:"深圳城市绿洲学校新生家长会深圳城市绿洲学校新生家长会深圳城市绿洲学校新生家长会深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205241712211267_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205301717174230_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205191025117594_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205191021544470_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205191029119238_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205160955015025_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            },
+            {
+                type:"huigu",
+                image:"https://newfile.ofweek.net/fileremote/room/cover/2022-05/202205090939171119_m.jpg",
+                title:"深圳城市绿洲学校新生家长会",
+                num:"7273",
+                date:"2022-06-20",
+                time:"01:32:04"
+            }]%>
+            <ul >
+                <%list2.forEach((item)=>{%>
+                    <li class="<%=item.type%>">
+                        <a href="javascript:" target="blank">
+                            <div class="image" style="background-image:url(<%=item.image%>)">
+                            <%if(item.type=="huigu"){%><span><%=item.time%></span><%}%>
+                            </div>
+                            <div class="text">
+                                <div class="title"><h3><%=item.title%></h3></div>
+                                <p>
+                                    <%if(item.type=="yugao"){%>
+                                        <span><%=item.num%>人已预约</span>    
+                                    <%}else{%>
+                                        <span><%=item.num%>次播放</span>    
+                                    <%}%>
+                                    <span><%=item.date%></span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                <%})%>
+            </ul>
+        </div>
     </section>
     <footer class="footernav">
         <div class="top">
@@ -60,5 +250,7 @@
             </p>
         </div>
     </footer>
+    <script src="https://lives.ieduchina.com/Public/Home/m/js/jquery-1.8.3.min.js"></script>
+    <script src="https://lives.ieduchina.com/Public/Home/m/js/swiper.min.js"></script>
 </body>
 </html>
