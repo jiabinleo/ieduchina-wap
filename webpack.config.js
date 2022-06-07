@@ -8,26 +8,30 @@ const {
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const smp = new SpeedMeasurePlugin();
 const TerserPlugin = require("terser-webpack-plugin");
-const CopyPlugin=require('copy-webpack-plugin');
 console.log(process.env.NODE_ENV)
 const isdev = process.env.NODE_ENV == "development";
-var pages = ["abroad","schoollistinfo","wenzhangdetail","huodongdetail","schoollist","ieduglobe","index"];
+const glob = require("glob");
 const entry = {};
 const template=[];
-pages.forEach((page,index)=>{
-    entry[page]=`./src/js/${page}.js`,
+glob.sync("./src/**.ejs").forEach((page)=>{
+    entry[page.replace("./src/","").replace(".ejs","")]=page.replace("./src/","./src/js/").replace(".ejs",".js");
     template.push(new HtmlWebpackPlugin({
-        template: `./src/${page}.ejs`,
+        template: page,
         hash: false,
         minify: {
-            collapseWhitespace: true,
-            removeComments: true,
+            collapseWhitespace: true,//压缩html
+            keepClosingSlash: true,//添加闭合标签
+            removeComments: true,//删除注释
+            removeRedundantAttributes: true,//删除默认属性
+            removeScriptTypeAttributes: true,//删除script的type属性
+            removeStyleLinkTypeAttributes: true,//删除link的type属性
+            useShortDoctype: true//小写doctype html
         },
         inject: "body",
-        filename: `${page}.html`,
+        filename: page.replace("./src/","").replace(".ejs",".html"),
         xhtml: true,
         showErrors: true,
-        chunks: [page]
+        chunks: [page.replace("./src/","").replace(".ejs","")]
     }),)
 })
 const moduleConfig = {
