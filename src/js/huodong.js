@@ -1,6 +1,7 @@
 import "../css/huodong.less";
 
 /* webpackjs */
+
 function getQueryVariable(variable)
 {
        var query = window.location.search.substring(1);
@@ -13,12 +14,17 @@ function getQueryVariable(variable)
 }
 let source = getQueryVariable("source");
 let scene = getQueryVariable("scene");
+if(scene){
+    window.sessionStorage.setItem("scene",scene);
+    window.sessionStorage.setItem("source",source);
+}
 setTimeout(() => {
-    if(source){
-        window.sessionStorage.setItem("source",getQueryVariable("source"))
+    if(!scene){
+        source = window.sessionStorage.getItem("source")
+        scene = window.sessionStorage.getItem("scene")
     }
     if(scene){
-        window.sessionStorage.setItem("scene",getQueryVariable("scene"))
+        $("input[type=hidden][mark=mark]").val("探校小管家小程序,来源:"+scene.replace(/(\"|'*)/g,'')+(source?("("+source.replace(/(\"|'*)/g,'')+")"):""));
     }
 }, 1000);
 /* webpackjs */
