@@ -14,7 +14,14 @@ function getQueryVariable(variable)
 }
 let source = getQueryVariable("source");
 let scene = getQueryVariable("scene");
-if(scene){
-    $("input[type=hidden][mark=mark]").val("探校小管家小程序,来源:"+scene.replace(/(\"|'*)/g,'')+(source?("("+source.replace(/(\"|'*)/g,'')+")"):""))
-}
+setTimeout(() => {
+    if(!scene){
+        source = window.sessionStorage.getItem("source")
+        scene = window.sessionStorage.getItem("scene")
+    }
+    if(scene){
+        $("input[type=hidden][mark=mark]").val("探校小管家小程序,来源:"+scene.replace(/(\"|'*)/g,'')+(source?("("+source.replace(/(\"|'*)/g,'')+")"):""))
+        $(".detail-msg").html("探校小管家小程序,来源:"+scene.replace(/(\"|'*)/g,'')+(source?("("+source.replace(/(\"|'*)/g,'')+")"):""))
+    }
+}, 1000);
 //webpackjs
