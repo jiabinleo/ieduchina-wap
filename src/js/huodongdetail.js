@@ -14,5 +14,7 @@ function getQueryVariable(variable)
 }
 let source = getQueryVariable("source");
 let scene = getQueryVariable("scene");
-$(".detail-msg").html(source+"-"+scene)
+if(scene){
+    $("input[type=hidden][mark=mark]").val("探校小管家小程序,来源:"+scene.replace(/(\"|'*)/g,'')+(source?("("+source.replace(/(\"|'*)/g,'')+")"):""))
+}
 //webpackjs
