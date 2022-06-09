@@ -1,9 +1,10 @@
 import "../css/huodong.less";
 
 /* webpackjs */
-
-function getQueryVariable(variable)
-{
+setmark();
+function setmark(){
+    /*获取小程序场景值和来源*/
+    function getQueryVariable(variable){
        var query = window.location.search.substring(1);
        var vars = query.split("&");
        for (var i=0;i<vars.length;i++) {
@@ -11,20 +12,21 @@ function getQueryVariable(variable)
                if(pair[0] == variable){return decodeURI(pair[1]);}
        }
        return(false);
-}
-let source = getQueryVariable("source");
-let scene = getQueryVariable("scene");
-if(scene){
-    window.sessionStorage.setItem("scene",scene);
-    window.sessionStorage.setItem("source",source);
-}
-setTimeout(() => {
-    if(!scene){
-        source = window.sessionStorage.getItem("source")
-        scene = window.sessionStorage.getItem("scene")
     }
+    let source = getQueryVariable("source");
+    let scene = getQueryVariable("scene");
     if(scene){
-        $("input[type=hidden][mark=mark]").val("探校小管家小程序,来源:"+scene.replace(/(\"|'*)/g,'')+(source?("("+source.replace(/(\"|'*)/g,'')+")"):""));
+        window.sessionStorage.setItem("scene",scene);
+        window.sessionStorage.setItem("source",source);
     }
-}, 1000);
+    setTimeout(() => {
+        if(!scene){
+            source = window.sessionStorage.getItem("source")
+            scene = window.sessionStorage.getItem("scene")
+        }
+        if(scene){
+            $("input[type=hidden][mark=mark]").val("探校小管家小程序,来源:"+scene.replace(/(\"|'*)/g,'')+(source?("("+source.replace(/(\"|'*)/g,'')+")"):""));
+        }
+    }, 1000);
+}
 /* webpackjs */
