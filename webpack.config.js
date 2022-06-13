@@ -22,7 +22,7 @@ glob.sync("./src/**.ejs").forEach((page)=>{
             collapseWhitespace: true,//压缩html
             keepClosingSlash: true,//添加闭合标签
             removeComments: true,//删除注释
-            removeRedundantAttributes: true,//删除默认属性
+            removeRedundantAttributes: false,//删除默认属性
             removeScriptTypeAttributes: true,//删除script的type属性
             removeStyleLinkTypeAttributes: true,//删除link的type属性
             useShortDoctype: true//小写doctype html
