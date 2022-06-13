@@ -14,25 +14,27 @@ const glob = require("glob");
 const entry = {};
 const template=[];
 glob.sync("./src/**.ejs").forEach((page)=>{
-    entry[page.replace("./src/","").replace(".ejs","")]=page.replace("./src/","./src/js/").replace(".ejs",".js");
-    template.push(new HtmlWebpackPlugin({
-        template: page,
-        hash: false,
-        minify: {
-            collapseWhitespace: true,//压缩html
-            keepClosingSlash: true,//添加闭合标签
-            removeComments: true,//删除注释
-            removeRedundantAttributes: false,//删除默认属性
-            removeScriptTypeAttributes: true,//删除script的type属性
-            removeStyleLinkTypeAttributes: true,//删除link的type属性
-            useShortDoctype: true//小写doctype html
-        },
-        inject: "body",
-        filename: page.replace("./src/","").replace(".ejs",".html"),
-        xhtml: true,
-        showErrors: true,
-        chunks: [page.replace("./src/","").replace(".ejs","")]
-    }),)
+    if(page == "./src/schoollist.ejs"){
+        entry[page.replace("./src/","").replace(".ejs","")]=page.replace("./src/","./src/js/").replace(".ejs",".js");
+        template.push(new HtmlWebpackPlugin({
+            template: page,
+            hash: false,
+            minify: {
+                collapseWhitespace: true,//压缩html
+                keepClosingSlash: true,//添加闭合标签
+                removeComments: true,//删除注释
+                removeRedundantAttributes: false,//删除默认属性
+                removeScriptTypeAttributes: true,//删除script的type属性
+                removeStyleLinkTypeAttributes: true,//删除link的type属性
+                useShortDoctype: true//小写doctype html
+            },
+            inject: "body",
+            filename: page.replace("./src/","").replace(".ejs",".html"),
+            xhtml: true,
+            showErrors: true,
+            chunks: [page.replace("./src/","").replace(".ejs","")]
+        }))
+    }
 })
 const moduleConfig = {
     entry,
