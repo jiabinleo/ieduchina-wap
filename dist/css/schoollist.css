@@ -572,13 +572,13 @@ section.schoollist .schoollist-list ul li .center .tools {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-  padding-bottom: 0.42666667rem;
 }
 section.schoollist .schoollist-list ul li .center .tools a {
   font-size: 0.59733333rem;
   font-weight: 400;
   color: #666666;
   cursor: pointer;
+  padding-bottom: 0.42666667rem;
 }
 section.schoollist .schoollist-list ul li .center .tools a::before {
   content: "";
