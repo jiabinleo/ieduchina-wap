@@ -2248,6 +2248,7 @@ var schoollist = {
     this.menu();
     this.loadschool();
     this.form();
+    this.kefu();
   },
   form: function form() {
     $(document).on("click", ".close", function () {
@@ -2255,6 +2256,8 @@ var schoollist = {
     });
     addressInit('provinceid', 'cityid', 'cmbArea2');
     $(document).on("click", ".formtk", function () {
+      var schoolname = $(this).closest("li").find("h3").attr("title");
+      $("input[type=hidden][name=school]").val(schoolname);
       $(".mask-form").css("display", "flex");
     });
     var applyFlag = true;
@@ -2417,10 +2420,15 @@ var schoollist = {
           }
         },
         error: function error() {
-          var li = "<li><div class=\"top\"><a href=\"javascript:\"><div class=\"schoollog\"><img src=\"https://www.ieduchina.com/uploadfile/college/202012/1607653957.png\" alt=\"\u5317\u4EAC\u5E08\u8303\u5927\u5B66\u9644\u5C5E\u5B9E\u9A8C\u4E2D\u5B66\u56FD\u9645\u90E8\"></div><div class=\"price\"><span>\u53C2\u8003\u5B66\u8D39</span><p>12.8\u4E07~20.8\u4E07</p></div></a></div><div class=\"center\"><a href=\"javascript:\"><h3>\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821</h3><div class=\"text\"><p>\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\u4F4D\u4E8E\u6D66\u4E1C\u7EFF\u5730\u56FD\u9645\u6559\u80B2\u56ED\u533A\uFF0C\u662F\u4E0E\u7EFF\u5730\u9999\u6E2F\u80A1\u4EFD\u6709\u9650\u516C\u53F8\uFF08\u5168\u7403500\u5F3A\u4F01\u4E1A\u7EFF\u5730\u96C6\u56E2\u63A7\u80A1\u5B50\u516C\u53F8\uFF09\u6218\u7565\u5408\u4F5C\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\u4F4D\u4E8E\u2026</p></div></a><div class=\"tools\"><a>2020\u4EBA\u5173\u6CE8</a> <a>2020\u4EBA\u54A8\u8BE2</a> <a class=\"formtk\">\u9884\u7EA6\u63A2\u6821</a></div></div></li>";
+          var li = "<li><div class=\"top\"><a href=\"javascript:\"><div class=\"schoollog\"><img src=\"https://www.ieduchina.com/uploadfile/college/202012/1607653957.png\" alt=\"\u5317\u4EAC\u5E08\u8303\u5927\u5B66\u9644\u5C5E\u5B9E\u9A8C\u4E2D\u5B66\u56FD\u9645\u90E8\"></div><div class=\"price\"><span>\u53C2\u8003\u5B66\u8D39</span><p>12.8\u4E07~20.8\u4E07</p></div></a></div><div class=\"center\"><a href=\"javascript:\"><h3 title=\"\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\">\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821</h3><div class=\"text\"><p>\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\u4F4D\u4E8E\u6D66\u4E1C\u7EFF\u5730\u56FD\u9645\u6559\u80B2\u56ED\u533A\uFF0C\u662F\u4E0E\u7EFF\u5730\u9999\u6E2F\u80A1\u4EFD\u6709\u9650\u516C\u53F8\uFF08\u5168\u7403500\u5F3A\u4F01\u4E1A\u7EFF\u5730\u96C6\u56E2\u63A7\u80A1\u5B50\u516C\u53F8\uFF09\u6218\u7565\u5408\u4F5C\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\u4F4D\u4E8E\u2026</p></div></a><div class=\"tools\"><a>2020\u4EBA\u5173\u6CE8</a> <a class=\"kefu\">2020\u4EBA\u54A8\u8BE2</a> <a class=\"formtk\">\u9884\u7EA6\u63A2\u6821</a></div></div></li>";
           ul.append(li);
         }
       });
+    });
+  },
+  kefu: function kefu() {
+    $(document).on("click", ".kefu", function () {
+      window.location.href = "http://p.qiao.baidu.com/cps/chat?siteId=10762946&amp;userId=23739680";
     });
   }
 };
