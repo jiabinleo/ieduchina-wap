@@ -6,10 +6,20 @@ const schoollist = {
         this.loadschool();
         this.form();
         this.kefu();
+        setInterval(() => {
+            // window.location.href = window.location.href 
+        }, 1000)
     },
-    form(){
+    form() {
         $(document).on("click", ".close", function () {
             $(".masks").hide();
+        })
+        $(".menu-con .menu.s").find(".title").on("click", function () {
+            if ($(this).hasClass("show")) {
+                $(this).removeClass("show");
+            } else {
+                $(this).addClass("show").siblings(".title").removeClass("show");
+            }
         })
         addressInit('provinceid', 'cityid', 'cmbArea2');
         $(document).on("click", ".formtk", function () {
@@ -59,7 +69,7 @@ const schoollist = {
                                 skin: 'msg',
                                 time: 3
                             });
-                            
+
                         } else if (data.status == 0) {
                             layer.open({
                                 content: data.info,
@@ -115,7 +125,7 @@ const schoollist = {
                     time: 3
                 });
                 return false;
-            }else if(value && (value=="孩子就读省份" || value=="孩子就读城市") && $(element).attr('nullmsg')){
+            } else if (value && (value == "孩子就读省份" || value == "孩子就读城市") && $(element).attr('nullmsg')) {
                 layer.open({
                     content: value,
                     skin: 'msg',
@@ -133,55 +143,55 @@ const schoollist = {
             return true;
         }
     },
-    menu(){
-        $(".headerwrap").on("click","menu span",function(){
-            if($(this).hasClass("active")){
+    menu() {
+        $(".headerwrap").on("click", "menu span", function () {
+            if ($(this).hasClass("active")) {
                 $(this).removeClass("active");
                 $(".menu-mask").hide();
                 $(".headerwrap").find(".menu").eq($(this).index()).removeClass("active");
-            }else{
+            } else {
                 $(this).addClass("active").siblings().removeClass("active");
                 $(".headerwrap").find(".menu").eq($(this).index()).addClass("active").siblings().removeClass("active");
                 $(".menu-mask").show();
             }
         })
-        $(".headerwrap").on("click",".links a",function(){
+        $(".headerwrap").on("click", ".links a", function () {
             $(this).addClass("active").siblings("a").removeClass("active");
         })
-        $(".menu-mask").on("click",function(){
+        $(".menu-mask").on("click", function () {
             $(".menu-mask").hide();
             $(".headerwrap").find(".menu").removeClass("active");
             $("menu span").removeClass("active");
         })
     },
-    loadschool(){
-        let page=1;
-        $(document).on("click",".more-school a",function(){
+    loadschool() {
+        let page = 1;
+        $(document).on("click", ".more-school a", function () {
             let ul = $(this).closest(".schoollist-list").find("ul");
             $.ajax({
-                url:"list",
-                type:"get",
-                dataType:"html",
-                data:{page},
-                success(res){
-                    if(res){
-                        page+=1
+                url: "list",
+                type: "get",
+                dataType: "html",
+                data: { page },
+                success(res) {
+                    if (res) {
+                        page += 1
                     }
                 },
-                error(){
+                error() {
                     let li = `<li><div class="top"><a href="javascript:"><div class="schoollog"><img src="https://www.ieduchina.com/uploadfile/college/202012/1607653957.png" alt="北京师范大学附属实验中学国际部"></div><div class="price"><span>参考学费</span><p>12.8万~20.8万</p></div></a></div><div class="center"><a href="javascript:"><h3 title="上海高藤致远创新学校">上海高藤致远创新学校</h3><div class="text"><p>上海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位于…</p></div></a><div class="tools"><a>2020人关注</a> <a class="kefu">2020人咨询</a> <a class="formtk">预约探校</a></div></div></li>`
                     ul.append(li);
                 }
             })
         })
     },
-    kefu(){
-        $(document).on("click",".kefu",function(){
-            window.location.href="http://p.qiao.baidu.com/cps/chat?siteId=10762946&amp;userId=23739680"
+    kefu() {
+        $(document).on("click", ".kefu", function () {
+            window.location.href = "http://p.qiao.baidu.com/cps/chat?siteId=10762946&amp;userId=23739680"
         })
     }
 }
 
-$(function(){
+$(function () {
     schoollist.init();
 })
