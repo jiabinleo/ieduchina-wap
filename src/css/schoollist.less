@@ -370,7 +370,7 @@ section {
                     border-radius: (12/@rem);
                     margin-top: (24/@rem);
                     box-sizing: border-box;
-                    padding: (20/@rem);
+                    padding: (20/@rem) (20/@rem) 0 (20/@rem);
 
                     .top {
                         padding-bottom: (20/@rem);
@@ -423,22 +423,24 @@ section {
                     }
 
                     .center {
-                        padding-top: (30/@rem);
+                        // padding-top: (30/@rem);
                         h3 {
                             font-size: (32/@rem);
                             font-weight: bold;
                             color: #333333;
-                            .line(1);
-                            // padding: (30/@rem) 0 (20/@rem);
+                            // white-space: nowrap;
+                            line-height: (40/@rem);
+                            // .line(1);
+                            padding: (20/@rem) 0 (20/@rem);
                         }
 
                         .text {
-                            padding-top: (30/@rem);
-                            height: (140/@rem);
+                            // padding-top: (30/@rem);
+                            height: (134/@rem);
 
                             p {
                                 .line(3);
-                                font-size: (28/@rem);
+                                font-size: (26/@rem);
                                 font-weight: 400;
                                 color: #666666;
                                 line-height: (38/@rem);
@@ -449,14 +451,13 @@ section {
                         .tools {
                             display: flex;
                             justify-content: space-around;
-                            margin-top: (10/@rem);
 
                             a {
                                 font-size: (28/@rem);
                                 font-weight: 400;
                                 color: #666666;
                                 cursor: pointer;
-                                padding-bottom: (20/@rem);
+                                padding-bottom: (26/@rem);
 
                                 &::before {
                                     content: "";
@@ -475,14 +476,7 @@ section {
                                         background-image: url("../images/关注@2x.png");
                                     }
                                 }
-
                                 &:nth-of-type(2) {
-                                    &::before {
-                                        background-image: url("../images/咨询@2x.png");
-                                    }
-                                }
-
-                                &:nth-of-type(3) {
                                     &::before {
                                         background-image: url("../images/预约@2x.png");
                                     }
@@ -493,6 +487,7 @@ section {
 
                     .bottom {
                         padding-top: (30/@rem);
+                        padding-bottom: (26/@rem);
                         border-top: solid rgba(221, 221, 221, .5) (2/@rem);
                         a {
                             .text {
@@ -508,7 +503,7 @@ section {
                                         i{
                                             position: absolute;
                                             left: 0;
-                                            top: (14/@rem);
+                                            top: (10/@rem);
                                             display: inline-block;
                                             width: (14/@rem);
                                             height: (14/@rem);
