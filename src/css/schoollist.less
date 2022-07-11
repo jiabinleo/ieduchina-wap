@@ -97,42 +97,7 @@ body {
             }
             &.s {
                 padding-bottom: (60/@rem);
-                .nowcity{
-                    width: 100%;
-                    height: (100/@rem);
-                    line-height: (100/@rem);
-                    font-size: (28/@rem);
-                    font-weight: 400;
-                    color: #333333;
-                    padding-left: (45/@rem);
-                    span{
-                        color: #338EFF;
-                        padding-left: (16/@rem);
-                        font-size: (36/@rem);
-                    }
-                }
-                .hot-city{
-                    display: flex;
-                    justify-content: flex-start;
-                    flex-wrap: wrap;
-                    text-align: center;
-                    background-color: #f5f5f5;
-                    padding: 0 (32/@rem) (20/@rem) (45/@rem);
-
-                    a {
-                        line-height: (45/@rem);
-                        color: #333333;
-                        border-radius: (8/@rem);
-                        font-size: (28/@rem);
-                        font-weight: 400;
-                        background-color: white;
-                        padding: (6/@rem) 0;
-                        width: (135/@rem);
-                        cursor: pointer;
-                        margin-right: (30/@rem);
-                        margin-top:(10/@rem)
-                    }
-                }
+                max-width: 750px;
                 .tip{
                     line-height: (60/@rem);
                     height: (60/@rem);
@@ -206,7 +171,19 @@ body {
                     }
                 }
             }
+            &.hotcity{
+                .links {
+                    padding-bottom: (30/@rem);
+                    a {
+                        margin-left: (20/@rem);
+                        width: (160/@rem);
 
+                        &:nth-of-type(4n+1) {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
             &.kc {
                 .links {
                     a {
@@ -219,6 +196,46 @@ body {
                     }
                 }
             }
+            // &.hotcity{
+            //     max-width: 750px;
+            //     // padding-bottom: (60/@rem);
+            //     .nowcity{
+            //         width: 100%;
+            //         height: (100/@rem);
+            //         line-height: (100/@rem);
+            //         font-size: (28/@rem);
+            //         font-weight: 400;
+            //         color: #333333;
+            //         padding-left: (45/@rem);
+            //         span{
+            //             color: #338EFF;
+            //             padding-left: (16/@rem);
+            //             font-size: (36/@rem);
+            //         }
+            //     }
+            //     .hot-city{
+            //         display: flex;
+            //         justify-content: flex-start;
+            //         flex-wrap: wrap;
+            //         text-align: center;
+            //         background-color: #f5f5f5;
+            //         padding: 0 (32/@rem) (20/@rem) (45/@rem);
+
+            //         a {
+            //             line-height: (45/@rem);
+            //             color: #333333;
+            //             border-radius: (8/@rem);
+            //             font-size: (28/@rem);
+            //             font-weight: 400;
+            //             background-color: white;
+            //             padding: (6/@rem) 0;
+            //             width: (135/@rem);
+            //             cursor: pointer;
+            //             margin-right: (30/@rem);
+            //             margin-top:(10/@rem)
+            //         }
+            //     }
+            // }
 
             .links {
                 width: (700/@rem);
@@ -406,15 +423,17 @@ section {
                     }
 
                     .center {
+                        padding-top: (30/@rem);
                         h3 {
                             font-size: (32/@rem);
                             font-weight: bold;
                             color: #333333;
                             .line(1);
-                            padding: (30/@rem) 0 (20/@rem);
+                            // padding: (30/@rem) 0 (20/@rem);
                         }
 
                         .text {
+                            padding-top: (30/@rem);
                             height: (140/@rem);
 
                             p {
@@ -430,6 +449,7 @@ section {
                         .tools {
                             display: flex;
                             justify-content: space-around;
+                            margin-top: (10/@rem);
 
                             a {
                                 font-size: (28/@rem);
@@ -532,7 +552,7 @@ section {
 .footernav {
     padding-bottom: (100/@rem);
 }
-.school-footer-tools {
+.footer-tools {
     position        : fixed;
     bottom          : 0;
     z-index         : 10;

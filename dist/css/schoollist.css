@@ -337,49 +337,7 @@ body {
 }
 .headerwrap .menu-con .menu.s {
   padding-bottom: 1.28rem;
-}
-.headerwrap .menu-con .menu.s .nowcity {
-  width: 100%;
-  height: 2.13333333rem;
-  line-height: 2.13333333rem;
-  font-size: 0.59733333rem;
-  font-weight: 400;
-  color: #333333;
-  padding-left: 0.96rem;
-}
-.headerwrap .menu-con .menu.s .nowcity span {
-  color: #338EFF;
-  padding-left: 0.34133333rem;
-  font-size: 0.768rem;
-}
-.headerwrap .menu-con .menu.s .hot-city {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  text-align: center;
-  background-color: #f5f5f5;
-  padding: 0 0.68266667rem 0.42666667rem 0.96rem;
-}
-.headerwrap .menu-con .menu.s .hot-city a {
-  line-height: 0.96rem;
-  color: #333333;
-  border-radius: 0.17066667rem;
-  font-size: 0.59733333rem;
-  font-weight: 400;
-  background-color: white;
-  padding: 0.128rem 0;
-  width: 2.88rem;
-  cursor: pointer;
-  margin-right: 0.64rem;
-  margin-top: 0.21333333rem;
+  max-width: 750px;
 }
 .headerwrap .menu-con .menu.s .tip {
   line-height: 1.28rem;
@@ -451,6 +409,16 @@ body {
   width: 3.41333333rem;
 }
 .headerwrap .menu-con .menu.grade .links a:nth-of-type(4n+1) {
+  margin-left: 0;
+}
+.headerwrap .menu-con .menu.hotcity .links {
+  padding-bottom: 0.64rem;
+}
+.headerwrap .menu-con .menu.hotcity .links a {
+  margin-left: 0.42666667rem;
+  width: 3.41333333rem;
+}
+.headerwrap .menu-con .menu.hotcity .links a:nth-of-type(4n+1) {
   margin-left: 0;
 }
 .headerwrap .menu-con .menu.kc .links a {
@@ -636,6 +604,9 @@ section.schoollist .schoollist-list ul li .top a .price p {
   color: #333333;
   padding-top: 0.08533333rem;
 }
+section.schoollist .schoollist-list ul li .center {
+  padding-top: 0.64rem;
+}
 section.schoollist .schoollist-list ul li .center h3 {
   font-size: 0.68266667rem;
   font-weight: bold;
@@ -645,9 +616,9 @@ section.schoollist .schoollist-list ul li .center h3 {
   -webkit-line-clamp: 1;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 0.64rem 0 0.42666667rem;
 }
 section.schoollist .schoollist-list ul li .center .text {
+  padding-top: 0.64rem;
   height: 2.98666667rem;
 }
 section.schoollist .schoollist-list ul li .center .text p {
@@ -670,6 +641,7 @@ section.schoollist .schoollist-list ul li .center .tools {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+  margin-top: 0.21333333rem;
 }
 section.schoollist .schoollist-list ul li .center .tools a {
   font-size: 0.59733333rem;
@@ -755,7 +727,7 @@ section.schoollist .schoollist-list .more-school a {
 .footernav {
   padding-bottom: 2.13333333rem;
 }
-.school-footer-tools {
+.footer-tools {
   position: fixed;
   bottom: 0;
   z-index: 10;
@@ -775,7 +747,7 @@ section.schoollist .schoollist-list .more-school a {
       -ms-flex-align: center;
           align-items: center;
 }
-.school-footer-tools a {
+.footer-tools a {
   text-align: center;
   width: 4.43733333rem;
   height: 1.45066667rem;
