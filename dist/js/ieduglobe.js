@@ -18,6 +18,22 @@ module.exports = function (argument) {
 
 /***/ }),
 
+/***/ 6077:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var isCallable = __webpack_require__(614);
+
+var $String = String;
+var $TypeError = TypeError;
+
+module.exports = function (argument) {
+  if (typeof argument == 'object' || isCallable(argument)) return argument;
+  throw $TypeError("Can't set " + $String(argument) + ' as a prototype');
+};
+
+
+/***/ }),
+
 /***/ 1223:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -40,6 +56,22 @@ if (ArrayPrototype[UNSCOPABLES] == undefined) {
 // add a key to Array.prototype[@@unscopables]
 module.exports = function (key) {
   ArrayPrototype[UNSCOPABLES][key] = true;
+};
+
+
+/***/ }),
+
+/***/ 1530:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var charAt = (__webpack_require__(8710).charAt);
+
+// `AdvanceStringIndex` abstract operation
+// https://tc39.es/ecma262/#sec-advancestringindex
+module.exports = function (S, index, unicode) {
+  return index + (unicode ? charAt(S, index).length : 1);
 };
 
 
@@ -578,6 +610,88 @@ module.exports = function (exec) {
 
 /***/ }),
 
+/***/ 7007:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+// TODO: Remove from `core-js@4` since it's moved to entry points
+__webpack_require__(4916);
+var uncurryThis = __webpack_require__(1702);
+var defineBuiltIn = __webpack_require__(8052);
+var regexpExec = __webpack_require__(2261);
+var fails = __webpack_require__(7293);
+var wellKnownSymbol = __webpack_require__(5112);
+var createNonEnumerableProperty = __webpack_require__(8880);
+
+var SPECIES = wellKnownSymbol('species');
+var RegExpPrototype = RegExp.prototype;
+
+module.exports = function (KEY, exec, FORCED, SHAM) {
+  var SYMBOL = wellKnownSymbol(KEY);
+
+  var DELEGATES_TO_SYMBOL = !fails(function () {
+    // String methods call symbol-named RegEp methods
+    var O = {};
+    O[SYMBOL] = function () { return 7; };
+    return ''[KEY](O) != 7;
+  });
+
+  var DELEGATES_TO_EXEC = DELEGATES_TO_SYMBOL && !fails(function () {
+    // Symbol-named RegExp methods call .exec
+    var execCalled = false;
+    var re = /a/;
+
+    if (KEY === 'split') {
+      // We can't use real regex here since it causes deoptimization
+      // and serious performance degradation in V8
+      // https://github.com/zloirock/core-js/issues/306
+      re = {};
+      // RegExp[@@split] doesn't call the regex's exec method, but first creates
+      // a new one. We need to return the patched regex when creating the new one.
+      re.constructor = {};
+      re.constructor[SPECIES] = function () { return re; };
+      re.flags = '';
+      re[SYMBOL] = /./[SYMBOL];
+    }
+
+    re.exec = function () { execCalled = true; return null; };
+
+    re[SYMBOL]('');
+    return !execCalled;
+  });
+
+  if (
+    !DELEGATES_TO_SYMBOL ||
+    !DELEGATES_TO_EXEC ||
+    FORCED
+  ) {
+    var uncurriedNativeRegExpMethod = uncurryThis(/./[SYMBOL]);
+    var methods = exec(SYMBOL, ''[KEY], function (nativeMethod, regexp, str, arg2, forceStringMethod) {
+      var uncurriedNativeMethod = uncurryThis(nativeMethod);
+      var $exec = regexp.exec;
+      if ($exec === regexpExec || $exec === RegExpPrototype.exec) {
+        if (DELEGATES_TO_SYMBOL && !forceStringMethod) {
+          // The native String method already delegates to @@method (this
+          // polyfilled function), leasing to infinite recursion.
+          // We avoid it by directly calling the native @@method method.
+          return { done: true, value: uncurriedNativeRegExpMethod(regexp, str, arg2) };
+        }
+        return { done: true, value: uncurriedNativeMethod(str, regexp, arg2) };
+      }
+      return { done: false };
+    });
+
+    defineBuiltIn(String.prototype, KEY, methods[0]);
+    defineBuiltIn(RegExpPrototype, SYMBOL, methods[1]);
+  }
+
+  if (SHAM) createNonEnumerableProperty(RegExpPrototype[SYMBOL], 'sham', true);
+};
+
+
+/***/ }),
+
 /***/ 2104:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -818,6 +932,31 @@ module.exports = fails(function () {
 
 /***/ }),
 
+/***/ 9587:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var isCallable = __webpack_require__(614);
+var isObject = __webpack_require__(111);
+var setPrototypeOf = __webpack_require__(7674);
+
+// makes subclassing work correct for wrapped built-ins
+module.exports = function ($this, dummy, Wrapper) {
+  var NewTarget, NewTargetPrototype;
+  if (
+    // it can work only with native `setPrototypeOf`
+    setPrototypeOf &&
+    // we haven't completely correct pre-ES6 way for getting `new.target`, so use this
+    isCallable(NewTarget = dummy.constructor) &&
+    NewTarget !== Wrapper &&
+    isObject(NewTargetPrototype = NewTarget.prototype) &&
+    NewTargetPrototype !== Wrapper.prototype
+  ) setPrototypeOf($this, NewTargetPrototype);
+  return $this;
+};
+
+
+/***/ }),
+
 /***/ 2788:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -1046,6 +1185,25 @@ module.exports = function (it) {
 /***/ ((module) => {
 
 module.exports = false;
+
+
+/***/ }),
+
+/***/ 7850:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var isObject = __webpack_require__(111);
+var classof = __webpack_require__(4326);
+var wellKnownSymbol = __webpack_require__(5112);
+
+var MATCH = wellKnownSymbol('match');
+
+// `IsRegExp` abstract operation
+// https://tc39.es/ecma262/#sec-isregexp
+module.exports = function (it) {
+  var isRegExp;
+  return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : classof(it) == 'RegExp');
+};
 
 
 /***/ }),
@@ -1489,6 +1647,40 @@ exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
 
 /***/ }),
 
+/***/ 7674:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/* eslint-disable no-proto -- safe */
+var uncurryThis = __webpack_require__(1702);
+var anObject = __webpack_require__(9670);
+var aPossiblePrototype = __webpack_require__(6077);
+
+// `Object.setPrototypeOf` method
+// https://tc39.es/ecma262/#sec-object.setprototypeof
+// Works with __proto__ only. Old v8 can't work with null proto objects.
+// eslint-disable-next-line es-x/no-object-setprototypeof -- safe
+module.exports = Object.setPrototypeOf || ('__proto__' in {} ? function () {
+  var CORRECT_SETTER = false;
+  var test = {};
+  var setter;
+  try {
+    // eslint-disable-next-line es-x/no-object-getownpropertydescriptor -- safe
+    setter = uncurryThis(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__').set);
+    setter(test, []);
+    CORRECT_SETTER = test instanceof Array;
+  } catch (error) { /* empty */ }
+  return function setPrototypeOf(O, proto) {
+    anObject(O);
+    aPossiblePrototype(proto);
+    if (CORRECT_SETTER) setter(O, proto);
+    else O.__proto__ = proto;
+    return O;
+  };
+}() : undefined);
+
+
+/***/ }),
+
 /***/ 288:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -1544,6 +1736,49 @@ module.exports = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
   var keys = getOwnPropertyNamesModule.f(anObject(it));
   var getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
   return getOwnPropertySymbols ? concat(keys, getOwnPropertySymbols(it)) : keys;
+};
+
+
+/***/ }),
+
+/***/ 2626:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var defineProperty = (__webpack_require__(3070).f);
+
+module.exports = function (Target, Source, key) {
+  key in Target || defineProperty(Target, key, {
+    configurable: true,
+    get: function () { return Source[key]; },
+    set: function (it) { Source[key] = it; }
+  });
+};
+
+
+/***/ }),
+
+/***/ 7651:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var call = __webpack_require__(6916);
+var anObject = __webpack_require__(9670);
+var isCallable = __webpack_require__(614);
+var classof = __webpack_require__(4326);
+var regexpExec = __webpack_require__(2261);
+
+var $TypeError = TypeError;
+
+// `RegExpExec` abstract operation
+// https://tc39.es/ecma262/#sec-regexpexec
+module.exports = function (R, S) {
+  var exec = R.exec;
+  if (isCallable(exec)) {
+    var result = call(exec, R, S);
+    if (result !== null) anObject(result);
+    return result;
+  }
+  if (classof(R) === 'RegExp') return call(regexpExec, R, S);
+  throw $TypeError('RegExp#exec called on incompatible receiver');
 };
 
 
@@ -1700,6 +1935,25 @@ module.exports = function () {
 
 /***/ }),
 
+/***/ 4706:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var call = __webpack_require__(6916);
+var hasOwn = __webpack_require__(2597);
+var isPrototypeOf = __webpack_require__(7976);
+var regExpFlags = __webpack_require__(7066);
+
+var RegExpPrototype = RegExp.prototype;
+
+module.exports = function (R) {
+  var flags = R.flags;
+  return flags === undefined && !('flags' in RegExpPrototype) && !hasOwn(R, 'flags') && isPrototypeOf(RegExpPrototype, R)
+    ? call(regExpFlags, R) : flags;
+};
+
+
+/***/ }),
+
 /***/ 2999:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -1787,6 +2041,20 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ 1150:
+/***/ ((module) => {
+
+// `SameValue` abstract operation
+// https://tc39.es/ecma262/#sec-samevalue
+// eslint-disable-next-line es-x/no-object-is -- safe
+module.exports = Object.is || function is(x, y) {
+  // eslint-disable-next-line no-self-compare -- NaN check
+  return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
+};
+
+
+/***/ }),
+
 /***/ 7152:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -1820,6 +2088,33 @@ module.exports = {
   // `setInterval` method
   // https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval
   setInterval: wrap(global.setInterval)
+};
+
+
+/***/ }),
+
+/***/ 6340:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var getBuiltIn = __webpack_require__(5005);
+var definePropertyModule = __webpack_require__(3070);
+var wellKnownSymbol = __webpack_require__(5112);
+var DESCRIPTORS = __webpack_require__(9781);
+
+var SPECIES = wellKnownSymbol('species');
+
+module.exports = function (CONSTRUCTOR_NAME) {
+  var Constructor = getBuiltIn(CONSTRUCTOR_NAME);
+  var defineProperty = definePropertyModule.f;
+
+  if (DESCRIPTORS && Constructor && !Constructor[SPECIES]) {
+    defineProperty(Constructor, SPECIES, {
+      configurable: true,
+      get: function () { return this; }
+    });
+  }
 };
 
 
@@ -1869,6 +2164,109 @@ var store = __webpack_require__(5465);
   license: 'https://github.com/zloirock/core-js/blob/v3.23.3/LICENSE',
   source: 'https://github.com/zloirock/core-js'
 });
+
+
+/***/ }),
+
+/***/ 8710:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var uncurryThis = __webpack_require__(1702);
+var toIntegerOrInfinity = __webpack_require__(9303);
+var toString = __webpack_require__(1340);
+var requireObjectCoercible = __webpack_require__(4488);
+
+var charAt = uncurryThis(''.charAt);
+var charCodeAt = uncurryThis(''.charCodeAt);
+var stringSlice = uncurryThis(''.slice);
+
+var createMethod = function (CONVERT_TO_STRING) {
+  return function ($this, pos) {
+    var S = toString(requireObjectCoercible($this));
+    var position = toIntegerOrInfinity(pos);
+    var size = S.length;
+    var first, second;
+    if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
+    first = charCodeAt(S, position);
+    return first < 0xD800 || first > 0xDBFF || position + 1 === size
+      || (second = charCodeAt(S, position + 1)) < 0xDC00 || second > 0xDFFF
+        ? CONVERT_TO_STRING
+          ? charAt(S, position)
+          : first
+        : CONVERT_TO_STRING
+          ? stringSlice(S, position, position + 2)
+          : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
+  };
+};
+
+module.exports = {
+  // `String.prototype.codePointAt` method
+  // https://tc39.es/ecma262/#sec-string.prototype.codepointat
+  codeAt: createMethod(false),
+  // `String.prototype.at` method
+  // https://github.com/mathiasbynens/String.prototype.at
+  charAt: createMethod(true)
+};
+
+
+/***/ }),
+
+/***/ 6091:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var PROPER_FUNCTION_NAME = (__webpack_require__(6530).PROPER);
+var fails = __webpack_require__(7293);
+var whitespaces = __webpack_require__(1361);
+
+var non = '\u200B\u0085\u180E';
+
+// check that a method works with the correct list
+// of whitespaces and has a correct name
+module.exports = function (METHOD_NAME) {
+  return fails(function () {
+    return !!whitespaces[METHOD_NAME]()
+      || non[METHOD_NAME]() !== non
+      || (PROPER_FUNCTION_NAME && whitespaces[METHOD_NAME].name !== METHOD_NAME);
+  });
+};
+
+
+/***/ }),
+
+/***/ 3111:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var uncurryThis = __webpack_require__(1702);
+var requireObjectCoercible = __webpack_require__(4488);
+var toString = __webpack_require__(1340);
+var whitespaces = __webpack_require__(1361);
+
+var replace = uncurryThis(''.replace);
+var whitespace = '[' + whitespaces + ']';
+var ltrim = RegExp('^' + whitespace + whitespace + '*');
+var rtrim = RegExp(whitespace + whitespace + '*$');
+
+// `String.prototype.{ trim, trimStart, trimEnd, trimLeft, trimRight }` methods implementation
+var createMethod = function (TYPE) {
+  return function ($this) {
+    var string = toString(requireObjectCoercible($this));
+    if (TYPE & 1) string = replace(string, ltrim, '');
+    if (TYPE & 2) string = replace(string, rtrim, '');
+    return string;
+  };
+};
+
+module.exports = {
+  // `String.prototype.{ trimLeft, trimStart }` methods
+  // https://tc39.es/ecma262/#sec-string.prototype.trimstart
+  start: createMethod(1),
+  // `String.prototype.{ trimRight, trimEnd }` methods
+  // https://tc39.es/ecma262/#sec-string.prototype.trimend
+  end: createMethod(2),
+  // `String.prototype.trim` method
+  // https://tc39.es/ecma262/#sec-string.prototype.trim
+  trim: createMethod(3)
+};
 
 
 /***/ }),
@@ -2140,6 +2538,16 @@ module.exports = function (name) {
 
 /***/ }),
 
+/***/ 1361:
+/***/ ((module) => {
+
+// a string of all valid unicode whitespaces
+module.exports = '\u0009\u000A\u000B\u000C\u000D\u0020\u00A0\u1680\u2000\u2001\u2002' +
+  '\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
+
+
+/***/ }),
+
 /***/ 9826:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -2212,6 +2620,203 @@ if (!TO_STRING_TAG_SUPPORT) {
 
 /***/ }),
 
+/***/ 4603:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+var DESCRIPTORS = __webpack_require__(9781);
+var global = __webpack_require__(7854);
+var uncurryThis = __webpack_require__(1702);
+var isForced = __webpack_require__(4705);
+var inheritIfRequired = __webpack_require__(9587);
+var createNonEnumerableProperty = __webpack_require__(8880);
+var getOwnPropertyNames = (__webpack_require__(8006).f);
+var isPrototypeOf = __webpack_require__(7976);
+var isRegExp = __webpack_require__(7850);
+var toString = __webpack_require__(1340);
+var getRegExpFlags = __webpack_require__(4706);
+var stickyHelpers = __webpack_require__(2999);
+var proxyAccessor = __webpack_require__(2626);
+var defineBuiltIn = __webpack_require__(8052);
+var fails = __webpack_require__(7293);
+var hasOwn = __webpack_require__(2597);
+var enforceInternalState = (__webpack_require__(9909).enforce);
+var setSpecies = __webpack_require__(6340);
+var wellKnownSymbol = __webpack_require__(5112);
+var UNSUPPORTED_DOT_ALL = __webpack_require__(9441);
+var UNSUPPORTED_NCG = __webpack_require__(7168);
+
+var MATCH = wellKnownSymbol('match');
+var NativeRegExp = global.RegExp;
+var RegExpPrototype = NativeRegExp.prototype;
+var SyntaxError = global.SyntaxError;
+var exec = uncurryThis(RegExpPrototype.exec);
+var charAt = uncurryThis(''.charAt);
+var replace = uncurryThis(''.replace);
+var stringIndexOf = uncurryThis(''.indexOf);
+var stringSlice = uncurryThis(''.slice);
+// TODO: Use only propper RegExpIdentifierName
+var IS_NCG = /^\?<[^\s\d!#%&*+<=>@^][^\s!#%&*+<=>@^]*>/;
+var re1 = /a/g;
+var re2 = /a/g;
+
+// "new" should create a new object, old webkit bug
+var CORRECT_NEW = new NativeRegExp(re1) !== re1;
+
+var MISSED_STICKY = stickyHelpers.MISSED_STICKY;
+var UNSUPPORTED_Y = stickyHelpers.UNSUPPORTED_Y;
+
+var BASE_FORCED = DESCRIPTORS &&
+  (!CORRECT_NEW || MISSED_STICKY || UNSUPPORTED_DOT_ALL || UNSUPPORTED_NCG || fails(function () {
+    re2[MATCH] = false;
+    // RegExp constructor can alter flags and IsRegExp works correct with @@match
+    return NativeRegExp(re1) != re1 || NativeRegExp(re2) == re2 || NativeRegExp(re1, 'i') != '/a/i';
+  }));
+
+var handleDotAll = function (string) {
+  var length = string.length;
+  var index = 0;
+  var result = '';
+  var brackets = false;
+  var chr;
+  for (; index <= length; index++) {
+    chr = charAt(string, index);
+    if (chr === '\\') {
+      result += chr + charAt(string, ++index);
+      continue;
+    }
+    if (!brackets && chr === '.') {
+      result += '[\\s\\S]';
+    } else {
+      if (chr === '[') {
+        brackets = true;
+      } else if (chr === ']') {
+        brackets = false;
+      } result += chr;
+    }
+  } return result;
+};
+
+var handleNCG = function (string) {
+  var length = string.length;
+  var index = 0;
+  var result = '';
+  var named = [];
+  var names = {};
+  var brackets = false;
+  var ncg = false;
+  var groupid = 0;
+  var groupname = '';
+  var chr;
+  for (; index <= length; index++) {
+    chr = charAt(string, index);
+    if (chr === '\\') {
+      chr = chr + charAt(string, ++index);
+    } else if (chr === ']') {
+      brackets = false;
+    } else if (!brackets) switch (true) {
+      case chr === '[':
+        brackets = true;
+        break;
+      case chr === '(':
+        if (exec(IS_NCG, stringSlice(string, index + 1))) {
+          index += 2;
+          ncg = true;
+        }
+        result += chr;
+        groupid++;
+        continue;
+      case chr === '>' && ncg:
+        if (groupname === '' || hasOwn(names, groupname)) {
+          throw new SyntaxError('Invalid capture group name');
+        }
+        names[groupname] = true;
+        named[named.length] = [groupname, groupid];
+        ncg = false;
+        groupname = '';
+        continue;
+    }
+    if (ncg) groupname += chr;
+    else result += chr;
+  } return [result, named];
+};
+
+// `RegExp` constructor
+// https://tc39.es/ecma262/#sec-regexp-constructor
+if (isForced('RegExp', BASE_FORCED)) {
+  var RegExpWrapper = function RegExp(pattern, flags) {
+    var thisIsRegExp = isPrototypeOf(RegExpPrototype, this);
+    var patternIsRegExp = isRegExp(pattern);
+    var flagsAreUndefined = flags === undefined;
+    var groups = [];
+    var rawPattern = pattern;
+    var rawFlags, dotAll, sticky, handled, result, state;
+
+    if (!thisIsRegExp && patternIsRegExp && flagsAreUndefined && pattern.constructor === RegExpWrapper) {
+      return pattern;
+    }
+
+    if (patternIsRegExp || isPrototypeOf(RegExpPrototype, pattern)) {
+      pattern = pattern.source;
+      if (flagsAreUndefined) flags = getRegExpFlags(rawPattern);
+    }
+
+    pattern = pattern === undefined ? '' : toString(pattern);
+    flags = flags === undefined ? '' : toString(flags);
+    rawPattern = pattern;
+
+    if (UNSUPPORTED_DOT_ALL && 'dotAll' in re1) {
+      dotAll = !!flags && stringIndexOf(flags, 's') > -1;
+      if (dotAll) flags = replace(flags, /s/g, '');
+    }
+
+    rawFlags = flags;
+
+    if (MISSED_STICKY && 'sticky' in re1) {
+      sticky = !!flags && stringIndexOf(flags, 'y') > -1;
+      if (sticky && UNSUPPORTED_Y) flags = replace(flags, /y/g, '');
+    }
+
+    if (UNSUPPORTED_NCG) {
+      handled = handleNCG(pattern);
+      pattern = handled[0];
+      groups = handled[1];
+    }
+
+    result = inheritIfRequired(NativeRegExp(pattern, flags), thisIsRegExp ? this : RegExpPrototype, RegExpWrapper);
+
+    if (dotAll || sticky || groups.length) {
+      state = enforceInternalState(result);
+      if (dotAll) {
+        state.dotAll = true;
+        state.raw = RegExpWrapper(handleDotAll(pattern), rawFlags);
+      }
+      if (sticky) state.sticky = true;
+      if (groups.length) state.groups = groups;
+    }
+
+    if (pattern !== rawPattern) try {
+      // fails in old engines, but we have no alternatives for unsupported regex syntax
+      createNonEnumerableProperty(result, 'source', rawPattern === '' ? '(?:)' : rawPattern);
+    } catch (error) { /* empty */ }
+
+    return result;
+  };
+
+  for (var keys = getOwnPropertyNames(NativeRegExp), index = 0; keys.length > index;) {
+    proxyAccessor(RegExpWrapper, NativeRegExp, keys[index++]);
+  }
+
+  RegExpPrototype.constructor = RegExpWrapper;
+  RegExpWrapper.prototype = RegExpPrototype;
+  defineBuiltIn(global, 'RegExp', RegExpWrapper, { constructor: true });
+}
+
+// https://tc39.es/ecma262/#sec-get-regexp-@@species
+setSpecies('RegExp');
+
+
+/***/ }),
+
 /***/ 4916:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -2224,6 +2829,160 @@ var exec = __webpack_require__(2261);
 // https://tc39.es/ecma262/#sec-regexp.prototype.exec
 $({ target: 'RegExp', proto: true, forced: /./.exec !== exec }, {
   exec: exec
+});
+
+
+/***/ }),
+
+/***/ 9714:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var PROPER_FUNCTION_NAME = (__webpack_require__(6530).PROPER);
+var defineBuiltIn = __webpack_require__(8052);
+var anObject = __webpack_require__(9670);
+var $toString = __webpack_require__(1340);
+var fails = __webpack_require__(7293);
+var getRegExpFlags = __webpack_require__(4706);
+
+var TO_STRING = 'toString';
+var RegExpPrototype = RegExp.prototype;
+var n$ToString = RegExpPrototype[TO_STRING];
+
+var NOT_GENERIC = fails(function () { return n$ToString.call({ source: 'a', flags: 'b' }) != '/a/b'; });
+// FF44- RegExp#toString has a wrong name
+var INCORRECT_NAME = PROPER_FUNCTION_NAME && n$ToString.name != TO_STRING;
+
+// `RegExp.prototype.toString` method
+// https://tc39.es/ecma262/#sec-regexp.prototype.tostring
+if (NOT_GENERIC || INCORRECT_NAME) {
+  defineBuiltIn(RegExp.prototype, TO_STRING, function toString() {
+    var R = anObject(this);
+    var pattern = $toString(R.source);
+    var flags = $toString(getRegExpFlags(R));
+    return '/' + pattern + '/' + flags;
+  }, { unsafe: true });
+}
+
+
+/***/ }),
+
+/***/ 4723:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var call = __webpack_require__(6916);
+var fixRegExpWellKnownSymbolLogic = __webpack_require__(7007);
+var anObject = __webpack_require__(9670);
+var toLength = __webpack_require__(7466);
+var toString = __webpack_require__(1340);
+var requireObjectCoercible = __webpack_require__(4488);
+var getMethod = __webpack_require__(8173);
+var advanceStringIndex = __webpack_require__(1530);
+var regExpExec = __webpack_require__(7651);
+
+// @@match logic
+fixRegExpWellKnownSymbolLogic('match', function (MATCH, nativeMatch, maybeCallNative) {
+  return [
+    // `String.prototype.match` method
+    // https://tc39.es/ecma262/#sec-string.prototype.match
+    function match(regexp) {
+      var O = requireObjectCoercible(this);
+      var matcher = regexp == undefined ? undefined : getMethod(regexp, MATCH);
+      return matcher ? call(matcher, regexp, O) : new RegExp(regexp)[MATCH](toString(O));
+    },
+    // `RegExp.prototype[@@match]` method
+    // https://tc39.es/ecma262/#sec-regexp.prototype-@@match
+    function (string) {
+      var rx = anObject(this);
+      var S = toString(string);
+      var res = maybeCallNative(nativeMatch, rx, S);
+
+      if (res.done) return res.value;
+
+      if (!rx.global) return regExpExec(rx, S);
+
+      var fullUnicode = rx.unicode;
+      rx.lastIndex = 0;
+      var A = [];
+      var n = 0;
+      var result;
+      while ((result = regExpExec(rx, S)) !== null) {
+        var matchStr = toString(result[0]);
+        A[n] = matchStr;
+        if (matchStr === '') rx.lastIndex = advanceStringIndex(S, toLength(rx.lastIndex), fullUnicode);
+        n++;
+      }
+      return n === 0 ? null : A;
+    }
+  ];
+});
+
+
+/***/ }),
+
+/***/ 4765:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var call = __webpack_require__(6916);
+var fixRegExpWellKnownSymbolLogic = __webpack_require__(7007);
+var anObject = __webpack_require__(9670);
+var requireObjectCoercible = __webpack_require__(4488);
+var sameValue = __webpack_require__(1150);
+var toString = __webpack_require__(1340);
+var getMethod = __webpack_require__(8173);
+var regExpExec = __webpack_require__(7651);
+
+// @@search logic
+fixRegExpWellKnownSymbolLogic('search', function (SEARCH, nativeSearch, maybeCallNative) {
+  return [
+    // `String.prototype.search` method
+    // https://tc39.es/ecma262/#sec-string.prototype.search
+    function search(regexp) {
+      var O = requireObjectCoercible(this);
+      var searcher = regexp == undefined ? undefined : getMethod(regexp, SEARCH);
+      return searcher ? call(searcher, regexp, O) : new RegExp(regexp)[SEARCH](toString(O));
+    },
+    // `RegExp.prototype[@@search]` method
+    // https://tc39.es/ecma262/#sec-regexp.prototype-@@search
+    function (string) {
+      var rx = anObject(this);
+      var S = toString(string);
+      var res = maybeCallNative(nativeSearch, rx, S);
+
+      if (res.done) return res.value;
+
+      var previousLastIndex = rx.lastIndex;
+      if (!sameValue(previousLastIndex, 0)) rx.lastIndex = 0;
+      var result = regExpExec(rx, S);
+      if (!sameValue(rx.lastIndex, previousLastIndex)) rx.lastIndex = previousLastIndex;
+      return result === null ? -1 : result.index;
+    }
+  ];
+});
+
+
+/***/ }),
+
+/***/ 3210:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var $ = __webpack_require__(2109);
+var $trim = (__webpack_require__(3111).trim);
+var forcedStringTrimMethod = __webpack_require__(6091);
+
+// `String.prototype.trim` method
+// https://tc39.es/ecma262/#sec-string.prototype.trim
+$({ target: 'String', proto: true, forced: forcedStringTrimMethod('trim') }, {
+  trim: function trim() {
+    return $trim(this);
+  }
 });
 
 
@@ -2344,8 +3103,8 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2564);
-/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3210);
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9826);
 /* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1539);
@@ -2354,213 +3113,402 @@ var __webpack_exports__ = {};
 /* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4916);
 /* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4603);
+/* harmony import */ var core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9714);
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4723);
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_es_string_search_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4765);
+/* harmony import */ var core_js_modules_es_string_search_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_search_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2564);
+/* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
 
 
 
-var schoollist = {
-  init: function init() {
-    this.menu();
-    this.loadschool();
-    this.form();
-    this.kefu();
-    setInterval(function () {// window.location.href = window.location.href 
-    }, 1000);
-  },
-  form: function form() {
-    $(document).on("click", ".close", function () {
-      $(".masks").hide();
-    });
-    $(".menu-con .menu.s").find(".title").on("click", function () {
-      if ($(this).hasClass("show")) {
-        $(this).removeClass("show");
-      } else {
-        $(this).addClass("show").siblings(".title").removeClass("show");
-      }
-    });
-    addressInit('provinceid', 'cityid', 'cmbArea2');
-    $(document).on("click", ".formtk", function () {
-      var schoolname = $(this).closest("li").find("h3").attr("title");
-      $("input[type=hidden][name=school]").val(schoolname);
-      $(".mask-form").css("display", "flex");
-    });
-    var applyFlag = true;
-    $(document).on("click", 'input[type="submit"]', function (e) {
-      e = e || window.event;
-      e.preventDefault();
-      var form = $(this).parents('form');
-      var action = form.attr("action");
-      var content = form.serialize();
-      var result = false;
-      var con = [];
-      form.find('[name]').each(function () {
-        result = check(this);
 
-        if ($(this).attr("mark") && $(this).val()) {
-          con.push(($(this).attr("mark") == "mark" ? '' : $(this).attr("mark") + ":") + $(this).val());
-        }
 
-        return result;
-      });
 
-      if (con.length) {
-        content = content + '&mark=' + encodeURI(con.join('%%%'));
-      }
 
-      if (result && applyFlag) {
-        applyFlag = false;
-        var url = action ? action : "/ajaxs/collegereg/?dopost=reg&t=";
-        $.ajax({
-          url: url + Math.random(),
-          type: 'POST',
-          dataType: 'json',
-          data: content,
-          header: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-            'X-XXS-Protection': '1;mode=block',
-            'X-Frame-Options': 'deny'
-          },
-          success: function success(data) {
-            if (data.status == 1) {
-              $(".mask-form").hide();
-              form[0].reset();
-              layer.open({
-                content: '提交成功',
-                skin: 'msg',
-                time: 3
-              });
-            } else if (data.status == 0) {
-              layer.open({
-                content: data.info,
-                skin: 'msg',
-                time: 3
-              });
-            }
 
-            applyFlag = true;
-          },
-          error: function error() {
-            applyFlag = true;
-            layer.open({
-              content: '提交失败，请稍后再试！',
-              skin: 'msg',
-              time: 3
-            });
-          }
-        });
-      }
-    }); // 验证表单
+/*webpackjs*/
 
-    var dataReg = {
-      m: /^[1][0-9]{10}$/,
-      e: /^[A-Za-z0-9-_\.]+\@([A-Za-z0-9-_]+\.)+[A-Za-z0-9]{2,6}$/
-    };
-
-    function check(element) {
-      var datatype = $(element).attr('datatype');
-      var value = $(element).val();
-
-      if ($(element).attr("type") == "radio" && $(element).attr('nullmsg')) {
-        var radiovalchecked = $("input[type='radio'][name='" + $(element).attr("name") + "']:checked").val();
-
-        if (!radiovalchecked) {
-          if (radiovalchecked == "") {
-            layer.open({
-              content: $("input[type='radio'][name='" + $(element).attr("name") + "']:checked").attr('nullmsg'),
-              skin: 'msg',
-              time: 3
-            });
-          } else {
-            layer.open({
-              content: $(element).attr('nullmsg'),
-              skin: 'msg',
-              time: 3
-            });
-          }
-
-          return false;
-        }
-      } else if (!value && $(element).attr('nullmsg')) {
-        layer.open({
-          content: $(element).attr('nullmsg'),
-          skin: 'msg',
-          time: 3
-        });
-        return false;
-      } else if (value && (value == "孩子就读省份" || value == "孩子就读城市") && $(element).attr('nullmsg')) {
-        layer.open({
-          content: value,
-          skin: 'msg',
-          time: 3
-        });
-        return false;
-      } else if (datatype && !dataReg[datatype].test(value)) {
-        layer.open({
-          content: $(element).attr('errormsg'),
-          skin: 'msg',
-          time: 3
-        });
-        return false;
-      }
-
-      return true;
+$(function () {
+  $(document).keydown(function (event) {
+    if (event.keyCode == 13) {
+      searchKey();
     }
-  },
-  menu: function menu() {
-    $(".headerwrap").on("click", "menu span", function () {
-      if ($(this).hasClass("active")) {
-        $(this).removeClass("active");
-        $(".menu-mask").hide();
-        $(".headerwrap").find(".menu").eq($(this).index()).removeClass("active");
+  });
+  $(document).on("click", ".library-search-icon", function () {
+    searchKey();
+  });
+
+  function searchKey() {
+    var val = $.trim($("#librarySearch").val());
+
+    if (val) {
+      var url = "//m.ieduglobe.com/?searchkey=" + val;
+      window.location.href = url;
+    } else {
+      layer.open({
+        content: "请输入您想了解的学校",
+        skin: 'msg',
+        time: 3
+      });
+    }
+  } //tab切换
+
+
+  $(".search_nav ul li").click(function () {
+    $(".search_nav ul .active").removeClass('active');
+    var $index = $(this).index();
+    var code = $('.list_container .fl_list').eq($index);
+    var display = code.css('display');
+
+    if (display == 'none') {
+      $(this).addClass('active');
+      $('.list_container .fl_list').hide();
+      code.show();
+      $(".letter_nav").hide();
+    } else {
+      $('.list_container .fl_list').hide();
+      $(this).removeClass("active");
+      code.hide();
+      $(".letter_nav").show();
+    }
+  }); //收起点击事件
+
+  $(".fl_list h5").click(function () {
+    $(this).parents('.fl_list').hide();
+    $(".search_nav ul li.active").removeClass('active');
+  }); //字母搜索 
+
+  $(".letter_nav li:not(:first)").click(function () {
+    $(this).addClass("active").siblings().removeClass('active');
+    var pinying = $(this).html();
+    $("#pinying").attr("value", pinying);
+    $("#school_list").html('');
+    var url = "/index.php?m=iedum&c=index&a=json_list&catid=2&section=&province=16&city=17&searchkey=";
+    $.post(url, {
+      'page': 0,
+      'pinying': pinying
+    }, function (result) {
+      $(".lookMore").attr('data-page', result.page);
+
+      if (result.showHtml) {
+        $("#school_list").append(result.showHtml);
+        $("#sem-school-list").html(result.semHtml);
+        $(".lookMore").show();
       } else {
-        $(this).addClass("active").siblings().removeClass("active");
-        $(".headerwrap").find(".menu").eq($(this).index()).addClass("active").siblings().removeClass("active");
-        $(".menu-mask").show();
+        $(".lookMore").hide();
+        $("#school_list").html('<div class="univer_content"><h3 class="search_noh3">暂无相关学校数据，请重新搜索</h3></div>');
+        $(".bgdee+.univer_content").css("padding-bottom", "13rem");
       }
+    }, 'json');
+  }); //按省份选择城市
+
+  $(".province_list li").click(function () {
+    $(this).toggleClass('active');
+    $(this).find(".city_list_fl ").toggle();
+  }); //判断城市列表个数，最后一行不足4个，加空加标签
+
+  function appendLi(ul) {
+    //最后一行个数
+    var lastNum = $(ul).find("li").length % 4;
+    var lihtml = "";
+
+    if (lastNum == 0) {
+      return;
+    }
+
+    for (var i = 0; i < 4 - lastNum; i++) {
+      lihtml += "<li></li>";
+    }
+
+    $(ul).append(lihtml);
+  }
+
+  $(".province_list .city_list_fl").each(function () {
+    appendLi(this);
+  });
+  appendLi(".city_list_dl:first .city_list_fl"); //设置select默认值颜色
+
+  var unSelected = "#666666";
+  var selected = "#000000";
+  $("select").css("color", unSelected);
+  $("option").css("color", selected);
+  $("select").change(function () {
+    var selItem = $(this).val();
+
+    if (selItem == $(this).find('option:first').val()) {
+      $(this).css("color", unSelected);
+    } else {
+      if ($(this).hasClass("black")) {
+        $(this).css("color", "#000000");
+      } else {
+        $(this).css("color", selected);
+      }
+    }
+  }); //关闭报名弹框
+
+  $("#closebm").on("click", function () {
+    $(".mask").animate({
+      opacity: 0
+    }, 300, function () {
+      $(".mask").hide();
     });
-    $(".headerwrap").on("click", ".links a", function () {
-      $(this).addClass("active").siblings("a").removeClass("active");
+    $(".error-tips").html("");
+  }); //点击报名按钮
+
+  $(document).on("click", ".showtk", function () {
+    var schoolname = $(this).parents(".list").find(".school-name").text();
+    console.log(schoolname);
+    $("#want_school").val(schoolname);
+
+    if ($(this).hasClass("yy")) {
+      $(".mask").find(".xhelse").hide();
+      $(".mask").find(".else").removeAttr("nullmsg");
+    } else if ($(this).hasClass("sq")) {
+      $(".mask").find(".xhelse").show();
+      $(".mask").find(".else").attr("nullmsg", "请输入你要咨询的问题");
+    }
+
+    $(".mask").show();
+    $(".mask").animate({
+      opacity: 1
+    }, 300);
+  });
+  var applyFlag = true; //提交报名信息
+
+  $(document).on("click", ".tk_sibmit", function (e) {
+    e = e || window.event;
+    e.preventDefault();
+    var form = $(this).parents('form');
+    var error = form.find('.error-tips');
+    error.html("");
+    var btnTxt = $(this).html();
+    var result = false;
+    var self = this;
+    var errormsg = $(this).attr("errormsg") || "预约失败，请稍后再试";
+    var successmsg = $(this).attr("successmsg") || "您已预约成功，谢谢您的参与！"; // 提交前验证
+
+    var con = [];
+    form.find('input, select,textarea').each(function (i) {
+      result = check(this);
+
+      if ($(this).attr("mark") && $(this).val()) {
+        con.push(($(this).attr("mark") == "mark" ? '' : $(this).attr("mark") + ":") + $(this).val());
+      }
+
+      return result;
     });
-    $(".menu-mask").on("click", function () {
-      $(".menu-mask").hide();
-      $(".headerwrap").find(".menu").removeClass("active");
-      $("menu span").removeClass("active");
-    });
-  },
-  loadschool: function loadschool() {
-    var page = 1;
-    $(document).on("click", ".more-school a", function () {
-      var ul = $(this).closest(".schoollist-list").find("ul");
+    var content = form.serialize() + '&mark=' + encodeURI(con.join('%%%'));
+
+    if (result && applyFlag) {
+      applyFlag = false;
+      $(self).html('预约中...');
       $.ajax({
-        url: "list",
-        type: "get",
-        dataType: "html",
-        data: {
-          page: page
+        url: "/index.php?m=content&c=ajax&a=collegereg&dopost=reg&t=" + Math.random(),
+        type: 'POST',
+        dataType: 'json',
+        data: content,
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+          'X-XXS-Protection': '1;mode=block',
+          'X-Frame-Options': 'deny'
         },
-        success: function success(res) {
-          if (res) {
-            page += 1;
+        success: function success(data) {
+          if (data.status == 1) {
+            $(".mask").animate({
+              opacity: 0
+            }, 300, function () {
+              $(".mask").hide();
+            });
+            form[0].reset();
+            layer.open({
+              content: successmsg,
+              skin: 'msg',
+              time: 3
+            });
+          } else if (data.status == 0) {
+            error.html(data.info);
           }
+
+          applyFlag = true;
+          $(self).html(btnTxt);
         },
         error: function error() {
-          var li = "<li><div class=\"top\"><a href=\"javascript:\"><div class=\"schoollog\"><img src=\"https://www.ieduchina.com/uploadfile/college/202012/1607653957.png\" alt=\"\u5317\u4EAC\u5E08\u8303\u5927\u5B66\u9644\u5C5E\u5B9E\u9A8C\u4E2D\u5B66\u56FD\u9645\u90E8\"></div><div class=\"price\"><span>\u53C2\u8003\u5B66\u8D39</span><p>12.8\u4E07~20.8\u4E07</p></div></a></div><div class=\"center\"><a href=\"javascript:\"><h3 title=\"\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\">\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821</h3><div class=\"text\"><p>\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\u4F4D\u4E8E\u6D66\u4E1C\u7EFF\u5730\u56FD\u9645\u6559\u80B2\u56ED\u533A\uFF0C\u662F\u4E0E\u7EFF\u5730\u9999\u6E2F\u80A1\u4EFD\u6709\u9650\u516C\u53F8\uFF08\u5168\u7403500\u5F3A\u4F01\u4E1A\u7EFF\u5730\u96C6\u56E2\u63A7\u80A1\u5B50\u516C\u53F8\uFF09\u6218\u7565\u5408\u4F5C\u4E0A\u6D77\u9AD8\u85E4\u81F4\u8FDC\u521B\u65B0\u5B66\u6821\u4F4D\u4E8E\u2026</p></div></a><div class=\"tools\"><a>2020\u4EBA\u5173\u6CE8</a> <a class=\"kefu\">2020\u4EBA\u54A8\u8BE2</a> <a class=\"formtk\">\u9884\u7EA6\u63A2\u6821</a></div></div></li>";
-          ul.append(li);
+          applyFlag = true;
+          $(self).html(btnTxt);
+          layer.open({
+            content: errormsg,
+            skin: 'msg',
+            time: 3
+          });
         }
       });
-    });
-  },
-  kefu: function kefu() {
-    $(document).on("click", ".kefu", function () {
-      window.location.href = "http://p.qiao.baidu.com/cps/chat?siteId=10762946&amp;userId=23739680";
-    });
+    }
+  }); // 验证表单
+
+  var dataReg = {
+    m: /^[1][0-9]{10}$/
+  };
+
+  function check(element) {
+    var error = $(element).parents("form").find(".error-tips");
+    var datatype = $(element).attr('datatype');
+    var value = $(element).val();
+
+    if (!value && $(element).attr('nullmsg')) {
+      error.html($(element).attr('nullmsg'));
+      $(element).addClass('error');
+      return false;
+    }
+
+    if (datatype && !dataReg[datatype].test(value)) {
+      error.html($(element).attr('errormsg'));
+      $(element).addClass('error');
+      return false;
+    }
+
+    error.html('');
+    $(element).parents(".item").removeClass('error');
+    return true;
   }
-};
-$(function () {
-  schoollist.init();
+
+  $("body").on('blur', 'form input,form select,form textarea', function () {
+    check(this);
+  });
+  var alldata = [];
+  $.ajax({
+    url: "https://m.ieduglobe.com/statics/m/js/city.json",
+    type: "get",
+    success: function success(res) {
+      if (res.result === "1" && res.rows.length) {
+        alldata = res.rows;
+      }
+    }
+  });
+  $(".address").on("click", function () {
+    $(".pre").empty();
+    $.each(alldata, function (index, item) {
+      $(".pre").append('<li provinceId = ' + index + '><span>' + item.provinceName + '</span></li>');
+    });
+    $(".prew").css({
+      width: '100%'
+    });
+    $(".cityw").css({
+      width: 0
+    });
+    $(".preWrap").show();
+  });
+  $(document).on("click", ".pre li", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+    $(".city").empty();
+    var citydata = alldata[$(this).attr("provinceId")];
+    $.each(citydata.cities, function (index, item) {
+      $(".city").append('<li provinceId = ' + index + '><span>' + item.cityName + '</span></li>');
+    });
+    $(".prew").animate({
+      width: "50%"
+    }, 200);
+    $(".cityw").animate({
+      width: "50%"
+    }, 200);
+  });
+  $(document).on("click", ".city li", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+    var t1 = $(".pre").find("li.active").text();
+    var t2 = $(".city").find("li.active").text();
+    var adname = t1 == t2 ? t1 : t1 + ',' + t2;
+    $(".address").html(adname);
+    $(".addressinput").val(t1 == t2 ? t1 : t1 + ',' + t2);
+    $(".address").removeClass("msgnull");
+    $(".preWrap").hide();
+    $(".pre").empty();
+    $(".city").empty();
+    $(".prew").stop(true, true);
+    $(".cityw").stop(true, true);
+  });
+  $(document).on("click", ".preWrap", function (e) {
+    var con = $('.list');
+
+    if (!con.is(e.target) && con.has(e.target).length === 0) {
+      $(".address").removeClass("msgnull");
+      $(".preWrap").hide();
+      $(".pre").empty();
+      $(".city").empty();
+      $(".prew").stop(true, true);
+      $(".cityw").stop(true, true);
+    }
+  });
+
+  function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+  } //滑屏加载
+
+
+  var flag = true;
+  var page = 1;
+  $(document).on("scroll", function () {
+    moreAjax();
+  });
+
+  function moreAjax() {
+    var ajaxUrl = $("#ajaxUrl").val();
+    var wTop = $(window).scrollTop();
+    var wHeight = $(window).height();
+    var dHeight = $(document).height();
+
+    if (wTop + wHeight >= dHeight - 500 && flag) {
+      layer.open({
+        type: 2,
+        skin: 'loading'
+      });
+      page++;
+      flag = false;
+      $.ajax({
+        url: ajaxUrl + '&page=' + page,
+        type: 'get',
+        dataType: 'json',
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+          'X-XXS-Protection': '1;mode=block',
+          'X-Frame-Options': 'deny'
+        },
+        success: function success(res) {
+          layer.closeAll();
+
+          if (res.status == 1 && res.data) {
+            $("#sem-school-list").append(res.data);
+            flag = true;
+          } else {
+            page--;
+            layer.open({
+              content: '数据加载完成',
+              skin: 'msg',
+              time: 3
+            });
+          }
+        },
+        error: function error(err) {
+          page--;
+          layer.closeAll();
+          setTimeout(function () {
+            flag = true;
+          }, 10000);
+        }
+      });
+    }
+  }
 });
+/*webpackjs*/
 })();
 
 /******/ })()

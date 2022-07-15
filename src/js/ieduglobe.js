@@ -1,3 +1,4 @@
+import "../css/ieduglobe.less";
 /*webpackjs*/
 $(function () {
     $(document).keydown(function (event) {
