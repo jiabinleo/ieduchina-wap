@@ -145,89 +145,6 @@ body{
 
         form {
             margin-top: -(-26/@rem);
-
-            div {
-                overflow: hidden;
-                width: (650/@rem);
-                height: (80/@rem);
-                background: #FFFFFF;
-                border-radius: (8/@rem);
-                border: (1/@rem) solid #036AEE;
-                margin: (26/@rem) auto 0;
-
-                &.arr {
-                    position: relative;
-
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        width: (38/@rem);
-                        height: (38/@rem);
-                        background-image: url(../images/箭头@2x.png);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        right: (28/@rem);
-                        top: 50%;
-                        margin-top: (-18/@rem);
-                        z-index: 10;
-                    }
-                }
-
-                input {
-                    box-sizing: border-box;
-                    padding: 0 (28/@rem);
-                    width: (650/@rem);
-                    height: (80/@rem);
-                    font-size: (28/@rem);
-                    font-weight: 400;
-                    color: #333333;
-
-                    &::placeholder {
-                        font-size: (28/@rem);
-                        font-weight: 400;
-                        color: #999999;
-                    }
-                }
-
-                select {
-                    box-sizing: border-box;
-                    padding: 0 (28/@rem);
-                    width: (650/@rem);
-                    height: (80/@rem);
-                    font-size: (28/@rem);
-                    font-weight: 400;
-                    color: #999999;
-                    background-color: white;
-                    border: none;
-                    appearance: none;
-                }
-            }
-
-            p {
-                &.error-tips {
-                    font-size: (24/@rem);
-                    color: red;
-                    height: 0;
-                    line-height: (34/@rem);
-                    text-align: center;
-                }
-            }
-
-            button[type='submit'] {
-                display: block;
-                margin: (34/@rem) auto 0;
-                font-size: (32/@rem);
-                font-weight: 400;
-                color: #FFFFFF;
-                cursor: pointer;
-                width: (276/@rem);
-                height: (88/@rem);
-                // background: linear-gradient(270deg, #539DFC 0%, #036AEE 100%);
-                background-color: #036AEE;
-                border-radius: (12/@rem);
-                border: none;
-            }
         }
     }
 }
@@ -266,3 +183,152 @@ body{
 .mask .biaodan h2{
     color: #207AEC;
 }
+
+.bottomform .form{
+    border: none;
+    height: auto;
+    padding: (20/@rem);
+}
+.bottomform {
+    width: (710/@rem);
+  }
+  .bottomform h2 {
+    font-size: 0.33834667rem;
+    font-weight: bold;
+    line-height: 0.57096rem;
+    color: #035297;
+    text-align: center;
+  }
+  .bottomform .xh {
+    margin-top: 0.38064rem;
+    border: none;
+  }
+  .bottomform .xh label {
+    display: flex;
+  }
+  .bottomform .xh label span {
+    display: block;
+    width: 22%;
+    text-align: right;
+    padding-right: 0.10573333rem;
+    padding-left: 0.25376rem;
+    color: #333333;
+    font-size: 0.29605333rem;
+    font-weight: 400;
+    padding-top: 0.21146667rem;
+  }
+  .bottomform .xh label span a {
+    color: red;
+    padding-right: 0.06344rem;
+  }
+  .bottomform .xh label .username {
+    width: 70%;
+    height: 0.6344rem;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 0.29605333rem;
+    padding: 0 0.3172rem;
+    border: solid 1px #e5e5e5;
+    border-radius: 0.10573333rem;
+  }
+  .bottomform .xh label .username::placeholder {
+    font-size: 0.29605333rem;
+    color: #666666;
+  }
+  .bottomform .xh label select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    // background-image: url("../img/triangle.png?t=112315");
+    background-repeat: no-repeat;
+    background-position: 5.3924rem 0.33834667rem;
+    background-size: 0.23261333rem auto;
+    padding: 0;
+    border-radius: 0.10573333rem;
+    width: 70%;
+    height: 0.6344rem;
+    background-color: #ffffff;
+    font-size: 0.29605333rem;
+    color: #333333;
+    padding: 0 0.3172rem;
+    border: none;
+    outline: none;
+    border: solid 1px #e5e5e5;
+  }
+  .bottomform .xh label select::placeholder {
+    font-size: 0.29605333rem;
+    color: #cccccc;
+  }
+  .bottomform .xh label .address {
+    border-radius: 0.10573333rem;
+    width: 70%;
+    height: 0.6344rem;
+    margin-left: 0;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 0.29605333rem;
+    padding: 0 0.3172rem;
+    line-height: 0.61898667rem;
+    border: solid 1px #e5e5e5;
+    margin-top: 0.04rem;
+  }
+  .bottomform .xh label .address.msgnull {
+    color: #666666;
+  }
+  .bottomform .xh.xhelse {
+    display: none;
+  }
+  .bottomform .xh.xhelse span {
+    width: 100%;
+    text-align: right;
+    padding-left: 0.52866667rem;
+    display: block;
+    text-align: left;
+    color: #333333;
+    font-size: 0.29605333rem;
+    font-weight: 400;
+    padding-bottom: 0.21146667rem;
+  }
+  .bottomform .xh.xhelse span a {
+    color: red;
+    padding-right: 0.06344rem;
+  }
+  .bottomform .xh.xhelse .else {
+    width: 84%;
+    height: 2.74906667rem;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 0.29605333rem;
+    padding: 0 0.3172rem;
+    border: solid 1px #e5e5e5;
+    margin-left: 0.54981333rem;
+    font-size: 0.25376rem;
+    font-weight: 400;
+    line-height: 0.43350667rem;
+    padding: 0.10573333rem;
+    outline: none;
+    border-radius: 0.10573333rem;
+  }
+  .bottomform .xh.xhelse .else::placeholder {
+    font-size: 0.29605333rem;
+    color: #cccccc;
+  }
+  .bottomform .error-tips {
+    color: red;
+    font-size: 0.25376rem;
+    text-align: center;
+    line-height: 0.42293333rem;
+    height: 0rem;
+  }
+  .bottomform .save {
+    margin-top: 0.42293333rem;
+    width: 4.22933333rem;
+    height: 0.84586667rem;
+    background: #035297;
+    border-radius: 0.46522667rem;
+    border: none;
+    color: #ffffff;
+    margin-left: 1.05733333rem;
+    font-size: 0.33834667rem;
+    outline: none;
+  }

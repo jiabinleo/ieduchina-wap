@@ -1063,30 +1063,62 @@
                         </li>
                         <%})%>
                     </ul>
-                    <div class="right">
+                    <div class="bottomform">
                         <div class="form">
-                            <h2>广州40+所国际学校<br>
-                                信息全覆盖</h2>
+                            <h2>快速匹配学校<br>
+                                择校升学快人一步</h2>
                             <form>
-                                <div class="arr">
-                                    <select name="grade" nullmsg="请选择孩子在读年级" class="grateClass">
-                                        <option value="" disabled="disabled" selected="selected"
-                                            style="display:none;color:#999999">孩子在读年级</option>
-                                        <%grade.forEach((op)=>{%>
-                                        <option value="<%=op%>" style="color: rgb(0, 0, 0);"><%=op%></option>
-                                        <%})%>
-                                    </select>
+                                <input type="hidden" mark="mark" value="选校专家semWAP版">
+                                <div class="xh">
+                                    <label>
+                                        <span><a></a>城市</span>
+                                        <div class="address msgnull">请选择在读城市</div>
+                                        <input class="addressinput" type="hidden" mark="在读城市" value="">
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="text" name="name" nullmsg="请输入您的名字" class="username" placeholder="您的名字">
+                                <div class="xh">
+                                    <label>
+                                        <span><a>*</a>姓名</span>
+                                        <input class="username" nullmsg="请输入姓名" name="name" type="text"
+                                            placeholder="请输入姓名">
+                                    </label>
                                 </div>
-                                <div>
-                                    <input type="text" name="tel" nullmsg="请输入手机号码" class="telphone" errormsg="请输入正确的手机号码"
-                                        placeholder="您的电话" maxlength="11">
+                                <div class="xh">
+                                    <label>
+                                        <span><a>*</a>年级</span>
+                                        <select class="black" name="grade" nullmsg="请选择在读年级"
+                                            style="color: rgb(102, 102, 102);">
+                                            <option value="" disabled="" selected=""
+                                                style="display: none; color: rgb(0, 0, 0);">请选择在读年级
+                                            </option>
+                                            <option value="幼儿" style="color: rgb(0, 0, 0);">幼儿</option>
+                                            <option value="一年级" style="color: rgb(0, 0, 0);">一年级</option>
+                                            <option value="二年级" style="color: rgb(0, 0, 0);">二年级</option>
+                                            <option value="三年级" style="color: rgb(0, 0, 0);">三年级</option>
+                                            <option value="四年级" style="color: rgb(0, 0, 0);">四年级</option>
+                                            <option value="五年级" style="color: rgb(0, 0, 0);">五年级</option>
+                                            <option value="六年级" style="color: rgb(0, 0, 0);">六年级</option>
+                                            <option value="初一" style="color: rgb(0, 0, 0);">初一</option>
+                                            <option value="初二" style="color: rgb(0, 0, 0);">初二</option>
+                                            <option value="初三" style="color: rgb(0, 0, 0);">初三</option>
+                                            <option value="高一" style="color: rgb(0, 0, 0);">高一</option>
+                                            <option value="高二" style="color: rgb(0, 0, 0);">高二</option>
+                                            <option value="高三" style="color: rgb(0, 0, 0);">高三</option>
+                                            <option value="其他" style="color: rgb(0, 0, 0);">其他</option>
+                                        </select>
+                                    </label>
                                 </div>
-                                <input type="hidden" name="mark" value="广州国际学校排名_国际学校排名WAP版">
+                                <div class="xh">
+                                    <label>
+                                        <span><a>*</a>电话</span>
+                                        <input type="text" name="mobile" nullmsg="请输入家长电话" errormsg="请输入正确的家长电话"
+                                            datatype="m" class="username" placeholder="请输入家长电话">
+                                    </label>
+                                </div>
                                 <p class="error-tips"></p>
-                                <button type='submit' class="tk_sibmit">匹配学校</button>
+                                <input type="hidden" name="source" value="选校专家semWAP版">
+                                <button errormsg="提交失败，请稍后再试" successmsg="提交成功" class="save tk_sibmit"
+                                    data-agl-cvt="5">提交</button>
                             </form>
                         </div>
                     </div>
