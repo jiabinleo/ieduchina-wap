@@ -14,7 +14,7 @@ const glob = require("glob");
 const entry = {};
 const template=[];
 glob.sync("./src/**.ejs").forEach((page)=>{
-    if(page !== "./src/ieduglobe2.ejs"){
+    if(page == "./src/schoollist.ejs"){
         entry[page.replace("./src/","").replace(".ejs","")]=page.replace("./src/","./src/js/").replace(".ejs",".js");
         template.push(new HtmlWebpackPlugin({
             template: page,
