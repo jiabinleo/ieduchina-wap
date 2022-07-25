@@ -555,8 +555,6 @@ section.schoollist .schoollist-list ul li {
 section.schoollist .schoollist-list ul li .top {
   padding-bottom: 0.42666667rem;
   border-bottom: solid rgba(221, 221, 221, 0.5) 0.04266667rem;
-}
-section.schoollist .schoollist-list ul li .top a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -570,7 +568,7 @@ section.schoollist .schoollist-list ul li .top a {
       -ms-flex-align: center;
           align-items: center;
 }
-section.schoollist .schoollist-list ul li .top a .schoollog {
+section.schoollist .schoollist-list ul li .top .schoollog {
   width: 8.02133333rem;
   height: 1.92rem;
   border-radius: 0.17066667rem;
@@ -578,31 +576,41 @@ section.schoollist .schoollist-list ul li .top a .schoollog {
   overflow: hidden;
   text-align: center;
 }
-section.schoollist .schoollist-list ul li .top a .schoollog img {
+section.schoollist .schoollist-list ul li .top .schoollog img {
   max-width: 100%;
   max-height: 100%;
 }
-section.schoollist .schoollist-list ul li .top a .price {
-  width: 4.26666667rem;
-  text-align: center;
+section.schoollist .schoollist-list ul li .top .tools {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-left: 1.49333333rem;
 }
-section.schoollist .schoollist-list ul li .top a .price span {
+section.schoollist .schoollist-list ul li .top .tools a {
   display: inline-block;
-  width: 2.60266667rem;
-  height: 0.81066667rem;
-  line-height: 0.81066667rem;
-  text-align: center;
-  background: #0770D1;
-  border-radius: 0.53333333rem;
-  font-size: 0.46933333rem;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-section.schoollist .schoollist-list ul li .top a .price p {
   font-size: 0.59733333rem;
   font-weight: 400;
-  color: #333333;
-  padding-top: 0.08533333rem;
+  color: #666666;
+  line-height: 0.72533333rem;
+  cursor: pointer;
+}
+section.schoollist .schoollist-list ul li .top .tools a::before {
+  content: "";
+  display: inline-block;
+  width: 0.59733333rem;
+  height: 0.59733333rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 0.17066667rem;
+  vertical-align: -0.064rem;
+}
+section.schoollist .schoollist-list ul li .top .tools a:first-of-type::before {
+  background-image: url(../images/6283fa99.png);
 }
 section.schoollist .schoollist-list ul li .center h3 {
   font-size: 0.68266667rem;
@@ -612,7 +620,7 @@ section.schoollist .schoollist-list ul li .center h3 {
   padding: 0.42666667rem 0 0.42666667rem;
 }
 section.schoollist .schoollist-list ul li .center .text {
-  height: 2.85866667rem;
+  display: none;
 }
 section.schoollist .schoollist-list ul li .center .text p {
   display: -webkit-box;
@@ -626,7 +634,56 @@ section.schoollist .schoollist-list ul li .center .text p {
   line-height: 0.81066667rem;
   text-align: justify;
 }
-section.schoollist .schoollist-list ul li .center .tools {
+section.schoollist .schoollist-list ul li .center > p.label {
+  padding: 0.42666667rem 0 0.21333333rem;
+}
+section.schoollist .schoollist-list ul li .center > p.label a {
+  display: inline-block;
+  padding: 0 0.384rem;
+  line-height: 1.06666667rem;
+  border-radius: 0.42666667rem;
+  margin-right: 0.21333333rem;
+  font-size: 0.59733333rem;
+}
+section.schoollist .schoollist-list ul li .center > p.label a.d {
+  background-color: rgba(227, 162, 48, 0.1);
+  color: #E3A230;
+}
+section.schoollist .schoollist-list ul li .center > p.label a.t {
+  background-color: rgba(255, 99, 234, 0.1);
+  color: #FF63EA;
+}
+section.schoollist .schoollist-list ul li .center > p.label a.y {
+  background-color: rgba(255, 130, 39, 0.1);
+  color: #ff8227;
+}
+section.schoollist .schoollist-list ul li .center > p.label a.x {
+  background-color: rgba(0, 178, 154, 0.1);
+  color: #00b29a;
+}
+section.schoollist .schoollist-list ul li .center > p.label a.c {
+  background-color: rgba(168, 77, 248, 0.1);
+  color: #a84df8;
+}
+section.schoollist .schoollist-list ul li .center > p.label a.g {
+  background-color: rgba(70, 107, 252, 0.1);
+  color: #466bfc;
+}
+section.schoollist .schoollist-list ul li .center .field {
+  padding: 0.21333333rem 0;
+}
+section.schoollist .schoollist-list ul li .center .field p {
+  padding-left: 5em;
+  line-height: 0.85333333rem;
+  font-size: 0.59733333rem;
+  color: #666666;
+}
+section.schoollist .schoollist-list ul li .center .field p span {
+  color: #333333;
+  margin-left: -5em;
+}
+section.schoollist .schoollist-list ul li .center .btn {
+  padding: 0.21333333rem 0 0.42666667rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -635,32 +692,28 @@ section.schoollist .schoollist-list ul li .center .tools {
       -ms-flex-pack: distribute;
           justify-content: space-around;
 }
-section.schoollist .schoollist-list ul li .center .tools a {
-  font-size: 0.59733333rem;
-  font-weight: 400;
-  color: #666666;
+section.schoollist .schoollist-list ul li .center .btn a {
+  text-align: center;
+  line-height: 2.13333333rem;
+  width: 2.98666667rem;
+  height: 1.06666667rem;
+  display: block;
+  background-color: white;
+  border-radius: 0.384rem;
+  border: solid 0.04266667rem #1a5f9e;
+  line-height: 0.98133333rem;
+  color: #1a5f9c;
+  font-size: 0.512rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   cursor: pointer;
-  padding-bottom: 0.55466667rem;
 }
-section.schoollist .schoollist-list ul li .center .tools a::before {
-  content: "";
-  display: inline-block;
-  width: 0.59733333rem;
-  height: 0.59733333rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.17066667rem;
-  vertical-align: -0.064rem;
-}
-section.schoollist .schoollist-list ul li .center .tools a:first-of-type::before {
-  background-image: url(../images/6283fa99.png);
-}
-section.schoollist .schoollist-list ul li .center .tools a:nth-of-type(2)::before {
-  background-image: url(../images/3535a1d9.png);
+section.schoollist .schoollist-list ul li .center .btn a:last-of-type {
+  background-color: #1a5f9e;
+  color: white;
 }
 section.schoollist .schoollist-list ul li .bottom {
-  padding-top: 0.64rem;
+  padding-top: 0.34133333rem;
   padding-bottom: 0.55466667rem;
   border-top: solid rgba(221, 221, 221, 0.5) 0.04266667rem;
 }

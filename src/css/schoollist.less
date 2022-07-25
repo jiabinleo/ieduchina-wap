@@ -417,14 +417,8 @@ section {
                                 }
 
                                 &:first-of-type {
-                                    padding-bottom: (16/@rem);
                                     &::before {
                                         background-image: url("../images/关注@2x.png");
-                                    }
-                                }
-                                &:nth-of-type(2) {
-                                    &::before {
-                                        background-image: url("../images/预约@2x.png");
                                     }
                                 }
                             }
@@ -455,12 +449,86 @@ section {
                                 text-align: justify;
                             }
                         }
+                        &>p{
+                            &.label{
+                                padding: (20/@rem) 0 (10/@rem);
+                                a{
+                                    display: inline-block;
+                                    padding: 0 (18/@rem);
+                                    line-height: (50/@rem);
+                                    border-radius: (20/@rem);
+                                    margin-right: (10/@rem);
+                                    font-size: (28/@rem);
+                                    &.d {
+                                        background-color: rgba(227, 162, 48, 0.1);
+                                        color: #E3A230;
+                                      }
+                                    &.t {
+                                    background-color: rgba(255, 99, 234, 0.1);;
+                                    color: #FF63EA;
+                                    }
+                                    &.y {
+                                    background-color: rgba(255, 130, 39, 0.1);
+                                    color: #ff8227;
+                                    }
+                                    &.x {
+                                    background-color: rgba(0, 178, 154, 0.1);
+                                    color: #00b29a;
+                                    }
+                                    &.c {
+                                    background-color: rgba(168, 77, 248, 0.1);
+                                    color: #a84df8;
+                                    }
+                                    &.g {
+                                    background-color: rgba(70, 107, 252, 0.1);
+                                    color: #466bfc;
+                                    }
+                                }
+                            }
+                        }
+                        .field{
+                            padding: (10/@rem) 0;
+                            p{
+                                padding-left: 5em;
+                                line-height: (40/@rem);
+                                font-size: (28/@rem);
+                                color: #666666;
+                                span{
+                                    color: #333333;
+                                    margin-left: -5em;
+                                }
+                            }
+                        }
+                        .btn{
+                            padding: (10/@rem) 0 (20/@rem);
+                            display: flex;
+                            justify-content: space-around;
+                            a{
+                                text-align: center;
+                                line-height: (100/@rem);
+                                width: (140/@rem);
+                                height: (50/@rem);
+                                display: block;
+                                background-color: white; 
+                                border-radius: (18/@rem);
+                                border: solid (2/@rem) #1a5f9e;
+                                line-height: (46/@rem);
+                                color: #1a5f9c;
+                                font-size: (24/@rem);
+                                box-sizing: border-box;
+                                cursor: pointer;
+                                &:last-of-type{
+                                    background-color: #1a5f9e;
+                                    color: white;
+                                }
+                            }
+                        }
                     }
 
                     .bottom {
-                        padding-top: (10/@rem);
+                        padding-top: (16/@rem);
                         padding-bottom: (26/@rem);
-                        // border-top: solid rgba(221, 221, 221, .5) (2/@rem);
+                        border-top: solid rgba(221, 221, 221, .5) (2/@rem);
                         a {
                             .text {
                                 .title{
