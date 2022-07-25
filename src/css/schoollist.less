@@ -375,48 +375,57 @@ section {
                     .top {
                         padding-bottom: (20/@rem);
                         border-bottom: solid rgba(221, 221, 221, .5) (2/@rem);
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
 
-                        a {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
+                        .schoollog {
+                            width: (376/@rem);
+                            height: (90/@rem);
+                            border-radius: (8/@rem);
+                            border: rgba(232, 232, 232, 0.5) solid (2/@rem);
+                            overflow: hidden;
+                            text-align: center;
 
-                            .schoollog {
-                                width: (376/@rem);
-                                height: (90/@rem);
-                                border-radius: (8/@rem);
-                                border: rgba(232, 232, 232, 0.5) solid (2/@rem);
-                                overflow: hidden;
-                                text-align: center;
-
-                                img {
-                                    max-width: 100%;
-                                    max-height: 100%;
-                                }
+                            img {
+                                max-width: 100%;
+                                max-height: 100%;
                             }
+                        }
+                        .tools {
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin-left: (70/@rem);
+                            a {
+                                display: inline-block;
+                                font-size: (28/@rem);
+                                font-weight: 400;
+                                color: #666666;
+                                line-height: (34/@rem);
+                                cursor: pointer;
 
-                            .price {
-                                width: (200/@rem);
-                                text-align: center;
-
-                                span {
+                                &::before {
+                                    content: "";
                                     display: inline-block;
-                                    width: (122/@rem);
-                                    height: (38/@rem);
-                                    line-height: (38/@rem);
-                                    text-align: center;
-                                    background: #0770D1;
-                                    border-radius: (25/@rem);
-                                    font-size: (22/@rem);
-                                    font-weight: 500;
-                                    color: #FFFFFF;
+                                    width: (28/@rem);
+                                    height: (28/@rem);
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    margin-right: (8/@rem);
+                                    vertical-align: (-3/@rem);
                                 }
 
-                                p {
-                                    font-size: (28/@rem);
-                                    font-weight: 400;
-                                    color: #333333;
-                                    padding-top: (4/@rem);
+                                &:first-of-type {
+                                    padding-bottom: (16/@rem);
+                                    &::before {
+                                        background-image: url("../images/关注@2x.png");
+                                    }
+                                }
+                                &:nth-of-type(2) {
+                                    &::before {
+                                        background-image: url("../images/预约@2x.png");
+                                    }
                                 }
                             }
                         }
@@ -435,8 +444,7 @@ section {
                         }
 
                         .text {
-                            // padding-top: (30/@rem);
-                            height: (134/@rem);
+                            display: none;
 
                             p {
                                 .line(3);
@@ -447,48 +455,12 @@ section {
                                 text-align: justify;
                             }
                         }
-
-                        .tools {
-                            display: flex;
-                            justify-content: space-around;
-
-                            a {
-                                font-size: (28/@rem);
-                                font-weight: 400;
-                                color: #666666;
-                                cursor: pointer;
-                                padding-bottom: (26/@rem);
-
-                                &::before {
-                                    content: "";
-                                    display: inline-block;
-                                    width: (28/@rem);
-                                    height: (28/@rem);
-                                    background-size: contain;
-                                    background-repeat: no-repeat;
-                                    background-position: center;
-                                    margin-right: (8/@rem);
-                                    vertical-align: (-3/@rem);
-                                }
-
-                                &:first-of-type {
-                                    &::before {
-                                        background-image: url("../images/关注@2x.png");
-                                    }
-                                }
-                                &:nth-of-type(2) {
-                                    &::before {
-                                        background-image: url("../images/预约@2x.png");
-                                    }
-                                }
-                            }
-                        }
                     }
 
                     .bottom {
-                        padding-top: (30/@rem);
+                        padding-top: (10/@rem);
                         padding-bottom: (26/@rem);
-                        border-top: solid rgba(221, 221, 221, .5) (2/@rem);
+                        // border-top: solid rgba(221, 221, 221, .5) (2/@rem);
                         a {
                             .text {
                                 .title{

@@ -179,7 +179,35 @@ const schoollist = {
                     }
                 },
                 error() {
-                    let li = `<li><div class="top"><a href="javascript:"><div class="schoollog"><img src="https://www.ieduchina.com/uploadfile/college/202012/1607653957.png" alt="北京师范大学附属实验中学国际部"></div><div class="price"><span>参考学费</span><p>12.8万~20.8万</p></div></a></div><div class="center"><a href="javascript:"><h3 title="上海高藤致远创新学校">上海高藤致远创新学校</h3><div class="text"><p>上海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位于…</p></div></a><div class="tools"><a>2020人关注</a> <a class="kefu">2020人咨询</a> <a class="formtk">预约探校</a></div></div></li>`
+                    let li = `<li>
+                    <div class="top">
+                        <div class="schoollog">
+                           <a href="javascript:"><img src="https://www.ieduchina.com/uploadfile/college/202012/1607653957.png"
+                            alt="北京师范大学附属实验中学国际部"></a>
+                        </div>
+                        <div class="tools">
+                            <a>2020人关注</a>
+                            <a class="formtk">预约探校</a>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <a href="javascript:">
+                            <h3 title="上海高藤致远创新学校">上海高藤致远创新学校学校上海高藤致远创新学校上海高藤致远创新学校</h3>
+                            <div class="text">
+                                <p>上海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位</p>
+                            </div>
+                        </a>
+                        </div>
+                        <div class="bottom">
+                            <a href="javascript:">
+                                <div class="text">
+                                    <div class="title">
+                                        <h4><i></i>深扒包玉刚：中国排名第一！据说马伊琍女儿就读该校！它凭什么这么牛？</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+					</li>`
                     ul.append(li);
                 }
             })

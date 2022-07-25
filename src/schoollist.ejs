@@ -79,9 +79,9 @@
                 <div class="links">
                     <%hotcity.list.forEach((a,i)=>{%>
                     <a<%=(i==0)?' class=active':''%>><%=a.city%></a>
-                    <%})%>
+                        <%})%>
                 </div>
-            </div> 
+            </div>
             <%menu.forEach((el,index)=>{%>
             <%if(index){%>
             <div class="menu <%=el.class%>">
@@ -93,7 +93,7 @@
             </div>
             <%}else{%>
             <div class="menu <%=el.class%>">
-                
+
                 <!-- <p class="tip">按省份选择城市</p> -->
                 <%el.list.forEach((item,i)=>{%>
                 <div class="title"><%=item.title%></div>
@@ -137,37 +137,27 @@
                 <%list.forEach((el,index)=>{%>
                 <li>
                     <div class="top">
-                        <a href="javascript:">
-                            <div class="schoollog">
-                                <img src="https://www.ieduchina.com/uploadfile/college/202012/1607653957.png"
-                                    alt="北京师范大学附属实验中学国际部">
-                            </div>
-                            <div class="price">
-                                <span>参考学费</span>
-                                <p>12.8万~20.8万</p>
-                            </div>
-                        </a>
+                        <div class="schoollog">
+                           <a href="javascript:"><img src="https://www.ieduchina.com/uploadfile/college/202012/1607653957.png"
+                            alt="北京师范大学附属实验中学国际部"></a>
+                        </div>
+                        <div class="tools">
+                            <a>2020人关注</a>
+                            <a class="formtk">预约探校</a>
+                        </div>
                     </div>
                     <div class="center">
                         <a href="javascript:">
                             <%if(index){%>
-                                <h3 title="上海高藤致远创新学校">上海高藤致远创新学校学校上海高藤致远创新学校上海高藤致远创新学校</h3>
+                            <h3 title="上海高藤致远创新学校">上海高藤致远创新学校学校上海高藤致远创新学校上海高藤致远创新学校</h3>
                             <%}else{%>
-                                <h3 title="上海高藤致远创新学校">上海高藤致远创新学校学校</h3>
+                            <h3 title="上海高藤致远创新学校">上海高藤致远创新学校学校</h3>
                             <%}%>
                             <div class="text">
                                 <p>上海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位海高藤致远创新学校位于浦东绿地国际教育园区，是与绿地香港股份有限公司（全球500强企业绿地集团控股子公司）战略合作上海高藤致远创新学校位</p>
                             </div>
                         </a>
-                        <div class="tools">
-                            <a>2020人关注</a>
-                            <%if(index==2){%>
-                            <a class="formtk">预约探校</a>
-                            <%}else{%>
-                            <a class="formtk">预约探校</a>
-                            <%}%>
-							</div>
-						</div>
+                        </div>
 						<% if(index!=2){%>
                             <div class="bottom">
                                 <a href="javascript:">
