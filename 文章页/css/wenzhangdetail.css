@@ -31,6 +31,16 @@
 .searchschool ul li:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+.detail_content .titleLogo {
+  display: inline-block;
+  width: 1rem;
+  height: 0.4rem;
+  background-image: url(../images/9f508f54.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: -0.05rem;
+}
 .detail_content .desc-new .top .user-img {
   width: 0.7rem;
   height: 0.7rem;
@@ -38,11 +48,17 @@
 .detail_content .desc-new .top .user-img a img {
   width: 0.7rem;
   height: 0.7rem;
+  border-radius: 50%;
 }
 .detail_content .desc-new .top .rightbtn {
   padding-top: 0;
 }
+.detail_content .desc-new .top .rightbtn span {
+  border-color: #318eff;
+  color: #318eff;
+}
 .detail_content .desc-new .top .descs .username {
+  font-weight: inherit;
   font-size: 0.32rem;
   line-height: 0.17rem;
 }
@@ -51,6 +67,9 @@
 }
 .detail_content .desc-new .top .descs p span {
   margin-left: 0.4rem;
+}
+.detail_content .desc-new .top .descs p:last-of-type {
+  color: #9195a3;
 }
 .detail_content .total {
   display: -webkit-box;
@@ -72,11 +91,14 @@
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin: 0 0.1rem;
   height: 0.6rem;
   border-radius: 0.6rem;
   border: solid 1px #d8d8d8;
   line-height: 0.6rem;
+  margin-right: 0.2rem;
+}
+.detail_content .total span:last-of-type {
+  margin-right: 0;
 }
 .detail_content .total span a {
   font-size: 0.24rem;
@@ -97,9 +119,9 @@
 }
 .detail_content .total span a i.f {
   background-image: url(../images/a39c682a.png);
-  background-size: 0.46rem 0.46rem;
-  width: 0.46rem;
-  height: 0.46rem;
+  background-size: 0.4rem 0.4rem;
+  width: 0.4rem;
+  height: 0.4rem;
 }
 .detail_content .total span a i.d {
   background-image: url(../images/f6e02e51.png);
@@ -110,5 +132,30 @@
 }
 .detail_content .total span a i.j {
   background-image: url(../images/910e4c87.png);
+}
+.detail_content .school-message {
+  padding-top: 0.2rem;
+}
+.detail_content .school-message .top .school-logo {
+  border: none;
+  min-width: 2.58rem;
+  margin: 0.1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.detail_content .school-message .btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 0.2rem;
+}
+.detail_content .school-message .btn button {
+  width: 2.1rem;
+  height: 0.6rem;
 }
 
