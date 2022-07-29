@@ -44,14 +44,21 @@
                     img{
                         width: 0.7rem;
                         height: 0.7rem;
+                        border-radius: 50%;
                     }
                 }
             }
             .rightbtn{
                 padding-top: 0;
+                span{
+                    border-color: rgb(49,142,255);
+                    color: rgb(49,142,255);
+                }
             }
             .descs{
                 .username{
+                    // #9195a3
+                    font-weight: inherit;
                     font-size: 0.32rem;
                     line-height: .17rem;
                 }
@@ -59,6 +66,9 @@
                     font-size: 0.24rem;
                     span{
                         margin-left: 0.4rem;
+                    }
+                    &:last-of-type{
+                        color: #9195a3;
                     }
                 }
             }
@@ -71,11 +81,14 @@
         span{
             text-align: center;
             flex: 1;
-            margin: 0 0.1rem;
             height: 0.6rem;
             border-radius: 0.6rem;
             border: solid 1px #d8d8d8;
             line-height: 0.6rem;
+            margin-right: 0.2rem;
+            &:last-of-type{
+                margin-right: 0;
+            }
             a{
                 font-size: 0.24rem;
                 color: #000000;
@@ -92,18 +105,42 @@
                     background-size: 0.36rem 0.36rem;
                     margin-right: 0.06rem;
                     &.f{
-                        background-image: url(../images/2022072802.png);
+                        background-image: url(../images/发布222.png);
+                        background-size: 0.4rem 0.4rem;
+                        width: 0.4rem;
+                        height: 0.4rem;
                     }
                     &.d{
-                        background-image: url(../images/2022072803.png);
+                        background-image: url(../images/icon_z.png);
                     }
                     &.p{
-                        background-image: url(../images/2022072801.png);
+                        background-image: url(../images/icon_com.png);
+                        vertical-align: -0.1rem;
                     }
                     &.j{
                         background-image: url(../images/2022072804.png);
                     }
                 }
+            }
+        }
+    }
+    .school-message{
+        padding-top: 0.2rem;
+        .top{
+            .school-logo{
+                border:none;
+                min-width: 2.58rem;
+                margin: 0.1rem;
+                box-sizing: border-box;
+            }
+        }
+        .btn{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 0.2rem;
+            button{
+                width: 2.1rem;
+                height: 0.6rem;
             }
         }
     }
