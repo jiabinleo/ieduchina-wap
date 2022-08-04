@@ -14,7 +14,7 @@ const glob = require("glob");
 const entry = {};
 const template=[];
 glob.sync("./src/**.ejs").forEach((page)=>{
-    if(page == "./src/wenzhangdetail.ejs"){
+    if(page == "./src/schoollist.ejs"){
         entry[page.replace("./src/","").replace(".ejs","")]=page.replace("./src/","./src/js/").replace(".ejs",".js");
         template.push(new HtmlWebpackPlugin({
             template: page,
@@ -40,7 +40,7 @@ const moduleConfig = {
     entry,
     output: {
         filename: "js/[name].js?t=[contenthash:8]",
-        path: path.resolve(__dirname, "文章页"),
+        path: path.resolve(__dirname, "院校库列表页"),
         clean: true
     },
     module: {
@@ -138,12 +138,12 @@ const moduleConfig = {
     devServer: {
         watchFiles: ['src/**/*'],
         static: {
-            directory: path.join(__dirname, "./文章页/"),
+            directory: path.join(__dirname, "./院校库列表页/"),
         },
         compress: true,
         hot: true,
         open: true,
-        port:1234,
+        port:1233,
         allowedHosts: 'all',
         bonjour: true,
         client: {
