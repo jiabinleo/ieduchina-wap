@@ -23,7 +23,7 @@ const schoollist = {
         })
         addressInit('provinceid', 'cityid', 'cmbArea2');
         $(document).on("click", ".formtk", function () {
-            let schoolname = $(this).closest("li").find("h3").attr("title");
+            let schoolname = $(this).closest("li").find(".schoollog").find("img").attr("alt");
             $("input[type=hidden][name=school]").val(schoolname)
             $(".mask-form").css("display", "flex");
         })
