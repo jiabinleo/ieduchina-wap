@@ -23,7 +23,7 @@
         {"name":"资源","link":"/#ziyuan"}]%>
         <ul>
             <%topmenu.forEach((el,index)=>{%>
-                <li<%=(index==menu)?" class=active":""%>>
+                <li<%=(index==0)?" class=active":""%>>
                     <a href="<%=el.link%>"><%=el.name%></a>
                 </li>    
             <%})%>

@@ -1,5 +1,6 @@
 import "../css/wenzhangdetail.less";
-
+import "@cs/concat_school";
+declare let $:any;
 /*webpackjs*/
 var el = null;
 searchschool();

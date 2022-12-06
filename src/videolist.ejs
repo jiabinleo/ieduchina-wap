@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="//m.ieduchina.com/favicon.ico" rel="Shortcut Icon" />
+    <meta name="keywords" content="国际教育,国际学校,教育门户" />
+    <meta name="description"
+        content="国际教育网是汇集了海内外前沿的国际教育门户网站，涵盖北京、上海、广州、深圳等全国数千家国际学校排名学费及招生报名资讯，为K12家长提供全面升学指导、为孩子提供专业的国际课程、助力备考升学。" />
+    <script type="text/javascript" src="//m.ieduchina.com/statics/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="//m.ieduchina.com/statics/m/js/main.js?t=1664348082"></script>
+    <title>国际教育网-面向家长的国际学校升学教育门户</title>
+    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/reset.css">
+    <link rel="stylesheet" href="//m.ieduchina.com/statics/css/swiper.min.css">
+    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/header.css?t=1664348082">
+    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/footer.css?t=1664348082">
+    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/index.css?t=1664348082">
+
+    <script>
+        var http_url = window.location.href;
+        if (http_url == "http://m.ieduchina.com/" || http_url == "http://m.ieduchina.com") {
+            window.location.href = "https://m.ieduchina.com";
+        }
+        (function () {
+            var width = document.documentElement.clientWidth;
+            var style = document.createElement("style");
+            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
+            } else {
+                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
+            }
+            document.head.appendChild(style);
+        })();
+    </script>
+</head>
+
+<body>
+    <%let data=require('../data.json')%>
+    <link rel="stylesheet" href="https://www.ieduchina.com/statics/layui/css/layui.css">
+    <script src="https://www.ieduchina.com/statics/layui/layui.js"></script>
+    <%=require(`@layouts/header.ejs`)()%>
+    <section class="video-list">
+        <div class="video-list-title">
+            <a href="/">首页</a>>更多视频
+        </div>
+        <h2>精彩视频</h2>
+        <ul class="uls">
+            <%data.video_list.forEach((el)=>{%>
+                <li>
+                    <a href="<%=el.src%>">
+                        <img class="<%=el.type?'w':''%>" loading="lazy" src="<%=el.image%>" alt="">
+                        <p><%=el.title%></p>
+                        <div class="tool">
+                            <span><i></i><%=el.view%></span>
+                            <span><i></i><%=el.zan%></span>
+                        </div>
+                    </a>
+                </li>
+            <%})%>
+        </ul>
+    </section>
+    <%=require(`@layouts/footer.ejs`)()%>
+    <script src="//m.ieduchina.com/statics/w/js/swiper.min.js?t=1214"></script>
+    <script src="//m.ieduchina.com/statics/users/js/layer.js?t=396785"></script>
+    <script src="//m.ieduchina.com/statics/users/js/main.js?t=396785"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript">
+        var ShareLink = window.location.href; //默认分享链接
+        var ShareImgUrl = "https://m.ieduchina.com/statics/share.jpg"; // 分享图标
+        var ShareTitle = "国际教育网-面向家长的国际学校升学教育门户";//分享标题
+        var ShareDesc = "国际教育网-面向家长的国际学校升学教育门户";//分享描述
+        var ajaxurl = "/index.php?m=content&c=ajax&a=get_weixin_sign&t=1664348083";
+        var url = location.href.split('#')[0];
+        var weixinSign = {}
+        $.ajax({
+            type: "post",
+            url: ajaxurl,
+            data: { url: url },
+            cache: false,
+            async: false,
+            dataType: 'json',
+            success: function (data) {
+                weixinSign = data;
+            }
+        });
+        //console.log(weixinSign);
+
+        // 微信配置
+        wx.config({
+            debug: false,
+            appId: weixinSign.appId,
+            timestamp: weixinSign.timestamp,
+            nonceStr: weixinSign.nonceStr,
+            signature: weixinSign.signature,
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage',
+                'onMenuShareQQ', 'onMenuShareQZone', 'hideOptionMenu',
+                'onMenuShareWeibo']
+            // 功能列表，我们要使用JS-SDK的什么功能
+        });
+
+        // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在 页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready 函数中。
+        wx.ready(function () {
+            console.log("success");
+            var shareData = {
+                title: ShareTitle,
+                desc: ShareDesc,
+                link: ShareLink,
+                imgUrl: ShareImgUrl
+            };
+
+            // 获取"分享到朋友圈"按钮点击状态及自定义分享内容接口
+            wx.onMenuShareTimeline(shareData);
+
+            // 获取"分享给朋友"按钮点击状态及自定义分享内容接口
+            wx.onMenuShareAppMessage(shareData);
+            // 分享到QQ
+            wx.onMenuShareQQ(shareData);
+            // 分享到QQ空间
+            wx.onMenuShareQZone(shareData);
+            //分享到腾讯微博
+            wx.onMenuShareWeibo(shareData);
+
+        });
+        wx.error(function (res) {
+            console.log(res);
+        });
+    </script>
+</body>
+
+</html>
