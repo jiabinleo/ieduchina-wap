@@ -39,20 +39,24 @@ searchschool();
             }, 400);
         });
         $(document).on("click", function (e) {
-            var list = $(el).parent()[0]
-            if (e.target !== list && !$.contains(list, e.target)) {
-                $(".searchschool").find("ul").hide();
-            } else {
-                if ($(e.target).attr("type") == "text") {
-                    var ul = $(e.target).siblings(".searchschool").find("ul");
-                    if (ul.find("li").length) {
-                        ul.show();
-                    }
+            try {
+                var list = $(el).parent()[0]
+                if (e.target !== list && !$.contains(list, e.target)) {
+                    $(".searchschool").find("ul").hide();
                 } else {
-                    $("#want_school")
-                    $(e.target).closest(".searchschool").siblings("input[type='text'][name='want_school']").val($(e.target).text());
-                    $(e.target).closest(".searchschool").find("ul").hide();
+                    if ($(e.target).attr("type") == "text") {
+                        var ul = $(e.target).siblings(".searchschool").find("ul");
+                        if (ul.find("li").length) {
+                            ul.show();
+                        }
+                    } else {
+                        $("#want_school")
+                        $(e.target).closest(".searchschool").siblings("input[type='text'][name='want_school']").val($(e.target).text());
+                        $(e.target).closest(".searchschool").find("ul").hide();
+                    }
                 }
+            } catch (error) {
+                
             }
         });
     }

@@ -1,0 +1,279 @@
+@rem: 750/7.5rem;
+
+body {
+    margin: 0 auto;
+
+    .detail_content {
+        .concat_school {
+            margin: (16/@rem) auto;
+            width: 100%;
+            height: (800/@rem);
+            background: url("./蒙版组\ 54@2x.png") center center / cover no-repeat;
+            padding: (40/@rem) (10/@rem) 0;
+            box-sizing: border-box;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+                content: "";
+                width: (136/@rem);
+                height: (79/@rem);
+                background: url("./装饰@2x.png") center center / contain no-repeat;
+            }
+
+            .box {
+                width: 100%;
+                height: (750/@rem);
+                background: #FFFFFF;
+                border-radius: 0;
+                margin: 0 auto;
+
+                h3 {
+                    text-align: center;
+                    padding-top: (50/@rem);
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: (84/@rem);
+                        z-index: 1;
+                        content: "";
+                        width: (254/@rem);
+                        height: (15/@rem);
+                        background: #ECF4FA;
+                        border-radius: 0px;
+                    }
+
+                    span {
+                        position: relative;
+                        z-index: 10;
+                        font-size: (32/@rem);
+                        font-weight: 500;
+                        color: #2B77DF;
+                    }
+                }
+
+                p.tip1 {
+                    font-size: (24/@rem);
+                    font-weight: 400;
+                    color: #666666;
+                    text-align: center;
+                    padding-top: (30/@rem);
+
+                    span {
+                        color: #F61414;
+                    }
+                }
+
+                form {
+                    margin: 0 (25/@rem);
+
+                    .input {
+                        width: 100%;
+                        height: (75/@rem);
+                        background: #FFFFFF;
+                        border-radius: 0;
+                        margin-top: (20/@rem);
+                        position: relative;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            z-index: 10;
+                            top: 0;
+                            width: (75/@rem);
+                            height: (75/@rem);
+                            background: url("./姓名@2x.png") center center / (32/@rem) (32/@rem) no-repeat;
+                        }
+
+                        &:nth-of-type(2) {
+                            &::before {
+                                background-image: url("./年级@2x.png");
+                            }
+                        }
+
+                        &:nth-of-type(4) {
+                            &::before {
+                                background-image: url("./手机@2x.png");
+                            }
+                        }
+
+                        input {
+                            width: 100%;
+                            height: (75/@rem);
+                            line-height: (75/@rem);
+                            box-sizing: border-box;
+                            text-indent: (68/@rem);
+                            font-size: (28/@rem);
+                            font-weight: 400;
+                            color: #333333;
+                            border: 1px solid #E3E3E3;
+                            border-radius: 0;
+                            line-height: 1.3;
+                            line-height: 38px\9;
+                            padding-left: 0;
+                            -webkit-appearance: none;
+
+                            &::placeholder {
+                                color: #999;
+                            }
+
+                            &.layui-form-danger,
+                            &.layui-form-danger:focus {
+                                border-color: #FF5722 !important;
+                            }
+                        }
+                        .layui-form-select dl dd.layui-this {
+                            background-color: #2A74DA;
+                        }
+                    }
+
+                    .input-wrap {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .input {
+                            &:first-of-type{
+                                &::before {
+                                    background-image: url("./城市@2x.png");
+                                }
+                            }
+                            &:last-of-type {
+                                border-left: none;
+
+                                input {
+                                    border-left-color: transparent;
+                                }
+
+                                &::before {
+                                    content: initial;
+                                }
+                            }
+                        }
+                    }
+
+                    .btn {
+                        margin: (30/@rem) 0;
+                        display: flex;
+                        justify-content: space-between;
+
+                        button {
+                            width: (290/@rem);
+                            width: 47%;
+                            height: (75/@rem);
+                            background: linear-gradient(180deg, #9AC4FF 0%, #2A74DA 100%);
+                            box-shadow: 0px 3px 6px 1px rgba(43, 119, 223, 0.502);
+                            border-radius: (60/@rem);
+                            border: none;
+                            outline: none;
+                            font-size: (32/@rem);
+                            font-weight: 400;
+                            color: #FFFFFF;
+                            cursor: pointer;
+
+                            &.s {
+                                background: #32D38D;
+                                box-shadow: 0px 3px 6px 1px rgba(50, 211, 141, 0.502);
+
+                                i {
+                                    vertical-align: (-2/@rem);
+                                    margin-right: (10/@rem);
+                                    display: inline-block;
+                                    width: (32/@rem);
+                                    height: (32/@rem);
+                                    background: url("./成功 (3)@2x.png") 0 0 / (32/@rem) (32/@rem) no-repeat;
+                                }
+                            }
+                        }
+
+                        a {
+                            display: block;
+                            width: (290/@rem);
+                            width: 47%;
+                            height: (75/@rem);
+                            background: #E2E2E2;
+                            box-shadow: 0px 3px 6px 1px rgba(226, 226, 226, 0.502);
+                            border-radius: (60/@rem);
+                            font-size: (32/@rem);
+                            font-weight: 400;
+                            color: #8C8C8C;
+                            text-align: center;
+                            line-height: (75/@rem);
+                            position: relative;
+                            padding-left: (52/@rem);
+
+                            &[href] {
+                                span {
+                                    i {
+                                        width: (75/@rem);
+                                        height: (75/@rem);
+                                        background: url("2b943c80-3968-4743-80e7-c04edc719f4b.gif") center / (75/@rem) (75/@rem) no-repeat;
+                                    }
+                                }
+
+                                background: linear-gradient(180deg, #9AC4FF 0%, #2A74DA 100%);
+                                box-shadow: 0px 3px 6px 1px rgba(43, 119, 223, 0.502);
+                                color: white;
+                            }
+
+                            span {
+                                display: inline-block;
+                                width: (75/@rem);
+                                height: (75/@rem);
+                                vertical-align: (-4/@rem);
+                                margin-right: (16/@rem);
+                                position: relative;
+                                line-height: (75/@rem);
+                                position: absolute;
+                                left: (40/@rem);
+
+                                i {
+                                    display: inline-block;
+                                    width: (75/@rem);
+                                    height: (75/@rem);
+                                    background: url("联系 (1).png") center / (45/@rem) (45/@rem) no-repeat;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 6;
+                                }
+                            }
+                        }
+                    }
+
+                    p.tip2 {
+                        position: relative;
+                        font-size: (24/@rem);
+                        font-weight: 400;
+                        color: #999999;
+                        text-align: center;
+
+                        &:before,
+                        &::after {
+                            position: absolute;
+                            top: (16/@rem);
+                            content: "";
+                            width: 16%;
+                            height: 0px;
+                            border-top: 1px solid #C1C1C1;
+                        }
+
+                        &::before {
+                            left: 0;
+                        }
+
+                        &::after {
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

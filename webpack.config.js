@@ -153,8 +153,8 @@ if (isdev) {
 }
 moduleConfig.plugins.push(...htmlTemplate);
 
-// moduleConfig.plugins.push(new CopyPlugin({
-//     patterns: [
+moduleConfig.plugins.push(new CopyPlugin({
+    patterns: [
 //         {
 //             from: path.resolve(__dirname, `./src/plugins/jquery-3.6.0.min.js`),
 //             to: path.resolve(__dirname, `./dist/js`)
@@ -167,13 +167,13 @@ moduleConfig.plugins.push(...htmlTemplate);
 //             from: path.resolve(__dirname, `./src/plugins/swiper.min.css`),
 //             to: path.resolve(__dirname, `./dist/css`)
 //         },
-//         {
-//             from: path.resolve(__dirname, `./src/plugins/city.js`),
-//             to: path.resolve(__dirname, `./dist/js`)
-//         },
+        {
+            from: path.resolve(__dirname, `./src/plugins/city.js`),
+            to: path.resolve(__dirname, `./dist/js`)
+        },
 //         {
 //             from: path.resolve(__dirname, `./src/plugins/tinymce`),
 //             to: path.resolve(__dirname, `./dist/js`)
 //         }
-//     ]
-// }))
+    ]
+}))
