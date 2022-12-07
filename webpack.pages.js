@@ -6,7 +6,7 @@ const pages = [
     },
     {
         template:"wenzhangdetail",
-        defaults:true
+        defaults:false
     }
 ]
 

@@ -7,67 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="//m.ieduchina.com/favicon.ico" rel="Shortcut Icon" />
     <meta name="keywords" content="国际教育,国际学校,教育门户" />
-    <meta name="description"
-        content="国际教育网是汇集了海内外前沿的国际教育门户网站，涵盖北京、上海、广州、深圳等全国数千家国际学校排名学费及招生报名资讯，为K12家长提供全面升学指导、为孩子提供专业的国际课程、助力备考升学。" />
-    <script type="text/javascript" src="//m.ieduchina.com/statics/js/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="//m.ieduchina.com/statics/m/js/main.js?t=1664348082"></script>
+    <meta name="description" content="国际教育网是汇集了海内外前沿的国际教育门户网站，涵盖北京、上海、广州、深圳等全国数千家国际学校排名学费及招生报名资讯，为K12家长提供全面升学指导、为孩子提供专业的国际课程、助力备考升学。" />
     <title>国际教育网-面向家长的国际学校升学教育门户</title>
-    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/reset.css">
     <link rel="stylesheet" href="//m.ieduchina.com/statics/css/swiper.min.css">
-    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/header.css?t=1664348082">
-    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/footer.css?t=1664348082">
-    <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/index.css?t=1664348082">
-
-    <script>
-        var http_url = window.location.href;
-        if (http_url == "http://m.ieduchina.com/" || http_url == "http://m.ieduchina.com") {
-            window.location.href = "https://m.ieduchina.com";
-        }
-        (function () {
-            var width = document.documentElement.clientWidth;
-            var style = document.createElement("style");
-            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
-            } else {
-                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
-            }
-            document.head.appendChild(style);
-        })();
-    </script>
+    <%=require(`@cs/rem/index.ejs`)()%>
 </head>
 
 <body>
     <%=require(`@cs/header/index.ejs`)()%>
     <section class="section">
-        <div class="banner">
-            <div class="banner-bg"></div>
-            <div class="swiper-index">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="https://m.ieduchina.com/huodong/202209/1762.html">
-                            <div
-                                style="background-image: url(https://source.unsplash.com/random/700x300);">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://m.ieduchina.com/topic/2022/tongbukecheng/">
-                            <div
-                                style="background-image: url(https://source.unsplash.com/random/700x300);">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://m.ieduchina.com/topic/beikao/">
-                            <div
-                                style="background-image: url(https://source.unsplash.com/random/700x300);">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-index-pagination"></div>
-            </div>
-        </div>
+        <%=require(`@cs/index_banner/index.ejs`)()%>
         <div class="menu">
             <div class="swiper-menu">
                 <div class="swiper-wrapper">
@@ -801,12 +750,12 @@
                         <h2 class="changdi">场地资源</h2>
                         <p>为学校/办学团体提供合适办学场地（租赁、转让、买卖）信息，促进国际化学校在中国一线城市、二线城市落地办学。</p>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
     <%=require(`@cs/footer/index.ejs`)()%>
+    <script type="text/javascript" src="//m.ieduchina.com/statics/js/jquery-1.8.3.js"></script>
     <script src="//m.ieduchina.com/statics/w/js/swiper.min.js?t=1214"></script>
     <script src="//m.ieduchina.com/statics/users/js/layer.js?t=396785"></script>
     <script src="//m.ieduchina.com/statics/users/js/main.js?t=396785"></script>
