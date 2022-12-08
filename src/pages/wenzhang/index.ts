@@ -1,5 +1,5 @@
-import "../css/wenzhangdetail.less";
-import "@cs/concat_school";
+import "./index.less";
+import "./components/concat_school/index.ts";
 declare let $:any;
 /*webpackjs*/
 var el = null;

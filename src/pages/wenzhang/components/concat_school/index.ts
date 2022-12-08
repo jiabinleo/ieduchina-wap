@@ -1,5 +1,8 @@
 import "./index.less";
-
+declare let $: any;
+declare let layui: any;
+declare let layer: any;
+declare let address: any;
 export default $(function () {
     layui.use(["form"], function () {
         let form = layui.form;

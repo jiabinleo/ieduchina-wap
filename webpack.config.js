@@ -9,7 +9,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const isdev = process.env.NODE_ENV == "development";
 const { htmlTemplate, entry } = require('./webpack.pages');
-const fs = require("fs")
 const moduleConfig = {
     entry,
     output: {
@@ -155,25 +154,25 @@ moduleConfig.plugins.push(...htmlTemplate);
 
 moduleConfig.plugins.push(new CopyPlugin({
     patterns: [
-//         {
-//             from: path.resolve(__dirname, `./src/plugins/jquery-3.6.0.min.js`),
-//             to: path.resolve(__dirname, `./dist/js`)
-//         },
-//         {
-//             from: path.resolve(__dirname, `./src/plugins/swiper.min.js`),
-//             to: path.resolve(__dirname, `./dist/js`)
-//         },
-//         {
-//             from: path.resolve(__dirname, `./src/plugins/swiper.min.css`),
-//             to: path.resolve(__dirname, `./dist/css`)
-//         },
+        // {
+        //     from: path.resolve(__dirname, `./src/plugins/jquery-3.6.0.min.js`),
+        //     to: path.resolve(__dirname, `./dist/js`)
+        // },
+        // {
+        //     from: path.resolve(__dirname, `./src/plugins/swiper.min.js`),
+        //     to: path.resolve(__dirname, `./dist/js`)
+        // },
+        // {
+        //     from: path.resolve(__dirname, `./src/plugins/swiper.min.css`),
+        //     to: path.resolve(__dirname, `./dist/css`)
+        // },
         {
             from: path.resolve(__dirname, `./src/plugins/city.js`),
             to: path.resolve(__dirname, `./dist/js`)
         },
-//         {
-//             from: path.resolve(__dirname, `./src/plugins/tinymce`),
-//             to: path.resolve(__dirname, `./dist/js`)
-//         }
+        // {
+        //     from: path.resolve(__dirname, `./src/plugins/tinymce`),
+        //     to: path.resolve(__dirname, `./dist/js`)
+        // }
     ]
 }))
