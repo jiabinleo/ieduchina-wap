@@ -37,17 +37,17 @@
 </head>
 
 <body>
-    <%let data=require('../data.json')%>
+    <%let data=require('./mock.json')%>
     <link rel="stylesheet" href="https://www.ieduchina.com/statics/layui/css/layui.css">
     <script src="https://www.ieduchina.com/statics/layui/layui.js"></script>
-    <%=require(`@layouts/header.ejs`)()%>
+    <%=require(`@cs/header/index.ejs`)()%>
     <section class="video-list">
         <div class="video-list-title">
             <a href="/">首页</a>>更多视频
         </div>
         <h2>精彩视频</h2>
         <ul class="uls">
-            <%data.video_list.forEach((el)=>{%>
+            <%data.video_list1.forEach((el)=>{%>
                 <li>
                     <a href="<%=el.src%>">
                         <img class="<%=el.type?'w':''%>" loading="lazy" src="<%=el.image%>" alt="">
@@ -61,7 +61,7 @@
             <%})%>
         </ul>
     </section>
-    <%=require(`@layouts/footer.ejs`)()%>
+    <%=require(`@cs/footer/index.ejs`)()%>
     <script src="//m.ieduchina.com/statics/w/js/swiper.min.js?t=1214"></script>
     <script src="//m.ieduchina.com/statics/users/js/layer.js?t=396785"></script>
     <script src="//m.ieduchina.com/statics/users/js/main.js?t=396785"></script>

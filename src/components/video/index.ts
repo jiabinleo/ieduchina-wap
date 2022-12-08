@@ -1,5 +1,8 @@
-import "../css/videolist.less";
-$(function () {
+import "./index.less";
+declare let $:any;
+declare let TCPlayer:any;
+declare let layui:any;
+export default $(function () {
     function videolist() {
         let pagesize = 0
         let noMore = false;
@@ -11,7 +14,7 @@ $(function () {
                     args = arguments,
                     curTime = new Date();
                 clearTimeout(timeout);
-                if (curTime - startTime >= mustRun) {
+                if (+curTime - +startTime >= mustRun) {
                     func.apply(context, args);
                     startTime = curTime;
                 } else {
@@ -205,6 +208,7 @@ $(function () {
             return false;
         });
         var countdown = 60;
+        var timer = 60;
         $(".videos").on("click", '.getcode', function () {
             var $this = $(this);
             var text = $this.text();

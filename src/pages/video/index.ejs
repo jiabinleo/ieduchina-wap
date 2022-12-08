@@ -18,44 +18,28 @@
     <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/footer.css?t=1664348082">
     <link rel="stylesheet" href="//m.ieduchina.com/statics/users/css/index.css?t=1664348082">
     <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.5.4/tcplayer.min.css" rel="stylesheet"/>
-
-    <script>
-        var http_url = window.location.href;
-        if (http_url == "http://m.ieduchina.com/" || http_url == "http://m.ieduchina.com") {
-            window.location.href = "https://m.ieduchina.com";
-        }
-        (function () {
-            var width = document.documentElement.clientWidth;
-            var style = document.createElement("style");
-            if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-                style.innerHTML = "html{font-size: " + width / 16 + "px !important;}";
-            } else {
-                style.innerHTML = "html{font-size: " + 750 / 16 + "px !important;width:750px;margin:0 auto;}";
-            }
-            document.head.appendChild(style);
-        })();
-    </script>
+    <%=require(`@cs/rem/index.ejs`)()%>
 </head>
 
 <body>
-    <%let data=require('../data.json')%>
+    <%let {video_detail}=require('../videolist/mock.json')%>
     <link rel="stylesheet" href="https://www.ieduchina.com/statics/layui/css/layui.css">
     <script src="https://www.ieduchina.com/statics/layui/layui.js"></script>
-    <%=require(`@layouts/header.ejs`)()%>
+    <%=require(`@cs/header/index.ejs`)()%>
     <section class="videos">
         <div class="video-wrap">
             <a class="return"></a>
             <div class="video-play">
-                <video id="player-container-id" width="520" height="405" preload="auto" playsinline webkit-playsinline poster="<%=data.video_detail.image%>">
+                <video id="player-container-id" width="520" height="405" preload="auto" playsinline webkit-playsinline poster="<%=video_detail.image%>">
                 </video>
             </div>
-            <p class="video-title"><%=data.video_detail.title%></p>
+            <p class="video-title"><%=video_detail.title%></p>
             <div class="oper">
                 <span class="time">
-                    发布时间：<%=data.video_detail.time%>
+                    发布时间：<%=video_detail.time%>
                 </span>
                 <div class="right">
-                    <span><i class="thumbs <%=data.video_detail.active?'active':''%>"></i>2550</span>
+                    <span><i class="thumbs <%=video_detail.active?'active':''%>"></i>2550</span>
                 </div>
             </div>
         </div>
@@ -66,7 +50,7 @@
                 </a>
                 <div class="desc">
                     <p>选校专家</p>
-                    <p>视频：<%=data.video_detail.num%></p>
+                    <p>视频：<%=video_detail.num%></p>
                 </div>
             </div>
             <button>关注</button>
@@ -100,7 +84,7 @@
         <div class="video-list">
             <h3>接下来播放</h3>
             <ul>
-                <% data.video_detail_list.forEach((el)=>{%>
+                <% video_detail.list.forEach((el)=>{%>
                     <li>
                         <a href="<%=el.src%>">
                             <img src="<%=el.image%>" alt="">
@@ -119,7 +103,7 @@
             </ul>
         </div>
     </section>
-    <%=require(`@layouts/footer.ejs`)()%>
+    <%=require(`@cs/footer/index.ejs`)()%>
     <script src="//m.ieduchina.com/statics/w/js/swiper.min.js?t=1214"></script>
     <script src="//m.ieduchina.com/statics/users/js/layer.js?t=396785"></script>
     <script src="//m.ieduchina.com/statics/users/js/main.js?t=396785"></script>

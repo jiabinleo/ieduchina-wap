@@ -34,19 +34,26 @@ const pages = [
         defaults: false,
         desc: "首页",
         chunk: "index"
-    }, 
+    },
     {
         template: "wenzhang",
         defaults: false,
         desc: "文章页",
         chunk: "wenzhang",
     },
+    {
+        template: "videolist",
+        defaults: false,
+        desc: "视频列表",
+        chunk: "videolist"
+    },
+    {
+        template: "video",
+        defaults: false,
+        desc: "视频",
+        chunk: "video"
+    },
     // {
-    //     template: "video",
-    //     chunk: "videolist"
-    // }, {
-    //     template: "user"
-    // }, {
     //     template: "pubvideo",
     //     chunk: "user",
     //     defaults: false
