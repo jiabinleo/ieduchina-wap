@@ -1,0 +1,21 @@
+<%let {menu} = require("../../mock.json")%>
+<div class="menu">
+    <div class="swiper-menu">
+        <div class="swiper-wrapper">
+            <%menu.forEach((item)=>{%>
+                <div class="swiper-slide">
+                    <a href="<%=item.link%>">
+                        <%if(item.path=="location"){%>
+                            <img src="<%=require(`@/pages/index/components/menu/images/组 229@2x.png`)%>" alt="">
+                        <%}else{%>
+                            <img src="<%=item.image%>" alt="">     
+                        <%}%>
+                        <p><%=item.name%></p>
+                    </a>
+                </div> 
+            <%})%>
+        </div>
+        <div class="swiper-menu-pagination"></div>
+    </div>
+</div>
+            

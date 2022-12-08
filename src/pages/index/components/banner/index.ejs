@@ -1,0 +1,19 @@
+<% let {banner} = require("../../mock.json")%>
+<div class="banner">
+    <div class="banner-bg"></div>
+    <div class="swiper-index">
+        <div class="swiper-wrapper">
+            <%banner.forEach((el)=>{%>
+                <div class="swiper-slide">
+                    <a href="<%=el.link%>">
+                        <div
+                            style="background-image: url(<%=el.image%>);">
+                        </div>
+                    </a>
+                </div>
+            <%})%>
+            
+        </div>
+        <div class="swiper-index-pagination"></div>
+    </div>
+</div>

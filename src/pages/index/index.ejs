@@ -16,56 +16,8 @@
 <body>
     <%=require(`@cs/header/index.ejs`)()%>
     <section class="section">
-        <%=require(`@cs/index_banner/index.ejs`)()%>
-        <div class="menu">
-            <div class="swiper-menu">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="//schoollist.m.ieduchina.com">
-                            <img src="//m.ieduchina.com/statics/users/images/menu1.png?t=396783" alt="">
-                            <p>找学校</p>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="//m.ieduchina.com/ceping/">
-                            <img src="//m.ieduchina.com/statics/users/images/menu2.png?t=396783" alt="">
-                            <p>测一测</p>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="//m.ieduchina.com/topic/shengxue/">
-                            <img src="//m.ieduchina.com/statics/users/images/menu3.png?t=396783" alt="">
-                            <p>要备考</p>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="//m.ieduchina.com/huodong/">
-                            <img src="//m.ieduchina.com/statics/users/images/menu5.png?t=396783" alt="">
-                            <p>看学校</p>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="videolist.html">
-                            <img src="<%=require(`@images/组 229@2x.png`)%>" alt="">
-                            <p>看视频</p>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="//m.ieduchina.com/abroad/">
-                            <img src="//m.ieduchina.com/statics/users/images/menu6.png?t=396783" alt="">
-                            <p>要留学</p>
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="//lives.ieduchina.com">
-                            <img src="//m.ieduchina.com/statics/users/images/menu7.png?t=396783" alt="">
-                            <p>看直播</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-menu-pagination"></div>
-            </div>
-        </div>
+        <%=require(`./components/banner/index.ejs`)()%>
+        <%=require(`./components/menu/index.ejs`)()%>
         <div class="todaynews todaynew">
             <div class="index_title">
                 <h2>今日热闻</h2>

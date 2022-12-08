@@ -1,0 +1,32 @@
+module.exports = [
+    {
+        name:"找学校",
+        link:"//schoollist.m.ieduchina.com",
+        image:"//m.ieduchina.com/statics/users/images/menu1.png?t=396783"
+    },{
+        name:"测一测",
+        link:"//schoollist.m.ieduchina.com/ceping/",
+        image:"//m.ieduchina.com/statics/users/images/menu2.png?t=396783"
+    },{
+        name:"要备考",
+        link:"//schoollist.m.ieduchina.com/topic/shengxue/",
+        image:"//m.ieduchina.com/statics/users/images/menu3.png?t=396783"
+    },{
+        name:"看学校",
+        link:"//m.ieduchina.com/huodong/",
+        image:"//m.ieduchina.com/statics/users/images/menu5.png?t=396783"
+    },{
+        name:"看视频",
+        link:"videolist.html",
+        image:"组 229@2x",
+        path:"location"
+    },{
+        name:"要留学",
+        link:"//m.ieduchina.com/abroad/",
+        image:"//m.ieduchina.com/statics/users/images/menu6.png?t=396783"
+    },{
+        name:"看直播",
+        link:"//lives.ieduchina.com",
+        image:"//m.ieduchina.com/statics/users/images/menu7.png?t=396783"
+    }
+]
