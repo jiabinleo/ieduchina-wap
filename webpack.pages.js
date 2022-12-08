@@ -29,15 +29,15 @@ const pages = [
     // }, {
     //     template: "user_center"
     // }, 
-    // {
-    //     template: "index",
-    //     defaults: false,
-    //     desc: "首页",
-    //     chunk: "index"
-    // }, 
+    {
+        template: "index",
+        defaults: false,
+        desc: "首页",
+        chunk: "index"
+    }, 
     {
         template: "wenzhang",
-        defaults: true,
+        defaults: false,
         desc: "文章页",
         chunk: "wenzhang",
     },

@@ -115,7 +115,8 @@ const moduleConfig = {
             '@': path.resolve(__dirname, './src'),
             '@images': path.resolve(__dirname, `./src/images`),
             '@cs': path.resolve(__dirname, `./src/components`),
-            '@data': path.resolve(__dirname, `./src/data`)
+            '@data': path.resolve(__dirname, `./src/data`),
+            '@plugins': path.resolve(__dirname, `./src/plugins`)
         }
     },
     performance: {
