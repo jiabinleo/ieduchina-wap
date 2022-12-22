@@ -175,5 +175,9 @@ moduleConfig.plugins.push(new CopyPlugin({
         //     from: path.resolve(__dirname, `./src/plugins/tinymce`),
         //     to: path.resolve(__dirname, `./dist/js`)
         // }
+        {
+            from: path.resolve(__dirname, `./src/skin`),
+            to: path.resolve(__dirname, `./dist/skin/`)
+        }
     ]
 }))
