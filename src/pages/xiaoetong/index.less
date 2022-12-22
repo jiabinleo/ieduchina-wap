@@ -1,0 +1,118 @@
+html {
+    font-family: Source Han Sans CN-Regular, Source Han Sans CN;
+}
+
+body {
+    section {
+        .banner {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 563rem;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            span {
+                position: absolute;
+                min-width: 60rem;
+                max-width: 280rem;
+                height: 40rem;
+                line-height: 40rem;
+                background: #333;
+                color: #fff;
+                font-size: 24rem;
+                text-align: center;
+                border-radius: 10rem;
+                padding: 0 10rem;
+                opacity: .5;
+                z-index: 10;
+                bottom: 40rem;
+                right: 39rem;
+            }
+        }
+
+        .layui-form {
+            background-color: white;
+            margin-top: -20rem;
+            width: 100%;
+            padding: 15rem 39rem 0;
+            position: relative;
+            box-sizing: border-box;
+            border-radius: 30rem 30rem 0 0;
+            padding-bottom: 180rem;
+
+            .layui-form-item {
+                margin-bottom: 0;
+
+                label {
+                    font-size: 32rem;
+                    font-weight: 500;
+                    color: #000000;
+                    height: 45rem;
+                    padding: 35rem 0 15rem;
+                    display: inline-block;
+                    position: relative;
+                    padding-left: 20rem;
+
+                    &:before {
+                        position: absolute;
+                        content: "*";
+                        color: #F60B0B;
+                        font-size: 40rem;
+                        left: 0;
+                        top: 39rem;
+                    }
+                }
+
+                input {
+                    width: 100%;
+                    height: 80rem;
+                    background: #F6F6F6;
+                    border-radius: 10rem;
+                    font-size: 28rem;
+                    font-weight: 400;
+                    padding: 0 20rem;
+                    box-sizing: border-box;
+                }
+
+                .layui-form-select {
+                    font-size: 28rem;
+                    font-weight: 400;
+                    input{
+                        border: none;
+                    }
+
+                    dl {
+                        dd {
+                            &.layui-this {
+                                background-color: #105CFB;
+                            }
+                        }
+                    }
+                }
+            }
+
+            button {
+                position: fixed;
+                bottom: 68rem;
+                z-index: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+                background-color: #105CFB;
+                width: 693rem;
+                height: 80rem;
+                border-radius: 80rem;
+                border: none;
+                outline: none;
+                font-size: 32rem;
+                font-weight: 500;
+                color: #FFFFFF;
+                line-height: 0rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

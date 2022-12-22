@@ -53,6 +53,12 @@ const pages = [
         desc: "视频",
         chunk: "video"
     },
+    {
+        template: "xiaoetong",
+        defaults: false,
+        desc: "小鹅通",
+        chunk: "xiaoetong"
+    },
     // {
     //     template: "pubvideo",
     //     chunk: "user",
