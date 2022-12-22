@@ -1,0 +1,483 @@
+body {
+  font-family: "Source Han Sans CN-Regular, Source Han Sans CN";
+}
+section.video-list {
+  min-height: calc(100vh - 8rem);
+  font-size: 0;
+}
+section.video-list .video-list-title {
+  height: 1.45066667rem;
+  line-height: 1.45066667rem;
+  font-size: 0.512rem;
+  font-weight: 400;
+  color: #666666;
+  border-bottom: solid 1px #D6D6D6;
+  margin: 0 0.64rem;
+}
+section.video-list .video-list-title a {
+  color: #666666;
+}
+section.video-list h2 {
+  font-size: 0.59733333rem;
+  font-weight: 500;
+  color: #333333;
+  padding: 0.42666667rem 0;
+  margin: 0 0.64rem;
+}
+section.video-list h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.08533333rem;
+  height: 0.59733333rem;
+  background: #3C94E1;
+  border-radius: 0.192rem;
+  margin-right: 0.32rem;
+  vertical-align: -0.08533333rem;
+}
+section.video-list ul {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin: -0.42666667rem 0.256rem 0;
+  visibility: hidden;
+}
+section.video-list ul li {
+  margin-bottom: 0.448rem;
+  padding-bottom: 0.42666667rem;
+  width: 7.21066667rem;
+  position: absolute;
+}
+section.video-list ul li img {
+  width: 7.21066667rem;
+  height: 9.6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 0.128rem;
+}
+section.video-list ul li img.w {
+  height: 4.05333333rem;
+}
+section.video-list ul li p {
+  text-align: left;
+  width: 7.21066667rem;
+  font-size: 0.55466667rem;
+  font-weight: 400;
+  color: #333333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 0.768rem;
+  padding-top: 0.32rem;
+}
+section.video-list ul li .tool {
+  text-align: left;
+  padding-top: 0.21333333rem;
+}
+section.video-list ul li .tool span {
+  font-size: 0.512rem;
+  font-weight: 400;
+  color: #666666;
+}
+section.video-list ul li .tool span i {
+  display: inline-block;
+  width: 0.512rem;
+  height: 0.512rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: -0.04266667rem;
+  margin-right: 0.27733333rem;
+}
+section.video-list ul li .tool span:first-of-type {
+  margin-right: 0.98133333rem;
+}
+section.video-list ul li .tool span:first-of-type i {
+  background-image: url(../images/fa88bb52.png);
+}
+section.video-list ul li .tool span:nth-of-type(2) i {
+  background-image: url(../images/8d6a80f3.png);
+}
+section.videos {
+  font-size: 0;
+  background-color: #F7F7F7;
+}
+section.videos .video-wrap {
+  background-color: white;
+  padding-bottom: 0.68266667rem;
+  position: relative;
+}
+section.videos .video-wrap .return {
+  position: absolute;
+  left: 0.59733333rem;
+  top: 0.21333333rem;
+  z-index: 10;
+  width: 1.23733333rem;
+  height: 1.23733333rem;
+  cursor: pointer;
+  background-image: url(../images/ddb0488f.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+section.videos .video-wrap .video-play {
+  width: 16rem;
+  height: 9.00266667rem;
+  background: #000000;
+  border-radius: 0;
+}
+section.videos .video-wrap .video-play #player-container-id {
+  width: 16rem;
+  height: 9.00266667rem;
+  background: #000000;
+}
+section.videos .video-wrap .video-title {
+  margin: 0.42666667rem 0.59733333rem;
+  font-size: 0.64rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 0.85333333rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+section.videos .video-wrap .oper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.512rem;
+  font-weight: 400;
+  padding: 0 0.59733333rem;
+  color: #666666;
+  line-height: 1.06666667rem;
+}
+section.videos .video-wrap .oper .right span {
+  cursor: pointer;
+}
+section.videos .video-wrap .oper .right span i {
+  display: inline-block;
+  width: 0.85333333rem;
+  height: 0.85333333rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0.27733333rem;
+  vertical-align: -0.02133333rem;
+  background-image: url(../images/d65f518a.png);
+}
+section.videos .video-wrap .oper .right span i.active {
+  background-image: url(../images/3ff426dd.png);
+}
+section.videos .box {
+  height: 2.56rem;
+  background: #fff;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0.59733333rem;
+  margin: 0.42666667rem 0;
+}
+section.videos .box .upmsg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.videos .box .upmsg img {
+  width: 1.70666667rem;
+  height: 1.70666667rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.videos .box .upmsg .desc {
+  margin-left: 0.32rem;
+}
+section.videos .box .upmsg .desc p {
+  font-size: 0.59733333rem;
+  font-weight: 500;
+  color: #000000;
+}
+section.videos .box .upmsg .desc p:last-of-type {
+  padding-top: 0.32rem;
+  font-size: 0.46933333rem;
+  font-weight: 400;
+  color: #666666;
+}
+section.videos .box button {
+  padding: 0;
+  width: 3.072rem;
+  height: 1.152rem;
+  background: #0770D1;
+  border-radius: 0.128rem;
+  border: none;
+  outline: none;
+  font-size: 0.59733333rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+section.videos .box button.active {
+  background-color: #A5A5A5;
+}
+section.videos form {
+  padding: 0.64rem 0.59733333rem;
+  margin-top: 0.42666667rem;
+  background-color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 0.42666667rem;
+}
+section.videos form .form_head {
+  position: relative;
+  width: 100%;
+  height: 1.49333333rem;
+  background: #0770D1;
+  border-radius: 0.128rem 0.128rem 0 0;
+  text-align: center;
+  line-height: 1.49333333rem;
+}
+section.videos form .form_head span {
+  font-size: 0.68266667rem;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+section.videos form .form_head::after,
+section.videos form .form_head::before {
+  position: absolute;
+  content: "";
+  top: 0.53333333rem;
+  width: 0.42666667rem;
+  height: 0.42666667rem;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+section.videos form .form_head::before {
+  left: 0.42666667rem;
+}
+section.videos form .form_head::after {
+  right: 0.42666667rem;
+}
+section.videos form .titles {
+  background-color: #F7F7F7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0.61866667rem 0.42666667rem 0.64rem;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.videos form .titles span {
+  font-size: 0.59733333rem;
+  font-weight: 500;
+  color: #0770D1;
+}
+section.videos form .titles span:nth-of-type(2) {
+  margin-left: 0.512rem;
+}
+section.videos form .titles span:last-of-type {
+  margin-top: 0.66133333rem;
+}
+section.videos form .titles span i {
+  width: 0.768rem;
+  height: 0.768rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  background-image: url(../images/32e4aadc.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-right: 6px;
+  vertical-align: -4px;
+}
+section.videos form .inputs {
+  background-color: #F7F7F7;
+  text-align: left;
+  padding: 0 0.42666667rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+section.videos form .inputs .input {
+  width: 100%;
+  height: 1.70666667rem;
+  border-radius: 0.128rem;
+  margin-top: 0.42666667rem;
+}
+section.videos form .inputs .input:first-of-type {
+  margin-top: 0;
+}
+section.videos form .inputs .input input {
+  background: #FFFFFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0.64rem;
+  width: 100%;
+  height: 1.70666667rem;
+  font-size: 0.59733333rem;
+  font-weight: 400;
+  color: #666666;
+}
+section.videos form .inputs .input.code {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+section.videos form .inputs .input.code input {
+  width: 8.74666667rem;
+}
+section.videos form .inputs .input.code button {
+  width: 4.77866667rem;
+  height: 1.70666667rem;
+  background: #0770D1;
+  border-radius: 0.128rem;
+  font-size: 0.59733333rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+section.videos form button[type='submit'] {
+  width: 100%;
+  height: 1.70666667rem;
+  background: #0770D1;
+  border-radius: 0.128rem;
+  font-size: 0.68266667rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0.64rem 0;
+}
+section.videos .video-list {
+  padding: 0.42666667rem 0.59733333rem 1.70666667rem;
+  background-color: white;
+}
+section.videos .video-list h3 {
+  font-size: 0.59733333rem;
+  font-weight: 500;
+  color: #333333;
+}
+section.videos .video-list ul li {
+  margin-top: 0.42666667rem;
+}
+section.videos .video-list ul li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+section.videos .video-list ul li a img {
+  width: 6.4rem;
+  height: 3.584rem;
+  border-radius: 0.17066667rem;
+  background: #000000;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+section.videos .video-list ul li a .text {
+  width: 7.76533333rem;
+  margin-left: 0.42666667rem;
+  border-bottom: solid 1px #D6D6D6;
+  padding-bottom: 0.21333333rem;
+}
+section.videos .video-list ul li a .text .list-title {
+  height: 2.77333333rem;
+}
+section.videos .video-list ul li a .text .list-title p {
+  font-size: 0.55466667rem;
+  font-weight: 400;
+  color: #333333;
+  line-height: 0.768rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+section.videos .video-list ul li a .text .nums span {
+  font-size: 0.512rem;
+  font-weight: 400;
+  color: #666666;
+}
+section.videos .video-list ul li a .text .nums span i {
+  display: inline-block;
+  width: 0.512rem;
+  height: 0.512rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0.27733333rem;
+  vertical-align: -0.04266667rem;
+}
+section.videos .video-list ul li a .text .nums span:nth-of-type(1) i {
+  background-image: url(../images/fa88bb52.png);
+}
+section.videos .video-list ul li a .text .nums span:nth-of-type(2) {
+  margin-left: 0.98133333rem;
+}
+section.videos .video-list ul li a .text .nums span:nth-of-type(2) i {
+  background-image: url(../images/8d6a80f3.png);
+}
+section.videos .video-list ul li a .text .nums span:nth-of-type(2) i.active {
+  background-image: url(../images/3ff426dd.png);
+}
+
