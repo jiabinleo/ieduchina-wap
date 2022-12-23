@@ -157,6 +157,10 @@ html {
   font-family: Source Han Sans CN-Regular, Source Han Sans CN;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 html {
   font-family: Source Han Sans CN-Regular, Source Han Sans CN;
 }
