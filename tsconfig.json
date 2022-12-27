@@ -20,7 +20,7 @@
     },
     "include": [  
     "./src/**/*.ts"
-, "src/js/modules.js", "src/js/modules.js"  ],
+, "src/js/modules.js", "src/js/modules.js", "src/skin/2022中秋教师节/index.js", "src/skin/2022中秋教师节/index.js", "src/skin/2022圣诞节/index.js", "src/skin/2022圣诞节/index.js"  ],
   "exclude": [
     "node_modules",
     "dist",
