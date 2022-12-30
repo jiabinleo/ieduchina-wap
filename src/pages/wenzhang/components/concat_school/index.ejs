@@ -1,42 +1,36 @@
 <%let {grade}=require("../../mock.json")%>
-    <div class="concat_school">
+    <div class="concat_school2" id="concat_school2">
         <div class="box">
-            <h3><span>免费联系KSS深圳国王学校</span></h3>
-            <p class="tip1">每天限<span>50</span>个名额</p>
+            <h3><span>免费注册会员，即刻联系学校</span></h3>
+            <p class="tip1">KSS深圳国王学校</p>
             <form class="layui-form" action="/test" method="post">
                 <div class="input">
-                    <input type="text" name="name" placeholder="请输入学生姓名" lay-verify="concat_name">
+                    <input type="text" name="name" placeholder="家长或学生姓名" lay-verify="concat_name">
                 </div>
                 <div class="input">
                     <select name="grade" lay-verify="concat_grade">
                         <option value="">孩子或学生在读年级</option>
                         <%grade.forEach((el)=>{%>
-                            <option value="<%=el%>"><%=el%></option>
-                        <%})%>
+                            <option value="<%=el%>">
+                                <%=el%>
+                            </option>
+                            <%})%>
                     </select>
-                </div>
-                <div class="input-wrap">
-                    <div class="input">
-                        <select name="province" id="concat_provice" lay-verify="concat_provice"
-                            lay-filter="concat_provice">
-                            <option value="">省份</option>
-                        </select>
-                    </div>
-                    <div class="input">
-                        <select name="city" id="concat_city" lay-verify="concat_city" lay-filter="concat_city">
-                            <option value="">城市</option>
-                        </select>
-                    </div>
                 </div>
                 <div class="input">
                     <input type="text" name="mobile" placeholder="输入手机号，联系方式将短信发给您" lay-verify="concat_mobile">
                 </div>
+                <div class="input-wrap">
+                    <div class="input">
+                        <input type="text" name="mobile" placeholder="输入验证码" lay-verify="concat_yzm">
+                    </div>
+                    <button type="button" class="get_concat_code">短信验证码</button>
+                </div>
                 <div class="btn">
-                    <button lay-submit="" lay-filter="concat_submit"><i></i>免费提交</button>
+                    <button lay-submit="" lay-filter="concat_submit"><i></i>点击注册</button>
                     <a hre1f=""><span><i></i></span>联系学校</a>
                 </div>
-                <p class="tip2">提交成功后可以直接一键联系学校哦!</p>
-            </div>
-        </form>
+                <p class="tip2">注册成功后可以直接一键联系学校哦!!</p>
+            </form>
+        </div>
     </div>
-</div>

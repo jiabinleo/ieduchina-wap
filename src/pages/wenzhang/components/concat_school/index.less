@@ -4,12 +4,56 @@ body {
     margin: 0 auto;
 
     .detail_content {
-        .concat_school {
-            margin: (16/@rem) auto;
+        .desc-new {
+            .top {
+                .rightbtn {
+                    span{
+                        &.concat {
+                            background-color: #318eff;
+                            color: #FFFFFF;
+                            margin-top: 0.1rem;
+                            width: 1.3rem;
+                            font-size: .26rem;
+                            line-height: .4rem;
+                            border: 1px solid #318eff;
+                            border-radius: 4px;
+                            text-align: center;
+                            cursor: pointer;
+                            float: right;
+                            &.tel {
+                                width: 1.6rem;
+                                a{
+                                    color: white;
+                                }
+    
+                                img {
+                                    width: 0.36rem;
+                                    vertical-align: -0.08rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .concat-school2 {
             width: 100%;
-            height: (800/@rem);
+            max-width: 750px;
+
+            .layui-layer-setwin {
+                right: 50%;
+                bottom: (-80/@rem);
+                top: initial;
+                transform: translateX(-15px);
+            }
+        }
+
+        .concat_school2 {
+            // margin: (16/@rem) auto;
+            width: 100%;
             background: url("./images/蒙版组\ 54@2x.png") center center / cover no-repeat;
-            padding: (40/@rem) (10/@rem) 0;
+            padding: (40/@rem) (10/@rem) (10/@rem);
             box-sizing: border-box;
             position: relative;
 
@@ -17,7 +61,7 @@ body {
                 position: absolute;
                 right: 0;
                 top: 0;
-                z-index: 1;
+                z-index: 0;
                 content: "";
                 width: (136/@rem);
                 height: (79/@rem);
@@ -98,7 +142,7 @@ body {
                             }
                         }
 
-                        &:nth-of-type(4) {
+                        &:nth-of-type(3) {
                             &::before {
                                 background-image: url("./images/手机@2x.png");
                             }
@@ -129,6 +173,7 @@ body {
                                 border-color: #FF5722 !important;
                             }
                         }
+
                         .layui-form-select dl dd.layui-this {
                             background-color: #2A74DA;
                         }
@@ -139,22 +184,32 @@ body {
                         justify-content: space-between;
 
                         .input {
-                            &:first-of-type{
-                                &::before {
-                                    background-image: url("./images/城市@2x.png");
-                                }
-                            }
+                            flex: 1;
+
                             &:last-of-type {
-                                border-left: none;
-
-                                input {
-                                    border-left-color: transparent;
-                                }
+                                border-left: 1px solid #E3E3E3;
 
                                 &::before {
-                                    content: initial;
+                                    content: "";
+                                    background-image: url("./images/验证码@2x.png");
                                 }
                             }
+                        }
+
+                        button {
+                            width: (230/@rem);
+                            height: (75/@rem);
+                            background: linear-gradient(180deg, #9AC4FF 0%, #2A74DA 100%);
+                            box-shadow: 0 (3/@rem) (6/@rem) (1/@rem) rgba(43, 119, 223, 0.502);
+                            border-radius: 0px;
+                            font-size: (28/@rem);
+                            font-weight: 400;
+                            color: #FFFFFF;
+                            margin-top: (20/@rem);
+                            margin-left: (20/@rem);
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
                         }
                     }
 

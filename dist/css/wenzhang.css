@@ -162,39 +162,48 @@
 body {
   margin: 0 auto;
 }
-body .detail_content .concat_school {
-  margin: 0.16rem auto;
+body .detail_content .concat-school2 {
   width: 100%;
-  height: 8rem;
+  max-width: 750px;
+}
+body .detail_content .concat-school2 .layui-layer-setwin {
+  right: 50%;
+  bottom: -0.8rem;
+  top: initial;
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+body .detail_content .concat_school2 {
+  width: 100%;
   background: url(../images/864377bd.png) center center / cover no-repeat;
-  padding: 0.4rem 0.1rem 0;
+  padding: 0.4rem 0.1rem 0.1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
 }
-body .detail_content .concat_school::after {
+body .detail_content .concat_school2::after {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 0;
   content: "";
   width: 1.36rem;
   height: 0.79rem;
   background: url(../images/1ee1e1a9.png) center center / contain no-repeat;
 }
-body .detail_content .concat_school .box {
+body .detail_content .concat_school2 .box {
   width: 100%;
   height: 7.5rem;
   background: #FFFFFF;
   border-radius: 0;
   margin: 0 auto;
 }
-body .detail_content .concat_school .box h3 {
+body .detail_content .concat_school2 .box h3 {
   text-align: center;
   padding-top: 0.5rem;
   position: relative;
 }
-body .detail_content .concat_school .box h3::after {
+body .detail_content .concat_school2 .box h3::after {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -207,27 +216,27 @@ body .detail_content .concat_school .box h3::after {
   background: #ECF4FA;
   border-radius: 0px;
 }
-body .detail_content .concat_school .box h3 span {
+body .detail_content .concat_school2 .box h3 span {
   position: relative;
   z-index: 10;
   font-size: 0.32rem;
   font-weight: 500;
   color: #2B77DF;
 }
-body .detail_content .concat_school .box p.tip1 {
+body .detail_content .concat_school2 .box p.tip1 {
   font-size: 0.24rem;
   font-weight: 400;
   color: #666666;
   text-align: center;
   padding-top: 0.3rem;
 }
-body .detail_content .concat_school .box p.tip1 span {
+body .detail_content .concat_school2 .box p.tip1 span {
   color: #F61414;
 }
-body .detail_content .concat_school .box form {
+body .detail_content .concat_school2 .box form {
   margin: 0 0.25rem;
 }
-body .detail_content .concat_school .box form .input {
+body .detail_content .concat_school2 .box form .input {
   width: 100%;
   height: 0.75rem;
   background: #FFFFFF;
@@ -235,7 +244,7 @@ body .detail_content .concat_school .box form .input {
   margin-top: 0.2rem;
   position: relative;
 }
-body .detail_content .concat_school .box form .input::before {
+body .detail_content .concat_school2 .box form .input::before {
   content: "";
   position: absolute;
   left: 0;
@@ -245,13 +254,13 @@ body .detail_content .concat_school .box form .input::before {
   height: 0.75rem;
   background: url(../images/d6c14973.png) center center / 0.32rem 0.32rem no-repeat;
 }
-body .detail_content .concat_school .box form .input:nth-of-type(2)::before {
+body .detail_content .concat_school2 .box form .input:nth-of-type(2)::before {
   background-image: url(../images/9bdbe08a.png);
 }
-body .detail_content .concat_school .box form .input:nth-of-type(4)::before {
+body .detail_content .concat_school2 .box form .input:nth-of-type(3)::before {
   background-image: url(../images/6dd6f9a2.png);
 }
-body .detail_content .concat_school .box form .input input {
+body .detail_content .concat_school2 .box form .input input {
   width: 100%;
   height: 0.75rem;
   line-height: 0.75rem;
@@ -268,29 +277,29 @@ body .detail_content .concat_school .box form .input input {
   padding-left: 0;
   -webkit-appearance: none;
 }
-body .detail_content .concat_school .box form .input input::-webkit-input-placeholder {
+body .detail_content .concat_school2 .box form .input input::-webkit-input-placeholder {
   color: #999;
 }
-body .detail_content .concat_school .box form .input input::-moz-placeholder {
+body .detail_content .concat_school2 .box form .input input::-moz-placeholder {
   color: #999;
 }
-body .detail_content .concat_school .box form .input input:-ms-input-placeholder {
+body .detail_content .concat_school2 .box form .input input:-ms-input-placeholder {
   color: #999;
 }
-body .detail_content .concat_school .box form .input input::-ms-input-placeholder {
+body .detail_content .concat_school2 .box form .input input::-ms-input-placeholder {
   color: #999;
 }
-body .detail_content .concat_school .box form .input input::placeholder {
+body .detail_content .concat_school2 .box form .input input::placeholder {
   color: #999;
 }
-body .detail_content .concat_school .box form .input input.layui-form-danger,
-body .detail_content .concat_school .box form .input input.layui-form-danger:focus {
+body .detail_content .concat_school2 .box form .input input.layui-form-danger,
+body .detail_content .concat_school2 .box form .input input.layui-form-danger:focus {
   border-color: #FF5722 !important;
 }
-body .detail_content .concat_school .box form .input .layui-form-select dl dd.layui-this {
+body .detail_content .concat_school2 .box form .input .layui-form-select dl dd.layui-this {
   background-color: #2A74DA;
 }
-body .detail_content .concat_school .box form .input-wrap {
+body .detail_content .concat_school2 .box form .input-wrap {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -300,19 +309,37 @@ body .detail_content .concat_school .box form .input-wrap {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-body .detail_content .concat_school .box form .input-wrap .input:first-of-type::before {
-  background-image: url(../images/15b13388.png);
+body .detail_content .concat_school2 .box form .input-wrap .input {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
-body .detail_content .concat_school .box form .input-wrap .input:last-of-type {
-  border-left: none;
+body .detail_content .concat_school2 .box form .input-wrap .input:last-of-type {
+  border-left: 1px solid #E3E3E3;
 }
-body .detail_content .concat_school .box form .input-wrap .input:last-of-type input {
-  border-left-color: transparent;
+body .detail_content .concat_school2 .box form .input-wrap .input:last-of-type::before {
+  content: "";
+  background-image: url(../images/d41243f0.png);
 }
-body .detail_content .concat_school .box form .input-wrap .input:last-of-type::before {
-  content: initial;
+body .detail_content .concat_school2 .box form .input-wrap button {
+  width: 2.3rem;
+  height: 0.75rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9AC4FF), to(#2A74DA));
+  background: linear-gradient(180deg, #9AC4FF 0%, #2A74DA 100%);
+  -webkit-box-shadow: 0 0.03rem 0.06rem 0.01rem rgba(43, 119, 223, 0.502);
+          box-shadow: 0 0.03rem 0.06rem 0.01rem rgba(43, 119, 223, 0.502);
+  border-radius: 0px;
+  font-size: 0.28rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-body .detail_content .concat_school .box form .btn {
+body .detail_content .concat_school2 .box form .btn {
   margin: 0.3rem 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -323,7 +350,7 @@ body .detail_content .concat_school .box form .btn {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-body .detail_content .concat_school .box form .btn button {
+body .detail_content .concat_school2 .box form .btn button {
   width: 2.9rem;
   width: 47%;
   height: 0.75rem;
@@ -339,12 +366,12 @@ body .detail_content .concat_school .box form .btn button {
   color: #FFFFFF;
   cursor: pointer;
 }
-body .detail_content .concat_school .box form .btn button.s {
+body .detail_content .concat_school2 .box form .btn button.s {
   background: #32D38D;
   -webkit-box-shadow: 0px 3px 6px 1px rgba(50, 211, 141, 0.502);
           box-shadow: 0px 3px 6px 1px rgba(50, 211, 141, 0.502);
 }
-body .detail_content .concat_school .box form .btn button.s i {
+body .detail_content .concat_school2 .box form .btn button.s i {
   vertical-align: -0.02rem;
   margin-right: 0.1rem;
   display: inline-block;
@@ -352,7 +379,7 @@ body .detail_content .concat_school .box form .btn button.s i {
   height: 0.32rem;
   background: url(../images/ad3e6a75.png) 0 0 / 0.32rem 0.32rem no-repeat;
 }
-body .detail_content .concat_school .box form .btn a {
+body .detail_content .concat_school2 .box form .btn a {
   display: block;
   width: 2.9rem;
   width: 47%;
@@ -369,19 +396,19 @@ body .detail_content .concat_school .box form .btn a {
   position: relative;
   padding-left: 0.52rem;
 }
-body .detail_content .concat_school .box form .btn a[href] {
+body .detail_content .concat_school2 .box form .btn a[href] {
   background: -webkit-gradient(linear, left top, left bottom, from(#9AC4FF), to(#2A74DA));
   background: linear-gradient(180deg, #9AC4FF 0%, #2A74DA 100%);
   -webkit-box-shadow: 0px 3px 6px 1px rgba(43, 119, 223, 0.502);
           box-shadow: 0px 3px 6px 1px rgba(43, 119, 223, 0.502);
   color: white;
 }
-body .detail_content .concat_school .box form .btn a[href] span i {
+body .detail_content .concat_school2 .box form .btn a[href] span i {
   width: 0.75rem;
   height: 0.75rem;
   background: url(../images/3cf65aa6.gif) center / 0.75rem 0.75rem no-repeat;
 }
-body .detail_content .concat_school .box form .btn a span {
+body .detail_content .concat_school2 .box form .btn a span {
   display: inline-block;
   width: 0.75rem;
   height: 0.75rem;
@@ -392,7 +419,7 @@ body .detail_content .concat_school .box form .btn a span {
   position: absolute;
   left: 0.4rem;
 }
-body .detail_content .concat_school .box form .btn a span i {
+body .detail_content .concat_school2 .box form .btn a span i {
   display: inline-block;
   width: 0.75rem;
   height: 0.75rem;
@@ -402,15 +429,15 @@ body .detail_content .concat_school .box form .btn a span i {
   left: 0;
   z-index: 6;
 }
-body .detail_content .concat_school .box form p.tip2 {
+body .detail_content .concat_school2 .box form p.tip2 {
   position: relative;
   font-size: 0.24rem;
   font-weight: 400;
   color: #999999;
   text-align: center;
 }
-body .detail_content .concat_school .box form p.tip2:before,
-body .detail_content .concat_school .box form p.tip2::after {
+body .detail_content .concat_school2 .box form p.tip2:before,
+body .detail_content .concat_school2 .box form p.tip2::after {
   position: absolute;
   top: 0.16rem;
   content: "";
@@ -418,10 +445,10 @@ body .detail_content .concat_school .box form p.tip2::after {
   height: 0px;
   border-top: 1px solid #C1C1C1;
 }
-body .detail_content .concat_school .box form p.tip2::before {
+body .detail_content .concat_school2 .box form p.tip2::before {
   left: 0;
 }
-body .detail_content .concat_school .box form p.tip2::after {
+body .detail_content .concat_school2 .box form p.tip2::after {
   right: 0;
 }
 
