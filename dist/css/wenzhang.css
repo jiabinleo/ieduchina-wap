@@ -162,6 +162,29 @@
 body {
   margin: 0 auto;
 }
+body .detail_content .desc-new .top .rightbtn span.concat {
+  background-color: #318eff;
+  color: #FFFFFF;
+  margin-top: 0.1rem;
+  width: 1.3rem;
+  font-size: 0.26rem;
+  line-height: 0.4rem;
+  border: 1px solid #318eff;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+}
+body .detail_content .desc-new .top .rightbtn span.concat.tel {
+  width: 1.6rem;
+}
+body .detail_content .desc-new .top .rightbtn span.concat.tel a {
+  color: white;
+}
+body .detail_content .desc-new .top .rightbtn span.concat.tel img {
+  width: 0.36rem;
+  vertical-align: -0.08rem;
+}
 body .detail_content .concat-school2 {
   width: 100%;
   max-width: 750px;

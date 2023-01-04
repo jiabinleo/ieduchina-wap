@@ -65,7 +65,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
                         content: $("#concat_school2")
                     });
                 }
-            }, 5);
+            }, 5000);
             form.on("submit(concat_submit)", function (result) {
                 $.ajax({
                     url: result.form.action,
@@ -95,14 +95,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
             }
             $(".concat").click(function () {
                 clearTimeout(timeoutTimer);
-                $('html, body').animate({
-                    scrollTop: $(".concat-form").offset().top - 200
-                }, 300);
-            });
-            $(".concat.tel").click(function () {
-                $('html, body').animate({
-                    scrollTop: $(".concat-iedu").offset().top - 400
-                }, 300);
+                if (!$(this).hasClass('tel')) {
+                    $('html, body').animate({
+                        scrollTop: $(".concat_school2").offset().top - 200
+                    }, 300);
+                }
             });
             $(document).on("click", ".layui-layer-msg", function () {
                 $(this).hide();
