@@ -59,6 +59,12 @@ const pages = [
         desc: "小鹅通",
         chunk: "xiaoetong"
     },
+    {
+        template: "beikaoold",
+        defaults: false,
+        desc: "旧版备考",
+        chunk: "beikaoold"
+    },
     // {
     //     template: "pubvideo",
     //     chunk: "user",
