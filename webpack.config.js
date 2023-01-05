@@ -136,7 +136,7 @@ const moduleConfig = {
         compress: true,
         port: 8081,
         hot: true,
-        open: true,
+        open: false,
         allowedHosts: 'all',
         bonjour: true,
         client: {

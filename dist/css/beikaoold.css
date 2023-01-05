@@ -1188,51 +1188,18 @@ button.swiper-pagination-bullet {
   height: 4.544rem;
   margin-top: 1.13066667rem;
 }
+.section .environment {
+  text-align: center;
+}
 .section .environment h3 {
   font-size: 0.512rem;
   font-family: Adobe Heiti Std;
   font-weight: normal;
   color: #232323;
   padding: 1.00266667rem 0 0.64rem;
-  text-align: center;
 }
-.section .environment ul {
-  overflow: hidden;
-  width: 14.50666667rem;
-  margin: 0 auto;
-}
-.section .environment ul li {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.section .environment ul li:nth-of-type(1) {
-  float: left;
-  width: 7.12533333rem;
-  height: 3.60533333rem;
-}
-.section .environment ul li:nth-of-type(2) {
-  float: right;
-  width: 7.06133333rem;
-  height: 4.71466667rem;
-}
-.section .environment ul li:nth-of-type(3) {
-  float: left;
-  width: 7.18933333rem;
-  height: 4.032rem;
-  margin-top: 0.55466667rem;
-}
-.section .environment ul li:nth-of-type(4) {
-  float: right;
-  width: 7.01866667rem;
-  height: 7.95733333rem;
-  margin-top: 0.29866667rem;
-}
-.section .environment ul li:nth-of-type(5) {
-  float: left;
-  width: 7.168rem;
-  height: 4.58666667rem;
-  margin-top: 0.256rem;
+.section .environment img {
+  width: 14.72rem;
 }
 .section .address {
   margin: 0.85333333rem auto;
